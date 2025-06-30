@@ -1,75 +1,236 @@
-import Link from 'next/link';
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Your Company</h3>
-            <p className="text-gray-300">
-              Making the world a better place through innovative solutions.
+    <footer className="bg-white py-20 border-t">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+          {/* Brand Section */}
+          <div className="col-span-1">
+            <div className="flex items-center gap-2 mb-6">
+              <Image src="/logo.svg" alt="Ndugu Logo" width={40} height={40} />
+              <div>
+                <div className="font-semibold text-[#0B1C39]">Ndugu</div>
+                <div className="text-sm text-[#0066FF]">
+                  Blockchain Catalyst
+                </div>
+              </div>
+            </div>
+            <p className="text-gray-600 mb-8 text-lg">
+              Empowering Africa&apos;s Web3 Builders—One Line of Code at a Time.
             </p>
+            <div className="flex gap-6 pt-4">
+              <a href="#" className="hover:opacity-80 transition-opacity">
+                <Image src="/google.svg" alt="Google" width={24} height={24} />
+              </a>
+              <a href="#" className="hover:opacity-80 transition-opacity">
+                <Image
+                  src="/facebook.svg"
+                  alt="Facebook"
+                  width={24}
+                  height={24}
+                />
+              </a>
+              <a href="#" className="hover:opacity-80 transition-opacity">
+                <Image
+                  src="/instagram.svg"
+                  alt="Instagram"
+                  width={24}
+                  height={24}
+                />
+              </a>
+              <a href="#" className="hover:opacity-80 transition-opacity">
+                <Image src="/apple.svg" alt="Apple" width={24} height={24} />
+              </a>
+            </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+          {/* Services */}
+          <div className="col-span-1">
+            <h3 className="font-semibold text-[#0B1C39] mb-4">Services</h3>
+            <ul className="space-y-3">
               <li>
-                <Link href="/" className="text-gray-300 hover:text-white">
-                  Home
+                <Link
+                  href="/features"
+                  className="text-gray-600 hover:text-[#0066FF]"
+                >
+                  Features
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-gray-300 hover:text-white">
-                  Services
+                <Link
+                  href="/solutions"
+                  className="text-gray-600 hover:text-[#0066FF]"
+                >
+                  Solutions
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-gray-300 hover:text-white">
-                  About Us
+                <Link
+                  href="/mentorship"
+                  className="text-gray-600 hover:text-[#0066FF]"
+                >
+                  Mentorship
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/projects"
+                  className="text-gray-600 hover:text-[#0066FF]"
+                >
+                  Projects
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* More Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">More</h3>
-            <ul className="space-y-2">
+          {/* About us */}
+          <div className="col-span-1">
+            <h3 className="font-semibold text-[#0B1C39] mb-4">About us</h3>
+            <ul className="space-y-3">
               <li>
-                <Link href="/collaboration" className="text-gray-300 hover:text-white">
-                  Collaboration
+                <Link
+                  href="/core-values"
+                  className="text-gray-600 hover:text-[#0066FF]"
+                >
+                  Core Values
                 </Link>
               </li>
               <li>
-                <Link href="/events" className="text-gray-300 hover:text-white">
-                  Events & News
+                <Link
+                  href="/team"
+                  className="text-gray-600 hover:text-[#0066FF]"
+                >
+                  Team
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/testimonials"
+                  className="text-gray-600 hover:text-[#0066FF]"
+                >
+                  Testimonies
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/our-story"
+                  className="text-gray-600 hover:text-[#0066FF]"
+                >
+                  Our Story
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/blog"
+                  className="text-gray-600 hover:text-[#0066FF]"
+                >
+                  Blog
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Contact</h3>
-            <ul className="space-y-2 text-gray-300">
-              <li>Email: contact@example.com</li>
-              <li>Phone: (123) 456-7890</li>
-              <li>Address: 123 Business St, City, Country</li>
+          {/* Collaborations */}
+          <div className="col-span-1">
+            <h3 className="font-semibold text-[#0B1C39] mb-4">
+              Collaborations
+            </h3>
+            <ul className="space-y-3">
+              <li>
+                <Link
+                  href="/channels"
+                  className="text-gray-600 hover:text-[#0066FF]"
+                >
+                  Channels
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/groups"
+                  className="text-gray-600 hover:text-[#0066FF]"
+                >
+                  Groups
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/workshops"
+                  className="text-gray-600 hover:text-[#0066FF]"
+                >
+                  Workshops
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Events and News */}
+          <div className="col-span-1">
+            <h3 className="font-semibold text-[#0B1C39] mb-4">
+              Events and News
+            </h3>
+            <ul className="space-y-3">
+              <li>
+                <Link
+                  href="/hackathons"
+                  className="text-gray-600 hover:text-[#0066FF]"
+                >
+                  Hackathons
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/announcements"
+                  className="text-gray-600 hover:text-[#0066FF]"
+                >
+                  Announcements
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/callups"
+                  className="text-gray-600 hover:text-[#0066FF]"
+                >
+                  Callups
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
-          <p>© {new Date().getFullYear()} Your Company. All rights reserved.</p>
+        {/* Back to Top Button */}
+        <div className="flex justify-center mt-16">
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="bg-[#EEF5FF] p-4 rounded-full hover:bg-[#0066FF] hover:text-white transition-colors text-blue-300"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M5 10l7-7m0 0l7 7m-7-7v18"
+              />
+            </svg>
+          </button>
+        </div>
+
+        {/* Copyright */}
+        <div className="text-center mt-8 text-gray-600">
+          <p>© 2024 NDUGU Blockchain Catalyst. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
   );
 };
 
-export default Footer; 
+export default Footer;

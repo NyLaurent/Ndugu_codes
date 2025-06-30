@@ -11,20 +11,20 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Your Company",
-  description: "Your company description",
+  title: "Ndugu Codes - Blockchain Catalyst",
+  description: "Empowering Africa's Web3 Builders—One Line of Code at a Time.",
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html lang="en">
+    <html lang="en" className={montserrat.variable}>
       <body className={`${montserrat.className} bg-white`}>
         <Navbar />
-        <main className="min-h-screen pt-16">{children}</main>
+        <main className="min-h-screen">{children}</main>
         <Footer />
       </body>
     </html>
