@@ -1,11 +1,19 @@
 import CollaborationHero from "@/components/CollaborationHero";
+import MiddleDecoration from "@/components/MiddleDecoration";
+import CollaborationStories from "@/components/CollaborationStories";
+import React from "react";
+import ContactSection from "@/components/ContactSection";
 
-export default function Collaboration() {
+const Collaboration = () => {
   return (
-    <main>
+    <div>
       <CollaborationHero />
-
-     
-    </main>
+      <MiddleDecoration />
+      
+      <CollaborationStories />
+      <ContactSection />
+    </div>
   );
-}
+};
+
+export default Collaboration;

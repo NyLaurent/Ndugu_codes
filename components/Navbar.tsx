@@ -1,11 +1,19 @@
-'use client'
+"use client";
 
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (path: string) => {
+    if (path === "/" && pathname === "/") return true;
+    if (path !== "/" && pathname.startsWith(path)) return true;
+    return false;
+  };
 
   return (
     <nav className="bg-white border-b fixed w-full top-0 z-50">
@@ -35,31 +43,51 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-10">
             <Link
               href="/"
-              className="text-gray-700 hover:text-gray-900 text-sm font-medium"
+              className={`text-sm font-medium ${
+                isActive("/")
+                  ? "text-[#0066FF]"
+                  : "text-gray-700 hover:text-gray-900"
+              }`}
             >
               Home
             </Link>
             <Link
               href="/services"
-              className="text-gray-700 hover:text-gray-900 text-sm font-medium"
+              className={`text-sm font-medium ${
+                isActive("/services")
+                  ? "text-[#0066FF]"
+                  : "text-gray-700 hover:text-gray-900"
+              }`}
             >
               Services
             </Link>
             <Link
               href="/about"
-              className="text-gray-700 hover:text-gray-900 text-sm font-medium"
+              className={`text-sm font-medium ${
+                isActive("/about")
+                  ? "text-[#0066FF]"
+                  : "text-gray-700 hover:text-gray-900"
+              }`}
             >
               About us
             </Link>
             <Link
               href="/collaboration"
-              className="text-gray-700 hover:text-gray-900 text-sm font-medium"
+              className={`text-sm font-medium ${
+                isActive("/collaboration")
+                  ? "text-[#0066FF]"
+                  : "text-gray-700 hover:text-gray-900"
+              }`}
             >
               Collaborations
             </Link>
             <Link
               href="/events"
-              className="text-gray-700 hover:text-gray-900 text-sm font-medium"
+              className={`text-sm font-medium ${
+                isActive("/events")
+                  ? "text-[#0066FF]"
+                  : "text-gray-700 hover:text-gray-900"
+              }`}
             >
               Events and News
             </Link>
@@ -136,31 +164,51 @@ const Navbar = () => {
         <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
           <Link
             href="/"
-            className="text-gray-700 hover:text-gray-900 block px-3 py-2 text-base font-medium"
+            className={`block px-3 py-2 text-base font-medium ${
+              isActive("/")
+                ? "text-[#0066FF]"
+                : "text-gray-700 hover:text-gray-900"
+            }`}
           >
             Home
           </Link>
           <Link
             href="/services"
-            className="text-gray-700 hover:text-gray-900 block px-3 py-2 text-base font-medium"
+            className={`block px-3 py-2 text-base font-medium ${
+              isActive("/services")
+                ? "text-[#0066FF]"
+                : "text-gray-700 hover:text-gray-900"
+            }`}
           >
             Services
           </Link>
           <Link
             href="/about"
-            className="text-gray-700 hover:text-gray-900 block px-3 py-2 text-base font-medium"
+            className={`block px-3 py-2 text-base font-medium ${
+              isActive("/about")
+                ? "text-[#0066FF]"
+                : "text-gray-700 hover:text-gray-900"
+            }`}
           >
             About us
           </Link>
           <Link
             href="/collaboration"
-            className="text-gray-700 hover:text-gray-900 block px-3 py-2 text-base font-medium"
+            className={`block px-3 py-2 text-base font-medium ${
+              isActive("/collaboration")
+                ? "text-[#0066FF]"
+                : "text-gray-700 hover:text-gray-900"
+            }`}
           >
             Collaborations
           </Link>
           <Link
             href="/events"
-            className="text-gray-700 hover:text-gray-900 block px-3 py-2 text-base font-medium"
+            className={`block px-3 py-2 text-base font-medium ${
+              isActive("/events")
+                ? "text-[#0066FF]"
+                : "text-gray-700 hover:text-gray-900"
+            }`}
           >
             Events and News
           </Link>

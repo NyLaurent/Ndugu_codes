@@ -1,0 +1,164 @@
+import Image from "next/image";
+
+const MiddleDecoration = () => {
+  return (
+    <section className="py-16 px-4 md:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col lg:flex-row gap-12">
+          {/* Header Section */}
+          <div className="lg:w-1/2">
+            <div className="flex items-center gap-2 mb-4">
+              <Image src="/globe.svg" alt="Globe Icon" width={24} height={24} />
+              <p className="text-[#0066FF]">
+                Powering Partnerships Across Africa & Beyond
+              </p>
+            </div>
+            <h2 className="text-4xl text-black text-semibold mb-8">
+              See How Far We&apos;ve Collaborated
+            </h2>
+            <ul className="space-y-4">
+              <li className="flex items-center gap-2">
+                <div className="w-5 h-5 rounded-full bg-[#0066FF] flex items-center justify-center">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 3L4.5 8.5L2 6"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+                <span className="text-black">
+                  Trusted by Web3 companies, universities, and non-profits
+                </span>
+              </li>
+              <li className="flex items-center gap-2">
+                <div className="w-5 h-5 rounded-full bg-[#0066FF] flex items-center justify-center">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 3L4.5 8.5L2 6"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+                <span className="text-black">
+                  Active in 12+ African countries
+                </span>
+              </li>
+              <li className="flex items-center gap-2">
+                <div className="w-5 h-5 rounded-full bg-[#0066FF] flex items-center justify-center">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 3L4.5 8.5L2 6"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+                <span className="text-black" style={{ fontSize: "14px" }}>
+                  Dedicated customer success team designed for real impact and
+                  sustainable growth
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Stats Grid */}
+          <div className="lg:w-1/2 grid grid-cols-2 gap-8">
+            {/* First Row */}
+            <div className="text-center p-6 bg-white rounded-lg shadow-sm">
+              <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                <div className="w-16 h-16 rounded-full bg-red-500 flex items-center justify-center">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M4 4h16v16H4V4zm2 2v12h12V6H6zm3 3h6v2H9V9zm0 3h6v2H9v-2z" />
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-4xl text-black font-bold mb-2">$5M+</h3>
+              <p className="text-gray-600">Funding Channels Enabled</p>
+            </div>
+
+            <div className="text-center p-6 bg-white rounded-lg shadow-sm">
+              <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                <div className="w-16 h-16 rounded-full bg-green-500 flex items-center justify-center">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-4xl text-black font-bold mb-2">100+</h3>
+              <p className="text-gray-600">Startups Supported</p>
+            </div>
+
+            {/* Second Row */}
+            <div className="text-center p-6 bg-white rounded-lg shadow-sm">
+              <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                <div className="w-16 h-16 rounded-full bg-blue-500 flex items-center justify-center">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-4xl text-black font-bold mb-2">50K+</h3>
+              <p className="text-gray-600">Community Members</p>
+            </div>
+
+            <div className="text-center p-6 bg-white rounded-lg shadow-sm">
+              <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                <div className="w-16 h-16 rounded-full bg-orange-400 flex items-center justify-center">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M12 12.75c1.63 0 3.07.39 4.24.9 1.08.48 1.76 1.56 1.76 2.73V18H6v-1.61c0-1.18.68-2.26 1.76-2.73 1.17-.52 2.61-.91 4.24-.91zM4 13c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm18 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-8-4c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3z" />
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-4xl text-black font-bold mb-2">25+</h3>
+              <p className="text-gray-600">Official Collaborators</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default MiddleDecoration;
