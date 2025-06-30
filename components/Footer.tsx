@@ -203,7 +203,7 @@ const Footer = () => {
         </div>
 
         {/* Back to Top Button */}
-        <div className="flex justify-center mt-16">
+        <div className="flex justify-center mt-16 border-t pt-5">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="bg-[#EEF5FF] p-4 rounded-full hover:bg-[#0066FF] hover:text-white transition-colors text-blue-300"
