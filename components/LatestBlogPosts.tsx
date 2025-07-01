@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -62,8 +64,8 @@ const LatestBlogPosts = () => {
             Latest Blog Posts
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
-            Here's a quick glance over our latest blog posts and media articles
-            written by our team members, staff and guest writers.
+            Here&apos;s a quick glance over our latest blog posts and media
+            articles written by our team members, staff and guest writers.
           </p>
         </div>
 
@@ -72,7 +74,7 @@ const LatestBlogPosts = () => {
           {blogPosts.map((post) => (
             <article
               key={post.id}
-              className="bg-white rounded-lg overflow-hidden shadow-sm"
+              className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
             >
               <div className="relative h-48">
                 <Image
@@ -89,7 +91,7 @@ const LatestBlogPosts = () => {
                 </h3>
                 <p className="text-gray-600 text-sm mb-4">{post.description}</p>
                 <Link
-                  href={`/events/blog/${post.id}`}
+                  href="/events/blog"
                   className="text-[#0066FF] font-medium hover:text-blue-700 inline-flex items-center"
                 >
                   Learn more

@@ -6,47 +6,41 @@ import "leaflet/dist/leaflet.css";
 
 export default function Map() {
   const mapRef = useRef<L.Map | null>(null);
-  const mapContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (mapRef.current || !mapContainerRef.current) return;
+    if (typeof window !== "undefined") {
+      // Initialize map only if it hasn't been initialized yet
+      if (!mapRef.current) {
+        // Set default marker icon options
+        L.Icon.Default.imagePath = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/";
+        
+        // Create map instance
+        mapRef.current = L.map("map").setView([-1.9441, 30.0619], 13);
 
-    // Fix for default marker icon
-    delete L.Icon.Default.prototype._getIconUrl;
-    L.Icon.Default.mergeOptions({
-      iconRetinaUrl:
-        "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/marker-icon-2x.png",
-      iconUrl:
-        "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/marker-icon.png",
-      shadowUrl:
-        "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/marker-shadow.png",
-    });
+        // Add tile layer
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        }).addTo(mapRef.current);
 
-    // Kigali, Rwanda coordinates
-    const lat = -1.9441;
-    const lng = 30.0619;
+        // Add marker for Ndugu Codes location
+        L.marker([-1.9441, 30.0619], {
+          title: "Ndugu Codes",
+        })
+          .addTo(mapRef.current)
+          .bindPopup("Ndugu Codes - Innovation Hub")
+          .openPopup();
+      }
+    }
 
-    // Create map instance
-    mapRef.current = L.map(mapContainerRef.current).setView([lat, lng], 15);
-
-    // Add OpenStreetMap tiles
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
-      attribution: "© OpenStreetMap contributors",
-    }).addTo(mapRef.current);
-
-    // Add marker for Ndugu Codes location
-    const marker = L.marker([lat, lng]).addTo(mapRef.current);
-    marker.bindPopup("Ndugu Codes Hub").openPopup();
-
-    // Cleanup on component unmount
+    // Cleanup function
     return () => {
       if (mapRef.current) {
         mapRef.current.remove();
         mapRef.current = null;
       }
     };
-  }, []);
+  }, []); // Empty dependency array means this effect runs once on mount
 
-  return <div ref={mapContainerRef} className="h-full w-full"></div>;
+  return <div id="map" className="w-full h-full" />;
 }
