@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
+import Loading from "@/components/Loading";
+import { Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -23,9 +25,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={montserrat.variable}>
       <body className={`${montserrat.className} bg-white`}>
-        <Navbar />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
+        <Suspense fallback={<Loading />}>
+          <Navbar />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
+        </Suspense>
       </body>
     </html>
   );
