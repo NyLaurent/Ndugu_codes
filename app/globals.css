@@ -44,10 +44,6 @@ body {
   }
 }
 
-.animate-float {
-  animation: float 2s ease-in-out infinite;
-}
-
 .logo-float {
   animation: float 2s ease-in-out infinite;
 }
