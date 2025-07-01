@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
@@ -38,48 +39,39 @@ Topics Include:
   // Add more blog posts here
 ];
 
-export default function BlogPost({ params }: { params: { id: string } }) {
-  const post = blogPosts.find((p) => p.id === params.id);
+interface Props {
+  params: { id: string };
+}
 
-  if (!post) {
-    notFound();
-  }
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  return {
+    title: `Blog Post ${params.id} | Ndugu Codes`,
+    description: "Read our latest blog post about Web3 developments in Africa",
+  };
+}
+
+// Mock blog post data - replace with actual data fetching
+const getBlogPost = async (id: string) => {
+  // Simulate API call
+  return {
+    id,
+    title: `Blog Post ${id}`,
+    content: "This is the blog post content...",
+    date: new Date().toLocaleDateString(),
+  };
+};
+
+export default async function BlogPost({ params }: Props) {
+  const post = await getBlogPost(params.id);
 
   return (
     <main className="py-28 px-4 md:px-8">
       <article className="max-w-3xl mx-auto">
-        <div className="mb-8">
-          <Link
-            href="/events"
-            className="inline-flex items-center text-[#0066FF] hover:text-blue-700 transition-colors"
-          >
-            <svg
-              className="w-5 h-5 mr-2"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M10 19l-7-7m0 0l7-7m-7 7h18"
-              />
-            </svg>
-            Back to Events
-          </Link>
-        </div>
         <header className="mb-8">
           <div className="text-[#0066FF] text-sm mb-2">{post.date}</div>
           <h1 className="text-4xl font-bold text-black mb-4">{post.title}</h1>
         </header>
-        <div className="prose prose-lg">
-          {post.content.split("\n\n").map((paragraph, index) => (
-            <p key={index} className="mb-4 text-gray-600">
-              {paragraph}
-            </p>
-          ))}
-        </div>
+        <div className="prose prose-lg">{post.content}</div>
       </article>
     </main>
   );
