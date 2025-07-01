@@ -39,11 +39,18 @@ Topics Include:
   // Add more blog posts here
 ];
 
-interface Props {
+type SearchParams = { [key: string]: string | string[] | undefined };
+
+interface PageProps {
   params: { id: string };
+  searchParams: SearchParams;
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string };
+}): Promise<Metadata> {
   return {
     title: `Blog Post ${params.id} | Ndugu Codes`,
     description: "Read our latest blog post about Web3 developments in Africa",
@@ -61,7 +68,7 @@ const getBlogPost = async (id: string) => {
   };
 };
 
-export default async function BlogPost({ params }: Props) {
+export default async function BlogPost({ params }: { params: { id: string } }) {
   const post = await getBlogPost(params.id);
 
   return (
