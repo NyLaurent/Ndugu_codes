@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Elements -->
+  <circle cx="400" cy="300" r="250" fill="#E8F0FE" opacity="0.5"/>
+  <circle cx="400" cy="300" r="200" fill="#C6D9FD" opacity="0.3"/>
+  
+  <!-- Envelope Base -->
+  <path d="M250 200H550V400H250V200Z" fill="white" stroke="#0066FF" stroke-width="4"/>
+  
+  <!-- Envelope Flap -->
+  <path d="M250 200L400 300L550 200" stroke="#0066FF" stroke-width="4" fill="none"/>
+  
+  <!-- Decorative Lines -->
+  <line x1="300" y1="250" x2="500" y2="250" stroke="#0066FF" stroke-width="4" opacity="0.5"/>
+  <line x1="300" y1="300" x2="500" y2="300" stroke="#0066FF" stroke-width="4" opacity="0.5"/>
+  <line x1="300" y1="350" x2="500" y2="350" stroke="#0066FF" stroke-width="4" opacity="0.5"/>
+  
+  <!-- Decorative Circles -->
+  <circle cx="270" cy="450" r="15" fill="#0066FF" opacity="0.2"/>
+  <circle cx="530" cy="150" r="20" fill="#0066FF" opacity="0.2"/>
+  <circle cx="200" cy="250" r="10" fill="#0066FF" opacity="0.2"/>
+  <circle cx="600" cy="350" r="25" fill="#0066FF" opacity="0.2"/>
+</svg> 
