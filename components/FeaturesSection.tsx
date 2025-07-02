@@ -30,7 +30,7 @@ const FeaturesSection = () => {
             </div>
             <h3 className="text-xl text-black font-semibold mb-4">Decentralization</h3>
             <p className="text-gray-600">
-              NBC operates on a decentralized governance model, ensuring that
+              DC operates on a decentralized governance model, ensuring that
               decision-making power is distributed among community members.
             </p>
           </div>
@@ -118,7 +118,7 @@ const FeaturesSection = () => {
             </div>
             <h3 className="text-xl  text-black font-semibold mb-4">Diversity</h3>
             <p className="text-gray-600">
-              NBC is looking at creating an inclusive and diverse pool of
+              DC is looking at creating an inclusive and diverse pool of
               developers, protocols, and stakeholders.
             </p>
           </div>
