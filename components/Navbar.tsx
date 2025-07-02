@@ -31,7 +31,7 @@ const Navbar = () => {
                 className="object-contain"
               />
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-gray-900">Ndugu</span>
+                <span className="text-xl font-bold text-gray-900">Ndugu Codes</span>
                 <span className="text-sm text-[#0066FF]">
                   Blockchain Catalyst
                 </span>
