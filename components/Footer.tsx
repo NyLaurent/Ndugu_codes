@@ -14,7 +14,7 @@ const Footer = () => {
             <div className="flex items-center gap-2 mb-6">
               <Image src="/logo.svg" alt="Ndugu Logo" width={40} height={40} />
               <div>
-                <div className="font-semibold text-[#0B1C39]">Ndugu</div>
+                <div className="font-semibold text-[#0B1C39]">Ndugu Codes</div>
                 <div className="text-sm text-[#0066FF]">
                   Blockchain Catalyst
                 </div>
