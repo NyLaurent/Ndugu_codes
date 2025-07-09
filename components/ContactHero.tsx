@@ -138,7 +138,7 @@ export default function ContactHero() {
             </h2>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-600 hover:text-blue-600">
-                <span className="sr-only">Facebook</span>
+                <span className="sr-only">Instagram</span>
                 <svg
                   className="w-6 h-6"
                   fill="currentColor"
