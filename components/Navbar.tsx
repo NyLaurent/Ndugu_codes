@@ -16,7 +16,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white border-b fixed w-full top-0 z-50">
+    <nav className="bg-white/80 backdrop-blur-md border-b border-white/20 fixed w-full top-0 z-50 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           {/* Logo and Company Name */}
@@ -43,7 +43,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-10">
             <Link
               href="/"
-              className={`text-sm font-medium ${
+              className={`text-sm font-medium transition-colors duration-200 ${
                 isActive("/")
                   ? "text-[#0066FF]"
                   : "text-gray-700 hover:text-gray-900"
@@ -53,7 +53,7 @@ const Navbar = () => {
             </Link>
             <Link
               href="/services"
-              className={`text-sm font-medium ${
+              className={`text-sm font-medium transition-colors duration-200 ${
                 isActive("/services")
                   ? "text-[#0066FF]"
                   : "text-gray-700 hover:text-gray-900"
@@ -63,7 +63,7 @@ const Navbar = () => {
             </Link>
             <Link
               href="/about"
-              className={`text-sm font-medium ${
+              className={`text-sm font-medium transition-colors duration-200 ${
                 isActive("/about")
                   ? "text-[#0066FF]"
                   : "text-gray-700 hover:text-gray-900"
@@ -73,7 +73,7 @@ const Navbar = () => {
             </Link>
             <Link
               href="/collaboration"
-              className={`text-sm font-medium ${
+              className={`text-sm font-medium transition-colors duration-200 ${
                 isActive("/collaboration")
                   ? "text-[#0066FF]"
                   : "text-gray-700 hover:text-gray-900"
@@ -83,7 +83,7 @@ const Navbar = () => {
             </Link>
             <Link
               href="/events"
-              className={`text-sm font-medium ${
+              className={`text-sm font-medium transition-colors duration-200 ${
                 isActive("/events")
                   ? "text-[#0066FF]"
                   : "text-gray-700 hover:text-gray-900"
@@ -93,7 +93,7 @@ const Navbar = () => {
             </Link>
             <Link
               href="/contact"
-              className="bg-[#0066FF] text-white px-6 py-2.5 rounded-full hover:bg-blue-700 transition-colors text-sm font-medium flex items-center ml-4"
+              className="bg-[#0066FF]/90 backdrop-blur-sm text-white px-6 py-2.5 rounded-full hover:bg-[#0066FF] transition-all duration-200 text-sm font-medium flex items-center ml-4 shadow-lg shadow-[#0066FF]/25 border border-white/20"
             >
               Contact Us
               <svg
@@ -117,7 +117,7 @@ const Navbar = () => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#0066FF]"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-white/50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#0066FF] transition-all duration-200"
               aria-controls="mobile-menu"
               aria-expanded="false"
             >
@@ -161,60 +161,60 @@ const Navbar = () => {
         className={`md:hidden ${isOpen ? "block" : "hidden"}`}
         id="mobile-menu"
       >
-        <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
+        <div className="px-2 pt-2 pb-3 space-y-1 bg-white/90 backdrop-blur-md border-t border-white/20">
           <Link
             href="/"
-            className={`block px-3 py-2 text-base font-medium ${
+            className={`block px-3 py-2 text-base font-medium rounded-lg transition-colors duration-200 ${
               isActive("/")
-                ? "text-[#0066FF]"
-                : "text-gray-700 hover:text-gray-900"
+                ? "text-[#0066FF] bg-[#0066FF]/10"
+                : "text-gray-700 hover:text-gray-900 hover:bg-white/50"
             }`}
           >
             Home
           </Link>
           <Link
             href="/services"
-            className={`block px-3 py-2 text-base font-medium ${
+            className={`block px-3 py-2 text-base font-medium rounded-lg transition-colors duration-200 ${
               isActive("/services")
-                ? "text-[#0066FF]"
-                : "text-gray-700 hover:text-gray-900"
+                ? "text-[#0066FF] bg-[#0066FF]/10"
+                : "text-gray-700 hover:text-gray-900 hover:bg-white/50"
             }`}
           >
             Services
           </Link>
           <Link
             href="/about"
-            className={`block px-3 py-2 text-base font-medium ${
+            className={`block px-3 py-2 text-base font-medium rounded-lg transition-colors duration-200 ${
               isActive("/about")
-                ? "text-[#0066FF]"
-                : "text-gray-700 hover:text-gray-900"
+                ? "text-[#0066FF] bg-[#0066FF]/10"
+                : "text-gray-700 hover:text-gray-900 hover:bg-white/50"
             }`}
           >
             About us
           </Link>
           <Link
             href="/collaboration"
-            className={`block px-3 py-2 text-base font-medium ${
+            className={`block px-3 py-2 text-base font-medium rounded-lg transition-colors duration-200 ${
               isActive("/collaboration")
-                ? "text-[#0066FF]"
-                : "text-gray-700 hover:text-gray-900"
+                ? "text-[#0066FF] bg-[#0066FF]/10"
+                : "text-gray-700 hover:text-gray-900 hover:bg-white/50"
             }`}
           >
             Collaborations
           </Link>
           <Link
             href="/events"
-            className={`block px-3 py-2 text-base font-medium ${
+            className={`block px-3 py-2 text-base font-medium rounded-lg transition-colors duration-200 ${
               isActive("/events")
-                ? "text-[#0066FF]"
-                : "text-gray-700 hover:text-gray-900"
+                ? "text-[#0066FF] bg-[#0066FF]/10"
+                : "text-gray-700 hover:text-gray-900 hover:bg-white/50"
             }`}
           >
             Events and News
           </Link>
           <Link
             href="/contact"
-            className="bg-[#0066FF] text-white block px-3 py-2 rounded-full text-base font-medium mt-4 mx-2"
+            className="bg-[#0066FF]/90 backdrop-blur-sm text-white block px-3 py-2 rounded-full text-base font-medium mt-4 mx-2 shadow-lg shadow-[#0066FF]/25 border border-white/20 transition-all duration-200 hover:bg-[#0066FF]"
           >
             Contact Us
           </Link>
