@@ -58,7 +58,7 @@ const CollaborationStories = () => {
                   Cross-Border Hackathon to Unite African Talent
                 </h3>
                 <p className="text-gray-600 text-sm mb-2">
-                  We’re preparing to host our first Pan-African Web3 hackathon — bringing
+                  We are preparing to host our first Pan-African Web3 hackathon — bringing
                   together developers from across the continent to co-create meaningful
                   blockchain solutions.
                 </p>
@@ -81,7 +81,7 @@ const CollaborationStories = () => {
                   Blockchain for Agriculture: Future Pilot Program
                 </h3>
                 <p className="text-gray-600 text-sm mb-2">
-                  We're exploring a pilot program to use blockchain for tracking produce
+                  We are exploring a pilot program to use blockchain for tracking produce
                   in agricultural co-ops — helping improve transparency between farmers
                   and buyers.
                 </p>
@@ -101,7 +101,7 @@ const CollaborationStories = () => {
               </div>
               <div className="flex-1">
                 <h3 className="text-xl font-semibold text-black mb-2">
-                  Women in Web3: A Mentorship Initiative We’re Building
+                  Women in Web3: A Mentorship Initiative We are Building
                 </h3>
                 <p className="text-gray-600 text-sm mb-2">
                   We plan to collaborate with like-minded organizations to create a
