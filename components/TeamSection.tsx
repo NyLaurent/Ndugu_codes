@@ -3,79 +3,79 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const TeamSection = () => {
-  const team = [
-    {
-      image: "/p1.svg",
-      name: "Lisa Clarc",
-      role: "UI/UX Designer",
-      description:
-        "Lisa's proactive support and problem-solving abilities make her an invaluable advocate for our customers.",
-      socials: {
-        twitter: "#",
-        facebook: "#",
-        linkedin: "#",
-        telegram: "#",
-      },
+const team = [
+  {
+    image: "/joab.jpeg",
+    name: "Joab Niwagaba",
+    role: "Founder & Visionary Leader",
+    description:
+      "Mr.Joab drives the company’s mission and strategic growth, inspiring innovation and fostering a culture of excellence across all teams.",
+    socials: {
+      twitter: "https://x.com/niwagaba_joab?s=21",
+      instagram: "#",
+      linkedin: "https://www.linkedin.com/in/joab-niwagaba-0905161b3",
+      telegram: "https://t.me/JoabP",
     },
-    {
-      image: "/p2.svg",
-      name: "Olivia Manson",
-      role: "Cloud Architect",
-      description:
-        "With a deep understanding of user behavior and industry best practices, she crafts engaging experiences that seamlessly blend form and function.",
-      socials: {
-        twitter: "#",
-        facebook: "#",
-        linkedin: "#",
-        telegram: "#",
-      },
+  },
+  {
+    image: "/jabo.jpeg",
+    name: "Jabo Prosper",
+    role: "Operations Lead",
+    description:
+      "Mr.Jabo ensures operational efficiency and seamless execution of projects, optimizing workflows to empower teams and maximize impact.",
+    socials: {
+      twitter: "#",
+      instagram: "#",
+      linkedin: "#",
+      telegram: "#",
     },
-    {
-      image: "/p3.svg",
-      name: "Andrew Drue",
-      role: "Project Manager",
-      description:
-        "An ambitious and exquisite personality that always strives to exceed expectations. Always there when someone is in need.",
-      socials: {
-        twitter: "#",
-        facebook: "#",
-        linkedin: "#",
-        telegram: "#",
-      },
+  },
+  {
+    image: "/jonas.jpg",
+    name: "Jonas Sebera",
+    role: "Web3 Developer & Technical Support Lead",
+    description:
+      "Mr.Jonas leads the technical support efforts and drives blockchain development initiatives, ensuring robust, scalable solutions and expert troubleshooting.",
+    socials: {
+      twitter: "https://x.com/0xJonaseb11",
+      instagram: "https://instagram.com/sebe_j_az99",
+      linkedin: "https://linkedin.com/in/jonas-sebera",
+      telegram: "https://t.me/jonas_sebera",
+      github: "https://github.com/0xJonaseb11",
     },
-    {
-      image: "/p4.svg",
-      name: "Morgan John",
-      role: "CEO",
-      description:
-        "With his expertise in digital marketing channels and data analytics, Michael consistently helps our SaaS company succeed.",
-      socials: {
-        twitter: "#",
-        facebook: "#",
-        linkedin: "#",
-        telegram: "#",
-      },
+  },
+  {
+    image: "/laurent.jpeg",
+    name: "Nyumbayire Laurent",
+    role: "Developer Relations Specialist",
+    description:
+      "Mr.Laurent builds and nurtures the developer community by providing technical guidance, resources, and fostering collaboration across ecosystems.",
+    socials: {
+      twitter: "#",
+      instagram: "#",
+      linkedin: "#",
+      telegram: "#",
     },
-  ];
+  },
+];
 
+const TeamSection = () => {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-[#0B1C39] mb-6">
-            The Core of Our Team
+            Meet Our Leadership Team
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            We&apos;re happy to say that our team is what makes us strong and
-            unite. Here are our beloved team members that make us who we are.
+            Our strength comes from the passion and expertise of our core team members who drive innovation and deliver value every day.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {team.map((member, index) => (
             <div key={index} className="flex items-start space-x-8">
-              <div className="w-64 h-64 relative rounded-lg overflow-hidden bg-gray-100">
+              <div className="w-72 h-96 relative rounded-lg overflow-hidden bg-gray-100">
                 <Image
                   src={member.image}
                   alt={member.name}
@@ -95,6 +95,7 @@ const TeamSection = () => {
                     href={member.socials.twitter}
                     className="text-gray-600 hover:text-[#0066FF]"
                   >
+                    {/* Twitter Icon */}
                     <svg
                       className="w-5 h-5"
                       fill="currentColor"
@@ -104,9 +105,10 @@ const TeamSection = () => {
                     </svg>
                   </Link>
                   <Link
-                    href={member.socials.facebook}
+                    href={member.socials.instagram}
                     className="text-gray-600 hover:text-[#0066FF]"
                   >
+                    {/* Facebook Icon */}
                     <svg
                       className="w-5 h-5"
                       fill="currentColor"
@@ -119,6 +121,7 @@ const TeamSection = () => {
                     href={member.socials.linkedin}
                     className="text-gray-600 hover:text-[#0066FF]"
                   >
+                    {/* LinkedIn Icon */}
                     <svg
                       className="w-5 h-5"
                       fill="currentColor"
@@ -131,6 +134,7 @@ const TeamSection = () => {
                     href={member.socials.telegram}
                     className="text-gray-600 hover:text-[#0066FF]"
                   >
+                    {/* Telegram Icon */}
                     <svg
                       className="w-5 h-5"
                       fill="currentColor"

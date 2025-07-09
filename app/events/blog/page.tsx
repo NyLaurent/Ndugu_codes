@@ -2,41 +2,46 @@
 
 import Link from "next/link";
 
-// Mock blog posts data - replace with actual data fetching
+// Mock blog posts data - replace with real data fetching as needed
 const blogPosts = [
   {
     id: "1",
-    title: "Getting Started with Web3 in Africa",
-    content: "Learn about the exciting opportunities in Web3...",
-    date: "2024-03-20",
+    title: "Starting Your Web3 Journey in Rwanda and Beyond",
+    content:
+      "Discover how Rwanda is becoming a hub for Web3 innovation, with opportunities for developers and entrepreneurs to shape Africa’s digital future.",
+    date: "2025-03-20",
   },
   {
     id: "2",
-    title: "Building DeFi Solutions for African Markets",
-    content: "Exploring decentralized finance solutions...",
-    date: "2024-03-18",
+    title: "DeFi Solutions Tailored for African Markets",
+    content:
+      "Explore decentralized finance projects addressing Africa’s unique financial challenges and unlocking new economic possibilities.",
+    date: "2025-03-18",
   },
   {
     id: "3",
-    title: "Blockchain Education Initiatives",
-    content: "How we're spreading blockchain knowledge...",
-    date: "2024-03-15",
+    title: "Expanding Blockchain Education Across Rwanda",
+    content:
+      "Learn about our initiatives to bring blockchain knowledge to universities, startups, and communities in Rwanda.",
+    date: "2025-03-15",
   },
 ];
 
 export default function BlogPosts() {
   return (
-    <main className="py-28 px-4 md:px-8">
+    <main className="py-28 px-4 md:px-8 bg-gray-50 min-h-screen">
       <div className="max-w-3xl mx-auto">
         <Link
           href="/events"
           className="inline-flex items-center text-[#0066FF] hover:text-blue-700 mb-8 transition-colors"
+          aria-label="Back to Events page"
         >
           <svg
             className="w-5 h-5 mr-2"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
+            aria-hidden="true"
           >
             <path
               strokeLinecap="round"
@@ -48,20 +53,28 @@ export default function BlogPosts() {
           Back to Events
         </Link>
 
-        <h1 className="text-4xl font-bold text-black mb-12">
-          Latest Blog Posts
+        <h1 className="text-4xl font-bold text-[#0B1C39] mb-12">
+          Insights & Updates from Rwanda’s Web3 Frontier
         </h1>
+
         <div className="space-y-12">
           {blogPosts.map((post) => (
-            <article key={post.id} className="border-b border-gray-200 pb-8">
-              <div className="text-[#0066FF] text-sm mb-2">{post.date}</div>
-              <h2 className="text-2xl font-bold text-black mb-4">
+            <article key={post.id} className="border-b border-gray-300 pb-8">
+              <time className="text-[#0066FF] text-sm mb-2 block" dateTime={post.date}>
+                {new Date(post.date).toLocaleDateString("en-RW", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </time>
+              <h2 className="text-2xl font-semibold text-[#0B1C39] mb-4">
                 {post.title}
               </h2>
-              <p className="text-gray-600 mb-4">{post.content}</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">{post.content}</p>
               <Link
-                href="#"
-                className="text-[#0066FF] hover:text-blue-700 transition-colors"
+                href={`/blog/${post.id}`}
+                className="text-[#0066FF] font-semibold hover:text-blue-700 transition-colors"
+                aria-label={`Read more about: ${post.title}`}
               >
                 Read More →
               </Link>
