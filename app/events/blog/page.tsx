@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import LoadingSpinner from "@/components/LoadingSpinner";
+import useLoading from "@/hooks/useLoading";
 
 // Mock blog posts data - replace with real data fetching as needed
 const blogPosts = [
@@ -8,14 +10,14 @@ const blogPosts = [
     id: "1",
     title: "Starting Your Web3 Journey in Rwanda and Beyond",
     content:
-      "Discover how Rwanda is becoming a hub for Web3 innovation, with opportunities for developers and entrepreneurs to shape Africa’s digital future.",
+      "Discover how Rwanda is becoming a hub for Web3 innovation, with opportunities for developers and entrepreneurs to shape Africa's digital future.",
     date: "2025-03-20",
   },
   {
     id: "2",
     title: "DeFi Solutions Tailored for African Markets",
     content:
-      "Explore decentralized finance projects addressing Africa’s unique financial challenges and unlocking new economic possibilities.",
+      "Explore decentralized finance projects addressing Africa's unique financial challenges and unlocking new economic possibilities.",
     date: "2025-03-18",
   },
   {
@@ -28,6 +30,12 @@ const blogPosts = [
 ];
 
 export default function BlogPosts() {
+  const loading = useLoading();
+
+  if (loading) {
+    return <LoadingSpinner isLoading={loading} />;
+  }
+
   return (
     <main className="py-28 px-4 md:px-8 bg-gray-50 min-h-screen">
       <div className="max-w-3xl mx-auto">
@@ -54,13 +62,16 @@ export default function BlogPosts() {
         </Link>
 
         <h1 className="text-4xl font-bold text-[#0B1C39] mb-12">
-          Insights & Updates from Rwanda’s Web3 Frontier
+          Insights & Updates from Rwanda&apos;s Web3 Frontier
         </h1>
 
         <div className="space-y-12">
           {blogPosts.map((post) => (
             <article key={post.id} className="border-b border-gray-300 pb-8">
-              <time className="text-[#0066FF] text-sm mb-2 block" dateTime={post.date}>
+              <time
+                className="text-[#0066FF] text-sm mb-2 block"
+                dateTime={post.date}
+              >
                 {new Date(post.date).toLocaleDateString("en-RW", {
                   year: "numeric",
                   month: "long",
@@ -70,7 +81,9 @@ export default function BlogPosts() {
               <h2 className="text-2xl font-semibold text-[#0B1C39] mb-4">
                 {post.title}
               </h2>
-              <p className="text-gray-700 mb-4 leading-relaxed">{post.content}</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">
+                {post.content}
+              </p>
               <Link
                 href={`/blog/${post.id}`}
                 className="text-[#0066FF] font-semibold hover:text-blue-700 transition-colors"
