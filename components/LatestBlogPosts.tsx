@@ -7,10 +7,10 @@ const blogPosts = [
   {
     id: "rwanda-web3-hackathon-2025",
     image: "/e1.svg",
-    date: "20-22 July 2025",
+    date: "20–22 July 2025",
     title: "Rwanda Web3 Hackathon 2025",
     description:
-      "Join developers, startups, and mentors for a 48-hour sprint to solve local challenges using blockchain and decentralized tools.",
+      "Soon, we’ll gather builders and mentors for a 48-hour sprint to tackle local challenges through blockchain innovation.",
   },
   {
     id: "web3-in-academia-summit-1",
@@ -18,39 +18,39 @@ const blogPosts = [
     date: "2 August 2025",
     title: "Web3 in Academia Summit",
     description:
-      "A roundtable for educators and students to explore how blockchain can enhance research, credentials, and campus innovation.",
-  },
-  {
-    id: "web3-in-academia-summit-2",
-    image: "/e3.svg",
-    date: "2 August 2025",
-    title: "Web3 in Academia Summit",
-    description:
-      "A roundtable for educators and students to explore how blockchain can enhance research, credentials, and campus innovation.",
+      "We’re preparing conversations with students and educators on how decentralized tech can reshape research and campus systems.",
   },
   {
     id: "collaborate-world-tour-nairobi",
     image: "/e4.svg",
-    date: "20-22 July 2025",
+    date: "20–22 July 2025",
     title: "Collaborate World Tour: Nairobi Edition",
     description:
-      "Meet our partners, hear success stories, and explore how to engage with Ndugu Codes on the ground.",
+      "Coming soon: a local activation where we’ll connect with partners, creators, and new community members on-ground.",
   },
   {
-    id: "web3-in-academia-summit-3",
-    image: "/e5.svg",
-    date: "2 August 2025",
-    title: "Web3 in Academia Summit",
-    description:
-      "A roundtable for educators and students to explore how blockchain can enhance research, credentials, and campus innovation.",
-  },
-  {
-    id: "web3-in-academia-summit-4",
+    id: "future-women-in-web3-feature",
     image: "/e6.svg",
-    date: "2 August 2025",
-    title: "Web3 in Academia Summit",
+    date: "Coming Soon",
+    title: "Women in Web3: Stories That Inspire",
     description:
-      "A roundtable for educators and students to explore how blockchain can enhance research, credentials, and campus innovation.",
+      "We’re working on features that spotlight female builders across Africa and their journeys into Web3.",
+  },
+  {
+    id: "blog-ecosystem-launch",
+    image: "/e3.svg",
+    date: "Coming Soon",
+    title: "Building Our Content Ecosystem",
+    description:
+      "Our blog will soon launch with interviews, deep dives, and technical content curated by our early team and community.",
+  },
+  {
+    id: "events-and-insights-teaser",
+    image: "/e5.svg",
+    date: "August 2025",
+    title: "Insights from Events & Community",
+    description:
+      "We’ll be publishing event recaps and community takeaways as we activate across East Africa and beyond.",
   },
 ];
 
@@ -61,11 +61,12 @@ const LatestBlogPosts = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-black mb-4">
-            Latest Blog Posts
+            Upcoming Stories & Spotlights
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
-            Here&apos;s a quick glance over our latest blog posts and media
-            articles written by our team members, staff and guest writers.
+            We’re in the early days of documenting our journey — this space will soon
+            host reflections, event updates, and technical insights from our team
+            and community collaborators.
           </p>
         </div>
 
@@ -94,7 +95,7 @@ const LatestBlogPosts = () => {
                   href="/events/blog"
                   className="text-[#0066FF] font-medium hover:text-blue-700 inline-flex items-center"
                 >
-                  Learn more
+                  Coming soon
                   <svg className="w-4 h-4 ml-1" viewBox="0 0 24 24" fill="none">
                     <path
                       d="M5 12h14M12 5l7 7-7 7"

@@ -10,16 +10,16 @@ const ServicesHero = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left Column */}
           <div>
-            <h1 className="text-5xl font-bold text-[#0B1C39] mb-6">
-              Accelerating Blockchain{" "}
-              <span className="text-[#0066FF]">Dreams</span> into Reality.
+            <h1 className="text-5xl font-bold text-[#0B1C39] mb-6 leading-tight">
+              Turning Web3{" "}
+              <span className="text-[#0066FF]">Ideas</span> into African Impact
             </h1>
             <p className="text-gray-600 text-lg mb-8">
-              We offer tailored support, expert guidance, and valuable resources
-              to help you grow. From funding access to strategic advice,
-              we&apos;re here to fuel your Web3 journey.
+              Whether you're just starting or scaling your vision, we offer
+              guidance, training, and collaboration to help bring your
+              blockchain solutions to life. The journey begins here.
             </p>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-4">
               <Link
                 href="/get-started"
                 className="bg-[#0066FF] text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
@@ -37,10 +37,10 @@ const ServicesHero = () => {
 
           {/* Right Column - Image */}
           <div className="relative">
-            <div className=" pt-3 rounded-2xl overflow-hidden">
+            <div className="pt-3 rounded-2xl overflow-hidden">
               <Image
                 src="/service.svg"
-                alt="Modern workspace setup"
+                alt="Team collaborating on Web3 services"
                 width={600}
                 height={300}
                 className="w-full h-auto object-cover"

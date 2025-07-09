@@ -10,11 +10,11 @@ const MiddleDecoration = () => {
             <div className="flex items-center gap-2 mb-4">
               <Image src="/globe.svg" alt="Globe Icon" width={24} height={24} />
               <p className="text-[#0066FF]">
-                Powering Partnerships Across Africa & Beyond
+                Building Bridges Across Africa & Beyond
               </p>
             </div>
-            <h2 className="text-4xl text-black text-semibold mb-8">
-              See How Far We&apos;ve Collaborated
+            <h2 className="text-4xl text-black font-semibold mb-8">
+              The Reach We Aspire To Achieve
             </h2>
             <ul className="space-y-4">
               <li className="flex items-center gap-2">
@@ -36,7 +36,7 @@ const MiddleDecoration = () => {
                   </svg>
                 </div>
                 <span className="text-black">
-                  Trusted by Web3 companies, universities, and non-profits
+                  Partnering with Web3 companies, universities & non-profits
                 </span>
               </li>
               <li className="flex items-center gap-2">
@@ -58,7 +58,7 @@ const MiddleDecoration = () => {
                   </svg>
                 </div>
                 <span className="text-black">
-                  Active in 12+ African countries
+                  Aiming to engage 12+ African countries in the next 2 years
                 </span>
               </li>
               <li className="flex items-center gap-2">
@@ -79,9 +79,8 @@ const MiddleDecoration = () => {
                     />
                   </svg>
                 </div>
-                <span className="text-black" style={{ fontSize: "14px" }}>
-                  Dedicated customer success team designed for real impact and
-                  sustainable growth
+                <span className="text-black text-sm">
+                  Designed to grow impact through sustainable, human-centered support
                 </span>
               </li>
             </ul>
@@ -103,7 +102,7 @@ const MiddleDecoration = () => {
                 </div>
               </div>
               <h3 className="text-4xl text-black font-bold mb-2">$5M+</h3>
-              <p className="text-gray-600">Funding Channels Enabled</p>
+              <p className="text-gray-600">Funding Ecosystem We’re Growing Toward</p>
             </div>
 
             <div className="text-center p-6 bg-white rounded-lg shadow-sm">
@@ -119,7 +118,7 @@ const MiddleDecoration = () => {
                 </div>
               </div>
               <h3 className="text-4xl text-black font-bold mb-2">100+</h3>
-              <p className="text-gray-600">Startups Supported</p>
+              <p className="text-gray-600">Startups We Plan to Support</p>
             </div>
 
             {/* Second Row */}
@@ -136,7 +135,7 @@ const MiddleDecoration = () => {
                 </div>
               </div>
               <h3 className="text-4xl text-black font-bold mb-2">50K+</h3>
-              <p className="text-gray-600">Community Members</p>
+              <p className="text-gray-600">Community Members We're Working to Reach</p>
             </div>
 
             <div className="text-center p-6 bg-white rounded-lg shadow-sm">
@@ -152,7 +151,7 @@ const MiddleDecoration = () => {
                 </div>
               </div>
               <h3 className="text-4xl text-black font-bold mb-2">25+</h3>
-              <p className="text-gray-600">Official Collaborators</p>
+              <p className="text-gray-600">Collaborations We’re Establishing</p>
             </div>
           </div>
         </div>
