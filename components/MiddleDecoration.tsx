@@ -80,7 +80,8 @@ const MiddleDecoration = () => {
                   </svg>
                 </div>
                 <span className="text-black text-sm">
-                  Designed to grow impact through sustainable, human-centered support
+                  Designed to grow impact through sustainable, human-centered
+                  support
                 </span>
               </li>
             </ul>
@@ -102,7 +103,9 @@ const MiddleDecoration = () => {
                 </div>
               </div>
               <h3 className="text-4xl text-black font-bold mb-2">$5M+</h3>
-              <p className="text-gray-600">Funding Ecosystem We’re Growing Toward</p>
+              <p className="text-gray-600">
+                Funding Ecosystem We&apos;re Growing Toward
+              </p>
             </div>
 
             <div className="text-center p-6 bg-white rounded-lg shadow-sm">
@@ -135,7 +138,9 @@ const MiddleDecoration = () => {
                 </div>
               </div>
               <h3 className="text-4xl text-black font-bold mb-2">50K+</h3>
-              <p className="text-gray-600">Community Members We're Working to Reach</p>
+              <p className="text-gray-600">
+                Community Members We&apos;re Working to Reach
+              </p>
             </div>
 
             <div className="text-center p-6 bg-white rounded-lg shadow-sm">
