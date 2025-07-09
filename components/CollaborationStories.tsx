@@ -10,8 +10,9 @@ const CollaborationStories = () => {
             Collaboration in Action
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
-            Explore real stories of how our partnerships are transforming
-            communities, empowering talent, and driving Africa&apos;s Web3 future.
+            At Ndugu-codes, we’re working to build partnerships that empower talent,
+            connect communities, and help shape Africa’s future in Web3.
+            Here’s a look at some of the initiatives we aim to launch soon.
           </p>
         </div>
 
@@ -31,11 +32,12 @@ const CollaborationStories = () => {
                 Empowering Young Developers Through University Collaboration
               </h3>
               <p className="text-gray-600 mb-4">
-                Through our partnership with Makerere University, we launched a
-                10-week Web3 bootcamp reaching over 300 students with hands-on
-                smart contract training and startup incubation.
+                We plan to collaborate with local universities to organize Web3
+                bootcamps focused on hands-on training in smart contracts, blockchain
+                architecture, and dApp development — with the goal of reaching hundreds
+                of students across East Africa.
               </p>
-              <p className="text-gray-500">18 May 2025</p>
+              <p className="text-gray-500">Coming Soon</p>
             </div>
           </div>
 
@@ -53,13 +55,14 @@ const CollaborationStories = () => {
               </div>
               <div className="flex-1">
                 <h3 className="text-xl font-semibold text-black mb-2">
-                  Cross-Border Hackathon Unites 8 African Countries
+                  Cross-Border Hackathon to Unite African Talent
                 </h3>
                 <p className="text-gray-600 text-sm mb-2">
-                  Developers from Nigeria, Rwanda, Kenya, and more teamed up to
-                  build real-world Web3 apps in our first Pan-African Hackathon.
+                  We’re preparing to host our first Pan-African Web3 hackathon — bringing
+                  together developers from across the continent to co-create meaningful
+                  blockchain solutions.
                 </p>
-                <p className="text-gray-500 text-sm">10 May 2025</p>
+                <p className="text-gray-500 text-sm">Planned for 2025</p>
               </div>
             </div>
 
@@ -75,14 +78,14 @@ const CollaborationStories = () => {
               </div>
               <div className="flex-1">
                 <h3 className="text-xl font-semibold text-black mb-2">
-                  Blockchain for Agriculture: A Pilot in Tanzania
+                  Blockchain for Agriculture: Future Pilot Program
                 </h3>
                 <p className="text-gray-600 text-sm mb-2">
-                  Partnering with a local co-op, we tested a blockchain-based
-                  produce tracking system— improving transparency for farmers
+                  We're exploring a pilot program to use blockchain for tracking produce
+                  in agricultural co-ops — helping improve transparency between farmers
                   and buyers.
                 </p>
-                <p className="text-gray-500 text-sm">04 May 2025</p>
+                <p className="text-gray-500 text-sm">Expected in Late 2025</p>
               </div>
             </div>
 
@@ -98,14 +101,14 @@ const CollaborationStories = () => {
               </div>
               <div className="flex-1">
                 <h3 className="text-xl font-semibold text-black mb-2">
-                  Women in Web3: Driving Inclusion through Mentorship
+                  Women in Web3: A Mentorship Initiative We’re Building
                 </h3>
                 <p className="text-gray-600 text-sm mb-2">
-                  Our collaboration with SheBuilds Africa mentors over 200 young
-                  women, introducing them to careers in smart contract
-                  development and digital entrepreneurship.
+                  We plan to collaborate with like-minded organizations to create a
+                  mentorship pipeline for young women — guiding them into Web3 development,
+                  digital finance, and entrepreneurship.
                 </p>
-                <p className="text-gray-500 text-sm">27 Apr 2025</p>
+                <p className="text-gray-500 text-sm">In Development</p>
               </div>
             </div>
           </div>

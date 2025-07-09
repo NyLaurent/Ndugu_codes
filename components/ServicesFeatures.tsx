@@ -8,44 +8,50 @@ const services = [
     id: 1,
     image: "/s1.svg",
     title: "Web3 Training & Education",
-    description: "No matter what kind of home you have to share, you can increase your earnings and beyond.",
-    link: "/services/training"
+    description:
+      "We equip learners with the fundamentals of blockchain, smart contracts, and decentralized tools through tailored bootcamps and courses.",
+    link: "/services/training",
   },
   {
     id: 2,
     image: "/s2.svg",
     title: "Hackathons & Bootcamps",
-    description: "No matter what kind of home you have to share, you can increase your earnings and beyond.",
-    link: "/services/hackathons"
+    description:
+      "Hands-on events that bring developers together to solve real-world African problems using Web3 technologies.",
+    link: "/services/hackathons",
   },
   {
     id: 3,
     image: "/s3.svg",
     title: "Mentorship & Coaching",
-    description: "No matter what kind of home you have to share, you can increase your earnings and beyond.",
-    link: "/services/mentorship"
+    description:
+      "We connect rising talent with experienced Web3 mentors to guide their learning, growth, and career journey.",
+    link: "/services/mentorship",
   },
   {
     id: 4,
     image: "/s4.svg",
     title: "Startup & Business Support",
-    description: "No matter what kind of home you have to share, you can increase your earnings and beyond.",
-    link: "/services/startup"
+    description:
+      "Early-stage support for Web3-focused startups through technical guidance, advisory, and strategic growth sessions.",
+    link: "/services/startup",
   },
   {
     id: 5,
     image: "/s5.svg",
     title: "Networking & Community Events",
-    description: "No matter what kind of home you have to share, you can increase your earnings and beyond.",
-    link: "/services/networking"
+    description:
+      "We organize meetups and events across Africa to foster collaboration, learning, and shared growth in the ecosystem.",
+    link: "/services/networking",
   },
   {
     id: 6,
     image: "/s6.svg",
     title: "Access to Funding & Opportunities",
-    description: "No matter what kind of home you have to share, you can increase your earnings and beyond.",
-    link: "/services/funding"
-  }
+    description:
+      "We help projects discover grants, pitch competitions, and partner funds aligned with Web3 innovation in Africa.",
+    link: "/services/funding",
+  },
 ];
 
 const ServicesFeatures = () => {
@@ -57,31 +63,30 @@ const ServicesFeatures = () => {
             Fostering Collaboration, Building Excellence.
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            Here&apos;s a quick overview of our main features and what we have to offer. For more in-depth reviews, browse around our website and articles.
+            Explore the core services we’re building at Ndugu-codes to empower the next generation of Web3 creators, developers, and startups across Africa.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
-            <Link 
+            <Link
               href={service.link}
               key={service.id}
               className="group bg-white rounded-2xl overflow-hidden hover:shadow-lg transition-shadow duration-300"
             >
-              <div className="aspect-w-16 aspect-h-9 relative">
+              <div className="relative h-48 w-full">
                 <Image
                   src={service.image}
-                  alt={service.title}
-                  width={400}
-                  height={300}
-                  className="w-full h-[200px] object-cover"
+                  alt={`${service.title} Icon`}
+                  fill
+                  className="object-cover"
                 />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-3 text-[#0B1C39] group-hover:text-[#0066FF] transition-colors">
                   {service.id}. {service.title}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 text-sm leading-relaxed">
                   {service.description}
                 </p>
               </div>
@@ -93,4 +98,4 @@ const ServicesFeatures = () => {
   );
 };
 
-export default ServicesFeatures; 
+export default ServicesFeatures;

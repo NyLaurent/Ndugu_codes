@@ -22,35 +22,35 @@ const ImpactSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-[#0B1C39] mb-4">
-            Our Impact in Africa&apos;s Web3 Ecosystem
+            The Impact We’re Building for Africa&apos;s Web3 Future
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
-            From training developers to supporting startups, Ndugu Codes is
-            driving real change in Africa&apos;s tech landscape. Here&apos;s a
-            glimpse of what we&apos;ve achieved together so far.
+            As a growing hub, Ndugu-codes is setting out to empower Africa’s next
+            generation of Web3 builders. These are the goals we’re working toward
+            through community, collaboration, and code.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <ImpactMetric
             number="300K+"
-            title="Developers Trained"
-            description="Equipped with Web3 skills through bootcamps, workshops, and mentorship programs."
+            title="Developers to Empower"
+            description="We aim to train thousands in blockchain, smart contracts, and dApp development."
           />
           <ImpactMetric
             number="256"
-            title="Jobs Created"
-            description="Through skill development, networking, and startup employment in the Web3 ecosystem."
+            title="Jobs to Facilitate"
+            description="Our mission includes creating pathways to meaningful Web3 employment opportunities."
           />
           <ImpactMetric
-            number="10k+"
-            title="Startups Supported"
-            description="Incubated or accelerated through our programs and community collaborations."
+            number="10K+"
+            title="Startups to Support"
+            description="We’re building programs to incubate and mentor founders building on decentralized tech."
           />
           <ImpactMetric
-            number="20k+"
-            title="Community Members"
-            description="Engaged across Africa via Discord, events, and educational programs."
+            number="20K+"
+            title="Community to Grow"
+            description="Our vision is to unite learners, developers, and builders across Africa and beyond."
           />
         </div>
       </div>
