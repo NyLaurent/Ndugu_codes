@@ -10,9 +10,10 @@ const CollaborationStories = () => {
             Collaboration in Action
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
-            At Ndugu-codes, we’re working to build partnerships that empower talent,
-            connect communities, and help shape Africa’s future in Web3.
-            Here’s a look at some of the initiatives we aim to launch soon.
+            At Ndugu-codes, we&apos;re working to build partnerships that
+            empower talent, connect communities, and help shape Africa&apos;s
+            future in Web3. Here&apos;s a look at some of the initiatives we aim
+            to launch soon.
           </p>
         </div>
 
@@ -33,9 +34,9 @@ const CollaborationStories = () => {
               </h3>
               <p className="text-gray-600 mb-4">
                 We plan to collaborate with local universities to organize Web3
-                bootcamps focused on hands-on training in smart contracts, blockchain
-                architecture, and dApp development — with the goal of reaching hundreds
-                of students across East Africa.
+                bootcamps focused on hands-on training in smart contracts,
+                blockchain architecture, and dApp development — with the goal of
+                reaching hundreds of students across East Africa.
               </p>
               <p className="text-gray-500">Coming Soon</p>
             </div>
@@ -58,9 +59,9 @@ const CollaborationStories = () => {
                   Cross-Border Hackathon to Unite African Talent
                 </h3>
                 <p className="text-gray-600 text-sm mb-2">
-                  We are preparing to host our first Pan-African Web3 hackathon — bringing
-                  together developers from across the continent to co-create meaningful
-                  blockchain solutions.
+                  We&apos;re preparing to host our first Pan-African Web3
+                  hackathon — bringing together developers from across the
+                  continent to co-create meaningful blockchain solutions.
                 </p>
                 <p className="text-gray-500 text-sm">Planned for 2025</p>
               </div>
@@ -81,9 +82,9 @@ const CollaborationStories = () => {
                   Blockchain for Agriculture: Future Pilot Program
                 </h3>
                 <p className="text-gray-600 text-sm mb-2">
-                  We are exploring a pilot program to use blockchain for tracking produce
-                  in agricultural co-ops — helping improve transparency between farmers
-                  and buyers.
+                  We&apos;re exploring a pilot program to use blockchain for
+                  tracking produce in agricultural co-ops — helping improve
+                  transparency between farmers and buyers.
                 </p>
                 <p className="text-gray-500 text-sm">Expected in Late 2025</p>
               </div>
@@ -101,12 +102,12 @@ const CollaborationStories = () => {
               </div>
               <div className="flex-1">
                 <h3 className="text-xl font-semibold text-black mb-2">
-                  Women in Web3: A Mentorship Initiative We are Building
+                  Women in Web3: A Mentorship Initiative We&apos;re Building
                 </h3>
                 <p className="text-gray-600 text-sm mb-2">
-                  We plan to collaborate with like-minded organizations to create a
-                  mentorship pipeline for young women — guiding them into Web3 development,
-                  digital finance, and entrepreneurship.
+                  We plan to collaborate with like-minded organizations to
+                  create a mentorship pipeline for young women — guiding them
+                  into Web3 development, digital finance, and entrepreneurship.
                 </p>
                 <p className="text-gray-500 text-sm">In Development</p>
               </div>

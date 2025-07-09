@@ -15,7 +15,7 @@ const ServicesHero = () => {
               <span className="text-[#0066FF]">Ideas</span> into African Impact
             </h1>
             <p className="text-gray-600 text-lg mb-8">
-              Whether you're just starting or scaling your vision, we offer
+              Whether you&apos;re just starting or scaling your vision, we offer
               guidance, training, and collaboration to help bring your
               blockchain solutions to life. The journey begins here.
             </p>
