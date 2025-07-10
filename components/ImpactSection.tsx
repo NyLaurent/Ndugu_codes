@@ -9,10 +9,16 @@ const ImpactMetric = ({
   title: string;
   description: string;
 }) => (
-  <div className="bg-white p-8 rounded-lg text-center">
-    <div className="text-[#0066FF] text-4xl font-bold mb-4">{number}</div>
-    <h3 className="text-[#9747FF] text-lg font-semibold mb-3">{title}</h3>
-    <p className="text-gray-600 text-sm leading-relaxed">{description}</p>
+  <div className="bg-white p-6 sm:p-8 rounded-lg text-center">
+    <div className="text-[#0066FF] text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
+      {number}
+    </div>
+    <h3 className="text-[#9747FF] text-base sm:text-lg font-semibold mb-2 sm:mb-3">
+      {title}
+    </h3>
+    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+      {description}
+    </p>
   </div>
 );
 
