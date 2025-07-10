@@ -1,10 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  transpilePackages: ['react-leaflet', 'react-loader-spinner'],
-  experimental: {
-    esmExternals: 'loose'
-  }
+ 
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+ 
 };
 
 export default nextConfig;

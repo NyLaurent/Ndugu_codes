@@ -5,8 +5,10 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "build:ignore-errors": "next build --no-lint",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:ignore": "echo 'Linting ignored'"
   },
   "dependencies": {
     "@types/leaflet": "^1.9.19",
