@@ -24,23 +24,23 @@ const NewsletterSection = () => {
   };
 
   return (
-    <section className="bg-gray-50 py-20">
+    <section className="bg-gray-50 py-12 sm:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto">
-          <p className="text-[#0066FF] font-medium mb-4">
+        <div className="text-center max-w-2xl sm:max-w-3xl mx-auto">
+          <p className="text-[#0066FF] font-medium mb-3 sm:mb-4 text-sm sm:text-base">
             Updates That Empower. Stories That Inspire.
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0B1C39] mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0B1C39] mb-3 sm:mb-4">
             Stay Connected to Africa&apos;s Web3 Movement
           </h2>
-          <p className="text-gray-600 mb-8">
+          <p className="text-gray-600 mb-6 sm:mb-8 text-sm sm:text-base lg:text-lg px-2">
             Join our mailing list to get early access to training programs,
             hackathons, stories, and resources from the Web3 Mates community.
           </p>
 
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-md sm:max-w-lg mx-auto"
             aria-label="Newsletter subscription form"
           >
             <input
@@ -52,12 +52,12 @@ const NewsletterSection = () => {
               }}
               placeholder="Enter your email"
               required
-              className="px-6 py-3 rounded-full border border-gray-300 flex-1 max-w-md focus:outline-none focus:ring-2 focus:ring-[#0066FF] focus:border-transparent"
+              className="px-4 sm:px-6 py-3 sm:py-4 rounded-full border border-gray-300 flex-1 focus:outline-none focus:ring-2 focus:ring-[#0066FF] focus:border-transparent text-sm sm:text-base"
               aria-label="Email address"
             />
             <button
               type="submit"
-              className="bg-[#0066FF] text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors whitespace-nowrap"
+              className="bg-[#0066FF] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium hover:bg-blue-700 transition-colors whitespace-nowrap text-sm sm:text-base"
             >
               Subscribe Now
             </button>
@@ -65,10 +65,14 @@ const NewsletterSection = () => {
 
           {/* Feedback */}
           {status === "success" && (
-            <p className="text-green-600 mt-4">Thanks for subscribing!</p>
+            <p className="text-green-600 mt-3 sm:mt-4 text-sm sm:text-base">
+              Thanks for subscribing!
+            </p>
           )}
           {status === "error" && (
-            <p className="text-red-600 mt-4">Something went wrong. Please try again.</p>
+            <p className="text-red-600 mt-3 sm:mt-4 text-sm sm:text-base">
+              Something went wrong. Please try again.
+            </p>
           )}
         </div>
       </div>

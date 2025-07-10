@@ -11,8 +11,10 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-      title: "Web3 Mates - Blockchain Catalyst",
+  title: "Web3 Mates - Blockchain Catalyst",
   description: "Empowering Africa's Web3 Builders—One Line of Code at a Time.",
+  viewport:
+    "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no",
 };
 
 export default function RootLayout({

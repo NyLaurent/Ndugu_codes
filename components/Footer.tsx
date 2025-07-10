@@ -5,54 +5,78 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="bg-white py-20 border-t">
+    <footer className="bg-white py-12 sm:py-16 lg:py-20 border-t">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand Section */}
-          <div className="col-span-1">
-            <div className="flex items-center gap-2 mb-6">
-              <Image src="/logo.svg" alt="Web3 Mates Logo" width={40} height={40} />
+          <div className="col-span-1 sm:col-span-2 lg:col-span-1">
+            <div className="flex items-center gap-2 mb-4 sm:mb-6">
+              <Image
+                src="/logo.svg"
+                alt="Web3 Mates Logo"
+                width={35}
+                height={35}
+                className="sm:w-10 sm:h-10"
+              />
               <div>
-                <div className="font-semibold text-[#0B1C39]">Web3 Mates</div>
-                <div className="text-sm text-[#0066FF]">
+                <div className="font-semibold text-[#0B1C39] text-sm sm:text-base">
+                  Web3 Mates
+                </div>
+                <div className="text-xs sm:text-sm text-[#0066FF]">
                   Blockchain Catalyst
                 </div>
               </div>
             </div>
-            <p className="text-gray-600 mb-8 text-lg">
+            <p className="text-gray-600 mb-6 sm:mb-8 text-sm sm:text-base lg:text-lg">
               Empowering Africa&apos;s Web3 Builders—One Line of Code at a Time.
             </p>
-            <div className="flex gap-6 pt-4">
+            <div className="flex gap-4 sm:gap-6 pt-2 sm:pt-4">
               <a href="#" className="hover:opacity-80 transition-opacity">
-                <Image src="/google.svg" alt="Google" width={24} height={24} />
+                <Image
+                  src="/google.svg"
+                  alt="Google"
+                  width={20}
+                  height={20}
+                  className="sm:w-6 sm:h-6"
+                />
               </a>
               <a href="#" className="hover:opacity-80 transition-opacity">
                 <Image
                   src="/facebook.svg"
                   alt="Facebook"
-                  width={24}
-                  height={24}
+                  width={20}
+                  height={20}
+                  className="sm:w-6 sm:h-6"
                 />
               </a>
               <a href="#" className="hover:opacity-80 transition-opacity">
                 <Image
                   src="/instagram.svg"
                   alt="Instagram"
-                  width={24}
-                  height={24}
+                  width={20}
+                  height={20}
+                  className="sm:w-6 sm:h-6"
                 />
               </a>
               <a href="#" className="hover:opacity-80 transition-opacity">
-                <Image src="/apple.svg" alt="Apple" width={24} height={24} />
+                <Image
+                  src="/apple.svg"
+                  alt="Apple"
+                  width={20}
+                  height={20}
+                  className="sm:w-6 sm:h-6"
+                />
               </a>
             </div>
           </div>
 
           {/* Services */}
           <div className="col-span-1">
-            <h3 className="font-semibold text-[#0B1C39] mb-4">Services</h3>
-            <ul className="space-y-3">
+            <h3 className="font-semibold text-[#0B1C39] mb-3 sm:mb-4 text-sm sm:text-base">
+              Services
+            </h3>
+            <ul className="space-y-2 sm:space-y-3">
               <li>
                 <Link
                   href="/features"
@@ -90,8 +114,10 @@ const Footer = () => {
 
           {/* About us */}
           <div className="col-span-1">
-            <h3 className="font-semibold text-[#0B1C39] mb-4">About us</h3>
-            <ul className="space-y-3">
+            <h3 className="font-semibold text-[#0B1C39] mb-3 sm:mb-4 text-sm sm:text-base">
+              About us
+            </h3>
+            <ul className="space-y-2 sm:space-y-3">
               <li>
                 <Link
                   href="/core-values"
@@ -137,10 +163,10 @@ const Footer = () => {
 
           {/* Collaborations */}
           <div className="col-span-1">
-            <h3 className="font-semibold text-[#0B1C39] mb-4">
+            <h3 className="font-semibold text-[#0B1C39] mb-3 sm:mb-4 text-sm sm:text-base">
               Collaborations
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2 sm:space-y-3">
               <li>
                 <Link
                   href="/channels"
@@ -170,10 +196,10 @@ const Footer = () => {
 
           {/* Events and News */}
           <div className="col-span-1">
-            <h3 className="font-semibold text-[#0B1C39] mb-4">
+            <h3 className="font-semibold text-[#0B1C39] mb-3 sm:mb-4 text-sm sm:text-base">
               Events and News
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2 sm:space-y-3">
               <li>
                 <Link
                   href="/hackathons"
@@ -203,13 +229,13 @@ const Footer = () => {
         </div>
 
         {/* Back to Top Button */}
-        <div className="flex justify-center mt-16 border-t pt-5">
+        <div className="flex justify-center mt-12 sm:mt-16 border-t pt-4 sm:pt-5">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="bg-[#EEF5FF] p-4 rounded-full hover:bg-[#0066FF] hover:text-white transition-colors text-blue-300"
+            className="bg-[#EEF5FF] p-3 sm:p-4 rounded-full hover:bg-[#0066FF] hover:text-white transition-colors text-blue-300"
           >
             <svg
-              className="w-6 h-6"
+              className="w-5 h-5 sm:w-6 sm:h-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -225,8 +251,10 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="text-center mt-8 text-gray-600">
-          <p>© 2024 NDUGU Blockchain Catalyst. All Rights Reserved.</p>
+        <div className="text-center mt-6 sm:mt-8 text-gray-600">
+          <p className="text-sm sm:text-base">
+            © 2024 NDUGU Blockchain Catalyst. All Rights Reserved.
+          </p>
         </div>
       </div>
     </footer>

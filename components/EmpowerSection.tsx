@@ -7,14 +7,14 @@ interface FeatureProps {
 }
 
 const Feature = ({ icon, title, description }: FeatureProps) => (
-  <div className="flex items-start gap-4 mb-8">
-    <div className="bg-[#0066FF] rounded-full p-3 flex-shrink-0">{icon}</div>
+  <div className="flex items-start gap-3 sm:gap-4 mb-6 sm:mb-8">
+    <div className="bg-[#0066FF] rounded-full p-2 sm:p-3 flex-shrink-0">{icon}</div>
     <div>
-      <h3 className="text-[#0B1C39] text-xl font-semibold mb-2">{title}</h3>
-      <p className="text-gray-600 leading-relaxed">{description}</p>
+      <h3 className="text-[#0B1C39] text-base sm:text-lg md:text-xl font-semibold mb-1 sm:mb-2">{title}</h3>
+      <p className="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed">{description}</p>
       <a
         href="#"
-        className="text-[#0066FF] flex items-center mt-2 hover:underline"
+        className="text-[#0066FF] flex items-center mt-1 sm:mt-2 hover:underline text-xs sm:text-sm"
       >
         Learn more <span className="ml-1">→</span>
       </a>
@@ -24,21 +24,21 @@ const Feature = ({ icon, title, description }: FeatureProps) => (
 
 const EmpowerSection = () => {
   return (
-    <div className="py-20">
+    <div className="py-12 sm:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0B1C39] mb-4">
+        <div className="text-center mb-10 sm:mb-14 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0B1C39] mb-3 sm:mb-4">
             Empowering the Builders of Africa&apos;s Web3 Future
           </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto">
+          <p className="text-gray-600 max-w-2xl sm:max-w-3xl mx-auto text-xs sm:text-base lg:text-lg px-2">
             Discover how Web3 Mates is enabling innovation, education, and
             impact through real-world training, community support, and startup
             acceleration.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="relative aspect-square">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="relative w-full aspect-square max-w-xs sm:max-w-md lg:max-w-lg mx-auto lg:mx-0">
             <Image
               src="/empower.svg"
               alt="Web3 Innovation Globe"
