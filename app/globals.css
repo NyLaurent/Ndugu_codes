@@ -30,3 +30,17 @@ body {
   width: 100%;
   height: 100%;
 }
+
+/* Logo Scroll Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 8s linear infinite;
+}

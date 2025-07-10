@@ -31,7 +31,7 @@ const NotFound = () => {
             <div className="relative">
               <Image
                 src="/logo.svg"
-                alt="Ndugu Codes Logo"
+                alt="Web3 Mates Logo"
                 width={60}
                 height={60}
                 className="animate-bounce"

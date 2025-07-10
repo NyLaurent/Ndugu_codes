@@ -17,7 +17,7 @@ const InnovateSection = () => {
               Africa&apos;s Digital Future.
             </h2>
             <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-              Ndugu-codes is an emerging community for dreamers and doers in the
+              Web3 Mates is an emerging community for dreamers and doers in the
               Web3 space. Whether you&apos;re just starting or eager to
               collaborate, we&apos;re laying the foundation for a hub where
               developers learn, explore, and build solutions inspired by African

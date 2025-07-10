@@ -24,14 +24,14 @@ const Navbar = () => {
             <Link href="/" className="flex items-center space-x-3">
               <Image
                 src="/logo.svg"
-                alt="Ndugu Logo"
+                alt="Web3 Mates Logo"
                 width={45}
                 height={45}
                 priority
                 className="object-contain"
               />
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-gray-900">Ndugu Codes</span>
+                <span className="text-xl font-bold text-gray-900">Web3 Mates</span>
                 <span className="text-sm text-[#0066FF]">
                   Blockchain Catalyst
                 </span>

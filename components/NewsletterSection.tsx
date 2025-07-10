@@ -35,7 +35,7 @@ const NewsletterSection = () => {
           </h2>
           <p className="text-gray-600 mb-8">
             Join our mailing list to get early access to training programs,
-            hackathons, stories, and resources from the Ndugu-codes community.
+            hackathons, stories, and resources from the Web3 Mates community.
           </p>
 
           <form
