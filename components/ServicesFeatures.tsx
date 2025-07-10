@@ -63,7 +63,9 @@ const ServicesFeatures = () => {
             Fostering Collaboration, Building Excellence.
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            Explore the core services we’re building at Ndugu-codes to empower the next generation of Web3 creators, developers, and startups across Africa.
+            Explore the core services we’re building at Web3 Mates to empower
+            the next generation of Web3 creators, developers, and startups
+            across Africa.
           </p>
         </div>
 

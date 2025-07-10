@@ -12,9 +12,9 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="col-span-1">
             <div className="flex items-center gap-2 mb-6">
-              <Image src="/logo.svg" alt="Ndugu Logo" width={40} height={40} />
+              <Image src="/logo.svg" alt="Web3 Mates Logo" width={40} height={40} />
               <div>
-                <div className="font-semibold text-[#0B1C39]">Ndugu Codes</div>
+                <div className="font-semibold text-[#0B1C39]">Web3 Mates</div>
                 <div className="text-sm text-[#0066FF]">
                   Blockchain Catalyst
                 </div>

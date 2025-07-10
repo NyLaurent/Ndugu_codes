@@ -38,7 +38,7 @@ export default function LocationMap() {
                 Address
               </h3>
               <div className="space-y-2">
-                <p className="font-medium text-gray-900">Ndugu Codes (DC)</p>
+                <p className="font-medium text-gray-900">Web3 Mates (DC)</p>
                 <p className="text-gray-600">
                   Bumbogo Innovation & Technology Hub
                 </p>

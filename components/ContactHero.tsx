@@ -83,7 +83,7 @@ export default function ContactHero() {
                 htmlFor="privacyPolicy"
                 className="ml-2 text-sm text-gray-600"
               >
-                I agree with Ndugu Codes Privacy Policy
+                I agree with Web3 Mates Privacy Policy
               </label>
             </div>
 
@@ -116,7 +116,9 @@ export default function ContactHero() {
 
           <div>
             <h2 className="text-xl text-black font-semibold mb-3">Address</h2>
-            <p className="font-medium text-black">Ndugu Codes Hub — Kigali, Rwanda</p>
+            <p className="font-medium text-black">
+              Web3 Mates Hub — Kigali, Rwanda
+            </p>
             <p className="text-gray-600">
               Bumbogo Innovation Center, KG 690 St, Kigali, Rwanda
             </p>
@@ -133,7 +135,7 @@ export default function ContactHero() {
           </div>
 
           <div>
-              <h2 className="text-xl text-black font-semibold mb-3">
+            <h2 className="text-xl text-black font-semibold mb-3">
               Social media
             </h2>
             <div className="flex space-x-4">

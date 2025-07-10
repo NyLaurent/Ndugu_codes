@@ -31,7 +31,7 @@ const EmpowerSection = () => {
             Empowering the Builders of Africa&apos;s Web3 Future
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
-            Discover how Ndugu Codes is enabling innovation, education, and
+            Discover how Web3 Mates is enabling innovation, education, and
             impact through real-world training, community support, and startup
             acceleration.
           </p>

@@ -12,7 +12,7 @@ const AboutHero = () => {
             Rooted in Africa. Building for the world.
           </p>
           <h1 className="text-4xl font-bold text-[#0B1C39] mb-6">
-            About Ndugu Blockchain Catalyst
+            About Web3 Mates Blockchain Catalyst
           </h1>
           <p className="text-gray-600 text-lg mb-8">
             We&apos;ve been told it is not possible to overachieve our
@@ -37,7 +37,7 @@ const AboutHero = () => {
         <div className="relative">
           <Image
             src="/about.svg"
-            alt="About Ndugu Blockchain"
+            alt="About Web3 Mates Blockchain"
             width={600}
             height={500}
             className="w-full h-auto"

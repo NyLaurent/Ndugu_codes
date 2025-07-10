@@ -25,9 +25,9 @@ const ImpactSection = () => {
             The Impact We’re Building for Africa&apos;s Web3 Future
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
-            As a growing hub, Ndugu-codes is setting out to empower Africa’s next
-            generation of Web3 builders. These are the goals we’re working toward
-            through community, collaboration, and code.
+            As a growing hub, Web3 Mates is setting out to empower Africa’s next
+            generation of Web3 builders. These are the goals we’re working
+            toward through community, collaboration, and code.
           </p>
         </div>
 

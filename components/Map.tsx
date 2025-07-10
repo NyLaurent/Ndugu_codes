@@ -12,8 +12,9 @@ export default function Map() {
       // Initialize map only if it hasn't been initialized yet
       if (!mapRef.current) {
         // Set default marker icon options
-        L.Icon.Default.imagePath = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/";
-        
+        L.Icon.Default.imagePath =
+          "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/";
+
         // Create map instance
         mapRef.current = L.map("map").setView([-1.9441, 30.0619], 13);
 
@@ -23,12 +24,12 @@ export default function Map() {
             '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         }).addTo(mapRef.current);
 
-        // Add marker for Ndugu Codes location
+        // Add marker for Web3 Mates location
         L.marker([-1.9441, 30.0619], {
-          title: "Ndugu Codes",
+          title: "Web3 Mates",
         })
           .addTo(mapRef.current)
-          .bindPopup("Ndugu Codes - Innovation Hub")
+          .bindPopup("Web3 Mates - Innovation Hub")
           .openPopup();
       }
     }

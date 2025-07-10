@@ -70,7 +70,7 @@ const ServicesOffer = () => {
           <div className="relative">
             <Image
               src="/offer.svg"
-              alt="Ndugu Codes Web3 Offerings Illustration"
+              alt="Web3 Mates Web3 Offerings Illustration"
               width={600}
               height={600}
               className="w-full h-auto"

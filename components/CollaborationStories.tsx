@@ -10,10 +10,10 @@ const CollaborationStories = () => {
             Collaboration in Action
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
-            At Ndugu-codes, we&apos;re working to build partnerships that
-            empower talent, connect communities, and help shape Africa&apos;s
-            future in Web3. Here&apos;s a look at some of the initiatives we aim
-            to launch soon.
+            At Web3 Mates, we&apos;re working to build partnerships that empower
+            talent, connect communities, and help shape Africa&apos;s future in
+            Web3. Here&apos;s a look at some of the initiatives we aim to launch
+            soon.
           </p>
         </div>
 

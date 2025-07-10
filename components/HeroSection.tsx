@@ -11,7 +11,7 @@ const HeroSection = () => {
             Empowering Africa Through Web3
           </h1>
           <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-            Ndugu Codes is a Web3 education and innovation hub dedicated to
+            Web3 Mates is a Web3 education and innovation hub dedicated to
             training, connecting, and empowering African developers and
             entrepreneurs.
           </p>
@@ -33,35 +33,66 @@ const HeroSection = () => {
           {/* Collaboration Section */}
           <div className="mt-12">
             <p className="text-gray-500 mb-4">In Collaboration with:</p>
-            <div className="flex flex-wrap items-center gap-8">
-              <Image
-                src="/monday.svg"
-                alt="Monday.com"
-                width={120}
-                height={30}
-                className="object-contain"
-              />
-              <Image
-                src="/newRelic.svg"
-                alt="New Relic"
-                width={120}
-                height={30}
-                className="object-contain"
-              />
-              <Image
-                src="/paypal.svg"
-                alt="PayPal"
-                width={100}
-                height={30}
-                className="object-contain"
-              />
-               <Image
-                src="/pinterest.svg"
-                alt="Pinterest"
-                width={100}
-                height={30}
-                className="object-contain"
-              />
+            <div className="relative overflow-hidden">
+              <div className="flex items-center gap-8 animate-scroll">
+                <Image
+                  src="/monday.svg"
+                  alt="Monday.com"
+                  width={120}
+                  height={30}
+                  className="object-contain flex-shrink-0"
+                />
+                <Image
+                  src="/newRelic.svg"
+                  alt="New Relic"
+                  width={120}
+                  height={30}
+                  className="object-contain flex-shrink-0"
+                />
+                <Image
+                  src="/paypal.svg"
+                  alt="PayPal"
+                  width={100}
+                  height={30}
+                  className="object-contain flex-shrink-0"
+                />
+                <Image
+                  src="/pinterest.svg"
+                  alt="Pinterest"
+                  width={100}
+                  height={30}
+                  className="object-contain flex-shrink-0"
+                />
+                {/* Duplicate logos for seamless loop */}
+                <Image
+                  src="/monday.svg"
+                  alt="Monday.com"
+                  width={120}
+                  height={30}
+                  className="object-contain flex-shrink-0"
+                />
+                <Image
+                  src="/newRelic.svg"
+                  alt="New Relic"
+                  width={120}
+                  height={30}
+                  className="object-contain flex-shrink-0"
+                />
+                <Image
+                  src="/paypal.svg"
+                  alt="PayPal"
+                  width={100}
+                  height={30}
+                  className="object-contain flex-shrink-0"
+                />
+                <Image
+                  src="/pinterest.svg"
+                  alt="Pinterest"
+                  width={100}
+                  height={30}
+                  className="object-contain flex-shrink-0"
+                />
+              </div>
             </div>
           </div>
         </div>
