@@ -125,7 +125,7 @@ const ApplyToMentorPage = () => {
         className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 sm:p-8 lg:p-10 max-w-3xl mx-auto"
       >
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 text-center">
-          Become a Web3 Mates Mentor
+          Become a Web3 Mates <span className="text-blue-700">Mentor</span>
         </h2>
 
         <form onSubmit={handleSubmit}>

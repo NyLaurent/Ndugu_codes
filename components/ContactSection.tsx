@@ -27,7 +27,7 @@ const ContactSection = () => {
             </p>
             <div className="flex gap-4">
               <Link 
-                href="/join"
+                href="/mentorship"
                 className="bg-[#0066FF] text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
               >
                 Join Now
