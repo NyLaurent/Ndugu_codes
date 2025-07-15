@@ -2,56 +2,56 @@
 
 export default function ContactHero() {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-28">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 pt-20 sm:pt-24">
+      <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
           Get in Touch with Us
         </h1>
-        <p className="text-gray-600">
+        <p className="text-gray-600 text-sm sm:text-base lg:text-lg">
           Reach out to us with any question or inquiry you have and we&apos;ll
           do our best to get back to you as soon as possible.
         </p>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-12">
-        <div className="md:col-span-2">
-          <form className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
+        <div className="lg:col-span-2">
+          <form className="space-y-4 sm:space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <div>
-                <label className="block text-gray-700 mb-2">First Name</label>
+                <label className="block text-gray-700 mb-2 text-sm sm:text-base">First Name</label>
                 <input
                   type="text"
                   placeholder="Please input"
-                  className="w-full px-4 py-2 text-black rounded-lg bg-gray-50 border border-gray-200"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base"
                 />
               </div>
               <div>
-                <label className="block text-gray-700 mb-2">
+                <label className="block text-gray-700 mb-2 text-sm sm:text-base">
                   Email Address
                 </label>
                 <input
                   type="email"
                   placeholder="Please input"
-                  className="w-full px-4 py-2 text-black rounded-lg bg-gray-50 border border-gray-200"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base"
                 />
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <div>
-                <label className="block text-gray-700 mb-2">Phone Number</label>
+                <label className="block text-gray-700 mb-2 text-sm sm:text-base">Phone Number</label>
                 <input
                   type="tel"
                   placeholder="+000"
-                  className="w-full px-4 py-2 text-black rounded-lg bg-gray-50 border border-gray-200"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base"
                 />
               </div>
               <div>
-                <label className="block text-gray-700 mb-2">
+                <label className="block text-gray-700 mb-2 text-sm sm:text-base">
                   Contact method
                 </label>
                 <select
-                  className="w-full px-4 py-2 text-black rounded-lg bg-gray-50 border border-gray-200"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base"
                   defaultValue=""
                 >
                   <option value="" disabled>
@@ -65,59 +65,61 @@ export default function ContactHero() {
             </div>
 
             <div>
-              <label className="block text-gray-700 mb-2">Message</label>
+              <label className="block text-gray-700 mb-2 text-sm sm:text-base">Message</label>
               <textarea
                 rows={4}
                 placeholder="Hi! We are Lookscout..."
-                className="w-full px-4 py-2 text-black rounded-lg bg-gray-50 border border-gray-200"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base"
               ></textarea>
             </div>
 
-            <div className="flex items-center">
+            <div className="flex items-start">
               <input
                 type="checkbox"
                 id="privacyPolicy"
-                className="h-4 w-4 text-blue-600 rounded border-gray-300"
+                className="h-4 w-4 text-blue-600 rounded border-gray-300 mt-1"
               />
               <label
                 htmlFor="privacyPolicy"
-                className="ml-2 text-sm text-gray-600"
+                className="ml-2 text-xs sm:text-sm text-gray-600"
               >
-                I agree with Ndugu Codes Privacy Policy
+                I agree with Web3 Mates Privacy Policy
               </label>
             </div>
 
             <button
               type="submit"
-              className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+              className="px-4 sm:px-6 py-2 sm:py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm sm:text-base w-full sm:w-auto"
             >
               Submit
             </button>
           </form>
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-6 sm:space-y-8">
           <div>
-            <h2 className="text-xl text-black font-semibold mb-3">
+            <h2 className="text-lg sm:text-xl text-black font-semibold mb-2 sm:mb-3">
               Get in touch
             </h2>
-            <p className="text-gray-600">
+            <p className="text-gray-600 text-sm sm:text-base">
               We&apos;d love to hear from you—whether you&apos;re looking to
               collaborate, support, or join our mission to drive Web3 innovation
               across Africa. Let&apos;s build something meaningful together.
             </p>
             <a
               href="#"
-              className="text-blue-600 hover:text-blue-700 inline-flex items-center mt-2"
+              className="text-blue-600 hover:text-blue-700 inline-flex items-center mt-2 text-sm sm:text-base"
             >
               Read more →
             </a>
           </div>
 
           <div>
-            <h2 className="text-xl text-black font-semibold mb-3">Address</h2>
-            <p className="font-medium text-black">Ndugu Codes Hub — Kigali, Rwanda</p>
-            <p className="text-gray-600">
+            <h2 className="text-lg sm:text-xl text-black font-semibold mb-2 sm:mb-3">Address</h2>
+            <p className="font-medium text-black text-sm sm:text-base">
+              Web3 Mates Hub — Kigali, Rwanda
+            </p>
+            <p className="text-gray-600 text-sm sm:text-base">
               Bumbogo Innovation Center, KG 690 St, Kigali, Rwanda
             </p>
           </div>
@@ -125,22 +127,22 @@ export default function ContactHero() {
           <div>
             <a
               href="tel:+250788123456"
-              className="text-blue-600 hover:text-blue-700"
+              className="text-blue-600 hover:text-blue-700 text-sm sm:text-base"
             >
               Make a phone call
             </a>
-            <p className="text-gray-600 mt-2">+250 788 123 456</p>
+            <p className="text-gray-600 mt-2 text-sm sm:text-base">+250 788 123 456</p>
           </div>
 
           <div>
-              <h2 className="text-xl text-black font-semibold mb-3">
+            <h2 className="text-lg sm:text-xl text-black font-semibold mb-2 sm:mb-3">
               Social media
             </h2>
-            <div className="flex space-x-4">
+            <div className="flex space-x-3 sm:space-x-4">
               <a href="#" className="text-gray-600 hover:text-blue-600">
                 <span className="sr-only">Instagram</span>
                 <svg
-                  className="w-6 h-6"
+                  className="w-5 h-5 sm:w-6 sm:h-6"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -150,7 +152,7 @@ export default function ContactHero() {
               <a href="#" className="text-gray-600 hover:text-blue-600">
                 <span className="sr-only">Twitter</span>
                 <svg
-                  className="w-6 h-6"
+                  className="w-5 h-5 sm:w-6 sm:h-6"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -160,7 +162,7 @@ export default function ContactHero() {
               <a href="#" className="text-gray-600 hover:text-blue-600">
                 <span className="sr-only">LinkedIn</span>
                 <svg
-                  className="w-6 h-6"
+                  className="w-5 h-5 sm:w-6 sm:h-6"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >

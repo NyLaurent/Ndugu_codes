@@ -56,25 +56,27 @@ const services = [
 
 const ServicesFeatures = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#0B1C39] mb-6">
+        <div className="text-center mb-10 sm:mb-12 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0B1C39] mb-4 sm:mb-6">
             Fostering Collaboration, Building Excellence.
           </h2>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            Explore the core services we’re building at Ndugu-codes to empower the next generation of Web3 creators, developers, and startups across Africa.
+          <p className="text-gray-600 text-sm sm:text-base lg:text-lg max-w-2xl sm:max-w-3xl mx-auto">
+            Explore the core services we're building at Web3 Mates to empower
+            the next generation of Web3 creators, developers, and startups
+            across Africa.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {services.map((service) => (
             <Link
               href={service.link}
               key={service.id}
               className="group bg-white rounded-2xl overflow-hidden hover:shadow-lg transition-shadow duration-300"
             >
-              <div className="relative h-48 w-full">
+              <div className="relative h-32 sm:h-40 lg:h-48 w-full">
                 <Image
                   src={service.image}
                   alt={`${service.title} Icon`}
@@ -82,11 +84,11 @@ const ServicesFeatures = () => {
                   className="object-cover"
                 />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3 text-[#0B1C39] group-hover:text-[#0066FF] transition-colors">
+              <div className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-[#0B1C39] group-hover:text-[#0066FF] transition-colors">
                   {service.id}. {service.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
                   {service.description}
                 </p>
               </div>

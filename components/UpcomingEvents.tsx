@@ -5,7 +5,8 @@ const events = [
   {
     id: "featured",
     image: "/big.svg",
-    title: "Empowering Young Developers Through University Collaboration in Rwanda",
+    title:
+      "Empowering Young Developers Through University Collaboration in Rwanda",
     description:
       "We plan to launch a 10-week Web3 bootcamp in partnership with a leading Rwandan university, aiming to reach over 300 students with hands-on smart contract training and startup incubation.",
     date: "Coming Soon: Feb 2026",
@@ -40,39 +41,39 @@ const UpcomingEvents = () => {
   const [featuredEvent, ...otherEvents] = events;
 
   return (
-    <section className="py-16 px-4 md:px-8 bg-gray-50">
+    <section className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
           {/* Featured Event */}
           <article className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
-            <div className="relative h-[400px] w-full">
+            <div className="relative h-48 sm:h-64 lg:h-[400px] w-full">
               <Image
                 src={featuredEvent.image}
                 alt={featuredEvent.title}
                 fill
                 className="object-cover"
                 priority
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 50vw"
               />
             </div>
-            <div className="p-6">
-              <time className="text-[#0066FF] text-sm font-semibold mb-2 block">
+            <div className="p-4 sm:p-6">
+              <time className="text-[#0066FF] text-xs sm:text-sm font-semibold mb-2 block">
                 {featuredEvent.date}
               </time>
-              <h3 className="text-2xl font-semibold text-black mb-4">
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-black mb-3 sm:mb-4">
                 {featuredEvent.title}
               </h3>
-              <p className="text-gray-700 mb-6 leading-relaxed">
+              <p className="text-gray-700 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
                 {featuredEvent.description}
               </p>
               <Link
                 href={`/events/${featuredEvent.id}`}
-                className="inline-flex items-center text-[#0066FF] font-semibold hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-[#0066FF] rounded"
+                className="inline-flex items-center text-[#0066FF] font-semibold hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-[#0066FF] rounded text-sm sm:text-base"
                 aria-label={`Learn more about: ${featuredEvent.title}`}
               >
                 Learn more
                 <svg
-                  className="w-4 h-4 ml-1"
+                  className="w-3 h-3 sm:w-4 sm:h-4 ml-1"
                   viewBox="0 0 24 24"
                   fill="none"
                   aria-hidden="true"
@@ -90,13 +91,13 @@ const UpcomingEvents = () => {
           </article>
 
           {/* Other Events */}
-          <div className="space-y-8">
+          <div className="space-y-4 sm:space-y-6 lg:space-y-8">
             {otherEvents.map((event) => (
               <article
                 key={event.id}
-                className="flex gap-6 bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 p-4"
+                className="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 p-4"
               >
-                <div className="relative w-48 h-32 flex-shrink-0 rounded-lg overflow-hidden">
+                <div className="relative w-full sm:w-48 h-32 sm:h-32 flex-shrink-0 rounded-lg overflow-hidden">
                   <Image
                     src={event.image}
                     alt={event.title}
@@ -105,24 +106,24 @@ const UpcomingEvents = () => {
                     sizes="(max-width: 640px) 100vw, 12rem"
                   />
                 </div>
-                <div className="flex flex-col justify-between">
-                  <time className="text-[#0066FF] text-sm font-semibold mb-2">
+                <div className="flex flex-col justify-between flex-1">
+                  <time className="text-[#0066FF] text-xs sm:text-sm font-semibold mb-2">
                     {event.date}
                   </time>
-                  <h3 className="text-xl font-semibold text-black mb-2">
+                  <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-black mb-2">
                     {event.title}
                   </h3>
-                  <p className="text-gray-700 text-sm mb-2 leading-relaxed">
+                  <p className="text-gray-700 text-xs sm:text-sm mb-2 leading-relaxed">
                     {event.description}
                   </p>
                   <Link
                     href={`/events/${event.id}`}
-                    className="inline-flex items-center text-[#0066FF] font-semibold hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-[#0066FF] rounded"
+                    className="inline-flex items-center text-[#0066FF] font-semibold hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-[#0066FF] rounded text-xs sm:text-sm"
                     aria-label={`Learn more about: ${event.title}`}
                   >
                     Learn more
                     <svg
-                      className="w-4 h-4 ml-1"
+                      className="w-3 h-3 sm:w-4 sm:h-4 ml-1"
                       viewBox="0 0 24 24"
                       fill="none"
                       aria-hidden="true"

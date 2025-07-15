@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 :root {
   --background: #ffffff;
   --foreground: #ffff;
@@ -31,21 +32,18 @@ body {
   height: 100%;
 }
 
-/* Loading Animation */
-@keyframes float {
+/* Logo Scroll Animation */
+@keyframes scroll {
   0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
+    transform: translateX(0);
   }
   100% {
-    transform: translateY(0px);
+    transform: translateX(-50%);
   }
 }
 
-.logo-float {
-  animation: float 2s ease-in-out infinite;
+.animate-scroll {
+  animation: scroll 8s linear infinite;
 }
 
 html {

@@ -56,28 +56,28 @@ const blogPosts = [
 
 const LatestBlogPosts = () => {
   return (
-    <section className="py-16 px-4 md:px-8 bg-gray-50">
+    <section className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-black mb-4">
+        <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-3 sm:mb-4">
             Upcoming Stories & Spotlights
           </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto">
-            We’re in the early days of documenting our journey — this space will soon
-            host reflections, event updates, and technical insights from our team
-            and community collaborators.
+          <p className="text-gray-600 max-w-2xl sm:max-w-3xl mx-auto text-sm sm:text-base lg:text-lg px-2">
+            We're in the early days of documenting our journey — this space will
+            soon host reflections, event updates, and technical insights from
+            our team and community collaborators.
           </p>
         </div>
 
         {/* Blog Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {blogPosts.map((post) => (
             <article
               key={post.id}
               className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
             >
-              <div className="relative h-48">
+              <div className="relative h-32 sm:h-40 lg:h-48">
                 <Image
                   src={post.image}
                   alt={post.title}
@@ -85,18 +85,26 @@ const LatestBlogPosts = () => {
                   className="object-cover"
                 />
               </div>
-              <div className="p-6">
-                <div className="text-[#0066FF] text-sm mb-2">{post.date}</div>
-                <h3 className="text-xl font-semibold text-black mb-3">
+              <div className="p-4 sm:p-6">
+                <div className="text-[#0066FF] text-xs sm:text-sm mb-2">
+                  {post.date}
+                </div>
+                <h3 className="text-lg sm:text-xl font-semibold text-black mb-2 sm:mb-3">
                   {post.title}
                 </h3>
-                <p className="text-gray-600 text-sm mb-4">{post.description}</p>
+                <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">
+                  {post.description}
+                </p>
                 <Link
                   href="/events/blog"
-                  className="text-[#0066FF] font-medium hover:text-blue-700 inline-flex items-center"
+                  className="text-[#0066FF] font-medium hover:text-blue-700 inline-flex items-center text-xs sm:text-sm"
                 >
                   Coming soon
-                  <svg className="w-4 h-4 ml-1" viewBox="0 0 24 24" fill="none">
+                  <svg
+                    className="w-3 h-3 sm:w-4 sm:h-4 ml-1"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
                     <path
                       d="M5 12h14M12 5l7 7-7 7"
                       stroke="currentColor"

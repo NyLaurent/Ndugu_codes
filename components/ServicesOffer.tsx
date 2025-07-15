@@ -63,43 +63,45 @@ const offerings = [
 
 const ServicesOffer = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Column - Image */}
-          <div className="relative">
+          <div className="relative order-first lg:order-last">
             <Image
               src="/offer.svg"
-              alt="Ndugu Codes Web3 Offerings Illustration"
+              alt="Web3 Mates Web3 Offerings Illustration"
               width={600}
               height={600}
-              className="w-full h-auto"
+              className="w-full h-auto max-w-md sm:max-w-lg lg:max-w-xl mx-auto lg:mx-0"
               priority
             />
           </div>
 
           {/* Right Column - Content */}
-          <div>
-            <h2 className="text-4xl font-bold text-[#0B1C39] mb-6">
+          <div className="text-center lg:text-left">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0B1C39] mb-4 sm:mb-6">
               What We Offer
             </h2>
-            <p className="text-gray-600 text-lg mb-8">
+            <p className="text-gray-600 text-sm sm:text-base lg:text-lg mb-6 sm:mb-8">
               Built for African builders, our offerings are designed to meet you
               where you are—whether you&apos;re refining an idea or preparing to
               scale.
             </p>
 
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               {offerings.map((offering, index) => (
-                <div key={index} className="flex items-start gap-4">
-                  <div className="bg-[#EEF5FF] p-3 rounded-lg">
+                <div key={index} className="flex items-start gap-3 sm:gap-4">
+                  <div className="bg-[#EEF5FF] p-2 sm:p-3 rounded-lg flex-shrink-0">
                     {offering.icon}
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-[#0B1C39] mb-2">
+                    <h3 className="text-lg sm:text-xl font-semibold text-[#0B1C39] mb-1 sm:mb-2">
                       {offering.title}
                     </h3>
-                    <p className="text-gray-600">{offering.description}</p>
+                    <p className="text-gray-600 text-sm sm:text-base">
+                      {offering.description}
+                    </p>
                   </div>
                 </div>
               ))}
