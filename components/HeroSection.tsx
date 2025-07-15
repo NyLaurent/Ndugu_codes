@@ -53,7 +53,7 @@ const HeroSection = () => {
             className="text-gray-600 text-xl mb-8 leading-relaxed max-w-lg"
             variants={itemVariants}
           >
-            Ndugu Codes is a Web3 education and innovation hub dedicated to
+            Web3 Mates is a Web3 education and innovation hub dedicated to
             training, connecting, and empowering African developers and
             entrepreneurs in the blockchain revolution.
           </motion.p>
