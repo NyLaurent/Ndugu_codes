@@ -193,7 +193,7 @@ const HeroSection = () => {
                 src="/africa-globe.webp"
                 alt="Africa Globe"
                 fill
-                className="object-contain drop-shadow-xl"
+                className="object-contain drop-shadow-xl rounded-full"
                 priority
               />
             </motion.div>
