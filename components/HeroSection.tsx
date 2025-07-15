@@ -1,120 +1,164 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24 pt-20 sm:pt-24">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
+    <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute -top-32 -right-32 w-96 h-96 bg-[#0066FF]/10 rounded-full filter blur-3xl opacity-70"></div>
+      <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-[#0066FF]/10 rounded-full filter blur-3xl opacity-70"></div>
+      
+      <motion.div 
+        className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+      >
         {/* Left Content */}
-        <div className="text-center lg:text-left">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-[#0B1C39] mb-4 sm:mb-6 leading-tight">
-            Empowering Africa Through Web3
-          </h1>
-          <p className="text-gray-600 text-base sm:text-lg xl:text-xl mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-            Web3 Mates is a Web3 education and innovation hub dedicated to
+        <div>
+          <motion.h1 
+            className="text-4xl md:text-6xl font-bold text-[#0B1C39] mb-6 leading-tight"
+            variants={itemVariants}
+          >
+            Empowering <span className="text-[#0066FF]">Africa</span> Through <span className="text-[#0066FF]">Web3</span>
+          </motion.h1>
+          
+          <motion.p 
+            className="text-gray-600 text-xl mb-8 leading-relaxed max-w-lg"
+            variants={itemVariants}
+          >
+            Ndugu Codes is a Web3 education and innovation hub dedicated to
             training, connecting, and empowering African developers and
-            entrepreneurs.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+            entrepreneurs in the blockchain revolution.
+          </motion.p>
+          
+          <motion.div 
+            className="flex flex-wrap gap-4"
+            variants={itemVariants}
+          >
             <Link
               href="/course"
-              className="bg-[#0066FF] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-blue-700 transition-colors text-sm sm:text-base font-medium text-center"
+              className="relative bg-gradient-to-r from-[#0066FF] to-[#0047CC] text-white px-8 py-4 rounded-full hover:shadow-lg transition-all duration-300 font-medium group overflow-hidden"
             >
-              Join The Course
+              <span className="relative z-10">Join The Course</span>
+              <span className="absolute inset-0 bg-gradient-to-r from-[#0047CC] to-[#0066FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
             </Link>
             <Link
               href="/contact"
-              className="bg-white text-[#0066FF] px-6 sm:px-8 py-3 sm:py-4 rounded-full border border-[#0066FF] hover:bg-gray-50 transition-colors text-sm sm:text-base font-medium text-center"
+              className="bg-white text-[#0066FF] px-8 py-4 rounded-full border-2 border-[#0066FF] hover:bg-[#0066FF]/5 hover:shadow-md transition-all duration-300 font-medium"
             >
               Contact Us
             </Link>
-          </div>
+          </motion.div>
 
           {/* Collaboration Section */}
-          <div className="mt-8 sm:mt-12">
-            <p className="text-gray-500 mb-3 sm:mb-4 text-sm sm:text-base">In Collaboration with:</p>
-            <div className="relative overflow-hidden">
-              <div className="flex items-center gap-4 sm:gap-6 lg:gap-8 animate-scroll">
+          <motion.div 
+            className="mt-16"
+            variants={itemVariants}
+          >
+            <p className="text-gray-500 mb-4 text-sm uppercase tracking-wider">Trusted by leading organizations</p>
+            <div className="flex flex-wrap items-center gap-8">
+              <motion.div whileHover={{ scale: 1.05 }}>
                 <Image
                   src="/monday.svg"
                   alt="Monday.com"
-                  width={80}
-                  height={20}
-                  className="object-contain flex-shrink-0 sm:w-[100px] sm:h-[25px] lg:w-[120px] lg:h-[30px]"
+                  width={120}
+                  height={30}
+                  className="object-contain opacity-80 hover:opacity-100 transition-opacity"
                 />
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }}>
                 <Image
                   src="/newRelic.svg"
                   alt="New Relic"
-                  width={80}
-                  height={20}
-                  className="object-contain flex-shrink-0 sm:w-[100px] sm:h-[25px] lg:w-[120px] lg:h-[30px]"
+                  width={120}
+                  height={30}
+                  className="object-contain opacity-80 hover:opacity-100 transition-opacity"
                 />
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }}>
                 <Image
                   src="/paypal.svg"
                   alt="PayPal"
-                  width={70}
-                  height={20}
-                  className="object-contain flex-shrink-0 sm:w-[90px] sm:h-[25px] lg:w-[100px] lg:h-[30px]"
+                  width={100}
+                  height={30}
+                  className="object-contain opacity-80 hover:opacity-100 transition-opacity"
                 />
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }}>
                 <Image
                   src="/pinterest.svg"
                   alt="Pinterest"
-                  width={70}
-                  height={20}
-                  className="object-contain flex-shrink-0 sm:w-[90px] sm:h-[25px] lg:w-[100px] lg:h-[30px]"
+                  width={100}
+                  height={30}
+                  className="object-contain opacity-80 hover:opacity-100 transition-opacity"
                 />
-                {/* Duplicate logos for seamless loop */}
-                <Image
-                  src="/monday.svg"
-                  alt="Monday.com"
-                  width={80}
-                  height={20}
-                  className="object-contain flex-shrink-0 sm:w-[100px] sm:h-[25px] lg:w-[120px] lg:h-[30px]"
-                />
-                <Image
-                  src="/newRelic.svg"
-                  alt="New Relic"
-                  width={80}
-                  height={20}
-                  className="object-contain flex-shrink-0 sm:w-[100px] sm:h-[25px] lg:w-[120px] lg:h-[30px]"
-                />
-                <Image
-                  src="/paypal.svg"
-                  alt="PayPal"
-                  width={70}
-                  height={20}
-                  className="object-contain flex-shrink-0 sm:w-[90px] sm:h-[25px] lg:w-[100px] lg:h-[30px]"
-                />
-                <Image
-                  src="/pinterest.svg"
-                  alt="Pinterest"
-                  width={70}
-                  height={20}
-                  className="object-contain flex-shrink-0 sm:w-[90px] sm:h-[25px] lg:w-[100px] lg:h-[30px]"
-                />
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
-        {/* Right Image with Perfect Circle */}
-        <div className="relative flex items-center justify-center order-first lg:order-last">
-          <div className="relative w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] xl:w-[550px] xl:h-[550px] flex items-center justify-center">
-            {/* Circle Border */}
-            <div className="absolute inset-0 rounded-full border-2 border-[#0066FF]" />
+        {/* Right Image with Animated Circle */}
+        <motion.div 
+          className="relative flex items-center justify-center"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <div className="relative w-[550px] h-[550px] flex items-center justify-center">
+            {/* Animated Circle Border */}
+            <motion.div 
+              className="absolute inset-0 rounded-full border-2 border-[#0066FF]"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+            />
+            
+            {/* Gradient Circle */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#0066FF]/10 to-[#0066FF]/30 blur-md"></div>
+            
             {/* Image Container */}
-            <div className="relative w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] lg:w-[380px] lg:h-[380px] xl:w-[400px] xl:h-[400px]">
+            <motion.div 
+              className="relative w-[400px] h-[400px]"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
               <Image
                 src="/hero.svg"
                 alt="Hero Image"
                 fill
-                className="object-contain"
+                className="object-contain drop-shadow-xl"
                 priority
               />
-            </div>
+            </motion.div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };

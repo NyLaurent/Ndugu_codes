@@ -45,3 +45,11 @@ body {
 .animate-scroll {
   animation: scroll 8s linear infinite;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* body {
+  font-family: 'Inter', sans-serif;
+} */
