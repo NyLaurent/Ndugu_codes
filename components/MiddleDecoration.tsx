@@ -2,22 +2,22 @@ import Image from "next/image";
 
 const MiddleDecoration = () => {
   return (
-    <section className="py-16 px-4 md:px-8">
+    <section className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-12">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
           {/* Header Section */}
-          <div className="lg:w-1/2">
-            <div className="flex items-center gap-2 mb-4">
+          <div className="lg:w-1/2 mb-8 lg:mb-0">
+            <div className="flex items-center gap-2 mb-3 sm:mb-4">
               <Image src="/globe.svg" alt="Globe Icon" width={24} height={24} />
-              <p className="text-[#0066FF]">
+              <p className="text-[#0066FF] text-sm sm:text-base">
                 Building Bridges Across Africa & Beyond
               </p>
             </div>
-            <h2 className="text-4xl text-black font-semibold mb-8">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl text-black font-semibold mb-4 sm:mb-8">
               The Reach We Aspire To Achieve
             </h2>
-            <ul className="space-y-4">
-              <li className="flex items-center gap-2">
+            <ul className="space-y-3 sm:space-y-4">
+              <li className="flex items-center gap-2 text-sm sm:text-base">
                 <div className="w-5 h-5 rounded-full bg-[#0066FF] flex items-center justify-center">
                   <svg
                     width="12"
@@ -39,7 +39,7 @@ const MiddleDecoration = () => {
                   Partnering with Web3 companies, universities & non-profits
                 </span>
               </li>
-              <li className="flex items-center gap-2">
+              <li className="flex items-center gap-2 text-sm sm:text-base">
                 <div className="w-5 h-5 rounded-full bg-[#0066FF] flex items-center justify-center">
                   <svg
                     width="12"
@@ -61,7 +61,7 @@ const MiddleDecoration = () => {
                   Aiming to engage 12+ African countries in the next 2 years
                 </span>
               </li>
-              <li className="flex items-center gap-2">
+              <li className="flex items-center gap-2 text-xs sm:text-sm">
                 <div className="w-5 h-5 rounded-full bg-[#0066FF] flex items-center justify-center">
                   <svg
                     width="12"
@@ -79,7 +79,7 @@ const MiddleDecoration = () => {
                     />
                   </svg>
                 </div>
-                <span className="text-black text-sm">
+                <span className="text-black">
                   Designed to grow impact through sustainable, human-centered
                   support
                 </span>
@@ -88,13 +88,13 @@ const MiddleDecoration = () => {
           </div>
 
           {/* Stats Grid */}
-          <div className="lg:w-1/2 grid grid-cols-2 gap-8">
+          <div className="lg:w-1/2 grid grid-cols-2 gap-4 sm:gap-8">
             {/* First Row */}
-            <div className="text-center p-6 bg-white rounded-lg shadow-sm">
-              <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <div className="w-16 h-16 rounded-full bg-red-500 flex items-center justify-center">
+            <div className="text-center p-4 sm:p-6 bg-white rounded-lg shadow-sm">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-red-500 flex items-center justify-center">
                   <svg
-                    className="w-8 h-8 text-white"
+                    className="w-6 h-6 sm:w-8 sm:h-8 text-white"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >
@@ -102,17 +102,17 @@ const MiddleDecoration = () => {
                   </svg>
                 </div>
               </div>
-              <h3 className="text-4xl text-black font-bold mb-2">$5M+</h3>
-              <p className="text-gray-600">
-                Funding Ecosystem We&apos;re Growing Toward
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl text-black font-bold mb-1 sm:mb-2">$5M+</h3>
+              <p className="text-gray-600 text-xs sm:text-sm lg:text-base">
+                Funding Ecosystem We're Growing Toward
               </p>
             </div>
 
-            <div className="text-center p-6 bg-white rounded-lg shadow-sm">
-              <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <div className="w-16 h-16 rounded-full bg-green-500 flex items-center justify-center">
+            <div className="text-center p-4 sm:p-6 bg-white rounded-lg shadow-sm">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-green-500 flex items-center justify-center">
                   <svg
-                    className="w-8 h-8 text-white"
+                    className="w-6 h-6 sm:w-8 sm:h-8 text-white"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >
@@ -120,16 +120,16 @@ const MiddleDecoration = () => {
                   </svg>
                 </div>
               </div>
-              <h3 className="text-4xl text-black font-bold mb-2">100+</h3>
-              <p className="text-gray-600">Startups We Plan to Support</p>
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl text-black font-bold mb-1 sm:mb-2">100+</h3>
+              <p className="text-gray-600 text-xs sm:text-sm lg:text-base">Startups We Plan to Support</p>
             </div>
 
             {/* Second Row */}
-            <div className="text-center p-6 bg-white rounded-lg shadow-sm">
-              <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <div className="w-16 h-16 rounded-full bg-blue-500 flex items-center justify-center">
+            <div className="text-center p-4 sm:p-6 bg-white rounded-lg shadow-sm">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-blue-500 flex items-center justify-center">
                   <svg
-                    className="w-8 h-8 text-white"
+                    className="w-6 h-6 sm:w-8 sm:h-8 text-white"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >
@@ -137,17 +137,17 @@ const MiddleDecoration = () => {
                   </svg>
                 </div>
               </div>
-              <h3 className="text-4xl text-black font-bold mb-2">50K+</h3>
-              <p className="text-gray-600">
-                Community Members We&apos;re Working to Reach
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl text-black font-bold mb-1 sm:mb-2">50K+</h3>
+              <p className="text-gray-600 text-xs sm:text-sm lg:text-base">
+                Community Members We're Working to Reach
               </p>
             </div>
 
-            <div className="text-center p-6 bg-white rounded-lg shadow-sm">
-              <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <div className="w-16 h-16 rounded-full bg-orange-400 flex items-center justify-center">
+            <div className="text-center p-4 sm:p-6 bg-white rounded-lg shadow-sm">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-orange-400 flex items-center justify-center">
                   <svg
-                    className="w-8 h-8 text-white"
+                    className="w-6 h-6 sm:w-8 sm:h-8 text-white"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >
@@ -155,8 +155,8 @@ const MiddleDecoration = () => {
                   </svg>
                 </div>
               </div>
-              <h3 className="text-4xl text-black font-bold mb-2">25+</h3>
-              <p className="text-gray-600">Collaborations We’re Establishing</p>
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl text-black font-bold mb-1 sm:mb-2">25+</h3>
+              <p className="text-gray-600 text-xs sm:text-sm lg:text-base">Collaborations We're Establishing</p>
             </div>
           </div>
         </div>
