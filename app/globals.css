@@ -50,6 +50,10 @@ html {
   scroll-behavior: smooth;
 }
 
+
+.rotate-animation {
+  transform-origin: center;
+}
 /* body {
   font-family: 'Inter', sans-serif;
 } */
