@@ -42,6 +42,16 @@ const HeroSection = () => {
     }
   };
 
+  // Web3 elements to surround the globe
+  const web3Elements = [
+    { name: "Blockchain", icon: "🔗", position: "top-0 left-1/2 -translate-x-1/2 -translate-y-1/2" },
+    { name: "DeFi", icon: "💰", position: "top-1/4 right-0 -translate-y-1/2 translate-x-1/2" },
+    { name: "NFTs", icon: "🖼️", position: "bottom-1/4 right-0 translate-y-1/2 translate-x-1/2" },
+    { name: "DAOs", icon: "🏛️", position: "bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2" },
+    { name: "Smart Contracts", icon: "📜", position: "bottom-1/4 left-0 translate-y-1/2 -translate-x-1/2" },
+    { name: "dApps", icon: "📱", position: "top-1/4 left-0 -translate-y-1/2 -translate-x-1/2" }
+  ];
+
   return (
     <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 overflow-hidden">
       {/* Background elements */}
@@ -128,7 +138,7 @@ const HeroSection = () => {
           </motion.div>
         </div>
 
-        {/* Right Globe Image */}
+        {/* Right Globe with Web3 Elements */}
         <motion.div 
           className="relative flex items-center justify-center"
           initial={{ opacity: 0, scale: 0.9 }}
@@ -136,30 +146,51 @@ const HeroSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] lg:w-[550px] lg:h-[550px] flex items-center justify-center">
+            {/* Web3 Elements Orbit */}
+            {web3Elements.map((element, index) => (
+              <motion.div
+                key={index}
+                className={`absolute ${element.position} z-10`}
+                animate={{
+                  rotate: 360,
+                  transition: {
+                    duration: 20,
+                    repeat: Infinity,
+                    ease: "linear"
+                  }
+                }}
+              >
+                <div className="bg-white/90 backdrop-blur-sm text-[#0066FF] rounded-full p-2 shadow-lg flex flex-col items-center justify-center w-16 h-16">
+                  <span className="text-2xl">{element.icon}</span>
+                  <span className="text-xs font-medium mt-1">{element.name}</span>
+                </div>
+              </motion.div>
+            ))}
+
             {/* Circle Border */}
             <div className="absolute inset-0 rounded-full border-2 border-[#0066FF]"></div>
             
             {/* Gradient Circle */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#0066FF]/10 to-[#0066FF]/30 blur-md"></div>
             
-            {/* Rotating Africa Globe Image */}
+            {/* Rotating Africa Globe */}
             <motion.div 
               className="relative w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[320px] md:h-[320px] lg:w-[400px] lg:h-[400px]"
               animate={{
                 rotate: 360,
                 transition: {
-                  duration: 30,
+                  duration: 15, // Faster rotation (15 seconds per full rotation)
                   repeat: Infinity,
                   ease: "linear"
                 }
               }}
               whileHover={{
                 scale: 1.05,
-                transition: { duration: 0.7 }
+                transition: { duration: 0.3 }
               }}
             >
               <Image
-                src="/africa-globe.webp" // Make sure this path is correct
+                src="/africa-globe.webp"
                 alt="Africa Globe"
                 fill
                 className="object-contain drop-shadow-xl"
