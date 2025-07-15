@@ -36,7 +36,7 @@ const ContactSection = () => {
                 href="/contact"
                 className="text-[#0B1C39] px-6 py-3 rounded-lg border border-gray-300 hover:border-[#0066FF] hover:text-[#0066FF] transition-colors flex items-center"
               >
-                Contact Us <span className="ml-2">→</span>
+                Contact Us <span className="ml-2 ">→</span>
               </Link>
             </div>
           </div>
@@ -50,12 +50,12 @@ const ContactSection = () => {
               Have questions or ideas? Reach out and let&apos;s connect.
             </p>
             
-            <form className="space-y-4">
+            <form className="space-y-4 text-black">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input
                   type="text"
                   placeholder="Enter your name"
-                  className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:border-[#0066FF]"
+                  className="w-full text-black px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:border-[#0066FF]"
                 />
                 <input
                   type="text"
@@ -66,7 +66,7 @@ const ContactSection = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:border-[#0066FF]"
+                className="w-full px-4 py-3 text-black rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:border-[#0066FF]"
               />
               <button
                 type="submit"

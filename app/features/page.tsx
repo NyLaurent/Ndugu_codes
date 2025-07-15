@@ -162,11 +162,11 @@ const FeaturesPage = () => {
         <h2 className="text-2xl sm:text-3xl font-bold text-[#0B1C39] mb-8 text-center">
           Program Features
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3  gap-6 sm:gap-8">
           {programFeatures.map((feature, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-xl p-6 sm:p-8 border border-[#0066FF]/20 hover:border-[#0066FF]/40 transition-colors"
+              className="bg-white rounded-xl shadow-xl p-6 sm:p-8 border border-[#0066FF]/20 hover:border-[#0066FF]/40 transition-colors"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 * index }}
@@ -221,9 +221,9 @@ const FeaturesPage = () => {
         </div>
       </section>
 
-      <section className="mb-20 bg-white rounded-2xl p-8 sm:p-12 shadow-sm border border-gray-100">
+      <section className="mb-20 bg-white shadow-2xl rounded-2xl p-8 sm:p-12 border border-gray-100">
         <h2 className="text-2xl sm:text-3xl font-bold text-[#0B1C39] mb-2 text-center">
-          Why Web3 Mates Stands Out
+          Why Web3 Mates <span className="text-blue-700">Stands Out</span>
         </h2>
         <p className="text-gray-600 mb-8 text-center max-w-2xl mx-auto">
           Traditional education vs. our industry-focused approach
@@ -273,7 +273,7 @@ const FeaturesPage = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
-              href="/course"
+              href="/mentorship"
               className="bg-gradient-to-r from-[#0066FF] to-[#0047CC] text-white px-8 py-3 rounded-full hover:shadow-lg transition-all duration-300 font-medium"
             >
               View Programs

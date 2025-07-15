@@ -8,7 +8,7 @@ import { useState } from "react";
 const MentorsPage = () => {
   const mentors = [
     {
-      name: "Amina Okafor",
+      name: "Jonas Sebera",
       role: "Smart Contract Engineer",
       company: "ChainSafe Africa",
       expertise: "Solidity, Security Audits, EVM Chains",
@@ -19,7 +19,7 @@ const MentorsPage = () => {
       track: "Smart Contract Development"
     },
     {
-      name: "Kwame Mensah",
+      name: "Jonas Sebera",
       role: "DeFi Architect",
       company: "Binance Africa",
       expertise: "DeFi Protocols, Tokenomics, DAOs",
@@ -30,7 +30,7 @@ const MentorsPage = () => {
       track: "DeFi & dApp Building"
     },
     {
-      name: "Ngozi Eze",
+      name: "Jonas Sebera",
       role: "Blockchain Educator",
       company: "Web3Bridge",
       expertise: "Onboarding, Technical Writing, Community Building",
@@ -41,7 +41,7 @@ const MentorsPage = () => {
       track: "Web3 Fundamentals"
     },
     {
-      name: "Tunde Adebayo",
+      name: "Jonas Sebera",
       role: "Blockchain Infrastructure Engineer",
       company: "Luno Nigeria",
       expertise: "Node Operation, Indexing, Blockchain APIs",
@@ -52,7 +52,7 @@ const MentorsPage = () => {
       track: "Smart Contract Development"
     },
     {
-      name: "Fatima Diallo",
+      name: "Jonas Sebera",
       role: "NFT & Creator Economy Specialist",
       company: "SuperRare Africa",
       expertise: "NFTs, IP Rights, Creator Monetization",
@@ -63,7 +63,7 @@ const MentorsPage = () => {
       track: "DeFi & dApp Building"
     },
     {
-      name: "Jabari Johnson",
+      name: "Jonas Sebera",
       role: "ZK Proof Researcher",
       company: "ZCash Foundation",
       expertise: "Zero-Knowledge Proofs, Cryptography, Privacy",

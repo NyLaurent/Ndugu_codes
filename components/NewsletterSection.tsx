@@ -40,7 +40,7 @@ const NewsletterSection = () => {
 
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-md sm:max-w-lg mx-auto"
+            className="flex text-black flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-md sm:max-w-lg mx-auto"
             aria-label="Newsletter subscription form"
           >
             <input

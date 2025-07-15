@@ -50,21 +50,21 @@ const MentorshipPage = () => {
 
   const mentors = [
     {
-      name: "Amina Okafor",
+      name: "Jonas Sebera",
       role: "Smart Contract Engineer",
       company: "ChainSafe Africa",
       expertise: "Solidity, Security Audits",
       image: "/mentor-1.jpg"
     },
     {
-      name: "Kwame Mensah",
+      name: "Jonas Sebera",
       role: "DeFi Architect",
       company: "Binance Africa",
       expertise: "DeFi Protocols, Tokenomics",
       image: "/mentor-2.jpg"
     },
     {
-      name: "Ngozi Eze",
+      name: "Jonas Sebera",
       role: "Blockchain Educator",
       company: "Web3Bridge",
       expertise: "Onboarding, Technical Writing",
@@ -198,7 +198,6 @@ const MentorshipPage = () => {
         </div>
       </section>
 
-      {/* Mentors Showcase */}
       <section className="mb-16">
         <motion.div
           className="text-center mb-8"

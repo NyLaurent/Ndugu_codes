@@ -8,7 +8,7 @@ const AboutHero = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 pt-20 sm:pt-24">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
         <div className="text-center lg:text-left">
-          <p className="text-[#0066FF] mb-3 sm:mb-4 text-sm sm:text-base">
+          <p className="text-[#0066FF] mb-3 sm:mb-4 text-xl sm:text-xl">
             Rooted in Africa. Building for the world.
           </p>
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0B1C39] mb-4 sm:mb-6">
