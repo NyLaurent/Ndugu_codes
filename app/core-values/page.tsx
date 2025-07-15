@@ -103,7 +103,7 @@ const CoreValues = () => {
           Ready to join our values-driven community?
         </h3>
         <Link
-          href="/course"
+          href="/mentorship"
           className="inline-block bg-gradient-to-r from-[#0066FF] to-[#0047CC] text-white px-8 py-3 rounded-full hover:shadow-lg transition-all duration-300 font-medium"
         >
           Start Your Web3 Journey
