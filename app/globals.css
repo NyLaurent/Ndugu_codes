@@ -47,3 +47,11 @@ body {
 .logo-float {
   animation: float 2s ease-in-out infinite;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* body {
+  font-family: 'Inter', sans-serif;
+} */

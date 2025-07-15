@@ -26,7 +26,7 @@ const team = [
     socials: {
       twitter: "#",
       instagram: "#",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/jabo-pro",
       telegram: "#",
     },
   },
