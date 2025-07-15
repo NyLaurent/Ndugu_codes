@@ -1,0 +1,294 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+
+const FeaturesPage = () => {
+  const learningFeatures = [
+    {
+      title: "Project-Based Curriculum",
+      description: "Learn by building real Web3 applications from day one - no theoretical fluff.",
+      icon: "",
+      image: "/project-based.jpg",
+      highlights: [
+        "Build 5+ portfolio projects",
+        "Real-world case studies",
+        "GitHub repository guidance"
+      ]
+    },
+    {
+      title: "African-Focused Content",
+      description: "Case studies and projects tailored to African market needs and challenges.",
+      icon: "",
+      image: "/african-content.jpg",
+      highlights: [
+        "Local payment integrations",
+        "Cross-border solutions",
+        "Regulatory considerations"
+      ]
+    },
+    {
+      title: "Mentorship Network",
+      description: "1:1 guidance from industry experts who've built successful Web3 projects in Africa.",
+      icon: "",
+      image: "/mentorship.jpg",
+      highlights: [
+        "Weekly office hours",
+        "Code reviews",
+        "Career path guidance"
+      ]
+    }
+  ];
+
+  const programFeatures = [
+    {
+      title: "Flexible Learning Paths",
+      description: "Choose between full-time intensive or part-time self-paced programs.",
+      icon: "",
+      stats: [
+        { value: "12-week", label: "Bootcamp" },
+        { value: "6-month", label: "Part-time" },
+        { value: "Self-paced", label: "Option" }
+      ]
+    },
+    {
+      title: "Job-Ready Outcomes",
+      description: "Our graduates land roles at top African and global Web3 companies.",
+      icon: "",
+      stats: [
+        { value: "85%", label: "Placement rate" },
+        { value: "3.5x", label: "Salary increase" },
+        { value: "50+", label: "Hiring partners" }
+      ]
+    },
+    {
+      title: "Lifetime Community Access",
+      description: "Join our growing network of 1000+ African Web3 builders.",
+      icon: "",
+      stats: [
+        { value: "Monthly", label: "Hackathons" },
+        { value: "Private", label: "Job board" },
+        { value: "VC", label: "Pitch days" }
+      ]
+    }
+  ];
+
+  const toolFeatures = [
+    {
+      title: "Interactive Learning Portal",
+      description: "Our custom platform with coding exercises, video tutorials, and progress tracking.",
+      image: "/learning-portal.jpg"
+    },
+    {
+      title: "Localized Development Kits",
+      description: "Pre-configured environments with African blockchain node connections.",
+      image: "/dev-kits.jpg"
+    },
+    {
+      title: "Career Dashboard",
+      description: "Track your job search with our interview prep tools and employer connections.",
+      image: "/career-dashboard.jpg"
+    }
+  ];
+
+  return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+      <div className="text-center mb-16 lg:mb-20">
+        <motion.h1
+          className="text-3xl sm:text-4xl md:text-4xl font-bold text-[#0B1C39] mb-4 sm:mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          How We <span className="text-[#0066FF] text-4xl">Empower</span> African Builders
+        </motion.h1>
+        <motion.p
+          className="text-gray-600 max-w-3xl mx-auto text-lg sm:text-xl"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          A complete ecosystem designed to take you from Web3 curious to job-ready developer
+        </motion.p>
+      </div>
+
+      <section className="mb-20">
+        <h2 className="text-2xl sm:text-3xl font-bold text-[#0B1C39] mb-8 text-center">
+          Our Learning Approach
+        </h2>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {learningFeatures.map((feature, index) => (
+            <motion.div
+              key={index}
+              className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 * index }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5 }}
+            >
+              <div className="relative h-48">
+                <Image
+                  src={feature.image}
+                  alt={feature.title}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute top-4 left-4 bg-white rounded-full w-12 h-12 flex items-center justify-center text-2xl shadow-sm">
+                  {feature.icon}
+                </div>
+              </div>
+              <div className="p-6 sm:p-8">
+                <h3 className="text-xl font-bold text-[#0B1C39] mb-3">{feature.title}</h3>
+                <p className="text-gray-600 mb-4">{feature.description}</p>
+                <ul className="space-y-2">
+                  {feature.highlights.map((highlight, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <svg className="w-5 h-5 text-[#0066FF] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-gray-700">{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mb-20 bg-gradient-to-br from-[#0066FF]/5 to-white rounded-2xl p-8 sm:p-12">
+        <h2 className="text-2xl sm:text-3xl font-bold text-[#0B1C39] mb-8 text-center">
+          Program Features
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          {programFeatures.map((feature, index) => (
+            <motion.div
+              key={index}
+              className="bg-white rounded-xl p-6 sm:p-8 border border-[#0066FF]/20 hover:border-[#0066FF]/40 transition-colors"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 * index }}
+              viewport={{ once: true }}
+            >
+              <div className="text-3xl mb-4">{feature.icon}</div>
+              <h3 className="text-xl font-bold text-[#0B1C39] mb-3">{feature.title}</h3>
+              <p className="text-gray-600 mb-6">{feature.description}</p>
+              <div className="grid grid-cols-3 gap-2">
+                {feature.stats.map((stat, i) => (
+                  <div key={i} className="text-center">
+                    <p className="text-lg sm:text-xl font-bold text-[#0066FF]">{stat.value}</p>
+                    <p className="text-xs sm:text-sm text-gray-600">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mb-20">
+        <h2 className="text-2xl sm:text-3xl font-bold text-[#0B1C39] mb-8 text-center">
+          Our Learning Platform
+        </h2>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {toolFeatures.map((feature, index) => (
+            <motion.div
+              key={index}
+              className="group relative overflow-hidden rounded-xl"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 * index }}
+              viewport={{ once: true }}
+            >
+              <div className="relative h-64">
+                <Image
+                  src={feature.image}
+                  alt={feature.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-1">{feature.title}</h3>
+                    <p className="text-white/90">{feature.description}</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mb-20 bg-white rounded-2xl p-8 sm:p-12 shadow-sm border border-gray-100">
+        <h2 className="text-2xl sm:text-3xl font-bold text-[#0B1C39] mb-2 text-center">
+          Why Web3 Mates Stands Out
+        </h2>
+        <p className="text-gray-600 mb-8 text-center max-w-2xl mx-auto">
+          Traditional education vs. our industry-focused approach
+        </p>
+        
+        <div className="overflow-x-auto">
+          <table className="w-full">
+            <thead>
+              <tr className="border-b border-gray-200">
+                <th className="pb-4 text-left"></th>
+                <th className="pb-4 text-left font-semibold text-[#0B1C39]">Traditional Programs</th>
+                <th className="pb-4 text-left font-semibold text-[#0066FF]">Web3 Mates</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-200">
+              {[
+                ["Curriculum", "Theoretical concepts", "Project-based learning"],
+                ["Content", "Global case studies", "African-focused examples"],
+                ["Instructors", "Academic teachers", "Industry practitioners"],
+                ["Outcome", "Certificate", "Job placement"],
+                ["Support", "Office hours", "1:1 mentorship"],
+                ["Cost", "$$$$", "Income-share options"]
+              ].map(([feature, traditional, web3mates], index) => (
+                <tr key={index}>
+                  <td className="py-4 pr-8 font-medium text-[#0B1C39]">{feature}</td>
+                  <td className="py-4 pr-8 text-gray-600">{traditional}</td>
+                  <td className="py-4 text-gray-600 font-medium">{web3mates}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section className="text-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#0B1C39] mb-4">
+            Ready to Transform Your Skills?
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+            Join our next cohort and start building Africa&apos;s Web3 future today.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="/course"
+              className="bg-gradient-to-r from-[#0066FF] to-[#0047CC] text-white px-8 py-3 rounded-full hover:shadow-lg transition-all duration-300 font-medium"
+            >
+              View Programs
+            </Link>
+            <Link
+              href="/contact"
+              className="bg-white text-[#0066FF] px-8 py-3 rounded-full border-2 border-[#0066FF] hover:bg-[#0066FF]/5 hover:shadow-md transition-all duration-300 font-medium"
+            >
+              Speak to Advisor
+            </Link>
+          </div>
+        </motion.div>
+      </section>
+    </div>
+  );
+};
+
+export default FeaturesPage;
