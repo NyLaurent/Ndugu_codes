@@ -71,7 +71,7 @@ const TeamPage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          The passionate individuals driving Web3 Mates' mission to empower Africa's blockchain revolution
+          The passionate individuals driving Web3 Mates&apos; mission to empower Africa&apos;s blockchain revolution
         </motion.p>
       </div>
 

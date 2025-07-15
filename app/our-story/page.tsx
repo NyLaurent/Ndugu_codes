@@ -252,7 +252,7 @@ const OurStory = () => {
             Be Part of Our Story
           </h2>
           <p className="text-white/90 max-w-2xl mx-auto mb-8">
-            Whether you&apos;re a developer, entrepreneur, or company - join us in building Africa's Web3 future.
+            Whether you&apos;re a developer, entrepreneur, or company - join us in building Africa&apos;s Web3 future.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
