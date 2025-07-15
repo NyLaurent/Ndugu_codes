@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import Image from "next/image";
@@ -101,7 +102,7 @@ const MentorshipPage = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-gray-600 max-w-3xl mx-auto text-lg"
         >
-          Personalized 1:1 mentorship from Africa's top blockchain developers and builders.
+          Personalized 1:1 mentorship from Africa&apos;s top blockchain developers and builders.
         </motion.p>
       </div>
 
@@ -206,7 +207,7 @@ const MentorshipPage = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Meet Your Mentors</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">Learn from Africa's top Web3 builders and educators</p>
+          <p className="text-gray-600 max-w-2xl mx-auto">Learn from Africa&apos;s top Web3 builders and educators</p>
         </motion.div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

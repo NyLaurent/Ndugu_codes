@@ -12,14 +12,14 @@ export async function POST(request: Request) {
     await sendEmail({
       to: data.email,
       subject: 'Mentor Application Received',
-      text: `Hi ${data.name}, we've received your application to become a Web3 Mates mentor.`
+      html: `<p>Hi ${data.name}, we've received your application to become a Web3 Mates mentor.</p>`
     });
     
     // Notify admin
     await sendEmail({
       to: 'admin@web3mates.com',
       subject: 'New Mentor Application',
-      text: `New application from ${data.name} (${data.email})`
+      html: `<p>New application from ${data.name} (${data.email})</p>`
     });
 
     return NextResponse.json({ success: true });

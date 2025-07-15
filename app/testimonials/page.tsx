@@ -71,7 +71,7 @@ const Testimonials = () => {
       transition: {
         x: {
           repeat: Infinity,
-          repeatType: "loop",
+          repeatType: "loop" as const,
           duration: 20,
           ease: "linear"
         }
@@ -86,7 +86,7 @@ const Testimonials = () => {
       transition: {
         x: {
           repeat: Infinity,
-          repeatType: "loop",
+          repeatType: "loop" as RepeatType,
           duration: 15,
           ease: "linear"
         }
@@ -112,7 +112,7 @@ const Testimonials = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          How we're empowering individuals and revolutionizing companies through Web3 education
+          How we&apos;re empowering individuals and revolutionizing companies through Web3 education
         </motion.p>
       </div>
 
@@ -149,7 +149,7 @@ const Testimonials = () => {
                     <p className="text-gray-500 text-xs">{testimonial.company}</p>
                   </div>
                 </div>
-                <blockquote className="text-gray-600 text-sm mb-4 italic line-clamp-3">"{testimonial.quote}"</blockquote>
+                <blockquote className="text-gray-600 text-sm mb-4 italic line-clamp-3">&quot;{testimonial.quote}&quot;</blockquote>
                 <div className="bg-[#0066FF]/10 px-3 py-1 rounded-lg inline-block">
                   <p className="text-[#0066FF] font-medium text-xs">{testimonial.stats}</p>
                 </div>
@@ -191,7 +191,7 @@ const Testimonials = () => {
                     <p className="text-[#0066FF] text-xs">{company.industry}</p>
                   </div>
                 </div>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-3">"{company.testimonial}"</p>
+                <p className="text-gray-600 text-sm mb-4 line-clamp-3">&quot;{company.testimonial}&quot;</p>
                 <div className="bg-[#0066FF]/10 px-3 py-1 rounded-lg inline-block">
                   <p className="text-[#0066FF] font-medium text-xs">{company.stats}</p>
                 </div>

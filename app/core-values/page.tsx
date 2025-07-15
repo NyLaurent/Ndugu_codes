@@ -62,7 +62,7 @@ const CoreValues = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          These principles guide everything we do at Web3 Mates to empower Africa's blockchain revolution
+          These principles guide everything we do at Web3 Mates to empower Africa&apos;s blockchain revolution
         </motion.p>
       </div>
 

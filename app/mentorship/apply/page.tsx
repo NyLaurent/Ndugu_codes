@@ -48,7 +48,7 @@ const ApplyPage = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-gray-600 max-w-3xl mx-auto text-lg"
         >
-          Complete this form to start your journey. We'll match you with the perfect mentor based on your goals.
+          Complete this form to start your journey. We&apos;ll match you with the perfect mentor based on your goals.
         </motion.p>
       </div>
 
