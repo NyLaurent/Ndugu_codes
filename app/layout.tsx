@@ -13,7 +13,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Ndugu Codes - Blockchain Catalyst",
+  title: "Web3 Mates - Blockchain Catalyst",
   description: "Empowering Africa's Web3 Builders—One Line of Code at a Time.",
 };
 
