@@ -1,4 +1,7 @@
+"use client"; // Required for animations
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface FeatureProps {
   icon: React.ReactNode;
@@ -38,7 +41,20 @@ const EmpowerSection = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          <div className="relative w-full aspect-square max-w-xs sm:max-w-md lg:max-w-lg mx-auto lg:mx-0">
+          {/* Animated Globe Container */}
+          <motion.div 
+            className="relative w-full aspect-square max-w-xs sm:max-w-md lg:max-w-lg mx-auto lg:mx-0"
+            animate={{ rotate: 360 }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+            whileHover={{
+              scale: 1.05,
+              transition: { duration: 0.3 }
+            }}
+          >
             <Image
               src="/empower.svg"
               alt="Web3 Innovation Globe"
@@ -46,7 +62,7 @@ const EmpowerSection = () => {
               className="object-contain"
               priority
             />
-          </div>
+          </motion.div>
 
           <div>
             <Feature
