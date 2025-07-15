@@ -12,12 +12,14 @@
   },
   "dependencies": {
     "@types/leaflet": "^1.9.19",
+    "date-fns": "^4.1.0",
     "dotenv": "^17.2.0",
     "framer-motion": "^12.23.5",
     "leaflet": "^1.9.4",
     "next": "15.3.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0",
     "react-leaflet": "^4.2.1",
     "react-loader-spinner": "^6.1.6",
     "resend": "^4.6.0"
