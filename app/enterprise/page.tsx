@@ -63,7 +63,7 @@ const EnterprisePage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Bridge the blockchain skills gap and accelerate your Web3 initiatives with Africa's premier developer training hub
+          Bridge the blockchain skills gap and accelerate your Web3 initiatives with Africa&apos;s premier developer training hub
         </motion.p>
       </div>
 
@@ -140,7 +140,7 @@ const EnterprisePage = () => {
                 Scaling Engineering Capacity 3x
               </h3>
               <p className="text-gray-600 mb-6">
-                "Web3 Mates provided us with a pipeline of pre-vetted blockchain security specialists that reduced our hiring time by 70% and allowed us to take on 40% more clients within the first year."
+                &quot;Web3 Mates provided us with a pipeline of pre-vetted blockchain security specialists that reduced our hiring time by 70% and allowed us to take on 40% more clients within the first year.&quot;
               </p>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 <li className="bg-[#0066FF]/5 p-3 rounded-lg">

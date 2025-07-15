@@ -120,7 +120,7 @@ const MentorsPage = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-gray-600 max-w-3xl mx-auto text-lg"
         >
-          Learn directly from Africa's top blockchain builders, researchers, and educators.
+          Learn directly from Africa&apos;s top blockchain builders, researchers, and educators.
         </motion.p>
       </div>
 
