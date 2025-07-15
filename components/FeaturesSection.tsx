@@ -135,24 +135,6 @@ const FeaturesSection = () => {
             </p>
           </div>
 
-          <div className="text-center">
-            <div className="bg-[#EEF5FF] w-12 h-12 sm:w-16 sm:h-16 rounded-lg flex items-center justify-center mx-auto mb-4 sm:mb-6">
-              <svg
-                className="w-6 h-6 sm:w-8 sm:h-8 text-[#0066FF]"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M9 11.75c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zm6 0c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-.29.02-.58.05-.86 2.36-1.05 4.23-2.98 5.21-5.37C11.07 8.33 14.05 10 17.42 10c.78 0 1.53-.09 2.25-.26.21.71.33 1.47.33 2.26 0 4.41-3.59 8-8 8z" />
-              </svg>
-            </div>
-            <h3 className="text-lg sm:text-xl text-black font-semibold mb-3 sm:mb-4">
-              Collaboration
-            </h3>
-            <p className="text-gray-600 text-xs sm:text-sm lg:text-base">
-              Fosters a spirit of teamwork, innovation, idea exchange and
-              collective growth among participants, mentors, and partners.
-            </p>
-          </div>
         </div>
 
         <div className="text-center">

@@ -87,7 +87,7 @@ const HeroSection = () => {
             variants={itemVariants}
           >
             <Link
-              href="/course"
+              href="/mentorship/apply"
               className="relative bg-gradient-to-r from-[#0066FF] to-[#0047CC] text-white px-8 py-4 rounded-full hover:shadow-lg transition-all duration-300 font-medium group overflow-hidden"
             >
               <span className="relative z-10">Join The Course</span>
@@ -101,7 +101,6 @@ const HeroSection = () => {
             </Link>
           </motion.div>
 
-          {/* Collaboration Section */}
           <motion.div 
             className="mt-16"
             variants={itemVariants}
@@ -138,7 +137,6 @@ const HeroSection = () => {
           </motion.div>
         </div>
 
-        {/* Right Globe with Web3 Elements */}
         <motion.div 
           className="relative flex items-center justify-center"
           initial={{ opacity: 0, scale: 0.9 }}
@@ -167,13 +165,10 @@ const HeroSection = () => {
               </motion.div>
             ))}
 
-            {/* Circle Border */}
             <div className="absolute inset-0 rounded-full border-2 border-[#0066FF]"></div>
             
-            {/* Gradient Circle */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#0066FF]/10 to-[#0066FF]/30 blur-md"></div>
             
-            {/* Rotating Africa Globe */}
             <motion.div 
               className="relative w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[320px] md:h-[320px] lg:w-[400px] lg:h-[400px]"
               animate={{
