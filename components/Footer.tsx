@@ -50,7 +50,7 @@ const Footer = () => {
                   className="sm:w-6 sm:h-6"
                 />
               </a>
-              <a href="#" className="hover:opacity-80 transition-opacity">
+              <a href="https://instagram.com/sebe_j_az99" className="hover:opacity-80 transition-opacity">
                 <Image
                   src="/instagram.svg"
                   alt="Instagram"
@@ -253,7 +253,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="text-center mt-6 sm:mt-8 text-gray-600">
           <p className="text-sm sm:text-base">
-            © 2024 NDUGU Blockchain Catalyst. All Rights Reserved.
+            © 2025 Web3 Mates - Blockchain Catalyst. All Rights Reserved.
           </p>
         </div>
       </div>
