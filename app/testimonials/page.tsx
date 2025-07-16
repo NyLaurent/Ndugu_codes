@@ -213,7 +213,7 @@ const Testimonials = () => {
         </h3>
         <div className="flex flex-wrap justify-center gap-4">
           <Link
-            href="/course"
+            href="/mentorship"
             className="bg-gradient-to-r from-[#0066FF] to-[#ителю
             [#0047CC] text-white px-8 py-3 rounded-full hover:shadow-lg transition-all duration-300 font-medium"
           >
