@@ -75,7 +75,6 @@ const TeamPage = () => {
         </motion.p>
       </div>
 
-      {/* Team Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
         {team.map((member, index) => (
           <motion.div

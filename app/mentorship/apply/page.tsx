@@ -25,14 +25,11 @@ const ApplyPage = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
     console.log(formData);
-    // You would typically send this data to your backend
   };
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-      {/* Hero Section */}
       <div className="text-center mb-12">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -52,7 +49,6 @@ const ApplyPage = () => {
         </motion.p>
       </div>
 
-      {/* Application Form */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

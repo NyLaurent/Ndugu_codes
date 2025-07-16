@@ -34,7 +34,6 @@ const ApplyToMentorPage = () => {
     setIsSubmitting(true);
     
     try {
-      // Replace with your actual API endpoint
       const response = await fetch('/api/mentors/apply', {
         method: 'POST',
         headers: {
@@ -208,7 +207,6 @@ const ApplyToMentorPage = () => {
             </motion.div>
           )}
 
-          {/* Step 2: Expertise & Availability */}
           {currentStep === 2 && (
             <motion.div
               initial={{ opacity: 0 }}
@@ -322,7 +320,6 @@ const ApplyToMentorPage = () => {
             </motion.div>
           )}
 
-          {/* Step 3: Social Links & Submission */}
           {currentStep === 3 && (
             <motion.div
               initial={{ opacity: 0 }}
@@ -410,7 +407,6 @@ const ApplyToMentorPage = () => {
         </form>
       </motion.div>
 
-      {/* Info Section */}
       <motion.section
         className="mt-16 bg-gray-50 rounded-xl p-8 sm:p-12"
         initial={{ opacity: 0 }}

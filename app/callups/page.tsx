@@ -1,4 +1,3 @@
-// app/callups/page.tsx
 import { format, isAfter, isBefore, subDays } from 'date-fns';
 
 interface Callup {
@@ -13,7 +12,6 @@ interface Callup {
 }
 
 export default function CallupsPage() {
-  // Sample data - replace with your actual data source
   const callups: Callup[] = [
     {
       id: '1',
@@ -48,7 +46,6 @@ export default function CallupsPage() {
 
   const currentDate = new Date();
   
-  // Categorize callups
   const openCallups = callups.filter(callup => 
     isAfter(new Date(callup.endDate), currentDate) && 
     isBefore(new Date(callup.startDate), currentDate)
@@ -61,7 +58,7 @@ export default function CallupsPage() {
   const recentClosedCallups = callups.filter(callup => 
     isBefore(new Date(callup.endDate), currentDate)
   ).sort((a, b) => new Date(b.endDate).getTime() - new Date(a.endDate).getTime())
-   .slice(0, 3); // Show only 3 most recent
+   .slice(0, 3); 
 
   return (
     <div className="max-w-4xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
@@ -72,7 +69,6 @@ export default function CallupsPage() {
         </p>
       </div>
 
-      {/* Open Callups Section */}
       <section className="mb-12">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-semibold text-gray-800">Open Callups</h2>
@@ -102,7 +98,6 @@ export default function CallupsPage() {
         )}
       </section>
 
-      {/* Upcoming Callups Section */}
       {upcomingCallups.length > 0 && (
         <section className="mb-12">
           <h2 className="text-2xl font-semibold text-gray-800 mb-6">Upcoming Callups</h2>
@@ -118,7 +113,6 @@ export default function CallupsPage() {
         </section>
       )}
 
-      {/* Recently Closed Section */}
       {recentClosedCallups.length > 0 && (
         <section>
           <h2 className="text-2xl font-semibold text-gray-800 mb-6">Recently Closed</h2>

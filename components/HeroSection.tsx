@@ -23,7 +23,7 @@ const HeroSection = () => {
       opacity: 1,
       transition: {
         duration: 0.5,
-        ease: "easeInOut" // Using a predefined easing function
+        ease: "easeInOut" 
       }
     }
   };
@@ -42,19 +42,18 @@ const HeroSection = () => {
     }
   };
 
-  // Web3 elements to surround the globe
   const web3Elements = [
-    { name: "Blockchain", icon: "🔗", position: "top-0 left-1/2 -translate-x-1/2 -translate-y-1/2" },
-    { name: "DeFi", icon: "💰", position: "top-1/4 right-0 -translate-y-1/2 translate-x-1/2" },
-    { name: "NFTs", icon: "🖼️", position: "bottom-1/4 right-0 translate-y-1/2 translate-x-1/2" },
+    { name: "Blockchain", icon: "🔗", position: "top-0 left-1/2 mt-2 -translate-x-1/2 -translate-y-1/2" },
+    { name: "DeFi", icon: "💰", position: "top-1/4 right-8 -translate-y-1/2 translate-x-1/2" },
+    { name: "NFTs", icon: "🖼️", position: "bottom-1/4 right-8 translate-y-1/2 translate-x-1/2" },
     { name: "DAOs", icon: "🏛️", position: "bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2" },
-    { name: "Smart Contracts", icon: "📜", position: "bottom-1/4 left-0 translate-y-1/2 -translate-x-1/2" },
-    { name: "dApps", icon: "📱", position: "top-1/4 left-0 -translate-y-1/2 -translate-x-1/2" }
+    { name: "Smart Contracts", icon: "📜", position: "bottom-1/4 left-8 translate-y-1/2 -translate-x-1/2" },
+    { name: "dApps", icon: "📱", position: "top-1/4 left-8 -translate-y-1/2 -translate-x-1/2" },
+    // { name: "Web3 Mates", icon: "", position: "centre-0 right-70 top-50 translate-y-1/2 translate-x-1/2"},
   ];
 
   return (
     <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 overflow-hidden">
-      {/* Background elements */}
       <div className="absolute -top-32 -right-32 w-64 h-64 md:w-96 md:h-96 bg-[#0066FF]/10 rounded-full filter blur-3xl opacity-70"></div>
       <div className="absolute -bottom-32 -left-32 w-64 h-64 md:w-96 md:h-96 bg-[#0066FF]/10 rounded-full filter blur-3xl opacity-70"></div>
       
@@ -143,12 +142,11 @@ const HeroSection = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] lg:w-[550px] lg:h-[550px] flex items-center justify-center">
-            {/* Web3 Elements Orbit */}
+          <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] lg:w-[550px] lg:h-[550px] flex items-center justify-center ">
             {web3Elements.map((element, index) => (
               <motion.div
                 key={index}
-                className={`absolute ${element.position} z-10`}
+                className={`absolute ${element.position} z-10 bg-blue-500 rounded-sm text-center` }
                 animate={{
                   rotate: 360,
                   transition: {
@@ -174,7 +172,7 @@ const HeroSection = () => {
               animate={{
                 rotate: 360,
                 transition: {
-                  duration: 15, // Faster rotation (15 seconds per full rotation)
+                  duration: 15,
                   repeat: Infinity,
                   ease: "linear"
                 }
@@ -188,7 +186,7 @@ const HeroSection = () => {
                 src="/africa-globe.webp"
                 alt="Africa Globe"
                 fill
-                className="object-contain drop-shadow-xl rounded-full"
+                className="object-contain drop-shadow-xl rounded-full border-0 "
                 priority
               />
             </motion.div>

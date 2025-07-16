@@ -314,7 +314,6 @@ export default function SubmitProjectPage() {
               </button>
             </div>
 
-            {/* Tech Stack */}
             <div>
               <h2 className="text-xl font-semibold text-gray-900 mb-6 pb-2 border-b border-gray-200">
                 Technology Stack
@@ -335,7 +334,6 @@ export default function SubmitProjectPage() {
               </div>
             </div>
 
-            {/* Links */}
             <div>
               <h2 className="text-xl font-semibold text-gray-900 mb-6 pb-2 border-b border-gray-200">
                 Project Links
@@ -387,7 +385,6 @@ export default function SubmitProjectPage() {
               </div>
             </div>
 
-            {/* Submit Button */}
             <div className="pt-6">
               <button
                 type="submit"

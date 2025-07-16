@@ -1,4 +1,4 @@
-// app/workshops/page.tsx
+/* eslint-disable @next/next/no-img-element */
 import { format, isAfter, isBefore, parseISO } from 'date-fns';
 
 interface Workshop {
@@ -8,7 +8,7 @@ interface Workshop {
   startDate: string;
   endDate: string;
   instructor: string;
-  location: string; // Can be physical or virtual
+  location: string; 
   capacity: number;
   enrolled: number;
   tags: string[];
@@ -17,7 +17,6 @@ interface Workshop {
 }
 
 export default function WorkshopsPage() {
-  // Sample data - replace with your actual data source
   const workshops: Workshop[] = [
     {
       id: '1',
@@ -63,7 +62,6 @@ export default function WorkshopsPage() {
 
   const currentDate = new Date();
   
-  // Categorize workshops
   const upcomingWorkshops = workshops
     .filter(workshop => isAfter(parseISO(workshop.startDate), currentDate))
     .sort((a, b) => parseISO(a.startDate).getTime() - parseISO(b.startDate).getTime());
@@ -77,7 +75,6 @@ export default function WorkshopsPage() {
     .filter(workshop => isBefore(parseISO(workshop.endDate), currentDate))
     .sort((a, b) => parseISO(b.startDate).getTime() - parseISO(a.startDate).getTime());
 
-  // Get all unique tags for filtering
   const allTags = Array.from(new Set(workshops.flatMap(workshop => workshop.tags)));
 
   return (
@@ -89,7 +86,6 @@ export default function WorkshopsPage() {
         </p>
       </div>
 
-      {/* Ongoing Workshops - Highest Priority */}
       {ongoingWorkshops.length > 0 && (
         <section className="mb-16">
           <div className="flex items-center mb-6">
@@ -110,7 +106,6 @@ export default function WorkshopsPage() {
         </section>
       )}
 
-      {/* Upcoming Workshops */}
       <section className="mb-16">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-semibold text-gray-800">Upcoming Workshops</h2>
@@ -155,7 +150,6 @@ export default function WorkshopsPage() {
         )}
       </section>
 
-      {/* Past Workshops */}
       {pastWorkshops.length > 0 && (
         <section>
           <h2 className="text-2xl font-semibold text-gray-800 mb-6">Past Workshops</h2>

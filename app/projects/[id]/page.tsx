@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 
-// Mock data - in a real app you'd fetch this from an API
 const allProjects = [
   {
     id: 1,
@@ -34,7 +33,6 @@ const allProjects = [
       "/project-africhain-3.jpg"
     ]
   },
-  // Add other projects with the same structure
 ];
 
 const ProjectProfilePage = () => {
@@ -59,7 +57,6 @@ const ProjectProfilePage = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      {/* Back Button */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -77,7 +74,6 @@ const ProjectProfilePage = () => {
         </Link>
       </motion.div>
 
-      {/* Project Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -164,9 +160,7 @@ const ProjectProfilePage = () => {
         </div>
       </motion.div>
 
-      {/* Project Details Sections */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-        {/* Team Section */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -189,7 +183,6 @@ const ProjectProfilePage = () => {
           </div>
         </motion.section>
 
-        {/* Tech Stack Section */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -210,7 +203,6 @@ const ProjectProfilePage = () => {
           </div>
         </motion.section>
 
-        {/* Milestones Section */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -230,7 +222,6 @@ const ProjectProfilePage = () => {
         </motion.section>
       </div>
 
-      {/* Project Gallery */}
       {project.gallery && project.gallery.length > 0 && (
         <motion.section
           initial={{ opacity: 0 }}
@@ -258,7 +249,6 @@ const ProjectProfilePage = () => {
         </motion.section>
       )}
 
-      {/* CTA Section */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

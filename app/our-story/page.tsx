@@ -93,7 +93,6 @@ const OurStory = () => {
         </motion.div>
       </div>
 
-      {/* Founder Spotlight */}
       <section className="py-16 sm:py-20 lg:py-24">
         <div className="flex flex-col lg:flex-row gap-12 items-center">
           <motion.div 
@@ -153,7 +152,6 @@ const OurStory = () => {
         </div>
       </section>
 
-      {/* Interactive Timeline */}
       <section className="py-12 sm:py-16 lg:py-20 bg-[#F8FAFF]">
         <div className="max-w-4xl mx-auto text-center mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#0B1C39] mb-4">
@@ -165,10 +163,8 @@ const OurStory = () => {
         </div>
         
         <div className="relative max-w-3xl mx-auto">
-          {/* Vertical line */}
           <div className="absolute left-1/2 w-0.5 h-full bg-[#0066FF]/30 transform -translate-x-1/2"></div>
           
-          {/* Milestones */}
           <div className="space-y-12">
             {milestones.map((milestone, index) => (
               <motion.div
@@ -179,17 +175,14 @@ const OurStory = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                {/* Date */}
                 <div className={`w-1/2 px-4 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
                   <p className="text-sm font-medium text-[#0066FF]">{milestone.year}</p>
                 </div>
                 
-                {/* Dot */}
                 <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-[#0066FF] flex items-center justify-center text-white z-10">
                   {milestone.icon}
                 </div>
                 
-                {/* Card */}
                 <div className="w-1/2 px-4">
                   <div className={`p-6 bg-white rounded-lg shadow-sm border border-gray-100 ${index % 2 === 0 ? 'ml-6' : 'mr-6'}`}>
                     <h3 className="text-lg font-bold text-[#0B1C39] mb-2">{milestone.title}</h3>
@@ -210,7 +203,6 @@ const OurStory = () => {
         </div>
       </section>
 
-      {/* Core Values */}
       <section className="py-16 sm:py-20 lg:py-24">
         <div className="max-w-4xl mx-auto text-center mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#0B1C39] mb-4">
@@ -240,7 +232,6 @@ const OurStory = () => {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="py-16 sm:py-20 bg-gradient-to-r from-[#0066FF] to-[#0047CC] rounded-2xl mb-16 text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -256,7 +247,7 @@ const OurStory = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
-              href="/course"
+              href="/mentorship"
               className="bg-white text-[#0066FF] px-8 py-3 rounded-full hover:shadow-lg transition-all duration-300 font-medium"
             >
               Start Learning

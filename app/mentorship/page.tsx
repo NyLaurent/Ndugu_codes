@@ -106,7 +106,6 @@ const MentorshipPage = () => {
         </motion.p>
       </div>
 
-      {/* Value Proposition */}
       <motion.section 
         className="mb-16 bg-blue-50 rounded-xl p-8 sm:p-12"
         initial={{ opacity: 0 }}

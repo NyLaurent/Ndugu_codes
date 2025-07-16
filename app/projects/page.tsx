@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 
-// Mock project data - consistent with project profile data structure
 const featuredProjects = [
   {
     id: 1,
@@ -14,7 +13,7 @@ const featuredProjects = [
     tags: ["E-commerce", "NFT", "DeFi"],
     status: "Live",
     logo: "/project-africhain.jpg",
-    link: "/projects/1", // Updated to use dynamic route
+    link: "/projects/1", 
     team: [
       { name: "Amina O.", role: "Founder & CEO" },
       { name: "Kwame M.", role: "Blockchain Developer" },
@@ -97,13 +96,11 @@ const ProjectsPage = () => {
   const [activeFilter, setActiveFilter] = useState("All Projects");
   const allProjects = [...featuredProjects, ...upcomingProjects];
 
-  // Filter projects based on active filter
   const filteredProjects = allProjects.filter(project => {
     if (activeFilter === "All Projects") return true;
     return project.tags.includes(activeFilter);
   });
 
-  // Separate filtered projects back into featured and upcoming
   const filteredFeatured = filteredProjects.filter(project => 
     featuredProjects.some(fp => fp.id === project.id)
   );
@@ -113,7 +110,6 @@ const ProjectsPage = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-      {/* Hero Section */}
       <div className="text-center mb-16">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -133,7 +129,6 @@ const ProjectsPage = () => {
         </motion.p>
       </div>
 
-      {/* Category Filters */}
       <motion.div 
         className="flex flex-wrap justify-center gap-3 mb-12"
         initial={{ opacity: 0 }}
@@ -155,7 +150,6 @@ const ProjectsPage = () => {
         ))}
       </motion.div>
 
-      {/* Featured Projects */}
       {filteredFeatured.length > 0 && (
         <section className="mb-16">
           <motion.h2 
@@ -256,7 +250,6 @@ const ProjectsPage = () => {
         </section>
       )}
 
-      {/* Upcoming Projects */}
       {filteredUpcoming.length > 0 && (
         <section className="mb-16">
           <motion.h2 
@@ -320,7 +313,6 @@ const ProjectsPage = () => {
         </section>
       )}
 
-      {/* Show message when no projects match filter */}
       {filteredProjects.length === 0 && (
         <motion.div
           initial={{ opacity: 0 }}
@@ -336,7 +328,6 @@ const ProjectsPage = () => {
         </motion.div>
       )}
 
-      {/* CTA Section */}
       <motion.section
         className="bg-blue-600 rounded-xl p-8 sm:p-12 text-center"
         initial={{ opacity: 0 }}
