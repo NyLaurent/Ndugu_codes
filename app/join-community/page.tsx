@@ -84,7 +84,7 @@ const CommunityPage = () => {
                 Contribute to our open-source projects and collaborate with developers.
               </p>
               <a
-                href="#"
+                href="https://github.com/Web3Mates"
                 className="block w-full py-3 px-6 text-center bg-[#181717] hover:bg-[#000000] text-white font-medium rounded-lg transition-colors duration-200"
                 target="_blank"
                 rel="noopener noreferrer"

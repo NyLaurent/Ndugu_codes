@@ -36,7 +36,7 @@ const InnovateSection = () => {
                 src="/innovate.svg"
                 alt="Web3 Innovation Illustration"
                 fill
-                className="object-contain"
+                className="object-contain rounded-xl"
                 priority
               />
             </div>

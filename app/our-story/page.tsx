@@ -256,7 +256,7 @@ const OurStory = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
-              href="/course"
+              href="/mentorship"
               className="bg-white text-[#0066FF] px-8 py-3 rounded-full hover:shadow-lg transition-all duration-300 font-medium"
             >
               Start Learning
