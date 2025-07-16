@@ -1,4 +1,4 @@
-// app/groups/page.tsx
+/* eslint-disable @next/next/no-img-element */
 import { format, isAfter, isBefore, parseISO } from 'date-fns';
 
 interface Group {
@@ -18,7 +18,6 @@ interface Group {
 }
 
 export default function GroupsPage() {
-  // Sample data - replace with your actual data source
   const groups: Group[] = [
     {
       id: '1',
@@ -64,7 +63,6 @@ export default function GroupsPage() {
 
   const currentDate = new Date();
   
-  // Categorize groups
   const activeGroups = groups.filter(group => group.status === 'active');
   const upcomingGroups = groups.filter(group => group.status === 'upcoming');
   const completedGroups = groups.filter(group => group.status === 'completed');
@@ -78,7 +76,6 @@ export default function GroupsPage() {
         </p>
       </div>
 
-      {/* Active Groups */}
       <section className="mb-16">
         <div className="flex items-center mb-6">
           <h2 className="text-2xl font-semibold text-gray-800 mr-3">Active Groups</h2>
@@ -123,7 +120,6 @@ export default function GroupsPage() {
         )}
       </section>
 
-      {/* Upcoming Groups */}
       {upcomingGroups.length > 0 && (
         <section className="mb-16">
           <h2 className="text-2xl font-semibold text-gray-800 mb-6">Upcoming Groups</h2>
@@ -139,7 +135,6 @@ export default function GroupsPage() {
         </section>
       )}
 
-      {/* Completed Groups */}
       {completedGroups.length > 0 && (
         <section>
           <div className="flex items-center mb-6">
@@ -160,7 +155,6 @@ export default function GroupsPage() {
         </section>
       )}
 
-      {/* Call to Action */}
       <div className="mt-16 bg-blue-50 rounded-xl p-8 text-center">
         <h3 className="text-xl font-bold text-gray-900 mb-3">Want to start your own group?</h3>
         <p className="text-gray-600 mb-6">

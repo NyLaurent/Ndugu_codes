@@ -91,7 +91,7 @@ const FeaturesSection = () => {
             Fostering Collaboration, Building Excellence.
           </h2>
           <p className="text-gray-600 text-base sm:text-lg lg:text-xl max-w-3xl mx-auto">
-            Here's a quick overview of our main features and what we have to offer. 
+            Here&apos;s a quick overview of our main features and what we have to offer. 
             For more in-depth reviews, browse around our website and articles.
           </p>
         </motion.div>

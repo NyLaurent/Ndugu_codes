@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 const HackathonsPage = () => {
-  // Hackathon data
   const upcomingHackathons = [
     {
       id: 1,
@@ -204,7 +203,6 @@ const HackathonsPage = () => {
         </div>
       </section>
 
-      {/* Benefits Section */}
       <section className="mb-20">
         <motion.h2 
           className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8"
@@ -233,7 +231,6 @@ const HackathonsPage = () => {
         </div>
       </section>
 
-      {/* Past Hackathons */}
       {pastHackathons.length > 0 && (
         <section className="mb-16">
           <motion.h2 
@@ -317,7 +314,6 @@ const HackathonsPage = () => {
         </section>
       )}
 
-      {/* CTA Section */}
       <motion.section
         className="bg-blue-600 opacity-20 rounded-xl p-8 sm:p-12 text-center"
         initial={{ opacity: 0 }}
@@ -346,7 +342,6 @@ const HackathonsPage = () => {
         </div>
       </motion.section>
 
-      {/* FAQ Section */}
       <section className="mt-20">
         <motion.h2 
           className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8"
