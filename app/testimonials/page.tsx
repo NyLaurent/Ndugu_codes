@@ -64,7 +64,6 @@ const Testimonials = () => {
     }
   ];
 
-  // Animation for individual testimonials (left to right)
   const individualCarouselVariants = {
     animate: {
       x: [0, -100 * individualTestimonials.length],
@@ -79,7 +78,6 @@ const Testimonials = () => {
     }
   };
 
-  // Animation for company testimonials (right to left)
   const companyCarouselVariants = {
     animate: {
       x: [-100 * companyTestimonials.length, 0],
@@ -116,7 +114,6 @@ const Testimonials = () => {
         </motion.p>
       </div>
 
-      {/* Individual Testimonials */}
       <section className="mb-12 sm:mb-16">
         <h2 className="text-2xl sm:text-3xl font-bold text-[#0B1C39] mb-8 text-center">
           Developer Success Stories
@@ -159,7 +156,6 @@ const Testimonials = () => {
         </div>
       </section>
 
-      {/* Company Testimonials */}
       <section>
         <h2 className="text-2xl sm:text-3xl font-bold text-[#0B1C39] mb-8 text-center">
           Enterprise Impact Stories
@@ -201,7 +197,6 @@ const Testimonials = () => {
         </div>
       </section>
 
-      {/* CTA */}
       <motion.div
         className="mt-12 sm:mt-16 text-center"
         initial={{ opacity: 0 }}

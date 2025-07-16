@@ -16,7 +16,6 @@ interface Channel {
 }
 
 export default function ChannelsPage() {
-  // Sample data - replace with your actual data source
   const channels: Channel[] = [
     {
       id: '1',
@@ -65,7 +64,6 @@ export default function ChannelsPage() {
         </p>
       </div>
 
-      {/* Channels List */}
       <section>
         {channels.length > 0 ? (
           <div className="space-y-6">
@@ -102,7 +100,6 @@ export default function ChannelsPage() {
         )}
       </section>
 
-      {/* Call to Action */}
       <div className="mt-16 bg-blue-50 rounded-xl p-8 text-center">
         <h3 className="text-xl font-bold text-gray-900 mb-3">Want to create your own channel?</h3>
         <p className="text-gray-600 mb-6">
@@ -128,7 +125,6 @@ function ChannelCard({ channel }: { channel: Channel }) {
             </div>
           )}
 
-          {/* Channel Content */}
           <div className="flex-1">
             <div className="flex justify-between items-start mb-2">
               <div>
