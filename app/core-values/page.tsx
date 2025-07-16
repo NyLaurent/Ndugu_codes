@@ -46,7 +46,6 @@ const CoreValues = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-      {/* Hero Section */}
       <div className="text-center mb-12 sm:mb-16 lg:mb-20">
         <motion.h1 
           className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0B1C39] mb-4 sm:mb-6"
@@ -66,7 +65,6 @@ const CoreValues = () => {
         </motion.p>
       </div>
 
-      {/* Values Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {values.map((value, index) => (
           <motion.div
@@ -92,7 +90,6 @@ const CoreValues = () => {
         ))}
       </div>
 
-      {/* Call to Action */}
       <motion.div 
         className="mt-16 sm:mt-20 text-center"
         initial={{ opacity: 0 }}
@@ -110,7 +107,6 @@ const CoreValues = () => {
         </Link>
       </motion.div>
 
-      {/* Team Values Illustration */}
       <motion.div 
         className="mt-20 flex justify-center"
         initial={{ opacity: 0 }}

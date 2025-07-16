@@ -82,7 +82,6 @@ const MentorsPage = () => {
     search: ""
   });
 
-  // Filter mentors based on selected filters
   const filteredMentors = mentors.filter(mentor => {
     return (
       (filters.track === "" || mentor.track === filters.track) &&
@@ -198,7 +197,6 @@ const MentorsPage = () => {
         </div>
       </motion.div>
 
-      {/* Mentors Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredMentors.map((mentor, index) => (
           <motion.div
@@ -274,7 +272,6 @@ const MentorsPage = () => {
         ))}
       </div>
 
-      {/* Empty State */}
       {filteredMentors.length === 0 && (
         <motion.div
           initial={{ opacity: 0 }}
@@ -303,7 +300,6 @@ const MentorsPage = () => {
         </motion.div>
       )}
 
-      {/* CTA Section */}
       <motion.section
         className="mt-16 bg-blue-600 rounded-xl p-8 sm:p-12 text-center"
         initial={{ opacity: 0 }}
