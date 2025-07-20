@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="col-span-1 sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2 mb-4 sm:mb-6">
               <Image
-                src="/logo.jpeg"
+                src="/logo.svg"
                 alt="Web3 Mates Logo"
                 width={35}
                 height={35}

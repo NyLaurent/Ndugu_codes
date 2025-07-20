@@ -30,11 +30,11 @@ const NotFound = () => {
           <div className="mb-4 flex justify-center">
             <div className="relative">
               <Image
-                src="/logo.jpeg"
+                src="/logo.svg"
                 alt="Web3 Mates Logo"
                 width={60}
                 height={60}
-                className="animate-bounce"
+                className="animate-bounce mt-24 font-bold"
                 style={{ animationDuration: "2s" }}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-20 blur-xl animate-pulse"></div>
