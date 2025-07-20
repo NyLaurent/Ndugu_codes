@@ -39,22 +39,22 @@ const ImpactSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ">
           <ImpactMetric
-            number="300K+"
+            number="10K+"
             title="Developers to Empower"
             description="We aim to train thousands in blockchain, smart contracts, and dApp development."
           />
           <ImpactMetric
-            number="256"
+            number="150"
             title="Jobs to Facilitate"
             description="Our mission includes creating pathways to meaningful Web3 employment opportunities."
           />
           <ImpactMetric
-            number="10K+"
+            number="100+"
             title="Startups to Support"
             description="We’re building programs to incubate and mentor founders building on decentralized tech."
           />
           <ImpactMetric
-            number="20K+"
+            number="200K+"
             title="Community to Grow"
             description="Our vision is to unite learners, developers, and builders across Africa and beyond."
           />
