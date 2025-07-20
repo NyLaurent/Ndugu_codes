@@ -38,12 +38,12 @@ const CollaborationHero = () => {
               </div>
               <input
                 type="text"
-                placeholder="Feel free to share your ideas here ..."
+                placeholder="Feel free to share your ideas or feedback here ..."
                 className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 text-black py-2 sm:py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-[#0066FF] bg-white text-sm sm:text-base"
               />
             </div>
             <button className="w-full sm:w-auto bg-[#0066FF] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-lg hover:bg-blue-700 transition-colors whitespace-nowrap text-sm sm:text-base">
-              Search
+              Send feedback
             </button>
           </div>
         </div>
