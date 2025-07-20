@@ -114,11 +114,11 @@ const CoreValues = () => {
         transition={{ duration: 0.6, delay: 1 }}
       >
         <Image
-          src="/values-illustration.svg"
+          src="/team-values.png"
           alt="Team values illustration"
           width={600}
           height={400}
-          className="w-full max-w-2xl"
+          className="w-full h-100"
         />
       </motion.div>
     </div>
