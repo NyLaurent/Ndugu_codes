@@ -112,14 +112,14 @@ const HeroSection = () => {
                 animate="animate"
               >
                 {[
-                  { src: "/monday.svg", alt: "Monday.com", width: 120 },
-                  { src: "/newRelic.svg", alt: "New Relic", width: 120 },
-                  { src: "/paypal.svg", alt: "PayPal", width: 100 },
-                  { src: "/pinterest.svg", alt: "Pinterest", width: 100 },
-                  { src: "/monday.svg", alt: "Monday.com", width: 120 },
-                  { src: "/newRelic.svg", alt: "New Relic", width: 120 },
-                  { src: "/paypal.svg", alt: "PayPal", width: 100 },
-                  { src: "/pinterest.svg", alt: "Pinterest", width: 100 }
+                  { src: "/AyaHQ-blue.png", alt: "AyaHQ company logo", width: 120 },
+                  { src: "/web3bridge.png", alt: "Web3Bridge company logo", width: 120 },
+                  { src: "/AyaHQ-blue.png", alt: "AyaHQ company logo", width: 100 },
+                  { src: "/web3bridge.png", alt: "Web3Bridge company logo", width: 100 },
+                  { src: "/AyaHQ-blue.png", alt: "AyaHQ company logo", width: 120 },
+                  { src: "/web3bridge.png", alt: "Web3Bridge company logo", width: 120 },
+                  { src: "/AyaHQ-blue.png", alt: "AyaHQ company logo", width: 100 },
+                  { src: "/web3bridge.png", alt: "Web3Bridge company logo", width: 100 }
                 ].map((logo, index) => (
                   <div key={index} className="flex-shrink-0">
                     <Image

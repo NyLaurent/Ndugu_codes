@@ -39,7 +39,7 @@ const Navbar = () => {
                 className="flex items-center space-x-2 sm:space-x-3"
               >
                 <Image
-                  src="/logo.svg"
+                  src="/logo.jpeg"
                   alt="Web3 Mates Logo"
                   width={35}
                   height={35}
@@ -185,7 +185,7 @@ const Navbar = () => {
             <div className="flex justify-between items-center p-4 border-b border-gray-200/20">
               <div className="flex items-center space-x-3">
                 <Image
-                  src="/logo.svg"
+                  src="/logo.jpeg"
                   alt="Web3 Mates Logo"
                   width={40}
                   height={40}
