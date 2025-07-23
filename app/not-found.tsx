@@ -34,7 +34,7 @@ const NotFound = () => {
                 alt="Web3 Mates Logo"
                 width={60}
                 height={60}
-                className="animate-bounce"
+                className="animate-bounce mt-24 font-bold"
                 style={{ animationDuration: "2s" }}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-20 blur-xl animate-pulse"></div>
@@ -48,18 +48,15 @@ const NotFound = () => {
             </h1>
           </div>
 
-          {/* Error Message */}
           <div className="mb-4">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">
               Oops! Page Not Found
             </h2>
             <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Looks like this page got lost in the digital realm. Our blockchain
-              experts are working to bring you the best solutions!
+              Looks like this page got lost in the digital realm. Our Technical team is working to bring you the best solutions!
             </p>
           </div>
 
-          {/* Decorative Elements */}
           <div className="flex justify-center mb-4">
             <div className="flex space-x-2">
               {[...Array(3)].map((_, i) => (
@@ -120,7 +117,6 @@ const NotFound = () => {
             </Link>
           </div>
 
-          {/* Feature Under Development */}
           <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 shadow-lg border border-white/20 mb-4">
             <div className="flex items-center justify-center mb-2">
               <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full flex items-center justify-center mr-3">
@@ -149,12 +145,10 @@ const NotFound = () => {
               </h3>
             </div>
             <p className="text-sm text-gray-600 text-center">
-              This feature is currently being developed with cutting-edge
-              blockchain technology. Stay tuned for innovative solutions!
+              This feature is currently not available and it is being worked on by our techinical team. Stay tuned for innovative solutions!
             </p>
           </div>
 
-          {/* Quick Links */}
           <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 shadow-lg border border-white/20">
             <h3 className="text-base font-semibold text-gray-800 mb-3 text-center">
               Quick Links

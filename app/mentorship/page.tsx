@@ -9,7 +9,8 @@ const MentorshipPage = () => {
   const mentorshipTracks = [
     {
       title: "Web3 Fundamentals",
-      description: "Master blockchain basics, wallets, and core concepts before diving deeper",
+      description:
+        "Master blockchain basics, wallets, and core concepts before diving deeper",
       icon: "📚",
       duration: "4 weeks",
       level: "Beginner",
@@ -17,12 +18,13 @@ const MentorshipPage = () => {
         "Blockchain architecture",
         "Crypto wallets & security",
         "Smart contract overview",
-        "Decentralized applications"
-      ]
+        "Decentralized applications",
+      ],
     },
     {
       title: "Smart Contract Development",
-      description: "Build and deploy production-ready smart contracts on Ethereum and other EVM chains",
+      description:
+        "Build and deploy production-ready smart contracts on Ethereum and other EVM chains",
       icon: "🛠️",
       duration: "8 weeks",
       level: "Intermediate",
@@ -30,12 +32,13 @@ const MentorshipPage = () => {
         "Solidity programming",
         "Testing & debugging",
         "Deployment strategies",
-        "Security best practices"
-      ]
+        "Security best practices",
+      ],
     },
     {
       title: "DeFi & dApp Building",
-      description: "Create full-stack decentralized applications with frontend integration",
+      description:
+        "Create full-stack decentralized applications with frontend integration",
       icon: "💻",
       duration: "12 weeks",
       level: "Advanced",
@@ -43,56 +46,68 @@ const MentorshipPage = () => {
         "DeFi protocols",
         "Web3.js/Ethers.js",
         "UI/UX for dApps",
-        "Mainnet deployment"
-      ]
-    }
+        "Mainnet deployment",
+      ],
+    },
   ];
 
   const mentors = [
     {
-      name: "Amina Okafor",
+      name: "Jonas Sebera",
       role: "Smart Contract Engineer",
       company: "ChainSafe Africa",
       expertise: "Solidity, Security Audits",
-      image: "/mentor-1.jpg"
+      image: "/mentor-1.jpg",
     },
     {
-      name: "Kwame Mensah",
+      name: "Jonas Sebera",
       role: "DeFi Architect",
       company: "Binance Africa",
       expertise: "DeFi Protocols, Tokenomics",
-      image: "/mentor-2.jpg"
+      image: "/mentor-2.jpg",
     },
     {
-      name: "Ngozi Eze",
+      name: "Jonas Sebera",
       role: "Blockchain Educator",
       company: "Web3Bridge",
       expertise: "Onboarding, Technical Writing",
-      image: "/mentor-3.jpg"
-    }
+      image: "/mentor-3.jpg",
+    },
   ];
 
   const ArrowAnimation = () => (
     <motion.div
       animate={{ x: [-5, 5, -5] }}
       transition={{ duration: 1.5, repeat: Infinity }}
-      className="mx-2"
+      className="mx-2 hidden sm:block"
     >
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-blue-600">
-        <path d="M8 12H16M16 12L12 8M16 12L12 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        className="text-blue-600 sm:w-6 sm:h-6"
+      >
+        <path
+          d="M8 12H16M16 12L12 8M16 12L12 16"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </svg>
     </motion.div>
   );
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-24 pt-20 sm:pt-24">
       {/* Hero Section */}
-      <div className="text-center mb-16 lg:mb-20">
+      <div className="text-center mb-12 sm:mb-16 lg:mb-20">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6"
         >
           Accelerate Your <span className="text-blue-600">Web3 Journey</span>
         </motion.h1>
@@ -100,45 +115,54 @@ const MentorshipPage = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-gray-600 max-w-3xl mx-auto text-lg"
+          className="text-gray-600 max-w-3xl mx-auto text-base sm:text-lg"
         >
-          Personalized 1:1 mentorship from Africa&apos;s top blockchain developers and builders.
+          Personalized 1:1 mentorship from Africa&apos;s top blockchain
+          developers and builders.
         </motion.p>
       </div>
 
-      {/* Value Proposition */}
-      <motion.section 
-        className="mb-16 bg-blue-50 rounded-xl p-8 sm:p-12"
+      <motion.section
+        className="mb-12 sm:mb-16 bg-blue-50 rounded-xl p-6 sm:p-8 lg:p-12"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
             Why Choose Web3 Mates Mentorship?
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {[
               {
                 icon: "👨‍💻",
                 title: "Industry Practitioners",
-                description: "Learn from actively building professionals"
+                description: "Learn from actively building professionals",
               },
               {
                 icon: "🌍",
                 title: "African Context",
-                description: "Relevant examples and case studies"
+                description: "Relevant examples and case studies",
               },
               {
                 icon: "🎯",
                 title: "Career Focused",
-                description: "Build job-ready skills and portfolio"
-              }
+                description: "Build job-ready skills and portfolio",
+              },
             ].map((item, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                <div className="text-3xl mb-3">{item.icon}</div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600 text-sm">{item.description}</p>
+              <div
+                key={index}
+                className="bg-white p-4 sm:p-6 rounded-lg shadow-sm"
+              >
+                <div className="text-2xl sm:text-3xl mb-2 sm:mb-3">
+                  {item.icon}
+                </div>
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 text-xs sm:text-sm">
+                  {item.description}
+                </p>
               </div>
             ))}
           </div>
@@ -146,17 +170,17 @@ const MentorshipPage = () => {
       </motion.section>
 
       {/* Mentorship Tracks */}
-      <section className="mb-16">
-        <motion.h2 
-          className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 text-center"
+      <section className="mb-12 sm:mb-16">
+        <motion.h2
+          className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
           Structured Learning Tracks
         </motion.h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {mentorshipTracks.map((track, index) => (
             <motion.div
               key={index}
@@ -166,30 +190,55 @@ const MentorshipPage = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="p-6">
-                <div className="text-4xl mb-4">{track.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{track.title}</h3>
-                <p className="text-gray-600 mb-4">{track.description}</p>
-                
-                <div className="flex gap-4 mb-6">
-                  <span className="text-sm bg-blue-50 text-blue-600 px-3 py-1 rounded-full">{track.duration}</span>
-                  <span className="text-sm bg-gray-100 text-gray-600 px-3 py-1 rounded-full">{track.level}</span>
+              <div className="p-4 sm:p-6">
+                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">
+                  {track.icon}
                 </div>
-                
-                <ul className="space-y-2 mb-6">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
+                  {track.title}
+                </h3>
+                <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">
+                  {track.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 sm:gap-4 mb-4 sm:mb-6">
+                  <span className="text-xs sm:text-sm bg-blue-50 text-blue-600 px-2 sm:px-3 py-1 rounded-full">
+                    {track.duration}
+                  </span>
+                  <span className="text-xs sm:text-sm bg-gray-100 text-gray-600 px-2 sm:px-3 py-1 rounded-full">
+                    {track.level}
+                  </span>
+                </div>
+
+                <ul className="space-y-2 mb-4 sm:mb-6">
                   {track.features.map((feature, i) => (
                     <li key={i} className="flex items-start">
-                      <svg className="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      <svg
+                        className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M5 13l4 4L19 7"
+                        />
                       </svg>
-                      <span className="text-gray-700">{feature}</span>
+                      <span className="text-gray-700 text-sm sm:text-base">
+                        {feature}
+                      </span>
                     </li>
                   ))}
                 </ul>
               </div>
-              
-              <div className="px-6 pb-6">
-                <Link href="/mentorship/apply" className="w-full block text-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+
+              <div className="px-4 sm:px-6 pb-4 sm:pb-6">
+                <Link
+                  href="/mentorship/apply"
+                  className="w-full block text-center bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium transition-colors text-sm sm:text-base"
+                >
                   Apply Now
                 </Link>
               </div>
@@ -198,19 +247,22 @@ const MentorshipPage = () => {
         </div>
       </section>
 
-      {/* Mentors Showcase */}
-      <section className="mb-16">
+      <section className="mb-12 sm:mb-16">
         <motion.div
-          className="text-center mb-8"
+          className="text-center mb-6 sm:mb-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Meet Your Mentors</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">Learn from Africa&apos;s top Web3 builders and educators</p>
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2">
+            Meet Your Mentors
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
+            Learn from Africa&apos;s top Web3 builders and educators
+          </p>
         </motion.div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {mentors.map((mentor, index) => (
             <motion.div
               key={index}
@@ -220,7 +272,7 @@ const MentorshipPage = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="relative h-48 w-full">
+              <div className="relative h-40 sm:h-48 w-full">
                 <Image
                   src={mentor.image}
                   alt={mentor.name}
@@ -228,13 +280,23 @@ const MentorshipPage = () => {
                   className="object-cover"
                 />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-1">{mentor.name}</h3>
-                <p className="text-blue-600 font-medium mb-2">{mentor.role}</p>
-                <p className="text-gray-600 text-sm mb-4">{mentor.company}</p>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-sm font-medium text-gray-900">Expertise:</p>
-                  <p className="text-sm text-gray-600">{mentor.expertise}</p>
+              <div className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1">
+                  {mentor.name}
+                </h3>
+                <p className="text-blue-600 font-medium mb-2 text-sm sm:text-base">
+                  {mentor.role}
+                </p>
+                <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4">
+                  {mentor.company}
+                </p>
+                <div className="bg-gray-50 p-3 sm:p-4 rounded-lg">
+                  <p className="text-xs sm:text-sm font-medium text-gray-900">
+                    Expertise:
+                  </p>
+                  <p className="text-xs sm:text-sm text-gray-600">
+                    {mentor.expertise}
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -243,38 +305,42 @@ const MentorshipPage = () => {
       </section>
 
       {/* How It Works */}
-      <section className="mb-16 bg-gray-50 rounded-xl p-8 sm:p-12">
+      <section className="mb-12 sm:mb-16 bg-gray-50 rounded-xl p-6 sm:p-8 lg:p-12">
         <motion.h2
-          className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 text-center"
+          className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
           How Our Mentorship Works
         </motion.h2>
-        
+
         <div className="max-w-4xl mx-auto">
           {[
             {
               step: "1",
               title: "Application & Matching",
-              description: "Complete our application form and we'll match you with the ideal mentor based on your goals and skill level"
+              description:
+                "Complete our application form and we'll match you with the ideal mentor based on your goals and skill level",
             },
             {
               step: "2",
               title: "Onboarding Session",
-              description: "Kickoff with an introductory call to align on objectives and create your learning plan"
+              description:
+                "Kickoff with an introductory call to align on objectives and create your learning plan",
             },
             {
               step: "3",
               title: "Weekly Sessions",
-              description: "Regular 1:1 meetings with hands-on guidance and project reviews"
+              description:
+                "Regular 1:1 meetings with hands-on guidance and project reviews",
             },
             {
               step: "4",
               title: "Project Building",
-              description: "Apply your learning by building real-world projects with mentor support"
-            }
+              description:
+                "Apply your learning by building real-world projects with mentor support",
+            },
           ].map((item, index) => (
             <motion.div
               key={index}
@@ -282,19 +348,23 @@ const MentorshipPage = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`flex ${index !== 0 ? "mt-8" : ""}`}
+              className={`flex flex-col sm:flex-row ${index !== 0 ? "mt-6 sm:mt-8" : ""}`}
             >
-              <div className="flex flex-col items-center mr-6">
-                <div className="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">
+              <div className="flex flex-row sm:flex-col items-center sm:items-center mr-0 sm:mr-6 mb-4 sm:mb-0">
+                <div className="bg-blue-600 text-white w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-bold text-sm sm:text-base mr-4 sm:mr-0">
                   {item.step}
                 </div>
                 {index !== 3 && (
-                  <div className="w-px h-full bg-gray-300 my-2"></div>
+                  <div className="hidden sm:block w-px h-full bg-gray-300 my-2"></div>
                 )}
               </div>
-              <div className="pb-8">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
+              <div className="flex-1 pb-6 sm:pb-8">
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 text-sm sm:text-base">
+                  {item.description}
+                </p>
               </div>
             </motion.div>
           ))}
@@ -302,27 +372,28 @@ const MentorshipPage = () => {
       </section>
 
       <motion.section
-        className="bg-blue-600 rounded-xl p-8 sm:p-12 text-center"
+        className="bg-blue-600 rounded-xl p-6 sm:p-8 lg:p-12 text-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+        <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4">
           Ready to Accelerate Your Web3 Career?
         </h2>
-        <p className="text-blue-50 max-w-2xl mx-auto mb-8 text-lg">
-          Join our next mentorship cohort and get personalized guidance from industry experts.
+        <p className="text-blue-50 max-w-2xl mx-auto mb-6 sm:mb-8 text-base sm:text-lg">
+          Join our next mentorship cohort and get personalized guidance from
+          industry experts.
         </p>
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Link
             href="/mentorship/apply"
-            className="bg-white text-blue-600 px-6 py-3 rounded-lg hover:shadow-md font-medium transition-all"
+            className="bg-white text-blue-600 px-4 sm:px-6 py-3 rounded-lg hover:shadow-md font-medium transition-all text-sm sm:text-base"
           >
             Apply for Mentorship
           </Link>
           <Link
             href="/mentors"
-            className="bg-transparent border border-white text-white px-6 py-3 rounded-lg hover:bg-white/10 font-medium transition-all"
+            className="bg-transparent border border-white text-white px-4 sm:px-6 py-3 rounded-lg hover:bg-white/10 font-medium transition-all text-sm sm:text-base"
           >
             Meet All Mentors
           </Link>

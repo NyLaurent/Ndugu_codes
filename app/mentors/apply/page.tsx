@@ -34,7 +34,6 @@ const ApplyToMentorPage = () => {
     setIsSubmitting(true);
     
     try {
-      // Replace with your actual API endpoint
       const response = await fetch('/api/mentors/apply', {
         method: 'POST',
         headers: {
@@ -125,7 +124,7 @@ const ApplyToMentorPage = () => {
         className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 sm:p-8 lg:p-10 max-w-3xl mx-auto"
       >
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 text-center">
-          Become a Web3 Mates Mentor
+          Become a Web3 Mates <span className="text-blue-700">Mentor</span>
         </h2>
 
         <form onSubmit={handleSubmit}>
@@ -208,7 +207,6 @@ const ApplyToMentorPage = () => {
             </motion.div>
           )}
 
-          {/* Step 2: Expertise & Availability */}
           {currentStep === 2 && (
             <motion.div
               initial={{ opacity: 0 }}
@@ -322,7 +320,6 @@ const ApplyToMentorPage = () => {
             </motion.div>
           )}
 
-          {/* Step 3: Social Links & Submission */}
           {currentStep === 3 && (
             <motion.div
               initial={{ opacity: 0 }}
@@ -410,7 +407,6 @@ const ApplyToMentorPage = () => {
         </form>
       </motion.div>
 
-      {/* Info Section */}
       <motion.section
         className="mt-16 bg-gray-50 rounded-xl p-8 sm:p-12"
         initial={{ opacity: 0 }}

@@ -24,7 +24,7 @@ const InnovateSection = () => {
               needs.
             </p>
             <a
-              href="#"
+              href="/mentorship"
               className="inline-flex items-center bg-[#0066FF] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium hover:bg-blue-700 transition-colors text-sm sm:text-base"
             >
               Join the journey <span className="ml-2">→</span>
@@ -36,7 +36,7 @@ const InnovateSection = () => {
                 src="/innovate.svg"
                 alt="Web3 Innovation Illustration"
                 fill
-                className="object-contain"
+                className="object-contain rounded-xl"
                 priority
               />
             </div>

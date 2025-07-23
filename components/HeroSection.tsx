@@ -23,7 +23,7 @@ const HeroSection = () => {
       opacity: 1,
       transition: {
         duration: 0.5,
-        ease: "easeInOut" // Using a predefined easing function
+        ease: "easeInOut" 
       }
     }
   };
@@ -42,19 +42,18 @@ const HeroSection = () => {
     }
   };
 
-  // Web3 elements to surround the globe
   const web3Elements = [
-    { name: "Blockchain", icon: "🔗", position: "top-0 left-1/2 -translate-x-1/2 -translate-y-1/2" },
-    { name: "DeFi", icon: "💰", position: "top-1/4 right-0 -translate-y-1/2 translate-x-1/2" },
-    { name: "NFTs", icon: "🖼️", position: "bottom-1/4 right-0 translate-y-1/2 translate-x-1/2" },
+    { name: "Blockchain", icon: "🔗", position: "top-0 left-1/2 mt-2 -translate-x-1/2 -translate-y-1/2" },
+    { name: "DeFi", icon: "💰", position: "top-1/4 right-8 -translate-y-1/2 translate-x-1/2" },
+    { name: "NFTs", icon: "🖼️", position: "bottom-1/4 right-8 translate-y-1/2 translate-x-1/2" },
     { name: "DAOs", icon: "🏛️", position: "bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2" },
-    { name: "Smart Contracts", icon: "📜", position: "bottom-1/4 left-0 translate-y-1/2 -translate-x-1/2" },
-    { name: "dApps", icon: "📱", position: "top-1/4 left-0 -translate-y-1/2 -translate-x-1/2" }
+    { name: "Smart Contracts", icon: "📜", position: "bottom-1/4 left-8 translate-y-1/2 -translate-x-1/2" },
+    { name: "dApps", icon: "📱", position: "top-1/4 left-8 -translate-y-1/2 -translate-x-1/2" },
+    // { name: "Web3 Mates", icon: "", position: "centre-0 right-70 top-50 translate-y-1/2 translate-x-1/2"},
   ];
 
   return (
     <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 overflow-hidden">
-      {/* Background elements */}
       <div className="absolute -top-32 -right-32 w-64 h-64 md:w-96 md:h-96 bg-[#0066FF]/10 rounded-full filter blur-3xl opacity-70"></div>
       <div className="absolute -bottom-32 -left-32 w-64 h-64 md:w-96 md:h-96 bg-[#0066FF]/10 rounded-full filter blur-3xl opacity-70"></div>
       
@@ -87,7 +86,7 @@ const HeroSection = () => {
             variants={itemVariants}
           >
             <Link
-              href="/course"
+              href="/mentorship/apply"
               className="relative bg-gradient-to-r from-[#0066FF] to-[#0047CC] text-white px-8 py-4 rounded-full hover:shadow-lg transition-all duration-300 font-medium group overflow-hidden"
             >
               <span className="relative z-10">Join The Course</span>
@@ -101,7 +100,6 @@ const HeroSection = () => {
             </Link>
           </motion.div>
 
-          {/* Collaboration Section */}
           <motion.div 
             className="mt-16"
             variants={itemVariants}
@@ -114,14 +112,14 @@ const HeroSection = () => {
                 animate="animate"
               >
                 {[
-                  { src: "/monday.svg", alt: "Monday.com", width: 120 },
-                  { src: "/newRelic.svg", alt: "New Relic", width: 120 },
-                  { src: "/paypal.svg", alt: "PayPal", width: 100 },
-                  { src: "/pinterest.svg", alt: "Pinterest", width: 100 },
-                  { src: "/monday.svg", alt: "Monday.com", width: 120 },
-                  { src: "/newRelic.svg", alt: "New Relic", width: 120 },
-                  { src: "/paypal.svg", alt: "PayPal", width: 100 },
-                  { src: "/pinterest.svg", alt: "Pinterest", width: 100 }
+                  { src: "/AyaHQ-blue.png", alt: "AyaHQ company logo", width: 120 },
+                  { src: "/web3bridge.png", alt: "Web3Bridge company logo", width: 120 },
+                  { src: "/AyaHQ-blue.png", alt: "AyaHQ company logo", width: 100 },
+                  { src: "/web3bridge.png", alt: "Web3Bridge company logo", width: 100 },
+                  { src: "/AyaHQ-blue.png", alt: "AyaHQ company logo", width: 120 },
+                  { src: "/web3bridge.png", alt: "Web3Bridge company logo", width: 120 },
+                  { src: "/AyaHQ-blue.png", alt: "AyaHQ company logo", width: 100 },
+                  { src: "/web3bridge.png", alt: "Web3Bridge company logo", width: 100 }
                 ].map((logo, index) => (
                   <div key={index} className="flex-shrink-0">
                     <Image
@@ -138,19 +136,17 @@ const HeroSection = () => {
           </motion.div>
         </div>
 
-        {/* Right Globe with Web3 Elements */}
         <motion.div 
           className="relative flex items-center justify-center"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] lg:w-[550px] lg:h-[550px] flex items-center justify-center">
-            {/* Web3 Elements Orbit */}
+          <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] lg:w-[550px] lg:h-[550px] flex items-center justify-center ">
             {web3Elements.map((element, index) => (
               <motion.div
                 key={index}
-                className={`absolute ${element.position} z-10`}
+                className={`absolute ${element.position} z-10 bg-blue-500 rounded-sm text-center` }
                 animate={{
                   rotate: 360,
                   transition: {
@@ -167,19 +163,16 @@ const HeroSection = () => {
               </motion.div>
             ))}
 
-            {/* Circle Border */}
             <div className="absolute inset-0 rounded-full border-2 border-[#0066FF]"></div>
             
-            {/* Gradient Circle */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#0066FF]/10 to-[#0066FF]/30 blur-md"></div>
             
-            {/* Rotating Africa Globe */}
             <motion.div 
               className="relative w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[320px] md:h-[320px] lg:w-[400px] lg:h-[400px]"
               animate={{
                 rotate: 360,
                 transition: {
-                  duration: 15, // Faster rotation (15 seconds per full rotation)
+                  duration: 15,
                   repeat: Infinity,
                   ease: "linear"
                 }
@@ -193,7 +186,7 @@ const HeroSection = () => {
                 src="/africa-globe.webp"
                 alt="Africa Globe"
                 fill
-                className="object-contain drop-shadow-xl rounded-full"
+                className="object-contain drop-shadow-xl rounded-full border-0 "
                 priority
               />
             </motion.div>

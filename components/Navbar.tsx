@@ -9,12 +9,10 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
-  // Close mobile menu when route changes
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -31,7 +29,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-white border-b border-white/20 fixed w-full top-0 z-50 lg:bg-white/60 lg:backdrop-blur-md">
+      <nav className="bg-white/80 backdrop-blur-sm border-b border-white/20 fixed w-full top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 sm:h-20">
             {/* Logo and Company Name */}
@@ -46,7 +44,7 @@ const Navbar = () => {
                   width={35}
                   height={35}
                   priority
-                  className="object-contain sm:w-[45px] sm:h-[45px]"
+                  className="object-contain sm:w-[45px] sm:h-[45px] rounded-sm font-bold"
                 />
                 <div className="flex flex-col">
                   <span className="text-lg sm:text-xl font-bold text-gray-900">
@@ -182,9 +180,9 @@ const Navbar = () => {
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <div className="flex flex-col h-full w-full bg-white">
+          <div className="flex flex-col h-full w-full bg-white/95 backdrop-blur-sm">
             {/* Header with close button */}
-            <div className="flex justify-between items-center p-4 border-b border-gray-200">
+            <div className="flex justify-between items-center p-4 border-b border-gray-200/20">
               <div className="flex items-center space-x-3">
                 <Image
                   src="/logo.svg"
@@ -204,7 +202,7 @@ const Navbar = () => {
               </div>
               <button
                 onClick={() => setIsOpen(false)}
-                className="p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 transition-colors"
+                className="p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100/50 transition-colors"
               >
                 <svg
                   className="w-6 h-6"
@@ -230,7 +228,7 @@ const Navbar = () => {
                 className={`block px-4 py-3 text-lg font-medium rounded-lg transition-colors duration-200 ${
                   isActive("/")
                     ? "text-[#0066FF] bg-[#0066FF]/10"
-                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-50/50"
                 }`}
               >
                 Home
@@ -241,7 +239,7 @@ const Navbar = () => {
                 className={`block px-4 py-3 text-lg font-medium rounded-lg transition-colors duration-200 ${
                   isActive("/services")
                     ? "text-[#0066FF] bg-[#0066FF]/10"
-                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-50/50"
                 }`}
               >
                 Services
@@ -252,7 +250,7 @@ const Navbar = () => {
                 className={`block px-4 py-3 text-lg font-medium rounded-lg transition-colors duration-200 ${
                   isActive("/about")
                     ? "text-[#0066FF] bg-[#0066FF]/10"
-                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-50/50"
                 }`}
               >
                 About us
@@ -263,7 +261,7 @@ const Navbar = () => {
                 className={`block px-4 py-3 text-lg font-medium rounded-lg transition-colors duration-200 ${
                   isActive("/collaboration")
                     ? "text-[#0066FF] bg-[#0066FF]/10"
-                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-50/50"
                 }`}
               >
                 Collaborations
@@ -274,7 +272,7 @@ const Navbar = () => {
                 className={`block px-4 py-3 text-lg font-medium rounded-lg transition-colors duration-200 ${
                   isActive("/events")
                     ? "text-[#0066FF] bg-[#0066FF]/10"
-                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-50/50"
                 }`}
               >
                 Events and News
@@ -282,7 +280,7 @@ const Navbar = () => {
             </div>
 
             {/* Contact Button */}
-            <div className="p-4 border-t border-gray-200">
+            <div className="p-4 border-t border-gray-200/20">
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}

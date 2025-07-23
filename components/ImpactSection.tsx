@@ -9,7 +9,7 @@ const ImpactMetric = ({
   title: string;
   description: string;
 }) => (
-  <div className="bg-white p-6 sm:p-8 rounded-lg text-center">
+  <div className="bg-white p-6 sm:p-8 rounded-lg text-center shadow-lg">
     <div className="text-[#0066FF] text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
       {number}
     </div>
@@ -28,7 +28,7 @@ const ImpactSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-[#0B1C39] mb-4">
-            The Impact We’re Building for Africa&apos;s Web3 Future
+            The Impact We are Building for Africa&apos;s Web3 Future
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
             As a growing hub, Web3 Mates is setting out to empower Africa’s next
@@ -37,24 +37,24 @@ const ImpactSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ">
           <ImpactMetric
-            number="300K+"
+            number="10K+"
             title="Developers to Empower"
             description="We aim to train thousands in blockchain, smart contracts, and dApp development."
           />
           <ImpactMetric
-            number="256"
+            number="150"
             title="Jobs to Facilitate"
             description="Our mission includes creating pathways to meaningful Web3 employment opportunities."
           />
           <ImpactMetric
-            number="10K+"
+            number="100+"
             title="Startups to Support"
             description="We’re building programs to incubate and mentor founders building on decentralized tech."
           />
           <ImpactMetric
-            number="20K+"
+            number="200K+"
             title="Community to Grow"
             description="Our vision is to unite learners, developers, and builders across Africa and beyond."
           />
