@@ -37,7 +37,7 @@ const OurStory = () => {
     {
       year: "late 2025",
       title: "Enterprise Recognition",
-      description: "Started working with companies like StoneProofLabs to bridge the talent gap, validating our training model.",
+      description: "Started working with companies like AyaHQ, Web3Bridge, BuildGuidl and GENESIS to bridge the talent gap, validating our training model.",
       image: "/enterprise-partners.jpg",
       icon: ""
     }

@@ -64,10 +64,10 @@ const MentorshipPage = () => {
       image: "/mentor-2.jpg"
     },
     {
-      name: "Jonas Sebera",
+      name: "Kevin Jones",
       role: "Blockchain Educator",
-      company: "Web3Bridge",
-      expertise: "Onboarding, Technical Writing",
+      company: "Crypto Mastery",
+      expertise: "EVM, Solidity, Smart Contract Development",
       image: "/mentor-3.jpg"
     }
   ];
