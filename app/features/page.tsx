@@ -10,8 +10,7 @@ const FeaturesPage = () => {
       title: "Project-Based Curriculum",
       description:
         "Learn by building real Web3 applications from day one - no theoretical fluff.",
-      icon: "",
-      image: "/project-based.jpg",
+      image: "/img1.jpg", // Community classroom image
       highlights: [
         "Build 5+ portfolio projects",
         "Real-world case studies",
@@ -22,8 +21,7 @@ const FeaturesPage = () => {
       title: "African-Focused Content",
       description:
         "Case studies and projects tailored to African market needs and challenges.",
-      icon: "",
-      image: "/african-content.jpg",
+      image: "/img2.jpg", // Group discussion image
       highlights: [
         "Local payment integrations",
         "Cross-border solutions",
@@ -34,8 +32,7 @@ const FeaturesPage = () => {
       title: "Mentorship Network",
       description:
         "1:1 guidance from industry experts who've built successful Web3 projects in Africa.",
-      icon: "",
-      image: "/mentorship.jpg",
+      image: "/img3.jpg", // Mentorship session image
       highlights: [
         "Weekly office hours",
         "Code reviews",
@@ -49,7 +46,6 @@ const FeaturesPage = () => {
       title: "Flexible Learning Paths",
       description:
         "Choose between full-time intensive or part-time self-paced programs.",
-      icon: "",
       stats: [
         { value: "12-week", label: "Bootcamp" },
         { value: "6-month", label: "Part-time" },
@@ -60,7 +56,6 @@ const FeaturesPage = () => {
       title: "Job-Ready Outcomes",
       description:
         "Our graduates land roles at top African and global Web3 companies.",
-      icon: "",
       stats: [
         { value: "85%", label: "Placement rate" },
         { value: "3.5x", label: "Salary increase" },
@@ -70,7 +65,6 @@ const FeaturesPage = () => {
     {
       title: "Lifetime Community Access",
       description: "Join our growing network of 1000+ African Web3 builders.",
-      icon: "",
       stats: [
         { value: "Monthly", label: "Hackathons" },
         { value: "Private", label: "Job board" },
@@ -84,19 +78,19 @@ const FeaturesPage = () => {
       title: "Interactive Learning Portal",
       description:
         "Our custom platform with coding exercises, video tutorials, and progress tracking.",
-      image: "/learning-portal.jpg",
+      image: "/img4.jpg", // Event/learning portal image
     },
     {
       title: "Localized Development Kits",
       description:
         "Pre-configured environments with African blockchain node connections.",
-      image: "/dev-kits.jpg",
+      image: "/img5.jpg", // Tech/collaboration image
     },
     {
       title: "Career Dashboard",
       description:
         "Track your job search with our interview prep tools and employer connections.",
-      image: "/career-dashboard.jpg",
+      image: "/img6.jpg", // Career/community image
     },
   ];
 
@@ -145,9 +139,7 @@ const FeaturesPage = () => {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute top-4 left-4 bg-white rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-xl sm:text-2xl shadow-sm">
-                  {feature.icon}
-                </div>
+               
               </div>
               <div className="p-4 sm:p-6 lg:p-8">
                 <h3 className="text-lg sm:text-xl font-bold text-[#0B1C39] mb-3">
@@ -198,7 +190,7 @@ const FeaturesPage = () => {
               transition={{ duration: 0.5, delay: 0.2 * index }}
               viewport={{ once: true }}
             >
-              <div className="text-2xl sm:text-3xl mb-4">{feature.icon}</div>
+             
               <h3 className="text-lg sm:text-xl font-bold text-[#0B1C39] mb-3">
                 {feature.title}
               </h3>

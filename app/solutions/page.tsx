@@ -34,7 +34,7 @@ const SolutionsPage = () => {
           "Blockchain integrations",
           "Local payment solutions",
         ],
-        image: "/talent-solution.jpg",
+        image: "/img7.jpg", // Classroom/workshop image
       },
     },
     {
@@ -65,7 +65,7 @@ const SolutionsPage = () => {
           "Mastermind groups",
           "Collaboration portals",
         ],
-        image: "/community-solution.jpg",
+        image: "/img8.jpg", // Large group/community photo
       },
     },
     {
@@ -96,7 +96,7 @@ const SolutionsPage = () => {
           "Company showcases",
           "Interview preparation",
         ],
-        image: "/pipeline-solution.jpg",
+        image: "/img9.jpg", // Teamwork/collaboration image
       },
     },
   ];
@@ -104,21 +104,21 @@ const SolutionsPage = () => {
   const successStories = [
     {
       name: "GrowEasy",
-      logo: "/groweasy-logo.svg",
+     
       result: "Increased farmer payments by 40%",
       story:
         "Trained 3 developers who built a blockchain solution for agricultural supply chains.",
     },
     {
       name: "PayPulse",
-      logo: "/paypulse-logo.svg",
+      
       result: "$1.2M in seed funding",
       story:
         "Co-founded by 2 Web3 Mates alumni specializing in cross-border payments.",
     },
     {
       name: "SecureChain",
-      logo: "/securechain-logo.svg",
+     
       result: "3x engineering capacity",
       story: "Hired 5 graduates who reduced smart contract audit times by 30%.",
     },
@@ -286,15 +286,7 @@ const SolutionsPage = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white rounded-xl p-4 sm:p-6 border border-gray-200 shadow-sm max-w-[400px] mx-auto"
             >
-              <div className="flex items-center justify-center mb-4 sm:mb-6">
-                <Image
-                  src={story.logo}
-                  alt={story.name}
-                  width={80}
-                  height={40}
-                  className="h-8 sm:h-10 object-contain"
-                />
-              </div>
+              
               <h3 className="text-base sm:text-lg font-bold text-gray-900 text-center mb-3">
                 {story.name}
               </h3>

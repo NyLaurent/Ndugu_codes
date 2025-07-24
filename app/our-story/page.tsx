@@ -11,7 +11,7 @@ const OurStory = () => {
       title: "The Spark",
       description:
         "Joab Niwagaba, while working on blockchain projects, recognized Africa's potential to leapfrog traditional systems through Web3.",
-      image: "/joab.jpeg",
+      image: "/img2.jpg",
       icon: "",
     },
     {
@@ -19,7 +19,7 @@ const OurStory = () => {
       title: "First Assemblies",
       description:
         "Joab brought together Jonas, Jabo, and Laurent - forming the core team with complementary skills in development, operations, and community.",
-      image: "/team-early.jpg",
+      image: "/img3.jpg",
       icon: "",
     },
     {
@@ -27,7 +27,7 @@ const OurStory = () => {
       title: "First Bootcamp",
       description:
         "Launched our pilot program in Kigali, training 25 developers despite having no funding - proving the demand for Web3 education.",
-      image: "/first-bootcamp.jpg",
+      image: "/img4.jpg",
       icon: "",
     },
     {
@@ -35,7 +35,7 @@ const OurStory = () => {
       title: "Continent-Wide Reach",
       description:
         "Expanded to 6 African countries through partnerships with local tech hubs and blockchain projects.",
-      image: "/africa1.jpeg",
+      image: "/img5.jpg",
       icon: "",
     },
     {
@@ -43,7 +43,7 @@ const OurStory = () => {
       title: "Enterprise Recognition",
       description:
         "Started working with companies like StoneProofLabs to bridge the talent gap, validating our training model.",
-      image: "/enterprise-partners.jpg",
+      image: "/img6.jpg",
       icon: "",
     },
   ];
@@ -114,7 +114,7 @@ const OurStory = () => {
           >
             <div className="relative h-64 sm:h-80 lg:h-96 w-full rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/joab-speaking.jpg"
+                src="/img2.jpg"
                 alt="Joab Niwagaba speaking"
                 fill
                 className="object-cover"

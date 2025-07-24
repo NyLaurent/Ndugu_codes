@@ -13,7 +13,7 @@ const featuredProjects = [
       "A decentralized marketplace for African artisans to sell digital and physical goods with crypto payments",
     tags: ["E-commerce", "NFT", "DeFi"],
     status: "Live",
-    logo: "/project-africhain.jpg",
+    logo: "https://avatars.dicebear.com/api/identicon/africhain.svg",
     link: "/projects/1",
     team: [
       { name: "Amina O.", role: "Founder & CEO" },
@@ -29,7 +29,7 @@ const featuredProjects = [
       "Community-owned investment DAO focused on Nigerian tech startups",
     tags: ["DAO", "Governance", "Investment"],
     status: "Beta",
-    logo: "/project-naijadao.jpg",
+    logo: "https://avatars.dicebear.com/api/identicon/naijadao.svg",
     link: "/projects/2",
     team: [
       { name: "Tunde A.", role: "DAO Coordinator" },
@@ -43,7 +43,7 @@ const featuredProjects = [
     description: "Stablecoin payment gateway for Ghanaian businesses",
     tags: ["Payments", "Stablecoin", "Web3"],
     status: "Coming Soon",
-    logo: "/project-cedispay.jpg",
+    logo: "https://avatars.dicebear.com/api/identicon/cedispay.svg",
     link: "/projects/3",
     team: [
       { name: "Jabari J.", role: "Founder" },
@@ -61,7 +61,7 @@ const upcomingProjects = [
       "Arabic-language DeFi education platform with gamified learning",
     tags: ["Education", "DeFi", "Gamification"],
     status: "Prototype",
-    logo: "/project-yalladefi.jpg",
+    logo: "https://avatars.dicebear.com/api/identicon/yalladefi.svg",
     link: "/projects/4",
     team: [
       { name: "Karim B.", role: "Founder" },
@@ -75,7 +75,7 @@ const upcomingProjects = [
     description: "Decentralized emergency fund for African creators",
     tags: ["Social Impact", "Crowdfunding", "DAOs"],
     status: "Ideation",
-    logo: "/project-safufund.jpg",
+    logo: "https://avatars.dicebear.com/api/identicon/safufund.svg",
     link: "/projects/5",
     team: [
       { name: "Wanjiru K.", role: "Community Lead" },
@@ -113,6 +113,10 @@ const ProjectsPage = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-24 pt-20 sm:pt-24">
+      {/* Hero Section */}
+      <div className="relative w-full h-56 sm:h-72 mb-8 rounded-xl overflow-hidden">
+        <Image src="/img1.jpg" alt="Web3 Community Projects" fill className="object-cover" />
+      </div>
       <div className="text-center mb-12 sm:mb-16">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -154,6 +158,7 @@ const ProjectsPage = () => {
         ))}
       </motion.div>
 
+      {/* Featured Projects Section */}
       {filteredFeatured.length > 0 && (
         <section className="mb-12 sm:mb-16">
           <motion.h2
@@ -177,7 +182,7 @@ const ProjectsPage = () => {
               >
                 <div className="relative h-40 sm:h-48 w-full bg-gray-100">
                   <Image
-                    src={project.logo}
+                    src={project.logo || '/img2.jpg'}
                     alt={project.title}
                     fill
                     className="object-cover"
@@ -268,6 +273,7 @@ const ProjectsPage = () => {
         </section>
       )}
 
+      {/* Upcoming Projects Section */}
       {filteredUpcoming.length > 0 && (
         <section className="mb-12 sm:mb-16">
           <motion.h2
@@ -291,7 +297,7 @@ const ProjectsPage = () => {
               >
                 <div className="relative h-32 sm:h-40 w-full bg-gray-100">
                   <Image
-                    src={project.logo}
+                    src={project.logo || '/img3.jpg'}
                     alt={project.title}
                     fill
                     className="object-cover"
@@ -357,32 +363,38 @@ const ProjectsPage = () => {
         </motion.div>
       )}
 
+      {/* Call to Action Section */}
       <motion.section
-        className="bg-blue-600 rounded-xl p-6 sm:p-8 lg:p-12 text-center"
+        className="bg-blue-600 rounded-xl p-6 sm:p-8 lg:p-12 text-center relative overflow-hidden"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4">
-          Have a Web3 Project?
-        </h2>
-        <p className="text-blue-50 max-w-2xl mx-auto mb-6 sm:mb-8 text-base sm:text-lg">
-          Get featured on our platform and connect with developers, investors,
-          and mentors in our ecosystem.
-        </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Link
-            href="/projects/submit"
-            className="bg-white text-blue-600 px-4 sm:px-6 py-3 rounded-lg hover:shadow-md font-medium transition-all text-sm sm:text-base"
-          >
-            Submit Your Project
-          </Link>
-          <Link
-            href="/mentors"
-            className="bg-transparent border border-white text-white px-4 sm:px-6 py-3 rounded-lg hover:bg-white/10 font-medium transition-all text-sm sm:text-base"
-          >
-            Find Project Mentors
-          </Link>
+        <div className="absolute inset-0 z-0">
+          <Image src="/img4.jpg" alt="Community Collaboration" fill className="object-cover opacity-30" />
+        </div>
+        <div className="relative z-10">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4">
+            Have a Web3 Project?
+          </h2>
+          <p className="text-blue-50 max-w-2xl mx-auto mb-6 sm:mb-8 text-base sm:text-lg">
+            Get featured on our platform and connect with developers, investors,
+            and mentors in our ecosystem.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Link
+              href="/projects/submit"
+              className="bg-white text-blue-600 px-4 sm:px-6 py-3 rounded-lg hover:shadow-md font-medium transition-all text-sm sm:text-base"
+            >
+              Submit Your Project
+            </Link>
+            <Link
+              href="/mentors"
+              className="bg-transparent border border-white text-white px-4 sm:px-6 py-3 rounded-lg hover:bg-white/10 font-medium transition-all text-sm sm:text-base"
+            >
+              Find Project Mentors
+            </Link>
+          </div>
         </div>
       </motion.section>
     </div>

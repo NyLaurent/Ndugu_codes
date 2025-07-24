@@ -57,21 +57,21 @@ const MentorshipPage = () => {
       role: "Smart Contract Engineer",
       company: "ChainSafe Africa",
       expertise: "Solidity, Security Audits",
-      image: "/mentor-1.jpg",
+      image: "/jonas.jpg",
     },
     {
       name: "Jonas Sebera",
       role: "DeFi Architect",
       company: "Binance Africa",
       expertise: "DeFi Protocols, Tokenomics",
-      image: "/mentor-2.jpg",
+      image: "/jonas.jpg",
     },
     {
       name: "Jonas Sebera",
       role: "Blockchain Educator",
       company: "Web3Bridge",
       expertise: "Onboarding, Technical Writing",
-      image: "/mentor-3.jpg",
+      image: "/jonas.jpg",
     },
   ];
 
@@ -103,6 +103,14 @@ const MentorshipPage = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-24 pt-20 sm:pt-24">
       {/* Hero Section */}
       <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+        <div className="relative w-full h-56 sm:h-72 mb-8 rounded-xl overflow-hidden">
+          <Image
+            src="/img10.jpg"
+            alt="Web3 Mates Community Event"
+            fill
+            className="object-cover"
+          />
+        </div>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -129,6 +137,14 @@ const MentorshipPage = () => {
         viewport={{ once: true }}
       >
         <div className="max-w-4xl mx-auto text-center">
+          <div className="relative w-full h-40 sm:h-56 mb-8 rounded-xl overflow-hidden">
+            <Image
+              src="/img11.jpg"
+              alt="Mentorship Community"
+              fill
+              className="object-cover"
+            />
+          </div>
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
             Why Choose Web3 Mates Mentorship?
           </h2>
@@ -171,6 +187,14 @@ const MentorshipPage = () => {
 
       {/* Mentorship Tracks */}
       <section className="mb-12 sm:mb-16">
+        <div className="relative w-full h-40 sm:h-56 mb-8 rounded-xl overflow-hidden">
+          <Image
+            src="/img12.jpg"
+            alt="Learning Tracks Community"
+            fill
+            className="object-cover"
+          />
+        </div>
         <motion.h2
           className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -272,12 +296,12 @@ const MentorshipPage = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="relative h-40 sm:h-48 w-full">
+              <div className="relative h-40 sm:h-48 w-full rounded-xl overflow-hidden bg-gray-100">
                 <Image
                   src={mentor.image}
                   alt={mentor.name}
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </div>
               <div className="p-4 sm:p-6">
