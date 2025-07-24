@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -56,22 +55,18 @@ const MentorshipPage = () => {
       name: "Petar Popovic",
       role: "Founder & Smart Contract Engineer",
       company: "ETH Belgrade",
-      expertise:
-        "Fullstack Web3 Development, NFTs, DeFi, Community Building",
+      expertise: "Fullstack Web3 Development, NFTs, DeFi, Community Building",
       image: "/white.jpeg",
     },
-
     {
       name: "Michael Lawal",
       role: "Conscious Capitalism Advocate",
       company: "Binance Africa",
-      expertise:
-        "Tech for Good, Economic Inclusion, SDGs Advocacy",
+      expertise: "Tech for Good, Economic Inclusion, SDGs Advocacy",
       image: "/mentor2.jpg",
     },
-
     {
-      name: "Jonas Sebera",
+      name: "Kevin Jones",
       role: "Blockchain Educator",
       company: "Web3Bridge",
       expertise: "Onboarding, Technical Writing",
@@ -82,7 +77,7 @@ const MentorshipPage = () => {
   const ArrowAnimation = () => (
     <motion.div
       animate={{ x: [-5, 5, -5] }}
-      transition={{ duration: 1.5, repeat: Infinity }}
+      transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}
       className="mx-2 hidden sm:block"
     >
       <svg
@@ -107,12 +102,13 @@ const MentorshipPage = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-24 pt-20 sm:pt-24">
       {/* Hero Section */}
       <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-        <div className="relative w-full h-56 sm:h-72 mb-8 rounded-xl overflow-hidden">
+        <div className="relative w-full h-48 sm:h-64 md:h-72 lg:h-80 mb-8 rounded-xl overflow-hidden">
           <Image
             src="/img10.jpg"
             alt="Web3 Mates Community Event"
             fill
-            className="object-cover"
+            className="object-cover object-center"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
           />
         </div>
         <motion.h1
@@ -141,12 +137,13 @@ const MentorshipPage = () => {
         viewport={{ once: true }}
       >
         <div className="max-w-4xl mx-auto text-center">
-          <div className="relative w-full h-40 sm:h-56 mb-8 rounded-xl overflow-hidden">
+          <div className="relative w-full h-40 sm:h-48 md:h-56 lg:h-64 mb-8 rounded-xl overflow-hidden">
             <Image
               src="/img11.jpg"
               alt="Mentorship Community"
               fill
-              className="object-cover"
+              className="object-cover object-center"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 70vw"
             />
           </div>
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
@@ -191,12 +188,13 @@ const MentorshipPage = () => {
 
       {/* Mentorship Tracks */}
       <section className="mb-12 sm:mb-16">
-        <div className="relative w-full h-40 sm:h-56 mb-8 rounded-xl overflow-hidden">
+        <div className="relative w-full h-40 sm:h-48 md:h-56 lg:h-64 mb-8 rounded-xl overflow-hidden">
           <Image
             src="/img12.jpg"
             alt="Learning Tracks Community"
             fill
-            className="object-cover"
+            className="object-cover object-center"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
           />
         </div>
         <motion.h2
@@ -207,7 +205,6 @@ const MentorshipPage = () => {
         >
           Structured Learning Tracks
         </motion.h2>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {mentorshipTracks.map((track, index) => (
             <motion.div
@@ -228,7 +225,6 @@ const MentorshipPage = () => {
                 <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">
                   {track.description}
                 </p>
-
                 <div className="flex flex-wrap gap-2 sm:gap-4 mb-4 sm:mb-6">
                   <span className="text-xs sm:text-sm bg-blue-50 text-blue-600 px-2 sm:px-3 py-1 rounded-full">
                     {track.duration}
@@ -237,7 +233,6 @@ const MentorshipPage = () => {
                     {track.level}
                   </span>
                 </div>
-
                 <ul className="space-y-2 mb-4 sm:mb-6">
                   {track.features.map((feature, i) => (
                     <li key={i} className="flex items-start">
@@ -261,7 +256,6 @@ const MentorshipPage = () => {
                   ))}
                 </ul>
               </div>
-
               <div className="px-4 sm:px-6 pb-4 sm:pb-6">
                 <Link
                   href="/mentorship/apply"
@@ -289,7 +283,6 @@ const MentorshipPage = () => {
             Learn from Africa&apos;s top Web3 builders and educators
           </p>
         </motion.div>
-
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {mentors.map((mentor, index) => (
             <motion.div
@@ -300,12 +293,13 @@ const MentorshipPage = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="relative flex h-40 sm:h-48 w-full rounded-xl overflow-hidden bg-gray-100">
+              <div className="relative w-full h-56 sm:h-64 md:h-72 bg-gray-100 overflow-hidden">
                 <Image
-                  src={mentor.image}
+                  src={mentor.image || "/placeholder.svg"}
                   alt={mentor.name}
-                  fill          
-                  className="object-cover object-top"
+                  fill
+                  className="object-cover object-top hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
               </div>
               <div className="p-4 sm:p-6">
@@ -342,7 +336,6 @@ const MentorshipPage = () => {
         >
           How Our Mentorship Works
         </motion.h2>
-
         <div className="max-w-4xl mx-auto">
           {[
             {
