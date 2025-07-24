@@ -1,125 +1,104 @@
-"use client";
-
-import Link from "next/link";
-import Image from "next/image";
-import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
+"use client"
+import Link from "next/link"
+import Image from "next/image"
+import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
+    setIsOpen(false)
+  }, [pathname])
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = "hidden"
     } else {
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = "unset"
     }
-  }, [isOpen]);
+  }, [isOpen])
 
   const isActive = (path: string) => {
-    if (path === "/" && pathname === "/") return true;
-    if (path !== "/" && pathname.startsWith(path)) return true;
-    return false;
-  };
+    if (path === "/" && pathname === "/") return true
+    if (path !== "/" && pathname.startsWith(path)) return true
+    return false
+  }
 
   return (
     <>
-      <nav className="bg-white/80 backdrop-blur-sm border-b border-white/20 fixed w-full top-0 z-50">
+      <nav className="bg-white/80 backdrop-blur-sm border-b border-white/20 fixed w-full top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 sm:h-20">
             {/* Logo and Company Name */}
             <div className="flex items-center">
-              <Link
-                href="/"
-                className="flex items-center space-x-2 sm:space-x-3"
-              >
+              <Link href="/" className="flex items-center space-x-2 sm:space-x-3">
                 <Image
                   src="/logo.svg"
                   alt="Web3 Mates Logo"
                   width={35}
                   height={35}
                   priority
-                  className="object-contain sm:w-[45px] sm:h-[45px] rounded-sm font-bold"
+                  className="object-contain w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-11 lg:h-11 rounded-sm"
                 />
                 <div className="flex flex-col">
-                  <span className="text-lg sm:text-xl font-bold text-gray-900">
+                  <span className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-gray-900 leading-tight">
                     Web3 Mates
                   </span>
-                  <span className="text-xs sm:text-sm text-[#0066FF]">
-                    Blockchain Catalyst
-                  </span>
+                  <span className="text-xs sm:text-sm text-[#0066FF] leading-tight">Blockchain Catalyst</span>
                 </div>
               </Link>
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-8 xl:space-x-10">
+            <div className="hidden lg:flex items-center space-x-6 xl:space-x-8 2xl:space-x-10">
               <Link
                 href="/"
-                className={`text-sm font-medium transition-colors duration-200 ${
-                  isActive("/")
-                    ? "text-[#0066FF]"
-                    : "text-gray-700 hover:text-gray-900"
+                className={`text-sm xl:text-base font-medium transition-colors duration-200 ${
+                  isActive("/") ? "text-[#0066FF]" : "text-gray-700 hover:text-gray-900"
                 }`}
               >
                 Home
               </Link>
               <Link
                 href="/services"
-                className={`text-sm font-medium transition-colors duration-200 ${
-                  isActive("/services")
-                    ? "text-[#0066FF]"
-                    : "text-gray-700 hover:text-gray-900"
+                className={`text-sm xl:text-base font-medium transition-colors duration-200 ${
+                  isActive("/services") ? "text-[#0066FF]" : "text-gray-700 hover:text-gray-900"
                 }`}
               >
                 Services
               </Link>
               <Link
                 href="/about"
-                className={`text-sm font-medium transition-colors duration-200 ${
-                  isActive("/about")
-                    ? "text-[#0066FF]"
-                    : "text-gray-700 hover:text-gray-900"
+                className={`text-sm xl:text-base font-medium transition-colors duration-200 ${
+                  isActive("/about") ? "text-[#0066FF]" : "text-gray-700 hover:text-gray-900"
                 }`}
               >
                 About us
               </Link>
               <Link
                 href="/collaboration"
-                className={`text-sm font-medium transition-colors duration-200 ${
-                  isActive("/collaboration")
-                    ? "text-[#0066FF]"
-                    : "text-gray-700 hover:text-gray-900"
+                className={`text-sm xl:text-base font-medium transition-colors duration-200 ${
+                  isActive("/collaboration") ? "text-[#0066FF]" : "text-gray-700 hover:text-gray-900"
                 }`}
               >
                 Collaborations
               </Link>
               <Link
                 href="/events"
-                className={`text-sm font-medium transition-colors duration-200 ${
-                  isActive("/events")
-                    ? "text-[#0066FF]"
-                    : "text-gray-700 hover:text-gray-900"
+                className={`text-sm xl:text-base font-medium transition-colors duration-200 ${
+                  isActive("/events") ? "text-[#0066FF]" : "text-gray-700 hover:text-gray-900"
                 }`}
               >
                 Events and News
               </Link>
               <Link
                 href="/contact"
-                className="bg-[#0066FF]/90 backdrop-blur-sm text-white px-4 xl:px-6 py-2.5 rounded-full hover:bg-[#0066FF] transition-all duration-200 text-sm font-medium flex items-center ml-4 shadow-lg shadow-[#0066FF]/25 border border-white/20"
+                className="bg-[#0066FF]/90 backdrop-blur-sm text-white px-4 xl:px-6 py-2.5 rounded-full hover:bg-[#0066FF] transition-all duration-200 text-sm xl:text-base font-medium flex items-center ml-4 shadow-lg shadow-[#0066FF]/25 border border-white/20"
               >
                 Contact Us
-                <svg
-                  className="w-4 h-4 ml-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -141,94 +120,60 @@ const Navbar = () => {
               >
                 <span className="sr-only">Open main menu</span>
                 {!isOpen ? (
-                  <svg
-                    className="block h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4 6h16M4 12h16M4 18h16"
-                    />
+                  <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                   </svg>
                 ) : (
-                  <svg
-                    className="block h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
+                  <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 )}
               </button>
             </div>
           </div>
         </div>
+      </nav>
 
-        {/* Mobile menu overlay */}
-        <div
-          className={`fixed inset-0 z-50 lg:hidden transition-transform duration-300 ease-in-out ${
-            isOpen ? "translate-x-0" : "translate-x-full"
-          }`}
-        >
-          <div className="flex flex-col h-full w-full bg-white/95 backdrop-blur-sm">
+      {/* Mobile menu overlay - COMPLETELY SOLID BACKGROUND */}
+      {isOpen && (
+        <div className="fixed inset-0 z-50 lg:hidden">
+          {/* Solid white background with no transparency or blur effects */}
+          <div className="absolute inset-0 bg-white" style={{ backgroundColor: "#ffffff" }} />
+
+          {/* Menu content */}
+          <div className="relative flex flex-col h-full w-full">
             {/* Header with close button */}
-            <div className="flex justify-between items-center p-4 border-b border-gray-200/20">
+            <div className="flex justify-between items-center p-4 sm:p-6 border-b border-gray-300">
               <div className="flex items-center space-x-3">
                 <Image
                   src="/logo.svg"
                   alt="Web3 Mates Logo"
-                  width={40}
-                  height={40}
-                  className="object-contain"
+                  width={32}
+                  height={32}
+                  className="object-contain w-8 h-8 sm:w-9 sm:h-9"
                 />
                 <div className="flex flex-col">
-                  <span className="text-lg font-bold text-gray-900">
-                    Web3 Mates
-                  </span>
-                  <span className="text-sm text-[#0066FF]">
-                    Blockchain Catalyst
-                  </span>
+                  <span className="text-lg sm:text-xl font-bold text-gray-900 leading-tight">Web3 Mates</span>
+                  <span className="text-sm sm:text-base text-[#0066FF] leading-tight">Blockchain Catalyst</span>
                 </div>
               </div>
               <button
                 onClick={() => setIsOpen(false)}
-                className="p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100/50 transition-colors"
+                className="p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-200 transition-colors"
               >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
             </div>
 
             {/* Navigation Links */}
-            <div className="flex-1 px-4 py-6 space-y-2">
+            <div className="flex-1 px-4 sm:px-6 py-6 space-y-1 bg-white">
               <Link
                 href="/"
                 onClick={() => setIsOpen(false)}
-                className={`block px-4 py-3 text-lg font-medium rounded-lg transition-colors duration-200 ${
-                  isActive("/")
-                    ? "text-[#0066FF] bg-[#0066FF]/10"
-                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-50/50"
+                className={`block px-4 py-4 text-lg sm:text-xl font-medium rounded-lg transition-colors duration-200 ${
+                  isActive("/") ? "text-[#0066FF] bg-blue-50" : "text-gray-700 hover:text-gray-900 hover:bg-gray-200"
                 }`}
               >
                 Home
@@ -236,10 +181,10 @@ const Navbar = () => {
               <Link
                 href="/services"
                 onClick={() => setIsOpen(false)}
-                className={`block px-4 py-3 text-lg font-medium rounded-lg transition-colors duration-200 ${
+                className={`block px-4 py-4 text-lg sm:text-xl font-medium rounded-lg transition-colors duration-200 ${
                   isActive("/services")
-                    ? "text-[#0066FF] bg-[#0066FF]/10"
-                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-50/50"
+                    ? "text-[#0066FF] bg-blue-50"
+                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-200"
                 }`}
               >
                 Services
@@ -247,10 +192,10 @@ const Navbar = () => {
               <Link
                 href="/about"
                 onClick={() => setIsOpen(false)}
-                className={`block px-4 py-3 text-lg font-medium rounded-lg transition-colors duration-200 ${
+                className={`block px-4 py-4 text-lg sm:text-xl font-medium rounded-lg transition-colors duration-200 ${
                   isActive("/about")
-                    ? "text-[#0066FF] bg-[#0066FF]/10"
-                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-50/50"
+                    ? "text-[#0066FF] bg-blue-50"
+                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-200"
                 }`}
               >
                 About us
@@ -258,10 +203,10 @@ const Navbar = () => {
               <Link
                 href="/collaboration"
                 onClick={() => setIsOpen(false)}
-                className={`block px-4 py-3 text-lg font-medium rounded-lg transition-colors duration-200 ${
+                className={`block px-4 py-4 text-lg sm:text-xl font-medium rounded-lg transition-colors duration-200 ${
                   isActive("/collaboration")
-                    ? "text-[#0066FF] bg-[#0066FF]/10"
-                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-50/50"
+                    ? "text-[#0066FF] bg-blue-50"
+                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-200"
                 }`}
               >
                 Collaborations
@@ -269,10 +214,10 @@ const Navbar = () => {
               <Link
                 href="/events"
                 onClick={() => setIsOpen(false)}
-                className={`block px-4 py-3 text-lg font-medium rounded-lg transition-colors duration-200 ${
+                className={`block px-4 py-4 text-lg sm:text-xl font-medium rounded-lg transition-colors duration-200 ${
                   isActive("/events")
-                    ? "text-[#0066FF] bg-[#0066FF]/10"
-                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-50/50"
+                    ? "text-[#0066FF] bg-blue-50"
+                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-200"
                 }`}
               >
                 Events and News
@@ -280,20 +225,20 @@ const Navbar = () => {
             </div>
 
             {/* Contact Button */}
-            <div className="p-4 border-t border-gray-200/20">
+            <div className="p-4 sm:p-6 border-t border-gray-300 bg-white">
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
-                className="bg-[#0066FF] text-white block w-full px-4 py-3 rounded-full text-lg font-medium text-center shadow-lg shadow-[#0066FF]/25 transition-all duration-200 hover:bg-[#0066FF]/90"
+                className="bg-[#0066FF] text-white block w-full px-4 py-4 rounded-full text-lg sm:text-xl font-medium text-center shadow-lg shadow-[#0066FF]/25 transition-all duration-200 hover:bg-[#0066FF]/90"
               >
                 Contact Us
               </Link>
             </div>
           </div>
         </div>
-      </nav>
+      )}
     </>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
