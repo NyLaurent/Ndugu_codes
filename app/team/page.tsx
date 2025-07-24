@@ -92,13 +92,13 @@ const TeamPage = () => {
           >
             <div className="flex flex-col sm:flex-row">
               {/* Member Photo */}
-              <div className="w-full sm:w-2/5 lg:w-1/3 h-48 sm:h-auto relative">
+              <div className="w-full sm:w-2/5 lg:w-1/3 h-72 sm:h-auto relative">
                 <Image
                   src={member.image}
                   alt={member.name}
                   fill
-                  className="object-cover"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 40vw, 33vw"
+                  className="object-cover object-top"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
               </div>
 
