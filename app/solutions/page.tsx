@@ -104,21 +104,18 @@ const SolutionsPage = () => {
   const successStories = [
     {
       name: "GrowEasy",
-     
       result: "Increased farmer payments by 40%",
       story:
         "Trained 3 developers who built a blockchain solution for agricultural supply chains.",
     },
     {
       name: "PayPulse",
-      
       result: "$1.2M in seed funding",
       story:
         "Co-founded by 2 Web3 Mates alumni specializing in cross-border payments.",
     },
     {
       name: "SecureChain",
-     
       result: "3x engineering capacity",
       story: "Hired 5 graduates who reduced smart contract audit times by 30%.",
     },

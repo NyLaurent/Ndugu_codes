@@ -1,30 +1,31 @@
-"use client"
-import Link from "next/link"
-import Image from "next/image"
-import { useState, useEffect } from "react"
-import { usePathname } from "next/navigation"
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const pathname = usePathname()
+  const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
-    setIsOpen(false)
-  }, [pathname])
+    setIsOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden"
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "unset"
+      document.body.style.overflow = "unset";
     }
-  }, [isOpen])
+  }, [isOpen]);
 
   const isActive = (path: string) => {
-    if (path === "/" && pathname === "/") return true
-    if (path !== "/" && pathname.startsWith(path)) return true
-    return false
-  }
+    if (path === "/" && pathname === "/") return true;
+    if (path !== "/" && pathname.startsWith(path)) return true;
+    return false;
+  };
 
   return (
     <>
@@ -33,20 +34,25 @@ const Navbar = () => {
           <div className="flex justify-between h-16 sm:h-20">
             {/* Logo and Company Name */}
             <div className="flex items-center">
-              <Link href="/" className="flex items-center space-x-2 sm:space-x-3">
+              <Link
+                href="/"
+                className="flex items-center space-x-2 sm:space-x-3"
+              >
                 <Image
                   src="/logo.svg"
                   alt="Web3 Mates Logo"
                   width={35}
                   height={35}
                   priority
-                  className="object-contain w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-11 lg:h-11 rounded-sm"
+                  className="object-contain sm:w-[45px] sm:h-[45px] rounded-sm font-bold"
                 />
                 <div className="flex flex-col">
-                  <span className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-gray-900 leading-tight">
+                  <span className="text-lg sm:text-xl font-bold text-gray-900">
                     Web3 Mates
                   </span>
-                  <span className="text-xs sm:text-sm text-[#0066FF] leading-tight">Blockchain Catalyst</span>
+                  <span className="text-xs sm:text-sm text-[#0066FF]">
+                    Blockchain Catalyst
+                  </span>
                 </div>
               </Link>
             </div>
@@ -98,7 +104,12 @@ const Navbar = () => {
                 className="bg-[#0066FF]/90 backdrop-blur-sm text-white px-4 xl:px-6 py-2.5 rounded-full hover:bg-[#0066FF] transition-all duration-200 text-sm xl:text-base font-medium flex items-center ml-4 shadow-lg shadow-[#0066FF]/25 border border-white/20"
               >
                 Contact Us
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg
+                  className="w-4 h-4 ml-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -120,12 +131,32 @@ const Navbar = () => {
               >
                 <span className="sr-only">Open main menu</span>
                 {!isOpen ? (
-                  <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  <svg
+                    className="block h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
                   </svg>
                 ) : (
-                  <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <svg
+                    className="block h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
                   </svg>
                 )}
               </button>
@@ -182,9 +213,7 @@ const Navbar = () => {
                 href="/services"
                 onClick={() => setIsOpen(false)}
                 className={`block px-4 py-4 text-lg sm:text-xl font-medium rounded-lg transition-colors duration-200 ${
-                  isActive("/services")
-                    ? "text-[#0066FF] bg-blue-50"
-                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-200"
+                  isActive("/services") ? "text-[#0066FF] bg-blue-50" : "text-gray-700 hover:text-gray-900 hover:bg-gray-200"
                 }`}
               >
                 Services
@@ -193,9 +222,7 @@ const Navbar = () => {
                 href="/about"
                 onClick={() => setIsOpen(false)}
                 className={`block px-4 py-4 text-lg sm:text-xl font-medium rounded-lg transition-colors duration-200 ${
-                  isActive("/about")
-                    ? "text-[#0066FF] bg-blue-50"
-                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-200"
+                  isActive("/about") ? "text-[#0066FF] bg-blue-50" : "text-gray-700 hover:text-gray-900 hover:bg-gray-200"
                 }`}
               >
                 About us
@@ -204,9 +231,7 @@ const Navbar = () => {
                 href="/collaboration"
                 onClick={() => setIsOpen(false)}
                 className={`block px-4 py-4 text-lg sm:text-xl font-medium rounded-lg transition-colors duration-200 ${
-                  isActive("/collaboration")
-                    ? "text-[#0066FF] bg-blue-50"
-                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-200"
+                  isActive("/collaboration") ? "text-[#0066FF] bg-blue-50" : "text-gray-700 hover:text-gray-900 hover:bg-gray-200"
                 }`}
               >
                 Collaborations
@@ -215,9 +240,7 @@ const Navbar = () => {
                 href="/events"
                 onClick={() => setIsOpen(false)}
                 className={`block px-4 py-4 text-lg sm:text-xl font-medium rounded-lg transition-colors duration-200 ${
-                  isActive("/events")
-                    ? "text-[#0066FF] bg-blue-50"
-                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-200"
+                  isActive("/events") ? "text-[#0066FF] bg-blue-50" : "text-gray-700 hover:text-gray-900 hover:bg-gray-200"
                 }`}
               >
                 Events and News
@@ -238,7 +261,7 @@ const Navbar = () => {
         </div>
       )}
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

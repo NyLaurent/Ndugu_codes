@@ -63,39 +63,34 @@ const HackathonsPage = () => {
   const hackathonBenefits = [
     {
       title: "Build Real Solutions",
-      description:
-        "Work on meaningful projects that address Africa's unique challenges",
-      icon: "🛠️",
+      description: "Work on meaningful projects that address Africa's unique challenges",
+      icon: "🛠️"
     },
     {
       title: "Learn from Experts",
       description: "Access workshops and mentorship from industry leaders",
-      icon: "👩‍🏫",
+      icon: "👩‍🏫"
     },
     {
       title: "Win Prizes",
-      description:
-        "Compete for cash prizes, grants, and incubation opportunities",
-      icon: "🏆",
+      description: "Compete for cash prizes, grants, and incubation opportunities",
+      icon: "🏆"
     },
     {
       title: "Grow Your Network",
-      description:
-        "Connect with developers, entrepreneurs, and potential employers",
-      icon: "🌐",
+      description: "Connect with developers, entrepreneurs, and potential employers",
+      icon: "🌐"
     },
     {
       title: "Career Opportunities",
-      description:
-        "Get noticed by top tech companies and investors in the region",
-      icon: "💼",
+      description: "Get noticed by top tech companies and investors in the region",
+      icon: "💼"
     },
     {
       title: "University Credits",
-      description:
-        "Participating students may earn academic credits (varies by institution)",
-      icon: "🎓",
-    },
+      description: "Participating students may earn academic credits (varies by institution)",
+      icon: "🎓"
+    }
   ];
 
   return (

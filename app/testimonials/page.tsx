@@ -57,28 +57,24 @@ const Testimonials = () => {
 
   const individualCarouselVariants = {
     animate: {
-      x: [0, -100 * individualTestimonials.length],
+      x: [0, -1000],
       transition: {
-        x: {
-          repeat: Infinity,
-          repeatType: "loop" as const,
-          duration: 20,
-          ease: "linear",
-        },
+        repeat: Infinity,
+        repeatType: "loop" as const,
+        duration: 20,
+        ease: "linear" as any,
       },
     },
   };
 
   const companyCarouselVariants = {
     animate: {
-      x: [-100 * companyTestimonials.length, 0],
+      x: [0, -1000],
       transition: {
-        x: {
-          repeat: Infinity,
-          repeatType: "loop" as const,
-          duration: 15,
-          ease: "linear",
-        },
+        repeat: Infinity,
+        repeatType: "loop" as const,
+        duration: 15,
+        ease: "linear" as any,
       },
     },
   };

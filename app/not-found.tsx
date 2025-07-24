@@ -148,8 +148,6 @@ const NotFound = () => {
               This feature is currently not available and it is being worked on by our techinical team. Stay tuned for innovative solutions!
             </p>
           </div>
-
-         
         </div>
 
         {/* Floating Elements */}
