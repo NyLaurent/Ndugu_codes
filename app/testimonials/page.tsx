@@ -7,39 +7,39 @@ import Link from "next/link";
 const Testimonials = () => {
   const individualTestimonials = [
     {
-      name: "Amina Diallo",
+      name: "Petar Popovic",
       role: "Web3 Developer",
       company: "Chainlink Africa",
       quote:
         "Web3 Mates turned me from a beginner to a smart contract developer in 6 months, landing me a dream job.",
-      image: "/amina.jpeg",
+      image: "/white.jpeg",
       stats: "300% salary increase",
     },
     {
-      name: "Kwame Ofori",
+      name: "Micheal Lawal",
       role: "Blockchain Educator",
       company: "Accra Web3 Academy",
       quote:
         "Their mentorship helped me launch a Web3 education platform, training 200+ developers in Ghana.",
-      image: "/kwame.jpeg",
+      image: "/mentor2.jpg",
       stats: "200+ developers trained",
     },
     {
-      name: "Ngozi Eze",
+      name: "Jonathan Okwuma",
       role: "DeFi Specialist",
       company: "Yellow Card",
       quote:
         "From zero coding to leading DeFi product development at Africa's largest crypto exchange in 8 months.",
-      image: "/ngozi.jpeg",
+      image: "/speaker.jpeg",
       stats: "Promoted in 8 months",
     },
     {
-      name: "Jabari Mbeki",
+      name: "Jabari Okeke",
       role: "DAO Architect",
       company: "AfriDAO",
       quote:
         "I went from farming to building DAOs, thanks to Web3 Mates' project-based learning for African agriculture.",
-      image: "/jabari.jpeg",
+      image: "/speaker2.jpeg",
       stats: "Launched 3 DAOs",
     },
   ];
@@ -47,27 +47,11 @@ const Testimonials = () => {
   const companyTestimonials = [
     {
       name: "StoneProofLabs",
-      logo: "/stoneproof-logo.svg",
+      logo: "/stone_logo.svg", 
       industry: "Web3 Security",
       testimonial:
         "Web3 Mates tripled our engineering capacity, boosting audit speed by 40% and sales by $2M+.",
       stats: "$2M+ revenue growth",
-    },
-    {
-      name: "AfriPay",
-      logo: "/afripay-logo.svg",
-      industry: "Fintech",
-      testimonial:
-        "Their training enabled us to launch a DeFi payments platform 3 months early with 50K+ users.",
-      stats: "50K+ new users",
-    },
-    {
-      name: "BlockHarvest",
-      logo: "/blockharvest-logo.svg",
-      industry: "Agritech",
-      testimonial:
-        "We built a decentralized supply chain for farmers, cutting costs by 30% with their support.",
-      stats: "30% cost reduction",
     },
   ];
 

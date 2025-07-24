@@ -31,7 +31,7 @@ export default function GroupsPage() {
       organizer: "Alice Chen",
       status: "active",
       tags: ["web3", "ethereum", "solidity", "beginners-welcome"],
-      imageUrl: "/images/groups/web3-builders.jpg",
+      imageUrl: "/roundtables.jpeg",
       joinUrl: "/join/web3-builders",
     },
     {
@@ -46,7 +46,7 @@ export default function GroupsPage() {
       organizer: "Dr. Marcus Johnson",
       status: "upcoming",
       tags: ["ai", "ethics", "discussion", "monthly"],
-      imageUrl: "/images/groups/ai-ethics.jpg",
+      imageUrl: "/ai_ethic.jpeg",
     },
     {
       id: "3",
@@ -60,7 +60,7 @@ export default function GroupsPage() {
       organizer: "Sarah Williams",
       status: "completed",
       tags: ["opensource", "sustainability", "research"],
-      imageUrl: "/images/groups/opensource.jpg",
+      imageUrl: "/past.jpeg",
     },
   ];
 

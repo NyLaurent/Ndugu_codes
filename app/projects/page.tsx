@@ -8,49 +8,20 @@ import { useState } from "react";
 const featuredProjects = [
   {
     id: 1,
-    title: "AfriChain Marketplace",
+    title: "StoneProof Labs",
     description:
-      "A decentralized marketplace for African artisans to sell digital and physical goods with crypto payments",
+      "We are building a trusted and transparent mineral traceability system that empowers the mining industry and secures its future",
     tags: ["E-commerce", "NFT", "DeFi"],
     status: "Live",
-    logo: "https://avatars.dicebear.com/api/identicon/africhain.svg",
+    logo: "/stone_logo.svg",
     link: "/projects/1",
     team: [
-      { name: "Amina O.", role: "Founder & CEO" },
-      { name: "Kwame M.", role: "Blockchain Developer" },
-      { name: "Ngozi E.", role: "UX Designer" },
+      { name: "Okwame N.", role: "Founder & CEO" },
+      { name: "Jonas S.", role: "Blockchain Developer" },
+      { name: "Laurent N.", role: "UX Designer" },
     ],
     tech: ["Solidity", "Next.js", "IPFS"],
-  },
-  {
-    id: 2,
-    title: "NaijaDAO",
-    description:
-      "Community-owned investment DAO focused on Nigerian tech startups",
-    tags: ["DAO", "Governance", "Investment"],
-    status: "Beta",
-    logo: "https://avatars.dicebear.com/api/identicon/naijadao.svg",
-    link: "/projects/2",
-    team: [
-      { name: "Tunde A.", role: "DAO Coordinator" },
-      { name: "Fatima D.", role: "Smart Contract Developer" },
-    ],
-    tech: ["Aragon", "Gnosis Safe", "The Graph"],
-  },
-  {
-    id: 3,
-    title: "CedisPay",
-    description: "Stablecoin payment gateway for Ghanaian businesses",
-    tags: ["Payments", "Stablecoin", "Web3"],
-    status: "Coming Soon",
-    logo: "https://avatars.dicebear.com/api/identicon/cedispay.svg",
-    link: "/projects/3",
-    team: [
-      { name: "Jabari J.", role: "Founder" },
-      { name: "Amina O.", role: "Product Manager" },
-    ],
-    tech: ["Circle API", "WalletConnect", "Node.js"],
-  },
+  }
 ];
 
 const upcomingProjects = [

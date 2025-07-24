@@ -8,43 +8,50 @@ import { useParams } from "next/navigation";
 const allProjects = [
   {
     id: 1,
-    title: "AfriChain Marketplace",
-    description: "A decentralized marketplace for African artisans to sell digital and physical goods with crypto payments",
-    longDescription: "AfriChain Marketplace is revolutionizing e-commerce in Africa by providing a decentralized platform where artisans can sell both digital and physical goods while receiving payments in cryptocurrency. Our platform integrates NFT technology for digital goods certification and DeFi solutions for seamless crypto transactions. We're bridging the gap between African creators and the global crypto economy.",
+    title: "StoneProof Labs",
+    description:
+      "A decentralized marketplace for African artisans to sell digital and physical goods with crypto payments",
+    longDescription:
+      "StoneProof Labs is transforming the mining industry by building a decentralized platform focused on trust, transparency, and traceability. Using blockchain technology, we enable end-to-end mineral tracking, role-based access control, and NFT-based tokenization of mineral assets. Our platform ensures data integrity, reduces fraud, and empowers every actor in the supply chain — bridging the gap between traditional mining operations and the future of secure, verifiable mineral trade.",
     tags: ["E-commerce", "NFT", "DeFi"],
     status: "Live",
-    logo: "/project-africhain.jpg",
-    website: "https://africhain.example.com",
-    whitepaper: "https://africhain.example.com/whitepaper.pdf",
+    logo: "/stone_logo.svg",
+    website: "https://stoneproof-eth.vercel.app/",
+    whitepaper: "https://stoneproof-eth.vercel.app/whitepaper.pdf",
     team: [
-      { name: "Amina O.", role: "Founder & CEO" },
-      { name: "Kwame M.", role: "Blockchain Developer" },
-      { name: "Ngozi E.", role: "UX Designer" }
+      { name: "Okwame N.", role: "Founder & CEO" },
+      { name: "Jonas S.", role: "Blockchain Developer" },
+      { name: "Laurent N.", role: "UX Designer" },
     ],
     tech: ["Solidity", "Next.js", "IPFS", "Polygon", "WalletConnect"],
     milestones: [
       { date: "Q1 2023", achievement: "Prototype development completed" },
       { date: "Q2 2023", achievement: "Seed funding secured ($500k)" },
-      { date: "Q3 2023", achievement: "Beta launch with 100+ merchants" }
+      { date: "Q3 2023", achievement: "Beta launch with 100+ merchants" },
     ],
     gallery: [
-      "/project-africhain-1.jpg",
-      "/project-africhain-2.jpg",
-      "/project-africhain-3.jpg"
-    ]
+      "/stone_logo.svg",
+      "/stoneproof_land.jpeg",
+      "/stoneproof_dash.jpeg",
+    ],
   },
 ];
 
 const ProjectProfilePage = () => {
   const params = useParams();
   const projectId = Number(params.id);
-  const project = allProjects.find(p => p.id === projectId);
+  const project = allProjects.find((p) => p.id === projectId);
 
   if (!project) {
     return (
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
-        <h1 className="text-2xl font-bold text-gray-900 mb-4">Project Not Found</h1>
-        <p className="text-gray-600 mb-6">The project you&apos;re looking for doesn&apos;t exist or has been removed.</p>
+        <h1 className="text-2xl font-bold text-gray-900 mb-4">
+          Project Not Found
+        </h1>
+        <p className="text-gray-600 mb-6">
+          The project you&apos;re looking for doesn&apos;t exist or has been
+          removed.
+        </p>
         <Link
           href="/projects"
           className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
@@ -67,8 +74,19 @@ const ProjectProfilePage = () => {
           href="/projects"
           className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
         >
-          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          <svg
+            className="w-5 h-5 mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"
+            />
           </svg>
           Back to Projects
         </Link>
@@ -89,11 +107,11 @@ const ProjectProfilePage = () => {
             />
           </div>
         </div>
-        
+
         <div className="w-full md:w-2/3">
           <div className="flex items-start justify-between mb-4">
             <div>
-              <motion.h1 
+              <motion.h1
                 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -103,25 +121,29 @@ const ProjectProfilePage = () => {
               </motion.h1>
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.tags.map((tag, i) => (
-                  <span 
-                    key={i} 
+                  <span
+                    key={i}
                     className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium"
                   >
                     {tag}
                   </span>
                 ))}
-                <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                  project.status === "Live" ? "bg-green-100 text-green-800" :
-                  project.status === "Beta" ? "bg-yellow-100 text-yellow-800" :
-                  "bg-blue-100 text-blue-800"
-                }`}>
+                <span
+                  className={`px-3 py-1 rounded-full text-xs font-medium ${
+                    project.status === "Live"
+                      ? "bg-green-100 text-green-800"
+                      : project.status === "Beta"
+                        ? "bg-yellow-100 text-yellow-800"
+                        : "bg-blue-100 text-blue-800"
+                  }`}
+                >
                   {project.status}
                 </span>
               </div>
             </div>
           </div>
-          
-          <motion.p 
+
+          <motion.p
             className="text-gray-600 text-lg mb-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -129,8 +151,8 @@ const ProjectProfilePage = () => {
           >
             {project.longDescription}
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             className="flex flex-wrap gap-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -193,8 +215,8 @@ const ProjectProfilePage = () => {
           <h2 className="text-xl font-bold text-gray-900 mb-6">Tech Stack</h2>
           <div className="flex flex-wrap gap-2">
             {project.tech.map((tech, i) => (
-              <span 
-                key={i} 
+              <span
+                key={i}
                 className="bg-gray-50 border border-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium"
               >
                 {tech}
@@ -214,7 +236,9 @@ const ProjectProfilePage = () => {
           <div className="space-y-4">
             {project.milestones.map((milestone, i) => (
               <div key={i} className="border-l-2 border-blue-500 pl-4 py-1">
-                <p className="text-sm font-medium text-gray-500">{milestone.date}</p>
+                <p className="text-sm font-medium text-gray-500">
+                  {milestone.date}
+                </p>
                 <p className="text-gray-700">{milestone.achievement}</p>
               </div>
             ))}
@@ -229,7 +253,9 @@ const ProjectProfilePage = () => {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <h2 className="text-xl font-bold text-gray-900 mb-6">Project Gallery</h2>
+          <h2 className="text-xl font-bold text-gray-900 mb-6">
+            Project Gallery
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {project.gallery.map((image, i) => (
               <motion.div
@@ -255,9 +281,12 @@ const ProjectProfilePage = () => {
         viewport={{ once: true }}
         className="bg-blue-600 rounded-xl p-8 text-center"
       >
-        <h2 className="text-2xl font-bold text-white mb-4">Interested in this project?</h2>
+        <h2 className="text-2xl font-bold text-white mb-4">
+          Interested in this project?
+        </h2>
         <p className="text-blue-50 max-w-2xl mx-auto mb-6">
-          Contact the team to collaborate, invest, or learn more about their work.
+          Contact the team to collaborate, invest, or learn more about their
+          work.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <a

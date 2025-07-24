@@ -30,7 +30,7 @@ export default function WorkshopsPage() {
       capacity: 50,
       enrolled: 32,
       tags: ["blockchain", "beginner", "web3"],
-      imageUrl: "/images/workshops/web3.jpg",
+      imageUrl: "/ai_ethic.jpeg",
       registrationUrl: "/register/web3-fundamentals",
     },
     {
@@ -45,7 +45,7 @@ export default function WorkshopsPage() {
       capacity: 30,
       enrolled: 28,
       tags: ["security", "solidity", "advanced"],
-      imageUrl: "/images/workshops/security.jpg",
+      imageUrl: "/roundtables.jpeg",
     },
     {
       id: "3",
@@ -59,7 +59,7 @@ export default function WorkshopsPage() {
       capacity: 40,
       enrolled: 40,
       tags: ["nft", "development", "intermediate"],
-      imageUrl: "/images/workshops/nft.jpg",
+      imageUrl: "/past.jpeg",
     },
   ];
 

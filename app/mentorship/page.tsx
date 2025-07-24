@@ -53,19 +53,23 @@ const MentorshipPage = () => {
 
   const mentors = [
     {
-      name: "Jonas Sebera",
-      role: "Smart Contract Engineer",
-      company: "ChainSafe Africa",
-      expertise: "Solidity, Security Audits",
-      image: "/jonas.jpg",
+      name: "Petar Popovic",
+      role: "Founder & Smart Contract Engineer",
+      company: "ETH Belgrade",
+      expertise:
+        "Fullstack Web3 Development, NFTs, DeFi, Community Building",
+      image: "/white.jpeg",
     },
+
     {
-      name: "Jonas Sebera",
-      role: "DeFi Architect",
+      name: "Michael Lawal",
+      role: "Conscious Capitalism Advocate",
       company: "Binance Africa",
-      expertise: "DeFi Protocols, Tokenomics",
-      image: "/jonas.jpg",
+      expertise:
+        "Tech for Good, Economic Inclusion, SDGs Advocacy",
+      image: "/mentor2.jpg",
     },
+
     {
       name: "Jonas Sebera",
       role: "Blockchain Educator",
@@ -296,11 +300,11 @@ const MentorshipPage = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="relative h-40 sm:h-48 w-full rounded-xl overflow-hidden bg-gray-100">
+              <div className="relative flex h-40 sm:h-48 w-full rounded-xl overflow-hidden bg-gray-100">
                 <Image
                   src={mentor.image}
                   alt={mentor.name}
-                  fill
+                  fill          
                   className="object-cover object-top"
                 />
               </div>
