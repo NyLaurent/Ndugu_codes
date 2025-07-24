@@ -14,7 +14,11 @@
     "@types/leaflet": "^1.9.19",
     "date-fns": "^4.1.0",
     "dotenv": "^17.2.0",
+<<<<<<< HEAD
     "framer-motion": "^12.23.5",
+=======
+    "framer-motion": "^12.23.6",
+>>>>>>> 0de17ce7246f14ca2be8eb18dd310a1c21026d85
     "leaflet": "^1.9.4",
     "next": "15.3.4",
     "react": "^18.2.0",
