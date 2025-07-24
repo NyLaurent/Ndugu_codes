@@ -15,11 +15,15 @@ const HackathonsPage = () => {
       location: "University of Rwanda, Kigali Campus",
       themes: ["DeFi for Africa", "Digital Identity", "Climate Tech"],
       prize: "$15,000 in prizes",
-      partners: ["University of Rwanda", "Rwanda ICT Chamber", "Africa Blockchain Institute"],
+      partners: [
+        "University of Rwanda",
+        "Rwanda ICT Chamber",
+        "Africa Blockchain Institute",
+      ],
       status: "Registration Open",
-      image: "/hackathon-kigali.jpg",
+      image: "/past.jpeg",
       registrationLink: "#register",
-      deadline: "November 30, 2025"
+      deadline: "November 30, 2025",
     },
     {
       id: 2,
@@ -47,7 +51,10 @@ const HackathonsPage = () => {
       date: "August 2024",
       location: "Kigali Innovation City",
       themes: ["Financial Inclusion", "E-Government"],
-      winners: ["Team Umuganda (Digital ID solution)", "Team Irembo (Land registry prototype)"],
+      winners: [
+        "Team Umuganda (Digital ID solution)",
+        "Team Irembo (Land registry prototype)",
+      ],
       image: "/roundtables.jpeg",
       recapLink: "#",
     },
