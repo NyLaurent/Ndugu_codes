@@ -115,7 +115,7 @@ export default function ChannelsPage() {
           We support member-created channels for specific topics and interests.
         </p>
         <button className="px-4 sm:px-6 py-2 sm:py-3 border border-transparent text-sm sm:text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700">
-          Start a Channel
+          Create New Channel
         </button>
       </div>
     </div>
@@ -140,22 +140,22 @@ function ChannelCard({ channel }: { channel: Channel }) {
                 <h3 className="text-lg sm:text-xl font-bold text-gray-900 flex flex-wrap items-center gap-2 mb-1">
                   {channel.name}
                   {channel.isOfficial && (
-                    <span className="ml-2 px-2 py-0.5 rounded-full text-xs font-semibold bg-blue-100 text-blue-800">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800">
                       Official
                     </span>
                   )}
                   {channel.isNew && (
-                    <span className="ml-2 px-2 py-0.5 rounded-full text-xs font-semibold bg-green-100 text-green-800">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800">
                       New
                     </span>
                   )}
                 </h3>
-                <span className="text-xs sm:text-sm text-gray-500">
+                <span className="inline-block mt-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-gray-100 text-gray-800">
                   {channel.category}
                 </span>
               </div>
               <span className="text-xs sm:text-sm text-gray-500">
-                {channel.members} members
+                {channel.members.toLocaleString()} members
               </span>
             </div>
 
@@ -175,7 +175,8 @@ function ChannelCard({ channel }: { channel: Channel }) {
                   </span>
                 ))}
               </div>
-              <div className="flex items-center gap-4">
+
+              {channel.lastActivity && (
                 <div className="text-xs sm:text-sm text-gray-500 flex items-center">
                   <svg
                     className="flex-shrink-0 mr-1.5 h-3 w-3 sm:h-4 sm:w-4 text-gray-400"
@@ -193,18 +194,22 @@ function ChannelCard({ channel }: { channel: Channel }) {
                   Active{" "}
                   {format(parseISO(channel.lastActivity), "MMM d, h:mm a")}
                 </div>
+              )}
+            </div>
+
+            {channel.joinUrl && (
+              <div className="mt-4 sm:mt-6">
+                <a
+                  href={channel.joinUrl}
+                  className="inline-flex items-center px-3 sm:px-4 py-2 border border-transparent text-xs sm:text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
+                >
+                  Join Channel
+                </a>
               </div>
-            </div>
-            <div className="mt-4 sm:mt-6">
-              <a
-                href={channel.joinUrl}
-                className="inline-flex items-center px-3 sm:px-4 py-2 border border-transparent text-xs sm:text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
-              >
-                Join Channel
-              </a>
-            </div>
+            )}
           </div>
         </div>
       </div>
-    );
+    </div>
+  );
 }

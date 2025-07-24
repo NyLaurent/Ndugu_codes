@@ -61,16 +61,16 @@ const MentorshipPage = () => {
     {
       name: "Michael Lawal",
       role: "Conscious Capitalism Advocate",
-      company: "Binance Africa",
+      company: "Open source",
       expertise: "Tech for Good, Economic Inclusion, SDGs Advocacy",
       image: "/mentor2.jpg",
     },
     {
       name: "Kevin Jones",
       role: "Blockchain Educator",
-      company: "Web3Bridge",
-      expertise: "Onboarding, Technical Writing",
-      image: "/jonas.jpg",
+      company: "Crypto Mastery",
+      expertise: "EVM, Solidity, Smart Contract Development",
+      image: "/kevin-jones.jpeg",
     },
   ];
 
