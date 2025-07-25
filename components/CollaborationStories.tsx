@@ -30,7 +30,7 @@ const CollaborationStories = () => {
             </div>
             <div className="p-4 sm:p-6">
               <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-black mb-3 sm:mb-4">
-                Empowering Young Developers Through University Collaboration
+                Empowering Young Developers Through University Collaborations
               </h3>
               <p className="text-gray-600 text-sm sm:text-base mb-3 sm:mb-4">
                 We plan to collaborate with local universities to organize Web3
