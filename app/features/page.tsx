@@ -279,7 +279,7 @@ const FeaturesPage = () => {
                 ["Instructors", "Academic teachers", "Industry practitioners"],
                 ["Outcome", "Certificate", "Job placement"],
                 ["Support", "Office hours", "1:1 mentorship"],
-                ["Cost", "$$$$", "Income-share options"],
+                ["Cost", "$$$$", "FREE OF CHARGE"],
               ].map(([feature, traditional, web3mates], index) => (
                 <tr key={index}>
                   <td className="py-3 sm:py-4 pr-6 sm:pr-8 font-medium text-[#0B1C39] text-sm sm:text-base">

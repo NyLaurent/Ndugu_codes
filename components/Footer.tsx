@@ -18,7 +18,7 @@ const Footer = () => {
                 alt="Web3 Mates Logo"
                 width={35}
                 height={35}
-                className="sm:w-10 sm:h-10"
+                className="sm:w-20 sm:h-20"
               />
               <div>
                 <div className="font-semibold text-[#0B1C39] text-sm sm:text-base">

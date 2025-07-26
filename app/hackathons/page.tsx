@@ -14,13 +14,13 @@ const HackathonsPage = () => {
       date: "December 15-17, 2025",
       location: "University of Rwanda, Kigali Campus",
       themes: ["DeFi for Africa", "Digital Identity", "Climate Tech"],
-      prize: "$15,000 in prizes",
+      prize: "$1,000 in prizes",
       partners: [
         "University of Rwanda",
         "Rwanda ICT Chamber",
         "Africa Blockchain Institute",
       ],
-      status: "Registration Open",
+      status: "Registration Opening soon",
       image: "/past.jpeg",
       registrationLink: "#register",
       deadline: "November 30, 2025",
@@ -162,25 +162,25 @@ const HackathonsPage = () => {
                     <h4 className="text-xs sm:text-sm font-medium text-gray-500 mb-1">
                       Date
                     </h4>
-                    <p className="text-sm sm:text-base">{hackathon.date}</p>
+                    <p className="text-slate-400 text-sm sm:text-base">{hackathon.date}</p>
                   </div>
                   <div>
                     <h4 className="text-xs sm:text-sm font-medium text-gray-500 mb-1">
                       Location
                     </h4>
-                    <p className="text-sm sm:text-base">{hackathon.location}</p>
+                    <p className="text-slate-400 text-sm sm:text-base">{hackathon.location}</p>
                   </div>
                   <div>
                     <h4 className="text-xs sm:text-sm font-medium text-gray-500 mb-1">
                       Prize Pool
                     </h4>
-                    <p className="text-sm sm:text-base">{hackathon.prize}</p>
+                    <p className="text-slate-400 text-sm sm:text-base">{hackathon.prize}</p>
                   </div>
                   <div>
                     <h4 className="text-xs sm:text-sm font-medium text-gray-500 mb-1">
                       Registration Deadline
                     </h4>
-                    <p className="text-sm sm:text-base">{hackathon.deadline}</p>
+                    <p className="text-slate-400 text-sm sm:text-base">{hackathon.deadline}</p>
                   </div>
                 </div>
 
@@ -273,7 +273,7 @@ const HackathonsPage = () => {
       {pastHackathons.length > 0 && (
         <section className="mb-12 sm:mb-16">
           <motion.h2
-            className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 sm:mb-8"
+            className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 mb-6 sm:mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -281,102 +281,26 @@ const HackathonsPage = () => {
             Past Hackathons
           </motion.h2>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-            {pastHackathons.map((hackathon, index) => (
-              <motion.div
-                key={hackathon.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm"
-              >
-                <div className="relative h-40 sm:h-48 w-full bg-gray-100">
-                  <Image
-                    src={hackathon.image}
-                    alt={hackathon.title}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 sm:p-4">
-                    <h3 className="text-lg sm:text-xl font-bold text-white">
-                      {hackathon.title}
-                    </h3>
-                  </div>
-                </div>
-
-                <div className="p-4 sm:p-6">
-                  <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">
-                    {hackathon.description}
-                  </p>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4">
-                    <div>
-                      <h4 className="text-xs sm:text-sm font-medium text-gray-500 mb-1">
-                        Date
-                      </h4>
-                      <p className="text-sm sm:text-base">{hackathon.date}</p>
-                    </div>
-                    <div>
-                      <h4 className="text-xs sm:text-sm font-medium text-gray-500 mb-1">
-                        Location
-                      </h4>
-                      <p className="text-sm sm:text-base">
-                        {hackathon.location}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="mb-3 sm:mb-4">
-                    <h4 className="text-xs sm:text-sm font-medium text-gray-500 mb-1">
-                      Themes
-                    </h4>
-                    <div className="flex flex-wrap gap-1 sm:gap-2">
-                      {hackathon.themes.map((theme) => (
-                        <span
-                          key={theme}
-                          className="bg-gray-100 text-gray-700 px-2 sm:px-3 py-1 rounded-full text-xs"
-                        >
-                          {theme}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="mb-3 sm:mb-4">
-                    <h4 className="text-xs sm:text-sm font-medium text-gray-500 mb-1">
-                      Winning Teams
-                    </h4>
-                    <ul className="list-disc list-inside text-gray-700 text-sm sm:text-base">
-                      {hackathon.winners.map((winner) => (
-                        <li key={winner}>{winner}</li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <Link
-                    href={hackathon.recapLink}
-                    className="text-blue-600 hover:text-green-700 font-medium inline-flex items-center text-sm sm:text-base"
-                  >
-                    See Event Recap
-                    <svg
-                      className="w-3 h-3 sm:w-4 sm:h-4 ml-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
+          <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 sm:p-8 text-center">
+            <svg
+              className="mx-auto h-10 w-10 sm:h-12 sm:w-12 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+              />
+            </svg>
+            <h3 className="mt-4 text-base sm:text-lg font-medium text-gray-900">
+              No past hackathons
+            </h3>
+            <p className="mt-2 text-gray-500 text-sm sm:text-base">
+              We haven&apos;t hosted any hackathons yet. Stay tuned for our upcoming events!
+            </p>
           </div>
         </section>
       )}
