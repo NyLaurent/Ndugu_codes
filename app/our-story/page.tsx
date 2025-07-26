@@ -210,7 +210,7 @@ const OurStory = () => {
                   </p>
                 </div>
                 {/* Dot */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-[#0066FF] flex items-center justify-center text-white z-10 hidden sm:flex">
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-[#0066FF] items-center justify-center text-white z-10 hidden sm:flex">
                   {milestone.icon}
                 </div>
                 {/* Card */}

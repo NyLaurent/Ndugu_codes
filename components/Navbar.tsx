@@ -34,25 +34,17 @@ const Navbar = () => {
           <div className="flex justify-between h-16 sm:h-20">
             {/* Logo and Company Name */}
             <div className="flex items-center">
-<<<<<<< HEAD
-              <Link
-                href="/"
-                className="flex items-center space-x-2 sm:space-x-3"
-              >
-=======
+
               <Link href="/" className="flex items-center space-x-1 sm:space-x-2 lg:space-x-1">
->>>>>>> 029a95938fab8c11e427db0be8663d799b9e0962
+
                 <Image
                   src="/logo.svg"
                   alt="Web3 Mates Logo"
                   width={35}
                   height={35}
                   priority
-<<<<<<< HEAD
-                  className="object-contain sm:w-[45px] sm:h-[45px] rounded-sm font-bold"
-=======
+
                   className="object-contain w-12 h-12 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-16 lg:h-16 rounded-sm"
->>>>>>> 029a95938fab8c11e427db0be8663d799b9e0962
                 />
                 <div className="flex flex-col">
                   <span className="text-lg sm:text-xl font-bold text-gray-900">
