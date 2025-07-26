@@ -7,7 +7,7 @@ const blogPosts = [
   {
     id: "rwanda-web3-hackathon-2025",
     image: "/e1.svg",
-    date: "20–22 July 2025",
+    date: "20–22 Jan 2025",
     title: "Rwanda Web3 Hackathon 2025",
     description:
       "Soon, we’ll gather builders and mentors for a 48-hour sprint to tackle local challenges through blockchain innovation.",
@@ -15,7 +15,7 @@ const blogPosts = [
   {
     id: "web3-in-academia-summit-1",
     image: "/e2.svg",
-    date: "2 August 2025",
+    date: "2 September 2025",
     title: "Web3 in Academia Summit",
     description:
       "We’re preparing conversations with students and educators on how decentralized tech can reshape research and campus systems.",
@@ -23,7 +23,7 @@ const blogPosts = [
   {
     id: "collaborate-world-tour-nairobi",
     image: "/e4.svg",
-    date: "20–22 July 2025",
+    date: "18–10 March 2025",
     title: "Collaborate World Tour: Nairobi Edition",
     description:
       "Coming soon: a local activation where we’ll connect with partners, creators, and new community members on-ground.",

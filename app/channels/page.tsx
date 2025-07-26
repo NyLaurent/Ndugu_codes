@@ -23,7 +23,7 @@ export default function ChannelsPage() {
       description:
         "Discussion space for all things Web3, blockchain, and smart contract development. Share resources, ask questions, and collaborate.",
       category: "Technology",
-      members: 842,
+      members: 0,
       lastActivity: "2024-06-18T14:32:00",
       isOfficial: true,
       tags: ["web3", "blockchain", "solidity", "beginners-welcome"],
@@ -36,7 +36,7 @@ export default function ChannelsPage() {
       description:
         "For designers and creatives to share work, get feedback, and discuss UX/UI trends. Weekly design challenges and portfolio reviews.",
       category: "Creative",
-      members: 326,
+      members: 0,
       lastActivity: "2024-06-17T09:15:00",
       isNew: true,
       tags: ["ui", "ux", "figma", "feedback"],
@@ -101,7 +101,7 @@ export default function ChannelsPage() {
               suggest a channel topic!
             </p>
             <button className="mt-4 inline-flex items-center px-3 sm:px-4 py-2 border border-transparent text-xs sm:text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700">
-              Suggest a Channel
+              Coming Soon
             </button>
           </div>
         )}
@@ -115,7 +115,7 @@ export default function ChannelsPage() {
           We support member-created channels for specific topics and interests.
         </p>
         <button className="px-4 sm:px-6 py-2 sm:py-3 border border-transparent text-sm sm:text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700">
-          Create New Channel
+          Coming Soon
         </button>
       </div>
     </div>
@@ -191,7 +191,7 @@ function ChannelCard({ channel }: { channel: Channel }) {
                       d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  Active{" "}
+                  coming soon{" "}
                   {format(parseISO(channel.lastActivity), "MMM d, h:mm a")}
                 </div>
               )}
@@ -199,12 +199,9 @@ function ChannelCard({ channel }: { channel: Channel }) {
 
             {channel.joinUrl && (
               <div className="mt-4 sm:mt-6">
-                <a
-                  href={channel.joinUrl}
-                  className="inline-flex items-center px-3 sm:px-4 py-2 border border-transparent text-xs sm:text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
-                >
-                  Join Channel
-                </a>
+                <button className="inline-flex items-center px-3 sm:px-4 py-2 border border-gray-300 text-xs sm:text-sm font-medium rounded-md text-gray-500 bg-gray-100 cursor-not-allowed">
+                  Coming Soon
+                </button>
               </div>
             )}
           </div>
