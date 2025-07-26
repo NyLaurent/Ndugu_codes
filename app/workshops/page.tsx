@@ -19,6 +19,36 @@ interface Workshop {
 export default function WorkshopsPage() {
   const workshops: Workshop[] = [
     {
+      id: "base-batch-001",
+      title: "Base Batches #001 Workshop",
+      description:
+        "Comprehensive workshop on Base blockchain development, covering smart contract deployment, Layer 2 scaling solutions, and building decentralized applications on Coinbase's Layer 2 network.",
+      startDate: "2024-05-30T09:00:00",
+      endDate: "2024-05-30T17:00:00",
+      instructor: "Web3 Mates & Base Team",
+      location: "Web3 Mates Hub, Kigali",
+      capacity: 200,
+      enrolled: 58,
+      tags: ["base", "layer2", "blockchain", "advanced"],
+      imageUrl: "/basebatches.jpeg",
+      registrationUrl: "/workshops/base-batch-001",
+    },
+    {
+      id: "ayahq-lisk-roadshow",
+      title: "AyaHQ X Lisk Roadshow",
+      description:
+        "Exclusive roadshow event featuring AyaHQ and Lisk collaboration, showcasing innovative blockchain solutions and community building initiatives across Africa.",
+      startDate: "2024-05-15T10:00:00",
+      endDate: "2024-05-15T18:00:00",
+      instructor: "AyaHQ Team & Lisk Representatives",
+      location: "Multiple Cities, Africa",
+      capacity: 200,
+      enrolled: 180,
+      tags: ["ayahq", "lisk", "roadshow", "community"],
+      imageUrl: "/AyaHQxLisk-roadshow.jpeg",
+      registrationUrl: "/workshops/ayahq-lisk-roadshow",
+    },
+    {
       id: "1",
       title: "Web3 Fundamentals",
       description:
@@ -26,7 +56,7 @@ export default function WorkshopsPage() {
       startDate: "2024-07-10T09:00:00",
       endDate: "2024-07-10T12:00:00",
       instructor: "Jonas Sebera",
-      location: "Virtual (Zoom)",
+      location: "Gathering",
       capacity: 50,
       enrolled: 32,
       tags: ["blockchain", "beginner", "web3"],
@@ -55,7 +85,7 @@ export default function WorkshopsPage() {
       startDate: "2024-06-20T10:00:00",
       endDate: "2024-06-20T16:00:00",
       instructor: "Jonas Sebera",
-      location: "Virtual (Gather)",
+      location: "Gather",
       capacity: 40,
       enrolled: 40,
       tags: ["nft", "development", "intermediate"],
@@ -84,10 +114,6 @@ export default function WorkshopsPage() {
       (a, b) =>
         parseISO(b.startDate).getTime() - parseISO(a.startDate).getTime()
     );
-
-  const allTags = Array.from(
-    new Set(workshops.flatMap((workshop) => workshop.tags))
-  );
 
   return (
     <div className="max-w-7xl mx-auto py-6 sm:py-8 px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 lg:py-24">
@@ -161,7 +187,7 @@ export default function WorkshopsPage() {
               No upcoming workshops
             </h3>
             <p className="mt-2 text-gray-500 text-sm sm:text-base">
-              We don't have any workshops scheduled yet. Check back soon or join
+              We don&apos;t have any workshops scheduled yet. Check back soon or join
               our mailing list for updates.
             </p>
             <button className="mt-4 inline-flex items-center px-3 sm:px-4 py-2 border border-transparent text-xs sm:text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700">
@@ -176,22 +202,101 @@ export default function WorkshopsPage() {
           <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4 sm:mb-6">
             Past Workshops
           </h2>
-          <div className="grid gap-4 sm:gap-6 lg:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {pastWorkshops.slice(0, 6).map((workshop) => (
-              <WorkshopCard
-                key={workshop.id}
-                workshop={workshop}
-                status="past"
-              />
-            ))}
-          </div>
-          {pastWorkshops.length > 6 && (
-            <div className="mt-6 sm:mt-8 text-center">
-              <button className="inline-flex items-center px-3 sm:px-4 py-2 border border-gray-300 text-xs sm:text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
-                View All Past Workshops ({pastWorkshops.length})
-              </button>
+          
+          {/* Highlighted Featured Workshops */}
+          <div className="mb-8 sm:mb-12">
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-700 mb-4 sm:mb-6">
+              Featured Workshops
+            </h3>
+            <div className="grid gap-6 sm:gap-8 grid-cols-1 lg:grid-cols-2">
+              {pastWorkshops
+                .filter(workshop => workshop.id === "base-batch-001" || workshop.id === "ayahq-lisk-roadshow")
+                .map((workshop) => (
+                  <div key={workshop.id} className="border-2 border-blue-200 rounded-xl overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-50 hover:shadow-lg transition-all duration-300">
+                    {workshop.imageUrl && (
+                      <div className="h-48 sm:h-56 bg-gray-100 overflow-hidden">
+                        <img
+                          className="w-full h-full object-cover"
+                          src={workshop.imageUrl}
+                          alt={workshop.title}
+                        />
+                      </div>
+                    )}
+                    <div className="p-6 sm:p-8">
+                      <div className="flex justify-between items-start mb-3">
+                        <div className="flex-1">
+                          <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 mb-3">
+                            Featured Event
+                          </span>
+                          <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
+                            {workshop.title}
+                          </h4>
+                          <p className="text-gray-600 text-sm sm:text-base mb-4">
+                            {workshop.description}
+                          </p>
+                          <div className="grid grid-cols-2 gap-4 text-sm">
+                            <div>
+                              <span className="text-gray-500">Instructor:</span>
+                              <p className="font-medium text-gray-900">{workshop.instructor}</p>
+                            </div>
+                            <div>
+                              <span className="text-gray-500">Location:</span>
+                              <p className="font-medium text-gray-900">{workshop.location}</p>
+                            </div>
+                            <div>
+                              <span className="text-gray-500">Date:</span>
+                              <p className="font-medium text-gray-900">
+                                {format(parseISO(workshop.startDate), "MMM dd, yyyy")}
+                              </p>
+                            </div>
+                            <div>
+                              <span className="text-gray-500">Attendance:</span>
+                              <p className="font-medium text-gray-900">{workshop.enrolled}/{workshop.capacity}</p>
+                            </div>
+                          </div>
+                          <div className="mt-4 flex flex-wrap gap-2">
+                            {workshop.tags.map((tag) => (
+                              <span
+                                key={tag}
+                                className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
             </div>
-          )}
+          </div>
+          
+          {/* Regular Past Workshops */}
+          <div>
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-700 mb-4 sm:mb-6">
+              Other Past Workshops
+            </h3>
+            <div className="grid gap-4 sm:gap-6 lg:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+              {pastWorkshops
+                .filter(workshop => workshop.id !== "base-batch-001" && workshop.id !== "ayahq-lisk-roadshow")
+                .slice(0, 6)
+                .map((workshop) => (
+                  <WorkshopCard
+                    key={workshop.id}
+                    workshop={workshop}
+                    status="past"
+                  />
+                ))}
+            </div>
+            {pastWorkshops.filter(workshop => workshop.id !== "base-batch-001" && workshop.id !== "ayahq-lisk-roadshow").length > 6 && (
+              <div className="mt-6 sm:mt-8 text-center">
+                <button className="inline-flex items-center px-3 sm:px-4 py-2 border border-gray-300 text-xs sm:text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                  View All Past Workshops ({pastWorkshops.filter(workshop => workshop.id !== "base-batch-001" && workshop.id !== "ayahq-lisk-roadshow").length})
+                </button>
+              </div>
+            )}
+          </div>
         </section>
       )}
     </div>
