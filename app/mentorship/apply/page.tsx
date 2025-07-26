@@ -41,7 +41,7 @@ const ApplyPage = () => {
     })
 
     try {
-      const response = await fetch(url, {
+      const response = await fetch(url || "https://formspree.io/f/YOUR_MENTORSHIP_FORM_ID", {
         method: "POST",
         body: data,
         headers: {
@@ -124,7 +124,7 @@ const ApplyPage = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black"
               placeholder="Your name"
             />
           </div>
@@ -140,7 +140,7 @@ const ApplyPage = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black"
               placeholder="your@email.com"
             />
           </div>
@@ -155,7 +155,7 @@ const ApplyPage = () => {
               value={formData.track}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black"
             >
               <option value="">Select a track</option>
               <option value="Web3 Fundamentals">Web3 Fundamentals</option>
@@ -199,7 +199,7 @@ const ApplyPage = () => {
               onChange={handleChange}
               required
               rows={4}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black"
               placeholder="What do you hope to achieve through this mentorship?"
             />
           </div>
@@ -215,7 +215,7 @@ const ApplyPage = () => {
               value={formData.timezone}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black"
               placeholder="e.g. GMT+1, EST, etc."
             />
           </div>
@@ -231,7 +231,7 @@ const ApplyPage = () => {
               value={formData.availability}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black"
               placeholder="How many hours per week can you dedicate?"
             />
           </div>
@@ -300,7 +300,7 @@ const ApplyPage = () => {
             ))}
           </div>
         </div>
-      </motion.section>      
+      </motion.section>
     </div>
   )
 }
