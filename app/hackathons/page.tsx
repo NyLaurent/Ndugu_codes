@@ -35,7 +35,7 @@ const HackathonsPage = () => {
       themes: ["Cross-border Payments", "Supply Chain", "Healthcare"],
       prize: "TBD",
       partners: ["University of Rwanda", "EAC Secretariat"],
-      status: "Coming Soon",
+      status: "Registration Coming Soon",
       image: "/ai_ethic.jpeg",
       registrationLink: "#",
       deadline: "TBD",
@@ -144,7 +144,7 @@ const HackathonsPage = () => {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute top-3 sm:top-4 right-3 sm:right-4 bg-white/90 backdrop-blur px-2 sm:px-3 py-1 rounded-full text-xs font-medium">
+                <div className="text-slate-500 absolute top-3 sm:top-4 right-3 sm:right-4 bg-white/90 backdrop-blur px-2 sm:px-3 py-1 rounded-full text-xs font-medium">
                   {hackathon.status}
                 </div>
               </div>

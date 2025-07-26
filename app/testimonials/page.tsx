@@ -26,7 +26,7 @@ const Testimonials = () => {
       stats: "200+ developers empowered",
     },
     {
-      name: "Gilbert Mugisha",
+      name: "Gilbert Muhirwa",
       role: "University Student, Mining Sector",
       company: "University of Rwanda",
       quote:
