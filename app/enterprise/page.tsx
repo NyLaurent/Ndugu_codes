@@ -145,73 +145,134 @@ const EnterprisePage = () => {
         <h2 className="text-2xl sm:text-3xl font-bold text-[#0B1C39] mb-8 text-center">
           Enterprise Case Studies
         </h2>
-        <div className="bg-white rounded-2xl overflow-hidden border border-gray-100">
-          <div className="grid grid-cols-1 lg:grid-cols-2">
-            <div className="p-8 sm:p-12">
-              <div className="flex items-center gap-4 mb-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
+          {/* AyaHQ */}
+          <motion.div
+            className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer group"
+            whileHover={{ y: -5, scale: 1.02 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="p-6 sm:p-8">
+              <div className="flex items-center gap-3 mb-4">
                 <Image
-                  src="/placeholder.svg?height=60&width=120&text=StoneProofLabs"
-                  alt="StoneProofLabs"
-                  width={120}
-                  height={60}
-                  className="h-12 object-contain"
+                  src="/AyaHQ-blue.png"
+                  alt="AyaHQ"
+                  width={80}
+                  height={40}
+                  className="h-8 object-contain"
                 />
-                <span className="text-sm text-gray-500">Web3 Security</span>
+                <span className="text-sm text-gray-500">Web3 Community Platform</span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-[#0B1C39] mb-4">
-                Scaling Engineering Capacity 3x
+              <h3 className="text-lg sm:text-xl font-bold text-[#0B1C39] mb-3">
+                Community Growth Partner
               </h3>
-              <p className="text-gray-600 mb-6">
-                &quot;Web3 Mates provided us with a pipeline of pre-vetted
-                blockchain security specialists that reduced our hiring time by
-                70% and allowed us to take on 40% more clients within the first
-                year.&quot;
+              <p className="text-gray-600 text-sm mb-4">
+                &quot;Web3 Mates has been a valuable partner in growing our African developer community and facilitating meaningful connections across the continent.&quot;
               </p>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                <li className="bg-[#0066FF]/5 p-3 rounded-lg">
-                  <p className="font-medium text-[#0B1C39]">$2M+</p>
-                  <p className="text-sm text-gray-600">Annual revenue growth</p>
-                </li>
-                <li className="bg-[#0066FF]/5 p-3 rounded-lg">
-                  <p className="font-medium text-[#0B1C39]">40%</p>
-                  <p className="text-sm text-gray-600">Faster audit delivery</p>
-                </li>
-              </ul>
+              <div className="bg-blue-50 p-3 rounded-lg mb-4">
+                <p className="font-medium text-[#0B1C39] text-sm">Community Growth</p>
+                <p className="text-xs text-gray-600">Expanded reach across Africa</p>
+              </div>
               <Link
                 href="#contact"
-                className="inline-block bg-[#0066FF] text-white px-6 py-2 rounded-lg text-sm font-medium hover:bg-[#0047CC] transition-colors"
+                className="inline-block bg-[#0066FF] text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#0047CC] transition-colors group-hover:shadow-md"
               >
-                Get Similar Results
+                Partner With Us
               </Link>
             </div>
-            {/* BuidlGuidl */}
-            <div className="p-8 sm:p-12 flex flex-col items-center justify-center border-t lg:border-t-0 lg:border-l border-gray-100 transition-transform duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
-              <Image
-                src="/placeholder.svg?height=400&width=500&text=Enterprise+Dashboard"
-                alt="Enterprise Results"
-                width={500}
-                height={400}
-                className="w-full max-w-md"
-              />
-            </div>
-          </div>
-          <div className="bg-blue-50 text-center py-6 px-4 sm:px-8 border-t border-gray-100">
-            <p className="text-gray-700 text-sm sm:text-base">
-              More case studies and partnerships coming soon as Web3 Mates
-              grows. Interested in collaborating?{" "}
-              <Link href="#contact" className="text-[#0066FF] underline">
-                Contact us
+          </motion.div>
+
+          {/* Web3Bridge */}
+          <motion.div
+            className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer group"
+            whileHover={{ y: -5, scale: 1.02 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+          >
+            <div className="p-6 sm:p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <Image
+                  src="/web3bridge.png"
+                  alt="Web3Bridge"
+                  width={80}
+                  height={40}
+                  className="h-8 object-contain"
+                />
+                <span className="text-sm text-gray-500">Web3 Education</span>
+              </div>
+              <h3 className="text-lg sm:text-xl font-bold text-[#0B1C39] mb-3">
+                Expanding Blockchain Learning
+              </h3>
+              <p className="text-gray-600 text-sm mb-4">
+                &quot;The mentorship and collaboration with Web3 Mates helped us reach more learners and deliver hands-on blockchain education in Africa.&quot;
+              </p>
+              <div className="bg-blue-50 p-3 rounded-lg mb-4">
+                <p className="font-medium text-[#0B1C39] text-sm">Expanded Reach</p>
+                <p className="text-xs text-gray-600">More learners across Africa</p>
+              </div>
+              <Link
+                href="#contact"
+                className="inline-block bg-[#0066FF] text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#0047CC] transition-colors group-hover:shadow-md"
+              >
+                Partner With Us
               </Link>
-              .
-            </p>
-          </div>
+            </div>
+          </motion.div>
+
+          {/* BuidlGuidl */}
+          <motion.div
+            className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer group"
+            whileHover={{ y: -5, scale: 1.02 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <div className="p-6 sm:p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <Image
+                  src="/logo-color.svg"
+                  alt="BuidlGuidl"
+                  width={80}
+                  height={40}
+                  className="h-8 object-contain"
+                />
+                <span className="text-sm text-gray-500">Ethereum Builders Guild</span>
+              </div>
+              <h3 className="text-lg sm:text-xl font-bold text-[#0B1C39] mb-3">
+                Strengthening the Builder Network
+              </h3>
+              <p className="text-gray-600 text-sm mb-4">
+                &quot;Web3 Mates has contributed passionate developers and fresh perspectives to our builder community, strengthening our collective impact.&quot;
+              </p>
+              <div className="bg-blue-50 p-3 rounded-lg mb-4">
+                <p className="font-medium text-[#0B1C39] text-sm">Stronger Network</p>
+                <p className="text-xs text-gray-600">Enhanced builder community</p>
+              </div>
+              <Link
+                href="#contact"
+                className="inline-block bg-[#0066FF] text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#0047CC] transition-colors group-hover:shadow-md"
+              >
+                Partner With Us
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+        <div className="bg-blue-50 text-center py-6 px-4 sm:px-8 border-t border-gray-100 mt-8 rounded-xl">
+          <p className="text-gray-700 text-sm sm:text-base">
+            More case studies and partnerships coming soon as Web3 Mates grows. Interested in collaborating? <Link href="#contact" className="text-[#0066FF] underline">Contact us</Link>.
+          </p>
         </div>
       </section>
 
       {/* Contact Form */}
       <section
         id="contact"
-        className="bg-white rounded-2xl p-8 sm:p-12 shadow-sm border border-gray-100"
+        className="bg-white  text-slate-400 rounded-2xl p-8 sm:p-12 shadow-sm border border-gray-100"
       >
         <h2 className="text-2xl sm:text-3xl font-bold text-[#0B1C39] mb-2 text-center">
           Start Your Web3 Transformation
@@ -220,11 +281,8 @@ const EnterprisePage = () => {
           Complete the form below and our enterprise team will contact you
           within 24 hours
         </p>
-        <form
-          className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto"
-          action={url}
-          method="POST"
-        >
+
+        <form className="text-slate-400 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
           <div>
             <label
               htmlFor="name"
@@ -235,8 +293,7 @@ const EnterprisePage = () => {
             <input
               type="text"
               id="name"
-              name="name"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF]"
+              className="w-full text-slate-400 px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF]"
               placeholder="Your name"
               required
             />
@@ -244,7 +301,7 @@ const EnterprisePage = () => {
           <div>
             <label
               htmlFor="company"
-              className="block text-sm font-medium text-gray-700 mb-1"
+              className="block text-slate-400 text-sm font-medium  mb-1"
             >
               Company
             </label>
@@ -252,7 +309,7 @@ const EnterprisePage = () => {
               type="text"
               id="company"
               name="company"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF]"
+              className="w-full text-slate-400 px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF]"
               placeholder="Company name"
               required
             />
@@ -260,7 +317,7 @@ const EnterprisePage = () => {
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-gray-700 mb-1"
+              className="block  text-slate-400 text-sm font-medium  mb-1"
             >
               Work Email
             </label>
@@ -276,7 +333,7 @@ const EnterprisePage = () => {
           <div>
             <label
               htmlFor="phone"
-              className="block text-sm font-medium text-gray-700 mb-1"
+              className="block text-slate-400 text-sm font-medium  mb-1"
             >
               Phone
             </label>
@@ -284,7 +341,7 @@ const EnterprisePage = () => {
               type="tel"
               id="phone"
               name="phone"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF]"
+              className="w-full text-slate-400 px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF]"
               placeholder="+256 XXX XXX XXX"
             />
           </div>

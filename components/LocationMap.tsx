@@ -38,7 +38,7 @@ export default function LocationMap() {
                 Address
               </h3>
               <div className="space-y-1 sm:space-y-2">
-                <p className="font-medium text-gray-900 text-sm sm:text-base">Web3 Mates (DC)</p>
+                <p className="font-medium text-gray-900 text-sm sm:text-base">Web3 Mates (WM)</p>
                 <p className="text-gray-600 text-sm sm:text-base">
                   Bumbogo Innovation & Technology Hub
                 </p>

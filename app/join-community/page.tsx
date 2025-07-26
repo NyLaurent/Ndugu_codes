@@ -1,4 +1,4 @@
-import { FaDiscord, FaTelegram, FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaDiscord, FaTelegram, FaXTwitter, FaGithub, FaLinkedin } from 'react-icons/fa6';
 
 const CommunityPage = () => {
   return (
@@ -44,7 +44,7 @@ const CommunityPage = () => {
                 Get instant updates and announcements through our Telegram channel.
               </p>
               <a
-                href="#"
+                href="https://t.me/+Gc9JJOqazxgxZmQ0"
                 className="block w-full py-3 px-6 text-center bg-[#26A5E4] hover:bg-[#1D95D1] text-white font-medium rounded-lg transition-colors duration-200"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -56,16 +56,16 @@ const CommunityPage = () => {
 
           <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
             <div className="p-8">
-              <div className="flex items-center justify-center w-16 h-16 bg-[#1DA1F2] rounded-full mb-6 mx-auto">
-                <FaTwitter className="text-white text-2xl" />
+              <div className="flex items-center justify-center w-16 h-16 bg-black rounded-full mb-6 mx-auto">
+                <FaXTwitter className="text-white text-2xl" />
               </div>
-              <h3 className="text-xl text-blue-800 font-bold text-center mb-4">Twitter</h3>
+              <h3 className="text-xl text-blue-800 font-bold text-center mb-4">X (Twitter)</h3>
               <p className="text-gray-600 text-center mb-6">
-                Follow us on Twitter for news, updates, and engaging content.
+                Follow us on X for news, updates, and engaging content.
               </p>
               <a
                 href="#"
-                className="block w-full py-3 px-6 text-center bg-[#1DA1F2] hover:bg-[#1991DB] text-white font-medium rounded-lg transition-colors duration-200"
+                className="block w-full py-3 px-6 text-center bg-black hover:bg-gray-800 text-white font-medium rounded-lg transition-colors duration-200"
                 target="_blank"
                 rel="noopener noreferrer"
               >
