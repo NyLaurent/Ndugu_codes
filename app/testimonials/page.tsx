@@ -31,7 +31,7 @@ const Testimonials = () => {
       company: "University of Rwanda",
       quote:
         "Before Web3 Mates, I was a university student focused on the mining sector, unsure how blockchain could fit into my future. Through their mentorship, I discovered new possibilities, learned smart contract development, and transitioned into a thriving Web3 career. Now, I’m building solutions that bridge traditional industries and blockchain technology.",
-      image: "/img10.jpg",
+      image: "/gilbert.jpeg",
       stats: "Career transformation",
     },
   ];
@@ -40,14 +40,16 @@ const Testimonials = () => {
   const [expanded, setExpanded] = useState<{ [key: number]: boolean }>({});
 
   const toggleExpand = (index: number) => {
-    setExpanded(prev => ({ ...prev, [index]: !prev[index] }));
+    setExpanded((prev) => ({ ...prev, [index]: !prev[index] }));
   };
 
   // State for expanded company testimonials
-  const [expandedCompany, setExpandedCompany] = useState<{ [key: number]: boolean }>({});
+  const [expandedCompany, setExpandedCompany] = useState<{
+    [key: number]: boolean;
+  }>({});
 
   const toggleExpandCompany = (index: number) => {
-    setExpandedCompany(prev => ({ ...prev, [index]: !prev[index] }));
+    setExpandedCompany((prev) => ({ ...prev, [index]: !prev[index] }));
   };
 
   const companyTestimonials = [
@@ -175,7 +177,7 @@ const Testimonials = () => {
                       onClick={() => toggleExpand(index)}
                       className="text-blue-600 hover:text-blue-800 text-xs font-medium mb-2"
                     >
-                      {expanded[index] ? 'Read Less' : 'Read More'}
+                      {expanded[index] ? "Read Less" : "Read More"}
                     </button>
                   )}
                   <div className="bg-[#0066FF]/10 px-2 sm:px-3 py-1 rounded-lg inline-block">
@@ -238,7 +240,7 @@ const Testimonials = () => {
                       onClick={() => toggleExpandCompany(index)}
                       className="text-blue-600 hover:text-blue-800 text-xs font-medium mb-2"
                     >
-                      {expandedCompany[index] ? 'Read Less' : 'Read More'}
+                      {expandedCompany[index] ? "Read Less" : "Read More"}
                     </button>
                   )}
                   <div className="bg-[#0066FF]/10 px-2 sm:px-3 py-1 rounded-lg inline-block">

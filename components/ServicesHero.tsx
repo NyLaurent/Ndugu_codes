@@ -21,7 +21,7 @@ const ServicesHero = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
               <Link
-                href="/get-started"
+                href="/join-community"
                 className="bg-[#0066FF] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-lg hover:bg-blue-700 transition-colors text-sm sm:text-base text-center"
               >
                 Get Started

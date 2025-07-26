@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { FaLinkedin, FaTwitter, FaTelegram, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -33,43 +34,19 @@ const Footer = () => {
             </p>
             <div className="flex gap-4 sm:gap-6 pt-2 sm:pt-4">
               <a href="#" className="hover:opacity-80 transition-opacity">
-                <Image
-                  src="/google.svg"
-                  alt="Google"
-                  width={20}
-                  height={20}
-                  className="sm:w-6 sm:h-6"
-                />
+                <FaLinkedin className="w-5 h-5 sm:w-6 sm:h-6 text-[#0A66C2]" />
               </a>
               <a href="#" className="hover:opacity-80 transition-opacity">
-                <Image
-                  src="/facebook.svg"
-                  alt="Facebook"
-                  width={20}
-                  height={20}
-                  className="sm:w-6 sm:h-6"
-                />
+                <FaTwitter className="w-5 h-5 sm:w-6 sm:h-6 text-[#1DA1F2]" />
               </a>
               <a
                 href="https://instagram.com/sebe_j_az99"
                 className="hover:opacity-80 transition-opacity"
               >
-                <Image
-                  src="/instagram.svg"
-                  alt="Instagram"
-                  width={20}
-                  height={20}
-                  className="sm:w-6 sm:h-6"
-                />
+                <FaInstagram className="w-5 h-5 sm:w-6 sm:h-6 text-[#1DA1F2]" />
               </a>
               <a href="#" className="hover:opacity-80 transition-opacity">
-                <Image
-                  src="/apple.svg"
-                  alt="Apple"
-                  width={20}
-                  height={20}
-                  className="sm:w-6 sm:h-6"
-                />
+                <FaTelegram className="w-5 h-5 sm:w-6 sm:h-6 text-[#26A5E4]" />
               </a>
             </div>
           </div>
@@ -155,10 +132,10 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/blog"
+                  href="/join-community"
                   className="text-gray-600 hover:text-[#0066FF]"
                 >
-                  Blog
+                  Community
                 </Link>
               </li>
             </ul>
