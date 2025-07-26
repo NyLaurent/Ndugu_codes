@@ -115,15 +115,25 @@ const HeroSection = () => {
                   { src: "/logo-color.svg", alt: "BuidlGuidl Logo", width: 100 },
                   { src: "/AyaHQ-blue.png", alt: "AyaHQ company logo", width: 120 },
                   { src: "/web3bridge.png", alt: "Web3Bridge company logo", width: 120 },
+                  { src: "/genesys.png", alt: "Genesys company logo", width: 120 },
                   { src: "/AyaHQ-blue.png", alt: "AyaHQ company logo", width: 100 },
                   { src: "/logo-color.svg", alt: "BuidlGuidl Logo", width: 100 },
                   { src: "/web3bridge.png", alt: "Web3Bridge company logo", width: 100 },
+                  { src: "/genesys.png", alt: "Genesys company logo", width: 120 },
                   { src: "/AyaHQ-blue.png", alt: "AyaHQ company logo", width: 120 },
                   { src: "/logo-color.svg", alt: "BuidlGuidl Logo", width: 100 },
                   { src: "/web3bridge.png", alt: "Web3Bridge company logo", width: 120 },
+                  { src: "/genesys.png", alt: "Genesys company logo", width: 120 },
                   { src: "/AyaHQ-blue.png", alt: "AyaHQ company logo", width: 100 },
                   { src: "/logo-color.svg", alt: "BuidlGuidl Logo", width: 100 },
-                  { src: "/web3bridge.png", alt: "Web3Bridge company logo", width: 100 }
+                  { src: "/web3bridge.png", alt: "Web3Bridge company logo", width: 100 },
+                  { src: "/genesys.png", alt: "Genesys company logo", width: 120 },
+                  { src: "/AyaHQ-blue.png", alt: "AyaHQ company logo", width: 100 },
+                  { src: "/logo-color.svg", alt: "BuidlGuidl Logo", width: 100 },
+                  { src: "/web3bridge.png", alt: "Web3Bridge company logo", width: 100 },
+                  { src: "/genesys.png", alt: "Genesys company logo", width: 120 },
+                  { src: "/AyaHQ-blue.png", alt: "AyaHQ company logo", width: 100 },
+                  { src: "/logo-color.svg", alt: "BuidlGuidl Logo", width: 100 },
                 ].map((logo, index) => (
                   <div key={index} className="flex-shrink-0">
                     <Image

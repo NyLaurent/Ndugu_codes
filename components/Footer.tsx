@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { FaLinkedin, FaTwitter, FaTelegram, FaInstagram } from 'react-icons/fa';
+import { FaLinkedin, FaXTwitter, FaTelegram, FaInstagram } from 'react-icons/fa6';
 
 const Footer = () => {
   return (
@@ -37,7 +37,7 @@ const Footer = () => {
                 <FaLinkedin className="w-5 h-5 sm:w-6 sm:h-6 text-[#0A66C2]" />
               </a>
               <a href="#" className="hover:opacity-80 transition-opacity">
-                <FaTwitter className="w-5 h-5 sm:w-6 sm:h-6 text-[#1DA1F2]" />
+                <FaXTwitter className="w-5 h-5 sm:w-6 sm:h-6 text-black" />
               </a>
               <a
                 href="https://instagram.com/sebe_j_az99"
@@ -45,7 +45,7 @@ const Footer = () => {
               >
                 <FaInstagram className="w-5 h-5 sm:w-6 sm:h-6 text-[#1DA1F2]" />
               </a>
-              <a href="#" className="hover:opacity-80 transition-opacity">
+              <a href="https://t.me/+Gc9JJOqazxgxZmQ0" className="hover:opacity-80 transition-opacity">
                 <FaTelegram className="w-5 h-5 sm:w-6 sm:h-6 text-[#26A5E4]" />
               </a>
             </div>

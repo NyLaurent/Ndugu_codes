@@ -7,6 +7,8 @@ import React from "react";
 import ContactSection from "@/components/ContactSection";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import useLoading from "@/hooks/useLoading";
+import TopCollaborator from "@/components/TopCollaborator";
+import PartnersShowcase from "@/components/PartnersShowcase";
 
 const Collaboration = () => {
   const loading = useLoading();
@@ -18,10 +20,12 @@ const Collaboration = () => {
   return (
     <div>
       <CollaborationHero />
+      <TopCollaborator />
       <MiddleDecoration />
 
       <CollaborationStories />
       <ContactSection />
+      <PartnersShowcase />
     </div>
   );
 };
