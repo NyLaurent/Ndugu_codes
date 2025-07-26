@@ -147,7 +147,7 @@ const ContactHero = () => {
               />
               <label htmlFor="privacyPolicy" className="ml-2 text-xs sm:text-sm text-gray-600">
                 I agree with Web3 Mates Privacy Policy
-              </label>
+              </label>g
             </div>
             <div>
               <button

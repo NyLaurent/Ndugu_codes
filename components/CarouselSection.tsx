@@ -23,6 +23,15 @@ const CarouselSection = () => {
     "/img12.jpg",
     "/img13.jpg",
     "/img14.jpg",
+    "/img17.jpeg",
+    "/img18.jpeg",
+    "/img19.jpeg",
+    "/img20.jpeg",
+    "/img21.jpeg",
+    "/img22.jpeg",
+    "/img23.jpeg",
+    "/img24.jpeg",
+    "/img25.jpeg",
   ]
 
   const [currentIndex, setCurrentIndex] = useState(0)
