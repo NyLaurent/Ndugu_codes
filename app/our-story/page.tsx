@@ -19,7 +19,7 @@ const OurStory = () => {
       title: "First Assemblies",
       description:
         "Joab brought together Jonas, Jabo, and Laurent - forming the core team with complementary skills in development, operations, and community.",
-      image: "/team-early.jpg",
+      image: "/assembly.jpeg",
       icon: "",
     },
     {
@@ -27,7 +27,7 @@ const OurStory = () => {
       title: "First Bootcamp",
       description:
         "Launched our pilot program in Kigali, training 25 developers despite having no funding - proving the demand for Web3 education.",
-      image: "/first-bootcamp.jpg",
+      image: "/img6.jpg",
       icon: "",
     },
     {
@@ -42,8 +42,8 @@ const OurStory = () => {
       year: "late 2025",
       title: "Enterprise Recognition",
       description:
-        "Started working with companies like StoneProofLabs to bridge the talent gap, validating our training model.",
-      image: "/enterprise-partners.jpg",
+        "Started working with companies like AyaHQ, Web3Bridge and BuidlGuidl to bridge the talent gap, validating our training model.",
+      image: "/web3bridge.png",
       icon: "",
     },
   ];
@@ -118,7 +118,7 @@ const OurStory = () => {
           >
             <div className="relative h-64 sm:h-80 lg:h-96 w-full rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/joab-speaking.jpg"
+                src="/img2.jpg"
                 alt="Joab Niwagaba speaking"
                 fill
                 className="object-cover"
@@ -142,7 +142,7 @@ const OurStory = () => {
               &quot;Africa&apos;s future won&apos;t be built by outsiders&quot;
             </h2>
             <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">
-              In 2021, Joab saw two realities: Africa&apos;s youth were hungry
+              In 2023, Joab saw two realities: Africa&apos;s youth were hungry
               for tech opportunities, while global Web3 projects lacked African
               perspectives. He envisioned a homegrown solution - training
               Africans to build for African contexts.

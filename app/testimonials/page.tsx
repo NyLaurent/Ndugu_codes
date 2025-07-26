@@ -3,55 +3,77 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 const Testimonials = () => {
   const individualTestimonials = [
     {
       name: "Petar Popovic",
-      role: "Web3 Developer",
-      company: "Chainlink Africa",
+      role: "Founder and CEO of ETH-BELGRADE",
+      company: "ETH-BELGRADE",
       quote:
-        "Web3 Mates turned me from a beginner to a smart contract developer in 6 months, landing me a dream job.",
+        "As a longtime Ethereum ecosystem contributor and founder, I’ve seen many communities—but Web3 Mates stands out for its hands-on mentorship and real-world impact. Their support helped me scale ETH Belgrade and empower the next generation of blockchain builders.",
       image: "/white.jpeg",
       stats: "300% salary increase",
     },
     {
-      name: "Micheal Lawal",
-      role: "Blockchain Educator",
-      company: "Accra Web3 Academy",
+      name: "Michael Lawal",
+      role: "Conscious Capitalism Advocate & Web3 Educator",
+      company: "Open Source",
       quote:
-        "Their mentorship helped me launch a Web3 education platform, training 200+ developers in Ghana.",
+        "Web3 Mates mentorship is a catalyst for social good. Their guidance enabled me to launch inclusive blockchain education programs, reaching hundreds of aspiring developers and advancing economic empowerment across Africa.",
       image: "/mentor2.jpg",
-      stats: "200+ developers trained",
+      stats: "200+ developers empowered",
     },
     {
-      name: "Jonathan Okwuma",
-      role: "DeFi Specialist",
-      company: "Yellow Card",
+      name: "Gilbert Mugisha",
+      role: "University Student, Mining Sector",
+      company: "University of Rwanda",
       quote:
-        "From zero coding to leading DeFi product development at Africa's largest crypto exchange in 8 months.",
-      image: "/speaker.jpeg",
-      stats: "Promoted in 8 months",
-    },
-    {
-      name: "Jabari Okeke",
-      role: "DAO Architect",
-      company: "AfriDAO",
-      quote:
-        "I went from farming to building DAOs, thanks to Web3 Mates' project-based learning for African agriculture.",
-      image: "/speaker2.jpeg",
-      stats: "Launched 3 DAOs",
+        "Before Web3 Mates, I was a university student focused on the mining sector, unsure how blockchain could fit into my future. Through their mentorship, I discovered new possibilities, learned smart contract development, and transitioned into a thriving Web3 career. Now, I’m building solutions that bridge traditional industries and blockchain technology.",
+      image: "/img10.jpg",
+      stats: "Career transformation",
     },
   ];
 
+  // State for expanded testimonials
+  const [expanded, setExpanded] = useState<{ [key: number]: boolean }>({});
+
+  const toggleExpand = (index: number) => {
+    setExpanded(prev => ({ ...prev, [index]: !prev[index] }));
+  };
+
+  // State for expanded company testimonials
+  const [expandedCompany, setExpandedCompany] = useState<{ [key: number]: boolean }>({});
+
+  const toggleExpandCompany = (index: number) => {
+    setExpandedCompany(prev => ({ ...prev, [index]: !prev[index] }));
+  };
+
   const companyTestimonials = [
     {
-      name: "StoneProofLabs",
-      logo: "/stone_logo.svg", 
-      industry: "Web3 Security",
+      name: "AyaHQ",
+      logo: "/AyaHQ-blue.png",
+      industry: "Web3 Community Platform",
       testimonial:
-        "Web3 Mates tripled our engineering capacity, boosting audit speed by 40% and sales by $2M+.",
-      stats: "$2M+ revenue growth",
+        "Web3 Mates has been a valuable partner in growing our African developer community and facilitating meaningful connections across the continent.",
+      stats: "Community growth",
+    },
+    {
+      name: "Web3Bridge",
+      logo: "/web3bridge.png",
+      industry: "Web3 Education",
+      testimonial:
+        "The mentorship and collaboration with Web3 Mates helped us reach more learners and deliver hands-on blockchain education in Africa.",
+      stats: "Expanded reach",
+    },
+    {
+      name: "BuidlGuidl",
+      logo: "/logo-color.svg",
+      industry: "Ethereum Builders Guild",
+      testimonial:
+        "Web3 Mates has contributed passionate developers and fresh perspectives to our builder community, strengthening our collective impact.",
+      stats: "Stronger builder network",
     },
   ];
 
@@ -141,9 +163,21 @@ const Testimonials = () => {
                       </p>
                     </div>
                   </div>
-                  <blockquote className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 italic line-clamp-3">
-                    &quot;{testimonial.quote}&quot;
+                  <blockquote className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 italic">
+                    {expanded[index]
+                      ? `"${testimonial.quote}"`
+                      : testimonial.quote.length > 120
+                        ? `"${testimonial.quote.substring(0, 120)}..."`
+                        : `"${testimonial.quote}"`}
                   </blockquote>
+                  {testimonial.quote.length > 120 && (
+                    <button
+                      onClick={() => toggleExpand(index)}
+                      className="text-blue-600 hover:text-blue-800 text-xs font-medium mb-2"
+                    >
+                      {expanded[index] ? 'Read Less' : 'Read More'}
+                    </button>
+                  )}
                   <div className="bg-[#0066FF]/10 px-2 sm:px-3 py-1 rounded-lg inline-block">
                     <p className="text-[#0066FF] font-medium text-xs">
                       {testimonial.stats}
@@ -192,9 +226,21 @@ const Testimonials = () => {
                       </p>
                     </div>
                   </div>
-                  <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">
-                    &quot;{company.testimonial}&quot;
+                  <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4">
+                    {expandedCompany[index]
+                      ? `"${company.testimonial}"`
+                      : company.testimonial.length > 120
+                        ? `"${company.testimonial.substring(0, 120)}..."`
+                        : `"${company.testimonial}"`}
                   </p>
+                  {company.testimonial.length > 120 && (
+                    <button
+                      onClick={() => toggleExpandCompany(index)}
+                      className="text-blue-600 hover:text-blue-800 text-xs font-medium mb-2"
+                    >
+                      {expandedCompany[index] ? 'Read Less' : 'Read More'}
+                    </button>
+                  )}
                   <div className="bg-[#0066FF]/10 px-2 sm:px-3 py-1 rounded-lg inline-block">
                     <p className="text-[#0066FF] font-medium text-xs">
                       {company.stats}
