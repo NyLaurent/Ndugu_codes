@@ -84,40 +84,36 @@ const PartnersShowcase = () => {
 
         {/* Partnership Stats */}
         <motion.div
-          className="mt-16 sm:mt-20 grid grid-cols-1 sm:grid-cols-4 gap-6 sm:gap-8"
+          className="mt-16 sm:mt-20"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          <motion.div 
-            className="bg-white rounded-xl p-6 text-center shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
-            whileHover={{ y: -5, scale: 1.02 }}
-          >
-            <div className="text-2xl sm:text-3xl font-bold text-[#0066FF] mb-2">4</div>
-            <div className="text-gray-600 text-sm">Strategic Partners</div>
-          </motion.div>
-          <motion.div 
-            className="bg-white rounded-xl p-6 text-center shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
-            whileHover={{ y: -5, scale: 1.02 }}
-          >
-            <div className="text-2xl sm:text-3xl font-bold text-[#0066FF] mb-2">1000+</div>
-            <div className="text-gray-600 text-sm">Developers Reached</div>
-          </motion.div>
-          <motion.div 
-            className="bg-white rounded-xl p-6 text-center shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
-            whileHover={{ y: -5, scale: 1.02 }}
-          >
-            <div className="text-2xl sm:text-3xl font-bold text-[#0066FF] mb-2">20+</div>
-            <div className="text-gray-600 text-sm">Countries Served</div>
-          </motion.div>
-          <motion.div 
-            className="bg-white rounded-xl p-6 text-center shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
-            whileHover={{ y: -5, scale: 1.02 }}
-          >
-            <div className="text-2xl sm:text-3xl font-bold text-[#0066FF] mb-2">95%</div>
-            <div className="text-gray-600 text-sm">Success Rate</div>
-          </motion.div>
+          <div className="bg-white rounded-xl p-8 sm:p-12 text-center shadow-lg border border-gray-200 max-w-2xl mx-auto">
+            <div className="mb-4">
+              <svg
+                className="mx-auto h-12 w-12 sm:h-16 sm:w-16 text-gray-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
+            </div>
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
+              No Sponsors Yet
+            </h3>
+            <p className="text-gray-600 text-sm sm:text-base">
+              We&apos;re currently focused on building our community and partnerships. 
+              Sponsorship opportunities will be available as we grow.
+            </p>
+          </div>
         </motion.div>
 
         {/* Call to Action */}
