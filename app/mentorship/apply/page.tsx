@@ -1,8 +1,10 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import { motion } from "framer-motion";
-import Link from "next/link";
+import type React from "react"
+
+import { useState } from "react"
+import { motion } from "framer-motion"
+import Link from "next/link"
 
 const ApplyPage = () => {
   const [formData, setFormData] = useState({
@@ -13,20 +15,16 @@ const ApplyPage = () => {
     goals: "",
     timezone: "",
     availability: "",
-  });
+  })
+  const url = process.env.NEXT_PUBLIC_FORMSPREE_URL;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
+    const { name, value } = e.target
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log(formData);
-  };
+      [name]: value,
+    }))
+  }
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
@@ -55,7 +53,11 @@ const ApplyPage = () => {
         transition={{ duration: 0.5 }}
         className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 sm:p-8 lg:p-10 max-w-3xl mx-auto"
       >
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form
+          action={url}
+          method="POST"
+          className="space-y-6"
+        >
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
               Full Name
@@ -209,27 +211,25 @@ const ApplyPage = () => {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-          What Happens Next?
-        </h2>
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">What Happens Next?</h2>
         <div className="max-w-3xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
             {[
               {
                 icon: "✉️",
                 title: "Application Review",
-                description: "We'll review your application within 3 business days"
+                description: "We'll review your application within 3 business days",
               },
               {
                 icon: "🤝",
                 title: "Mentor Matching",
-                description: "We'll match you with the best mentor for your goals"
+                description: "We'll match you with the best mentor for your goals",
               },
               {
                 icon: "🎉",
                 title: "Onboarding",
-                description: "Start your mentorship journey with a kickoff call"
-              }
+                description: "Start your mentorship journey with a kickoff call",
+              },
             ].map((item, index) => (
               <motion.div
                 key={index}
@@ -248,7 +248,7 @@ const ApplyPage = () => {
         </div>
       </motion.section>
     </div>
-  );
-};
+  )
+}
 
-export default ApplyPage;
+export default ApplyPage
