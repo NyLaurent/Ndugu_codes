@@ -5,8 +5,18 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 
+interface Mentor {
+  name: string;
+  role: string;
+  company: string;
+  expertise: string;
+  image: string;
+  bio: string;
+  track: string;
+}
+
 const MentorsPage = () => {
-  const mentors = [
+  const mentors: Mentor[] = [
     {
       name: "Petar Popovic",
       role: "Smart Contract Engineer && Founder @EthBelgrade",
@@ -26,15 +36,14 @@ const MentorsPage = () => {
       track: "DeFi & dApp Building"
     },
     {
-      name: "Kevin Jones",
+      name: "Crypto Mastery",
       role: "Blockchain Educator",
-      company: "Crypto Mastery",
+      company: "The Graph",
       expertise: "Onboarding, Technical Writing, Community Building",
       image: "/kevin-jones.jpeg",
       bio: "Longtime contributor to the Ethereum ecosystem and founder of Crypto Mastery. Co-founded BuidlGuidl and has onboarded 1000+ developers to Web3 through immersive programs and curriculum development. Passionate about making blockchain education accessible to everyone.",
       track: "Web3 Fundamentals, Solidity and smart contract development"
     },
-   
   ];
 
   // Filter options state
@@ -42,6 +51,13 @@ const MentorsPage = () => {
     track: "",
     search: ""
   });
+
+  // State for expanded bios
+  const [expandedBios, setExpandedBios] = useState<{ [key: number]: boolean }>({});
+
+  // State for modal
+  const [selectedMentor, setSelectedMentor] = useState<Mentor | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const filteredMentors = mentors.filter(mentor => {
     return (
@@ -57,6 +73,23 @@ const MentorsPage = () => {
       ...prev,
       [name]: value
     }));
+  };
+
+  const toggleBioExpansion = (index: number) => {
+    setExpandedBios(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+
+  const openModal = (mentor: Mentor) => {
+    setSelectedMentor(mentor);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedMentor(null);
   };
 
   return (
@@ -147,14 +180,16 @@ const MentorsPage = () => {
             transition={{ duration: 0.5, delay: index * 0.1 }}
             className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
           >
-            <div className="relative h-60 w-full">
-              <Image
-                src={mentor.image}
-                alt={mentor.name}
-                fill
-                className="object-cover"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+            <div className="relative flex items-center justify-center w-full py-4">
+              <div className="relative w-56 h-56">
+                <Image
+                  src={mentor.image}
+                  alt={mentor.name}
+                  fill
+                  className="object-cover object-center rounded-full border-4 border-white shadow-md"
+                />
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 rounded-b-xl">
                 <h3 className="text-xl font-bold text-white">{mentor.name}</h3>
                 <p className="text-blue-300 font-medium">{mentor.role}</p>
               </div>
@@ -177,15 +212,32 @@ const MentorsPage = () => {
                 </span>
               </div>
               
-              <p className="text-sm text-gray-600 mb-6 line-clamp-3">{mentor.bio}</p>
+              <div className="mb-6">
+                <p className="text-sm text-gray-600">
+                  {expandedBios[index] 
+                    ? mentor.bio 
+                    : mentor.bio.length > 120 
+                      ? `${mentor.bio.substring(0, 120)}...` 
+                      : mentor.bio
+                  }
+                </p>
+                {mentor.bio.length > 120 && (
+                  <button
+                    onClick={() => toggleBioExpansion(index)}
+                    className="text-blue-600 hover:text-blue-800 text-sm font-medium mt-2"
+                  >
+                    {expandedBios[index] ? 'Read Less' : 'Read More'}
+                  </button>
+                )}
+              </div>
               
               <div className="flex space-x-3">
-                <Link
-                  href={`/mentors/${mentor.name.toLowerCase().replace(/\s+/g, '-')}`}
+                <button
+                  onClick={() => openModal(mentor)}
                   className="flex-1 text-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors text-sm"
                 >
                   View Profile
-                </Link>
+                </button>
                 <Link
                   href="/mentorship/apply"
                   className="flex-1 text-center bg-white border border-blue-600 text-blue-600 hover:bg-blue-50 px-4 py-2 rounded-lg font-medium transition-colors text-sm"
@@ -223,6 +275,76 @@ const MentorsPage = () => {
             Clear all filters
           </button>
         </motion.div>
+      )}
+
+      {/* Mentor Profile Modal */}
+      {isModalOpen && selectedMentor && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            className="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+          >
+            <div className="relative">
+              <div className="relative h-80 w-full">
+                <Image
+                  src={selectedMentor.image}
+                  alt={selectedMentor.name}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                  <h2 className="text-2xl font-bold text-white">{selectedMentor.name}</h2>
+                  <p className="text-blue-300 font-medium text-lg">{selectedMentor.role}</p>
+                  <p className="text-gray-300">{selectedMentor.company}</p>
+                </div>
+                <button
+                  onClick={closeModal}
+                  className="absolute top-4 right-4 bg-black bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-70 transition-all"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              
+              <div className="p-6">
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">About</h3>
+                  <p className="text-gray-600 leading-relaxed">{selectedMentor.bio}</p>
+                </div>
+                
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Expertise</h3>
+                  <p className="text-gray-600">{selectedMentor.expertise}</p>
+                </div>
+                
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Track</h3>
+                  <span className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    {selectedMentor.track}
+                  </span>
+                </div>
+                
+                <div className="flex space-x-4">
+                  <Link
+                    href="/mentorship/apply"
+                    className="flex-1 text-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                  >
+                    Apply for Mentorship
+                  </Link>
+                  <button
+                    onClick={closeModal}
+                    className="flex-1 text-center bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-medium transition-colors"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       )}
 
       <motion.section

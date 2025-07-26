@@ -137,15 +137,6 @@ const MentorshipPage = () => {
         viewport={{ once: true }}
       >
         <div className="max-w-4xl mx-auto text-center">
-          <div className="relative w-full h-40 sm:h-48 md:h-56 lg:h-64 mb-8 rounded-xl overflow-hidden">
-            <Image
-              src="/img11.jpg"
-              alt="Mentorship Community"
-              fill
-              className="object-cover object-center"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 70vw"
-            />
-          </div>
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
             Why Choose Web3 Mates Mentorship?
           </h2>
