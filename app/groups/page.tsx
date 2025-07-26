@@ -54,10 +54,10 @@ export default function GroupsPage() {
       description:
         "This completed working group explored funding models for open source maintenance. Our final report with recommendations is available to all members. Some participants continue collaborating informally.",
       focusArea: "Open Source",
-      startDate: "2023-09-01",
+      startDate: "2024-02-01",
       endDate: "2024-03-01",
       members: 18,
-      organizer: "Sarah Williams",
+      organizer: "Joab Niwagaba",
       status: "completed",
       tags: ["opensource", "sustainability", "research"],
       imageUrl: "/past.jpeg",

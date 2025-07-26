@@ -150,7 +150,7 @@ const EnterprisePage = () => {
             <div className="p-8 sm:p-12">
               <div className="flex items-center gap-4 mb-6">
                 <Image
-                  src="/placeholder.svg?height=60&width=120&text=StoneProofLabs"
+                  src="/stoneprooflabs.png"
                   alt="StoneProofLabs"
                   width={120}
                   height={60}
@@ -187,23 +187,13 @@ const EnterprisePage = () => {
             {/* BuidlGuidl */}
             <div className="p-8 sm:p-12 flex flex-col items-center justify-center border-t lg:border-t-0 lg:border-l border-gray-100 transition-transform duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
               <Image
-                src="/placeholder.svg?height=400&width=500&text=Enterprise+Dashboard"
+                src="/enterprise-dashboard.svg"
                 alt="Enterprise Results"
                 width={500}
                 height={400}
                 className="w-full max-w-md"
               />
             </div>
-          </div>
-          <div className="bg-blue-50 text-center py-6 px-4 sm:px-8 border-t border-gray-100">
-            <p className="text-gray-700 text-sm sm:text-base">
-              More case studies and partnerships coming soon as Web3 Mates
-              grows. Interested in collaborating?{" "}
-              <Link href="#contact" className="text-[#0066FF] underline">
-                Contact us
-              </Link>
-              .
-            </p>
           </div>
         </div>
       </section>
@@ -220,11 +210,8 @@ const EnterprisePage = () => {
           Complete the form below and our enterprise team will contact you
           within 24 hours
         </p>
-        <form
-          className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto"
-          action={url}
-          method="POST"
-        >
+
+        <form className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
           <div>
             <label
               htmlFor="name"
@@ -235,7 +222,6 @@ const EnterprisePage = () => {
             <input
               type="text"
               id="name"
-              name="name"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF]"
               placeholder="Your name"
               required

@@ -17,22 +17,107 @@ const allProjects = [
     status: "Live",
     logo: "/stone_logo.svg",
     website: "https://stoneproof-eth.vercel.app/",
-    whitepaper: "https://stoneproof-eth.vercel.app/whitepaper.pdf",
+    whitepaper: "https://stoneproof-eth.vercel.app/#whitepaper",
     team: [
       { name: "Jonas Sebera", role: "Founder & CEO" },
       { name: "Jonas S.", role: "Blockchain Developer" },
-      { name: "Laurent N.", role: "UX Designer" },
+      { name: "Ashraf Tuyubahe", role: "Backend Developer" },
+      { name: "Aimable Kwizera", role: "Frontend Developer" },
+      { name: "Laurent N.", role: "UI / UX Developer" },
     ],
-    tech: ["Solidity", "Next.js", "IPFS", "Polygon", "WalletConnect"],
+    tech: ["Solidity", "Next.js", "IPFS", "Base", "WalletConnect"],
     milestones: [
-      { date: "Q1 2023", achievement: "Prototype development completed" },
-      { date: "Q2 2023", achievement: "Seed funding secured ($500k)" },
-      { date: "Q3 2023", achievement: "Beta launch with 100+ merchants" },
+      { date: "Q1 2024", achievement: "Prototype development completed" },
+      { date: "Q2 2025", achievement: "Seed funding secured ($5k)" },
+      { date: "Q3 2025", achievement: "Beta launch with 20+ merchants" },
     ],
     gallery: [
       "/stone_logo.svg",
       "/stoneproof_land.jpeg",
       "/stoneproof_dash.jpeg",
+    ],
+  },
+  {
+    id: 2,
+    title: "MedRecordChain",
+    description:
+      "We are building a trusted and transparent medical record system that empowers the medical industry and secures its future",
+    longDescription:
+      "MedRecordChain is revolutionizing healthcare data management by creating a secure, decentralized platform for medical records. Our blockchain-based solution ensures patient data privacy, enables secure sharing between healthcare providers, and eliminates data silos. With role-based access control and immutable audit trails, we're building the future of healthcare where patient data is both secure and accessible when needed.",
+    tags: ["Medical services", "social good", "DeFi"],
+    status: "Live",
+    logo: "/medrecordchain.jpeg",
+    website: "https://medrecordchain.vercel.app/",
+    whitepaper: "#",
+    team: [
+      { name: "Byiringiro Olivier", role: "Founder & CEO" },
+      { name: "Byiringiro O.", role: "Blockchain Developer" },
+      { name: "Gilbert M.", role: "UX Designer" },
+      { name: "Musabe Kelvin Shebelle", role: "Frontend Developer" },
+    ],
+    tech: ["Solidity", "Next.js", "IPFS"],
+    milestones: [
+      { date: "Q1 2024", achievement: "Concept development and team formation" },
+      { date: "Q2 2024", achievement: "Prototype development completed" },
+      { date: "Q3 2024", achievement: "Beta testing with healthcare partners" },
+    ],
+    gallery: [
+      "/medrecordchain.jpeg",
+      "/med1.png",
+      "/med2.png",
+    ],
+  },
+  {
+    id: 4,
+    title: "YallaDeFi",
+    description:
+      "Arabic-language DeFi education platform with gamified learning",
+    longDescription:
+      "YallaDeFi is breaking down barriers to DeFi education in the Arabic-speaking world. Our gamified learning platform makes complex DeFi concepts accessible through interactive tutorials, simulations, and real-world projects. By providing education in native languages and cultural contexts, we're empowering the next generation of Arabic-speaking DeFi users and builders.",
+    tags: ["Education", "DeFi", "Gamification"],
+    status: "Prototype",
+    logo: "https://avatars.dicebear.com/api/identicon/yalladefi.svg",
+    website: "#",
+    whitepaper: "#",
+    team: [
+      { name: "Karim B.", role: "Founder" },
+      { name: "Leila M.", role: "Content Lead" },
+    ],
+    tech: ["React", "Firebase", "Web3.js"],
+    milestones: [
+      { date: "Q1 2024", achievement: "Platform concept and curriculum design" },
+      { date: "Q2 2024", achievement: "MVP development in progress" },
+    ],
+    gallery: [
+      "https://avatars.dicebear.com/api/identicon/yalladefi.svg",
+      "/img12.jpg",
+      "/img13.jpg",
+    ],
+  },
+  {
+    id: 5,
+    title: "SAFUFund",
+    description: "Decentralized emergency fund for African creators",
+    longDescription:
+      "SAFUFund is creating a decentralized safety net for African creators and entrepreneurs. Through community-governed emergency funds, we provide financial support during crises while maintaining transparency and accountability. Our platform leverages DAO governance to ensure fair distribution of funds and community-driven decision making.",
+    tags: ["Social Impact", "Crowdfunding", "DAOs"],
+    status: "Ideation",
+    logo: "https://avatars.dicebear.com/api/identicon/safufund.svg",
+    website: "#",
+    whitepaper: "#",
+    team: [
+      { name: "Wanjiru K.", role: "Community Lead" },
+      { name: "Olumide B.", role: "Developer" },
+    ],
+    tech: ["Solidity", "Hardhat", "React"],
+    milestones: [
+      { date: "Q1 2024", achievement: "Community research and needs assessment" },
+      { date: "Q2 2024", achievement: "Smart contract architecture design" },
+    ],
+    gallery: [
+      "https://avatars.dicebear.com/api/identicon/safufund.svg",
+      "/img14.jpg",
+      "/img1.jpg",
     ],
   },
 ];
@@ -44,8 +129,8 @@ const ProjectProfilePage = () => {
 
   if (!project) {
     return (
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
-        <h1 className="text-2xl font-bold text-gray-900 mb-4">
+      <div className="mt-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
+        <h1 className="mt-4 text-2xl font-bold text-gray-900 mb-4">
           Project Not Found
         </h1>
         <p className="text-gray-600 mb-6">
@@ -63,7 +148,7 @@ const ProjectProfilePage = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="mt-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
