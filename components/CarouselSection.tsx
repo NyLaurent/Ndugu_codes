@@ -48,10 +48,6 @@ const CarouselSection = () => {
     }
   }, [isHovered, images.length])
 
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index)
-  }
-
   const goToPrevious = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)
   }
