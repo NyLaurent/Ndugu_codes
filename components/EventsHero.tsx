@@ -9,7 +9,7 @@ const EventsHero = () => {
 
         {/* Main Title */}
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-6">
-          Events & News Hub
+          Events & News Hubs
         </h1>
 
         {/* Description */}
