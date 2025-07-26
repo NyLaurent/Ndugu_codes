@@ -25,10 +25,10 @@ export default function GroupsPage() {
       description:
         "A group for developers building decentralized applications on Ethereum and IPFS. We meet weekly to share knowledge, collaborate on projects, and discuss the latest in blockchain technology. All skill levels welcome!",
       focusArea: "Blockchain Development",
-      startDate: "2024-06-01",
-      members: 24,
+      startDate: "2025-09-01",
+      members: 0,
       maxMembers: 30,
-      organizer: "Alice Chen",
+      organizer: "Jonas Sebera",
       status: "upcoming",
       tags: ["web3", "ethereum", "solidity", "beginners-welcome"],
       imageUrl: "/roundtables.jpeg",
@@ -40,10 +40,10 @@ export default function GroupsPage() {
       description:
         "Monthly discussions on ethical implications of AI systems and responsible development practices. This group brings together technologists, philosophers, and policymakers to examine critical issues in AI deployment.",
       focusArea: "Artificial Intelligence",
-      startDate: "2024-07-15",
-      endDate: "2024-12-15",
-      members: 12,
-      organizer: "Dr. Marcus Johnson",
+      startDate: "2026-07-15",
+      // endDate: "2026-02-15",
+      members: 0,
+      organizer: "Laurent Nyumbayire",
       status: "upcoming",
       tags: ["ai", "ethics", "discussion", "monthly"],
       imageUrl: "/ai_ethic.jpeg",
@@ -253,7 +253,7 @@ function GroupCard({
                 Timeline
               </h4>
               <p className="text-xs sm:text-sm text-gray-600">
-                Started: {format(parseISO(group.startDate), "MMMM d, yyyy")}
+                Start : {format(parseISO(group.startDate), "MMMM d, yyyy")}
                 {group.endDate &&
                   ` • Ended: ${format(parseISO(group.endDate), "MMMM d, yyyy")}`}
               </p>

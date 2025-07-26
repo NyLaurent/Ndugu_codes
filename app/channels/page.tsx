@@ -49,7 +49,7 @@ export default function ChannelsPage() {
       description:
         "Private channel for startup founders to share experiences, ask for advice, and discuss challenges of building a business.",
       category: "Business",
-      members: 154,
+      members: 0,
       lastActivity: "2024-06-15T18:45:00",
       tags: ["entrepreneurship", "funding", "growth"],
       icon: "🚀",
@@ -176,34 +176,29 @@ function ChannelCard({ channel }: { channel: Channel }) {
                 ))}
               </div>
 
-              {channel.lastActivity && (
-                <div className="text-xs sm:text-sm text-gray-500 flex items-center">
-                  <svg
-                    className="flex-shrink-0 mr-1.5 h-3 w-3 sm:h-4 sm:w-4 text-gray-400"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                  coming soon{" "}
-                  {format(parseISO(channel.lastActivity), "MMM d, h:mm a")}
-                </div>
-              )}
+              <div className="text-xs sm:text-sm text-gray-500 flex items-center">
+                <svg
+                  className="flex-shrink-0 mr-1.5 h-3 w-3 sm:h-4 sm:w-4 text-gray-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                Expected Launch: August 2025
+              </div>
             </div>
 
-            {channel.joinUrl && (
-              <div className="mt-4 sm:mt-6">
-                <button className="inline-flex items-center px-3 sm:px-4 py-2 border border-gray-300 text-xs sm:text-sm font-medium rounded-md text-gray-500 bg-gray-100 cursor-not-allowed">
-                  Coming Soon
-                </button>
-              </div>
-            )}
+            <div className="mt-4 sm:mt-6">
+              <button className="inline-flex items-center px-3 sm:px-4 py-2 border border-gray-300 text-xs sm:text-sm font-medium rounded-md text-gray-500 bg-gray-100 cursor-not-allowed w-full">
+                Coming Soon
+              </button>
+            </div>
           </div>
         </div>
       </div>
