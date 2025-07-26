@@ -271,7 +271,7 @@ const MentorshipPage = () => {
             Meet Your Mentors
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
-            Learn from Africa&apos;s top Web3 builders and educators
+            Learn from The World&apos;s top Web3 builders and educators
           </p>
         </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">

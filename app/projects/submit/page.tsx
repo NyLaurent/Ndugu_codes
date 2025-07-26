@@ -356,7 +356,7 @@ export default function SubmitProjectPage() {
                 </div>
                 <div>
                   <label htmlFor="twitter" className="block text-sm font-medium text-gray-700 mb-1">
-                    Twitter
+                    X (Twitter)
                   </label>
                   <input
                     type="url"
@@ -364,8 +364,8 @@ export default function SubmitProjectPage() {
                     name="twitter"
                     value={formData.twitter}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="https://twitter.com/yourproject"
+                    placeholder="https://x.com/yourproject"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF]"
                   />
                 </div>
                 <div>

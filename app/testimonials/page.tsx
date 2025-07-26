@@ -8,23 +8,15 @@ import { useState } from "react";
 const Testimonials = () => {
   const individualTestimonials = [
     {
-      name: "Petar Popovic",
-      role: "Founder and CEO of ETH-BELGRADE",
-      company: "ETH-BELGRADE",
+      name: "Jonas Sebera",
+      role: "Blockchain Developer",
+      company: "Stone Proof Labs",
       quote:
-        "As a longtime Ethereum ecosystem contributor and founder, I’ve seen many communities—but Web3 Mates stands out for its hands-on mentorship and real-world impact. Their support helped me scale ETH Belgrade and empower the next generation of blockchain builders.",
-      image: "/white.jpeg",
+        "Being part of Web3 Mates was a turning point for me. The training I received didn’t just teach me Web3—it transformed how I think, build, and connect in the blockchain space. Forever grateful to this community.",
+      image: "/jonas-dp.png",
       stats: "300% salary increase",
     },
-    {
-      name: "Michael Lawal",
-      role: "Conscious Capitalism Advocate & Web3 Educator",
-      company: "Open Source",
-      quote:
-        "Web3 Mates mentorship is a catalyst for social good. Their guidance enabled me to launch inclusive blockchain education programs, reaching hundreds of aspiring developers and advancing economic empowerment across Africa.",
-      image: "/mentor2.jpg",
-      stats: "200+ developers empowered",
-    },
+
     {
       name: "Gilbert Muhirwa",
       role: "University Student, Mining Sector",
@@ -62,20 +54,20 @@ const Testimonials = () => {
       stats: "Community growth",
     },
     {
-      name: "Web3Bridge",
-      logo: "/web3bridge.png",
-      industry: "Web3 Education",
+      name: "AyaHQ",
+      logo: "/AyaHQ-blue.png",
+      industry: "Web3 Community Platform",
       testimonial:
-        "The mentorship and collaboration with Web3 Mates helped us reach more learners and deliver hands-on blockchain education in Africa.",
-      stats: "Expanded reach",
+        "Web3 Mates has been a valuable partner in growing our African developer community and facilitating meaningful connections across the continent.",
+      stats: "Community growth",
     },
     {
-      name: "BuidlGuidl",
-      logo: "/logo-color.svg",
-      industry: "Ethereum Builders Guild",
+      name: "AyaHQ",
+      logo: "/AyaHQ-blue.png",
+      industry: "Web3 Community Platform",
       testimonial:
-        "Web3 Mates has contributed passionate developers and fresh perspectives to our builder community, strengthening our collective impact.",
-      stats: "Stronger builder network",
+        "Web3 Mates has been a valuable partner in growing our African developer community and facilitating meaningful connections across the continent.",
+      stats: "Community growth",
     },
   ];
 
