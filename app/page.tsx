@@ -8,6 +8,7 @@ import NewsletterSection from "@/components/NewsletterSection";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import useLoading from "@/hooks/useLoading";
 import CarouselSection from "@/components/CarouselSection";
+import PartnersShowcase from "@/components/PartnersShowcase";
 
 export default function Home() {
   const loading = useLoading();
@@ -24,6 +25,7 @@ export default function Home() {
       <EmpowerSection />
       <InnovateSection />
       <NewsletterSection />
+      <PartnersShowcase />
     </div>
   );
 }
