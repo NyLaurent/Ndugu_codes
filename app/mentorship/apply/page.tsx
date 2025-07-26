@@ -1,10 +1,9 @@
 "use client"
 
-import type React from "react"
-
 import { useState } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
+import { useToast } from "@/hooks/use-toast"
 
 const ApplyPage = () => {
   const [formData, setFormData] = useState({
@@ -16,9 +15,11 @@ const ApplyPage = () => {
     timezone: "",
     availability: "",
   })
-  const url = process.env.NEXT_PUBLIC_FORMSPREE_URL;
+  const { toast, ToastContainer } = useToast()
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
+  ) => {
     const { name, value } = e.target
     setFormData((prev) => ({
       ...prev,
@@ -26,8 +27,66 @@ const ApplyPage = () => {
     }))
   }
 
+  const url = process.env.NEXT_PUBLIC_FORMSPREE_URL;
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+
+    const form = e.currentTarget as HTMLFormElement
+    const data = new FormData(form)
+
+    toast({
+      title: "Submitting application...",
+      description: "Please wait while your application is being sent.",
+    })
+
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
+      })
+
+      if (response.ok) {
+        toast({
+          title: "Application Sent!",
+          description: "Your mentorship application has been sent successfully. We'll be in touch soon!",
+          variant: "success",
+        })
+        setFormData({
+          name: "",
+          email: "",
+          track: "",
+          experience: "",
+          goals: "",
+          timezone: "",
+          availability: "",
+        })
+      } else {
+        const result = await response.json()
+        toast({
+          title: "Submission Failed",
+          description: result.errors
+            ? result.errors.map((err: { message: string }) => err.message).join(", ")
+            : "There was an issue sending your application. Please try again.",
+          variant: "destructive",
+        })
+      }
+    } catch (error) {
+      console.error("Form submission error:", error)
+      toast({
+        title: "Error",
+        description: "An unexpected error occurred. Please try again later.",
+        variant: "destructive",
+      })
+    }
+  }
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+      <ToastContainer />
       <div className="text-center mb-12">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -53,11 +112,7 @@ const ApplyPage = () => {
         transition={{ duration: 0.5 }}
         className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 sm:p-8 lg:p-10 max-w-3xl mx-auto"
       >
-        <form
-          action={url}
-          method="POST"
-          className="space-y-6"
-        >
+        <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
               Full Name
@@ -204,7 +259,6 @@ const ApplyPage = () => {
         </form>
       </motion.div>
 
-      {/* Next Steps */}
       <motion.section
         className="mt-16 bg-blue-50 rounded-xl p-8 sm:p-12 text-center"
         initial={{ opacity: 0 }}
@@ -246,7 +300,7 @@ const ApplyPage = () => {
             ))}
           </div>
         </div>
-      </motion.section>
+      </motion.section>      
     </div>
   )
 }

@@ -65,7 +65,7 @@ export default function ContactHero() {
               <textarea
                 name="message"
                 rows={4}
-                placeholder="Hi! We are Lookscout..."
+                placeholder="Enter you message..."
                 className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base"
               ></textarea>
             </div>
