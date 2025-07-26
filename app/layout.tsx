@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 import Footer from "@/components/Footer";
+import NProgressProvider from "@/components/NProgressProvider";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -30,9 +31,11 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
       </head>
       <body className={`${montserrat.className} bg-white`}>
-        <Navbar />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
+        <NProgressProvider>
+          <Navbar />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
+        </NProgressProvider>
       </body>
     </html>
   );
