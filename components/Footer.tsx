@@ -50,7 +50,10 @@ const Footer = () => {
                   className="sm:w-6 sm:h-6"
                 />
               </a>
-              <a href="https://instagram.com/sebe_j_az99" className="hover:opacity-80 transition-opacity">
+              <a
+                href="https://instagram.com/sebe_j_az99"
+                className="hover:opacity-80 transition-opacity"
+              >
                 <Image
                   src="/instagram.svg"
                   alt="Instagram"
