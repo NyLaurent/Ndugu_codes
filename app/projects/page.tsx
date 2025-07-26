@@ -11,14 +11,33 @@ const featuredProjects = [
     title: "StoneProof Labs",
     description:
       "We are building a trusted and transparent mineral traceability system that empowers the mining industry and secures its future",
-    tags: ["E-commerce", "NFT", "DeFi"],
+    tags: ["E-commerce", "NFT", "DeFi", "RWA"],
     status: "Live",
     logo: "/stone_logo.svg",
     link: "/projects/1",
     team: [
-      { name: "Okwame N.", role: "Founder & CEO" },
+      { name: "Jonas Sebera", role: "Founder & CEO" },
       { name: "Jonas S.", role: "Blockchain Developer" },
-      { name: "Laurent N.", role: "UX Designer" },
+      { name: "Ashraf Tuyubahe", role: "Backend Developer" },
+      { name: "Aimable Kwizera", role: "Frontend Developer" },
+      { name: "Laurent N.", role: "UI / UX Developer" },
+    ],
+    tech: ["Solidity", "Next.js", "IPFS"],
+  },
+  {
+    id: 2,
+    title: "MedRecordChain",
+    description:
+      "We are building a trusted and transparent medical record system that empowers the medical industry and secures its future",
+    tags: ["Medical services", "social good", "DeFi"],
+    status: "Live",
+    logo: "/medrecordchain.jpeg",
+    link: "/projects/2",
+    team: [
+      { name: "Byiringiro Olivier", role: "Founder & CEO" },
+      { name: "Byiringiro O.", role: "Blockchain Developer" },
+      { name: "Gilbert M.", role: "UX Designer" },
+      { name: "Musabe Kelvin Shebelle", role: "Frontend Developer" },
     ],
     tech: ["Solidity", "Next.js", "IPFS"],
   }
@@ -83,7 +102,7 @@ const ProjectsPage = () => {
   );
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-24 pt-20 sm:pt-24">
+    <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-24 pt-20 sm:pt-24">
       {/* Hero Section */}
       <div className="relative w-full h-56 sm:h-72 mb-8 rounded-xl overflow-hidden">
         <Image src="/img1.jpg" alt="Web3 Community Projects" fill className="object-cover" />
