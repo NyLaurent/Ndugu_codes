@@ -29,7 +29,7 @@ export default function GroupsPage() {
       members: 24,
       maxMembers: 30,
       organizer: "Alice Chen",
-      status: "active",
+      status: "upcoming",
       tags: ["web3", "ethereum", "solidity", "beginners-welcome"],
       imageUrl: "/roundtables.jpeg",
       joinUrl: "/join/web3-builders",
@@ -123,7 +123,7 @@ export default function GroupsPage() {
               soon or start your own!
             </p>
             <button className="mt-4 inline-flex items-center px-3 sm:px-4 py-2 border border-transparent text-xs sm:text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700">
-              Propose a Group
+              Coming Soon
             </button>
           </div>
         )}
@@ -169,7 +169,7 @@ export default function GroupsPage() {
           we'll help with promotion and resources.
         </p>
         <button className="px-4 sm:px-6 py-2 sm:py-3 border border-transparent text-sm sm:text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700">
-          Submit Group Proposal
+          Coming Soon
         </button>
       </div>
     </div>
@@ -314,18 +314,15 @@ function GroupCard({
 
           {status === "active" && group.joinUrl && (
             <div className="mt-4 sm:mt-6">
-              <a
-                href={group.joinUrl}
-                className="inline-flex items-center px-3 sm:px-4 py-2 border border-transparent text-xs sm:text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
-              >
-                Join Group
-              </a>
+              <button className="inline-flex items-center px-3 sm:px-4 py-2 border border-gray-300 text-xs sm:text-sm font-medium rounded-md text-gray-500 bg-gray-100 cursor-not-allowed">
+                Coming Soon
+              </button>
             </div>
           )}
           {status === "upcoming" && (
             <div className="mt-4 sm:mt-6">
-              <button className="inline-flex items-center px-3 sm:px-4 py-2 border border-gray-300 text-xs sm:text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
-                Notify Me When Available
+              <button className="inline-flex items-center px-3 sm:px-4 py-2 border border-gray-300 text-xs sm:text-sm font-medium rounded-md text-gray-500 bg-gray-100 cursor-not-allowed">
+                Coming Soon
               </button>
             </div>
           )}
