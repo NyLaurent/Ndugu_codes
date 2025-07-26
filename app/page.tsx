@@ -7,6 +7,7 @@ import InnovateSection from "@/components/InnovateSection";
 import NewsletterSection from "@/components/NewsletterSection";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import useLoading from "@/hooks/useLoading";
+import CarouselSection from "@/components/CarouselSection";
 
 export default function Home() {
   const loading = useLoading();
@@ -18,6 +19,7 @@ export default function Home() {
   return (
     <div>
       <HeroSection />
+      <CarouselSection />
       <ImpactSection />
       <EmpowerSection />
       <InnovateSection />
