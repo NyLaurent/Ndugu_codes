@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 :root {
   --background: #ffffff;
   --foreground: #ffff;
@@ -49,7 +48,6 @@ body {
 html {
   scroll-behavior: smooth;
 }
-
 
 .rotate-animation {
   transform-origin: center;
