@@ -229,7 +229,7 @@ const EnterprisePage = () => {
               type="text"
               id="name"
               name="name"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF] text-black"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF] text-black outline-none"
               placeholder="Your name"
               required
             />
@@ -242,7 +242,7 @@ const EnterprisePage = () => {
               type="text"
               id="company"
               name="company"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF] text-black"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF] text-black outline-none"
               placeholder="Company name"
               required
             />
@@ -255,7 +255,7 @@ const EnterprisePage = () => {
               type="email"
               id="email"
               name="email"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF] text-black"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF] text-black outline-none"
               placeholder="you@company.com"
               required
             />
@@ -268,7 +268,7 @@ const EnterprisePage = () => {
               type="tel"
               id="phone"
               name="phone"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF] text-black"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF] text-black outline-none"
               placeholder="+256 XXX XXX XXX"
             />
           </div>
@@ -279,7 +279,7 @@ const EnterprisePage = () => {
             <select
               id="needs"
               name="partnershipInterest"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF] text-black"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF] text-black outline-none"
               required
             >
               <option value="">Select partnership interest</option>
@@ -297,7 +297,7 @@ const EnterprisePage = () => {
               id="message"
               name="message"
               rows={4}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF] text-black"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF] text-black outline-none"
               placeholder="Tell us about your Web3 needs..."
             ></textarea>
           </div>

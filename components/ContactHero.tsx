@@ -85,7 +85,7 @@ const ContactHero = () => {
                   type="text"
                   name="firstName"
                   placeholder="Please input"
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base outline-none"
                   required
                 />
               </div>
@@ -95,7 +95,7 @@ const ContactHero = () => {
                   type="email"
                   name="email"
                   placeholder="Please input"
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base outline-none"
                   required
                 />
               </div>
@@ -107,14 +107,14 @@ const ContactHero = () => {
                   type="tel"
                   name="phone"
                   placeholder="+000"
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base outline-none"
                 />
               </div>
               <div>
                 <label className="block text-gray-700 mb-2 text-sm sm:text-base">Contact method</label>
                 <select
                   name="contactMethod"
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base outline-none"
                   defaultValue=""
                   required
                 >
@@ -133,7 +133,7 @@ const ContactHero = () => {
                 name="message"
                 rows={4}
                 placeholder="Enter your message..."
-                className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base outline-none"
                 required
               ></textarea>
             </div>
@@ -142,7 +142,7 @@ const ContactHero = () => {
                 type="checkbox"
                 name="privacyPolicy"
                 id="privacyPolicy"
-                className="h-4 w-4 text-blue-600 rounded border-gray-300 mt-1"
+                className="h-4 w-4 text-blue-600 rounded border-gray-300 mt-1 outline-none"
                 required
               />
               <label htmlFor="privacyPolicy" className="ml-2 text-xs sm:text-sm text-gray-600">

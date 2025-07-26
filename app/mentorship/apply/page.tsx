@@ -124,7 +124,7 @@ const ApplyPage = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none"
               placeholder="Your name"
             />
           </div>
@@ -140,7 +140,7 @@ const ApplyPage = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none"
               placeholder="your@email.com"
             />
           </div>
@@ -155,7 +155,7 @@ const ApplyPage = () => {
               value={formData.track}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none"
             >
               <option value="">Select a track</option>
               <option value="Web3 Fundamentals">Web3 Fundamentals</option>
@@ -178,7 +178,7 @@ const ApplyPage = () => {
                     value={level}
                     checked={formData.experience === level}
                     onChange={handleChange}
-                    className="h-4 w-4 text-blue-600 focus:ring-blue-500"
+                    className="h-4 w-4 text-blue-600 focus:ring-blue-500 outline-none"
                   />
                   <label htmlFor={`experience-${level.toLowerCase()}`} className="ml-2 block text-sm text-gray-700">
                     {level}
@@ -199,7 +199,7 @@ const ApplyPage = () => {
               onChange={handleChange}
               required
               rows={4}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none"
               placeholder="What do you hope to achieve through this mentorship?"
             />
           </div>
@@ -215,7 +215,7 @@ const ApplyPage = () => {
               value={formData.timezone}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none"
               placeholder="e.g. GMT+1, EST, etc."
             />
           </div>
@@ -231,7 +231,7 @@ const ApplyPage = () => {
               value={formData.availability}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none"
               placeholder="How many hours per week can you dedicate?"
             />
           </div>
