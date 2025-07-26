@@ -12,6 +12,7 @@ const OurStory = () => {
       description:
         "Joab Niwagaba, while working on blockchain projects, recognized Africa's potential to leapfrog traditional systems through Web3.",
       image: "/the-spark.jpeg",
+
       icon: "",
     },
     {
@@ -99,7 +100,8 @@ const OurStory = () => {
                 From <span className="text-[#0066FF]">Vision</span> to Movement
               </h1>
               <p className="text-base sm:text-lg lg:text-xl text-white/90 max-w-3xl mx-auto">
-                How a small group of passionate Africans came together to build Web3 Mates
+                How a small group of passionate Africans came together to build
+                Web3 Mates
               </p>
             </motion.div>
           </div>
