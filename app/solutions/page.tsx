@@ -65,7 +65,7 @@ const SolutionsPage = () => {
           "Mastermind groups",
           "Collaboration portals",
         ],
-        image: "/img8.jpg", // Large group/community photo
+        image: "/assembly.jpeg", // Large group/community photo
       },
     },
     {
@@ -101,25 +101,25 @@ const SolutionsPage = () => {
     },
   ];
 
-  const successStories = [
-    {
-      name: "GrowEasy",
-      result: "Increased farmer payments by 40%",
-      story:
-        "Trained 3 developers who built a blockchain solution for agricultural supply chains.",
-    },
-    {
-      name: "PayPulse",
-      result: "$1.2M in seed funding",
-      story:
-        "Co-founded by 2 Web3 Mates alumni specializing in cross-border payments.",
-    },
-    {
-      name: "SecureChain",
-      result: "3x engineering capacity",
-      story: "Hired 5 graduates who reduced smart contract audit times by 30%.",
-    },
-  ];
+  // const successStories = [
+  //   {
+  //     name: "GrowEasy",
+  //     result: "Increased farmer payments by 40%",
+  //     story:
+  //       "Trained 3 developers who built a blockchain solution for agricultural supply chains.",
+  //   },
+  //   {
+  //     name: "PayPulse",
+  //     result: "$1.2M in seed funding",
+  //     story:
+  //       "Co-founded by 2 Web3 Mates alumni specializing in cross-border payments.",
+  //   },
+  //   {
+  //     name: "SecureChain",
+  //     result: "3x engineering capacity",
+  //     story: "Hired 5 graduates who reduced smart contract audit times by 30%.",
+  //   },
+  // ];
 
   const ArrowAnimation = ({ reversed = false }) => (
     <motion.div
@@ -268,7 +268,7 @@ const SolutionsPage = () => {
           </div>
         ))}
       </section>
-
+{/* 
       <section className="mb-12 sm:mb-16">
         <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">
           Proven Impact Across Africa
@@ -298,7 +298,7 @@ const SolutionsPage = () => {
             </motion.div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       <motion.section
         initial={{ opacity: 0 }}
@@ -316,7 +316,7 @@ const SolutionsPage = () => {
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Link
-            href="/course"
+            href="/mentorship"
             className="bg-white text-blue-600 px-4 sm:px-6 py-3 rounded-lg hover:shadow-md font-medium transition-all text-sm sm:text-base"
           >
             Explore Programs
