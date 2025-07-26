@@ -19,7 +19,7 @@ const allProjects = [
     website: "https://stoneproof-eth.vercel.app/",
     whitepaper: "https://stoneproof-eth.vercel.app/whitepaper.pdf",
     team: [
-      { name: "Okwame N.", role: "Founder & CEO" },
+      { name: "Jonas Sebera", role: "Founder & CEO" },
       { name: "Jonas S.", role: "Blockchain Developer" },
       { name: "Laurent N.", role: "UX Designer" },
     ],

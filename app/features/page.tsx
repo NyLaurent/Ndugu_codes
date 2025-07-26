@@ -274,11 +274,7 @@ const FeaturesPage = () => {
             </thead>
             <tbody className="divide-y divide-gray-200">
               {[
-                [
-                  "Curriculum",
-                  "Theoretical concepts",
-                  "Project-based learning",
-                ],
+                ["Curriculum", "Theoretical concepts", "Project-based learning"],
                 ["Content", "Global case studies", "African-focused examples"],
                 ["Instructors", "Academic teachers", "Industry practitioners"],
                 ["Outcome", "Certificate", "Job placement"],
