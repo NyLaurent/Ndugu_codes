@@ -8,86 +8,44 @@ import { useState } from "react";
 const MentorsPage = () => {
   const mentors = [
     {
-      name: "Jonas Sebera",
-      role: "Smart Contract Engineer",
-      company: "ChainSafe Africa",
+      name: "Petar Popovic",
+      role: "Smart Contract Engineer && Founder @EthBelgrade",
+      company: "ETH BELGRADE",
       expertise: "Solidity, Security Audits, EVM Chains",
-      image: "/mentor-1.jpg",
-      bio: "Former Ethereum core contributor with 5+ years experience in smart contract development and security audits.",
-      availability: "Accepting new mentees",
-      rate: "$100/hr",
+      image: "/white.jpeg",
+      bio: "Former Ethereum core contributor with 5+ years experience in smart contract development and security audits. Specializes in building secure, gas-optimized smart contracts and conducting comprehensive security audits for DeFi protocols.",
       track: "Smart Contract Development"
     },
     {
-      name: "Jonas Sebera",
-      role: "DeFi Architect",
-      company: "Binance Africa",
+      name: "Michael Lawal",
+      role: "Conscious Capitalism Advocate",
+      company: "Open Source",
       expertise: "DeFi Protocols, Tokenomics, DAOs",
-      image: "/mentor-2.jpg",
-      bio: "Built multiple TVL-leading DeFi protocols in Africa. Specializes in protocol design and economic mechanisms.",
-      availability: "Waitlist only",
-      rate: "$150/hr",
+      image: "/mentor2.jpg",
+      bio: "Pioneering tech for good initiatives and economic inclusion through blockchain technology. Advocates for sustainable development goals (SDGs) and builds solutions that bridge traditional finance with decentralized systems.",
       track: "DeFi & dApp Building"
     },
     {
-      name: "Jonas Sebera",
+      name: "Kevin Jones",
       role: "Blockchain Educator",
-      company: "Web3Bridge",
+      company: "Crypto Mastery",
       expertise: "Onboarding, Technical Writing, Community Building",
-      image: "/mentor-3.jpg",
-      bio: "Has onboarded 1000+ developers to Web3 through immersive programs and curriculum development.",
-      availability: "Accepting new mentees",
-      rate: "$80/hr",
-      track: "Web3 Fundamentals"
+      image: "/kevin-jones.jpeg",
+      bio: "Longtime contributor to the Ethereum ecosystem and founder of Crypto Mastery. Co-founded BuidlGuidl and has onboarded 1000+ developers to Web3 through immersive programs and curriculum development. Passionate about making blockchain education accessible to everyone.",
+      track: "Web3 Fundamentals, Solidity and smart contract development"
     },
-    {
-      name: "Jonas Sebera",
-      role: "Blockchain Infrastructure Engineer",
-      company: "Luno Nigeria",
-      expertise: "Node Operation, Indexing, Blockchain APIs",
-      image: "/mentor-4.jpg",
-      bio: "Specializes in blockchain infrastructure and backend systems for Web3 applications.",
-      availability: "Accepting new mentees",
-      rate: "$120/hr",
-      track: "Smart Contract Development"
-    },
-    {
-      name: "Jonas Sebera",
-      role: "NFT & Creator Economy Specialist",
-      company: "SuperRare Africa",
-      expertise: "NFTs, IP Rights, Creator Monetization",
-      image: "/mentor-5.jpg",
-      bio: "Helps artists and creators navigate the NFT space with technical and business guidance.",
-      availability: "Limited availability",
-      rate: "$90/hr",
-      track: "DeFi & dApp Building"
-    },
-    {
-      name: "Jonas Sebera",
-      role: "ZK Proof Researcher",
-      company: "ZCash Foundation",
-      expertise: "Zero-Knowledge Proofs, Cryptography, Privacy",
-      image: "/mentor-6.jpg",
-      bio: "Working on cutting-edge privacy solutions for blockchain networks through advanced cryptography.",
-      availability: "Not currently accepting",
-      rate: "$200/hr",
-      track: "Advanced Topics"
-    }
+   
   ];
 
   // Filter options state
   const [filters, setFilters] = useState({
     track: "",
-    availability: "",
     search: ""
   });
 
   const filteredMentors = mentors.filter(mentor => {
     return (
       (filters.track === "" || mentor.track === filters.track) &&
-      (filters.availability === "" || 
-       (filters.availability === "available" && mentor.availability.includes("Accepting")) ||
-       (filters.availability === "waitlist" && mentor.availability.includes("Waitlist"))) &&
       (filters.search === "" || 
        mentor.name.toLowerCase().includes(filters.search.toLowerCase()) ||
        mentor.expertise.toLowerCase().includes(filters.search.toLowerCase())))
@@ -119,7 +77,7 @@ const MentorsPage = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-gray-600 max-w-3xl mx-auto text-lg"
         >
-          Learn directly from Africa&apos;s top blockchain builders, researchers, and educators.
+          Learn directly from Africa&apos;s top blockchain builders, researchers, and educators in our free community.
         </motion.p>
       </div>
 
@@ -130,7 +88,7 @@ const MentorsPage = () => {
         transition={{ duration: 0.5 }}
         className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-12"
       >
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
             <label htmlFor="search" className="block text-sm font-medium text-gray-700 mb-1">
               Search Mentors
@@ -165,28 +123,10 @@ const MentorsPage = () => {
             </select>
           </div>
           
-          <div>
-            <label htmlFor="availability" className="block text-sm font-medium text-gray-700 mb-1">
-              Availability
-            </label>
-            <select
-              id="availability"
-              name="availability"
-              value={filters.availability}
-              onChange={handleFilterChange}
-              className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
-            >
-              <option value="">All Mentors</option>
-              <option value="available">Accepting New Mentees</option>
-              <option value="waitlist">Waitlist Only</option>
-            </select>
-          </div>
-          
           <div className="flex items-end">
             <button
               onClick={() => setFilters({
                 track: "",
-                availability: "",
                 search: ""
               })}
               className="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-lg transition-colors"
@@ -221,20 +161,8 @@ const MentorsPage = () => {
             </div>
             
             <div className="p-6">
-              <div className="flex justify-between items-start mb-4">
-                <div>
-                  <p className="text-sm text-gray-600">{mentor.company}</p>
-                  <p className="text-sm font-medium text-gray-900 mt-1">
-                    <span className={`inline-block w-2 h-2 rounded-full mr-2 ${
-                      mentor.availability.includes("Accepting") ? "bg-green-500" : 
-                      mentor.availability.includes("Waitlist") ? "bg-yellow-500" : "bg-red-500"
-                    }`}></span>
-                    {mentor.availability}
-                  </p>
-                </div>
-                <span className="bg-blue-50 text-blue-600 px-3 py-1 rounded-full text-sm font-medium">
-                  {mentor.rate}
-                </span>
+              <div className="mb-4">
+                <p className="text-sm text-gray-600">{mentor.company}</p>
               </div>
               
               <div className="mb-4">
@@ -258,14 +186,12 @@ const MentorsPage = () => {
                 >
                   View Profile
                 </Link>
-                {mentor.availability.includes("Accepting") && (
-                  <Link
-                    href="/mentorship/apply"
-                    className="flex-1 text-center bg-white border border-blue-600 text-blue-600 hover:bg-blue-50 px-4 py-2 rounded-lg font-medium transition-colors text-sm"
-                  >
-                    Apply Now
-                  </Link>
-                )}
+                <Link
+                  href="/mentorship/apply"
+                  className="flex-1 text-center bg-white border border-blue-600 text-blue-600 hover:bg-blue-50 px-4 py-2 rounded-lg font-medium transition-colors text-sm"
+                >
+                  Apply Now
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -290,7 +216,6 @@ const MentorsPage = () => {
           <button
             onClick={() => setFilters({
               track: "",
-              availability: "",
               search: ""
             })}
             className="mt-4 text-blue-600 hover:text-blue-800 font-medium"
