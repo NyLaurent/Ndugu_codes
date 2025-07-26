@@ -10,7 +10,7 @@ const CollaborationStories = () => {
             Collaboration in Action
           </h2>
           <p className="text-gray-600 max-w-2xl sm:max-w-3xl mx-auto text-sm sm:text-base lg:text-lg px-2">
-            At Web3 Mates, we're working to build partnerships that empower
+            At Web3 Mates, we &apos; re working to build partnerships that empower
             talent, connect communities, and help shape Africa's future in
             Web3. Here's a look at some of the initiatives we aim to launch
             soon.
