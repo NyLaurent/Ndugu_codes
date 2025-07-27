@@ -1,19 +1,83 @@
 "use client"
 
-export default function ContactHero() {
+import { useToast } from "@/hooks/use-toast"
+import { motion } from "framer-motion"
+
+const ContactHero = () => {
   const url = process.env.NEXT_PUBLIC_FORMSPREE_URL;
+  const { toast, ToastContainer } = useToast()
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+
+    const form = e.currentTarget as HTMLFormElement
+    const data = new FormData(form)
+
+    toast({
+      title: "Submitting message...",
+      description: "Please wait while your message is being sent.",
+    })
+
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
+      })
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent!",
+          description: "Your message has been sent successfully. We'll get back to you soon!",
+          variant: "success",
+        })
+        form.reset()
+      } else {
+        const result = await response.json()
+        toast({
+          title: "Submission Failed",
+          description: result.errors
+            ? result.errors.map((err: { message: string }) => err.message).join(", ")
+            : "There was an issue sending your message. Please try again.",
+          variant: "destructive",
+        })
+      }
+    } catch (error) {
+      console.error("Form submission error:", error)
+      toast({
+        title: "Error",
+        description: "An unexpected error occurred. Please try again later.",
+        variant: "destructive",
+      })
+    }
+  }
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 pt-20 sm:pt-24">
       <div className="text-center mb-8 sm:mb-10 lg:mb-12">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Get in Touch with Us</h1>
-        <p className="text-gray-600 text-sm sm:text-base lg:text-lg">
+        <motion.h1
+          className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          Get in Touch with Us
+        </motion.h1>
+        <motion.p
+          className="text-gray-600 text-sm sm:text-base lg:text-lg"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           Reach out to us with any question or inquiry you have and we&apos;ll do our best to get back to you as soon as
           possible.
-        </p>
+        </motion.p>
       </div>
       <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
         <div className="lg:col-span-2">
-          <form className="space-y-4 sm:space-y-6" action={url} method="POST">
+          <form className="space-y-4 sm:space-y-6" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <div>
                 <label className="block text-gray-700 mb-2 text-sm sm:text-base">First Name</label>
@@ -21,7 +85,8 @@ export default function ContactHero() {
                   type="text"
                   name="firstName"
                   placeholder="Please input"
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base outline-none"
+                  required
                 />
               </div>
               <div>
@@ -30,7 +95,8 @@ export default function ContactHero() {
                   type="email"
                   name="email"
                   placeholder="Please input"
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base outline-none"
+                  required
                 />
               </div>
             </div>
@@ -41,15 +107,16 @@ export default function ContactHero() {
                   type="tel"
                   name="phone"
                   placeholder="+000"
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base outline-none"
                 />
               </div>
               <div>
                 <label className="block text-gray-700 mb-2 text-sm sm:text-base">Contact method</label>
                 <select
                   name="contactMethod"
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base outline-none"
                   defaultValue=""
+                  required
                 >
                   <option value="" disabled>
                     Choose method
@@ -65,8 +132,9 @@ export default function ContactHero() {
               <textarea
                 name="message"
                 rows={4}
-                placeholder="Hi! We are Lookscout..."
-                className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base"
+                placeholder="Enter your message..."
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base outline-none"
+                required
               ></textarea>
             </div>
             <div className="flex items-start">
@@ -74,18 +142,21 @@ export default function ContactHero() {
                 type="checkbox"
                 name="privacyPolicy"
                 id="privacyPolicy"
-                className="h-4 w-4 text-blue-600 rounded border-gray-300 mt-1"
+                className="h-4 w-4 text-blue-600 rounded border-gray-300 mt-1 outline-none"
+                required
               />
               <label htmlFor="privacyPolicy" className="ml-2 text-xs sm:text-sm text-gray-600">
                 I agree with Web3 Mates Privacy Policy
-              </label>
+              </label>g
             </div>
-            <button
-              type="submit"
-              className="px-4 sm:px-6 py-2 sm:py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm sm:text-base w-full sm:w-auto"
-            >
-              Submit
-            </button>
+            <div>
+              <button
+                type="submit"
+                className="px-4 sm:px-6 py-2 sm:py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm sm:text-base w-full sm:w-auto"
+              >
+                Submit
+              </button>
+            </div>
           </form>
         </div>
         <div className="space-y-6 sm:space-y-8">
@@ -138,6 +209,9 @@ export default function ContactHero() {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   )
 }
+
+export default ContactHero

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
+import { useToast } from "@/hooks/use-toast"
 
 const EnterprisePage = () => {
   const url = process.env.NEXT_PUBLIC_FORMSPREE_URL;
@@ -30,6 +31,8 @@ const EnterprisePage = () => {
     },
   ]
 
+  const url = process.env.NEXT_PUBLIC_FORMSPREE_URL;
+
   const successMetrics = [
     { value: "3-6x", label: "Faster onboarding" },
     { value: "40%", label: "Cost reduction" },
@@ -37,9 +40,57 @@ const EnterprisePage = () => {
     { value: "100%", label: "Certified teams" },
   ]
 
+  const { toast, ToastContainer } = useToast()
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+
+    const form = e.currentTarget as HTMLFormElement
+    const data = new FormData(form)
+
+    toast({
+      title: "Submitting inquiry...",
+      description: "Please wait while your request is being sent.",
+    })
+
+    try {
+      const response = await fetch(url || "https://formspree.io/f/YOUR_ENTERPRISE_FORM_ID", {
+        method: "POST",
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
+      })
+
+      if (response.ok) {
+        toast({
+          title: "Inquiry Sent!",
+          description: "Your enterprise inquiry has been sent successfully. We'll contact you within 24 hours.",
+          variant: "success",
+        })
+        form.reset()
+      } else {
+        const result = await response.json()
+        toast({
+          title: "Submission Failed",
+          description: result.errors
+            ? result.errors.map((err: { message: string }) => err.message).join(", ")
+            : "There was an issue sending your inquiry. Please try again.",
+          variant: "destructive",
+        })
+      }
+    } catch (error) {
+      console.error("Form submission error:", error)
+      toast({
+        title: "Error",
+        description: "An unexpected error occurred. Please try again later.",
+        variant: "destructive",
+      })
+    }
+  }
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-      {/* Hero */}
       <div className="text-center mb-16 lg:mb-20">
         <motion.h1
           className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0B1C39] mb-4 sm:mb-6"
@@ -120,8 +171,8 @@ const EnterprisePage = () => {
             <div className="p-8 sm:p-12">
               <div className="flex items-center gap-4 mb-6">
                 <Image
-                  src="/placeholder.svg?height=60&width=120&text=StoneProofLabs"
-                  alt="StoneProofLabs"
+                  src="/placeholder.svg?height=60&width=120"
+                  alt="StoneProofLabs logo"
                   width={120}
                   height={60}
                   className="h-12 object-contain"
@@ -152,8 +203,8 @@ const EnterprisePage = () => {
             </div>
             <div className="bg-gray-50 flex items-center justify-center p-8">
               <Image
-                src="/placeholder.svg?height=400&width=500&text=Enterprise+Dashboard"
-                alt="Enterprise Results"
+                src="/placeholder.svg?height=400&width=500"
+                alt="Enterprise Results dashboard"
                 width={500}
                 height={400}
                 className="w-full max-w-md"
@@ -163,7 +214,6 @@ const EnterprisePage = () => {
         </div>
       </section>
 
-      {/* Contact Form */}
       <section id="contact" className="bg-white rounded-2xl p-8 sm:p-12 shadow-sm border border-gray-100">
         <h2 className="text-2xl sm:text-3xl font-bold text-[#0B1C39] mb-2 text-center">
           Start Your Web3 Transformation
@@ -171,11 +221,7 @@ const EnterprisePage = () => {
         <p className="text-gray-600 mb-8 text-center max-w-2xl mx-auto">
           Complete the form below and our enterprise team will contact you within 24 hours
         </p>
-        <form
-          className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto"
-          action={url}
-          method="POST"
-        >
+        <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
               Full Name
@@ -184,7 +230,7 @@ const EnterprisePage = () => {
               type="text"
               id="name"
               name="name"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF]"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF] text-black outline-none"
               placeholder="Your name"
               required
             />
@@ -197,7 +243,7 @@ const EnterprisePage = () => {
               type="text"
               id="company"
               name="company"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF]"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF] text-black outline-none"
               placeholder="Company name"
               required
             />
@@ -210,7 +256,7 @@ const EnterprisePage = () => {
               type="email"
               id="email"
               name="email"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF]"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF] text-black outline-none"
               placeholder="you@company.com"
               required
             />
@@ -223,7 +269,7 @@ const EnterprisePage = () => {
               type="tel"
               id="phone"
               name="phone"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF]"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF] text-black outline-none"
               placeholder="+256 XXX XXX XXX"
             />
           </div>
@@ -234,7 +280,7 @@ const EnterprisePage = () => {
             <select
               id="needs"
               name="partnershipInterest"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF]"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF] text-black outline-none"
               required
             >
               <option value="">Select partnership interest</option>
@@ -252,7 +298,7 @@ const EnterprisePage = () => {
               id="message"
               name="message"
               rows={4}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF]"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF] text-black outline-none"
               placeholder="Tell us about your Web3 needs..."
             ></textarea>
           </div>
@@ -266,6 +312,8 @@ const EnterprisePage = () => {
           </div>
         </form>
       </section>
+
+      <ToastContainer />
     </div>
   )
 }
