@@ -83,12 +83,28 @@ const PartnersShowcase = () => {
         </div>
 
         {/* Partnership Stats */}
+        {/* Sponsors Section */}
+        <motion.div
+          className="mt-12 text-center mb-12 sm:mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+        >
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0B1C39] mb-4">
+            Our <span className="text-[#0066FF]">Sponsors</span>
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto text-base sm:text-lg">
+            We appreciate the support of organizations that believe in our mission
+          </p>
+        </motion.div>
+
         <motion.div
           className="mt-16 sm:mt-20"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
+          transition={{ delay: 0.3 }}
         >
           <div className="bg-white rounded-xl p-8 sm:p-12 text-center shadow-lg border border-gray-200 max-w-2xl mx-auto">
             <div className="mb-4">
