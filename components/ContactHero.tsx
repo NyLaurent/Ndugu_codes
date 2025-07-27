@@ -1,10 +1,10 @@
 "use client";
 
-import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 import { FaXTwitter } from "react-icons/fa6";
+import { useToast } from "@/hooks/use-toast";
 
-const ContactHero = () => {
+export default function ContactHero() {
   const url = process.env.NEXT_PUBLIC_FORMSPREE_URL;
   const { toast, ToastContainer } = useToast();
 
@@ -20,7 +20,7 @@ const ContactHero = () => {
     });
 
     try {
-      const response = await fetch(url, {
+      const response = await fetch(url || "", {
         method: "POST",
         body: data,
         headers: {
@@ -251,6 +251,4 @@ const ContactHero = () => {
       <ToastContainer />
     </div>
   );
-};
-
-export default ContactHero;
+}
