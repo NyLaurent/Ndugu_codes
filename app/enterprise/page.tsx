@@ -1,9 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion"
-import Image from "next/image"
-import Link from "next/link"
-import { useToast } from "@/hooks/use-toast"
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { useToast } from "@/hooks/use-toast";
 
 const EnterprisePage = () => {
   const url = process.env.NEXT_PUBLIC_FORMSPREE_URL;
@@ -41,65 +41,69 @@ const EnterprisePage = () => {
         "White-label solutions",
       ],
     },
-  ]
-
-  const url = process.env.NEXT_PUBLIC_FORMSPREE_URL;
+  ];
 
   const successMetrics = [
     { value: "3-6x", label: "Faster onboarding" },
     { value: "40%", label: "Cost reduction" },
     { value: "85%+", label: "Retention rate" },
     { value: "100%", label: "Certified teams" },
-  ]
+  ];
 
-  const { toast, ToastContainer } = useToast()
+  const { toast, ToastContainer } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    const form = e.currentTarget as HTMLFormElement
-    const data = new FormData(form)
+    const form = e.currentTarget as HTMLFormElement;
+    const data = new FormData(form);
 
     toast({
       title: "Submitting inquiry...",
       description: "Please wait while your request is being sent.",
-    })
+    });
 
     try {
-      const response = await fetch(url || "https://formspree.io/f/YOUR_ENTERPRISE_FORM_ID", {
-        method: "POST",
-        body: data,
-        headers: {
-          Accept: "application/json",
-        },
-      })
+      const response = await fetch(
+        url || "https://formspree.io/f/YOUR_ENTERPRISE_FORM_ID",
+        {
+          method: "POST",
+          body: data,
+          headers: {
+            Accept: "application/json",
+          },
+        }
+      );
 
       if (response.ok) {
         toast({
           title: "Inquiry Sent!",
-          description: "Your enterprise inquiry has been sent successfully. We'll contact you within 24 hours.",
+          description:
+            "Your enterprise inquiry has been sent successfully. We'll contact you within 24 hours.",
           variant: "success",
-        })
-        form.reset()
+        });
+        form.reset();
       } else {
-        const result = await response.json()
+        const result = await response.json();
         toast({
           title: "Submission Failed",
           description: result.errors
-            ? result.errors.map((err: { message: string }) => err.message).join(", ")
+            ? result.errors
+                .map((err: { message: string }) => err.message)
+                .join(", ")
             : "There was an issue sending your inquiry. Please try again.",
           variant: "destructive",
-        })
+        });
       }
     } catch (error) {
-      console.error("Form submission error:", error)
+      console.error("Form submission error:", error);
       toast({
         title: "Error",
         description: "An unexpected error occurred. Please try again later.",
         variant: "destructive",
-      })
+      });
     }
-  }
+  };
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
@@ -214,17 +218,25 @@ const EnterprisePage = () => {
                   height={40}
                   className="h-8 object-contain"
                 />
-                <span className="text-sm text-gray-500">Web3 Community Platform</span>
+                <span className="text-sm text-gray-500">
+                  Web3 Community Platform
+                </span>
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-[#0B1C39] mb-3">
                 Community Growth Partner
               </h3>
               <p className="text-gray-600 text-sm mb-4">
-                &quot;Web3 Mates has been a valuable partner in growing our African developer community and facilitating meaningful connections across the continent.&quot;
+                &quot;Web3 Mates has been a valuable partner in growing our
+                African developer community and facilitating meaningful
+                connections across the continent.&quot;
               </p>
               <div className="bg-blue-50 p-3 rounded-lg mb-4">
-                <p className="font-medium text-[#0B1C39] text-sm">Community Growth</p>
-                <p className="text-xs text-gray-600">Expanded reach across Africa</p>
+                <p className="font-medium text-[#0B1C39] text-sm">
+                  Community Growth
+                </p>
+                <p className="text-xs text-gray-600">
+                  Expanded reach across Africa
+                </p>
               </div>
               <Link
                 href="#contact"
@@ -259,11 +271,17 @@ const EnterprisePage = () => {
                 Expanding Blockchain Learning
               </h3>
               <p className="text-gray-600 text-sm mb-4">
-                &quot;The mentorship and collaboration with Web3 Mates helped us reach more learners and deliver hands-on blockchain education in Africa.&quot;
+                &quot;The mentorship and collaboration with Web3 Mates helped us
+                reach more learners and deliver hands-on blockchain education in
+                Africa.&quot;
               </p>
               <div className="bg-blue-50 p-3 rounded-lg mb-4">
-                <p className="font-medium text-[#0B1C39] text-sm">Expanded Reach</p>
-                <p className="text-xs text-gray-600">More learners across Africa</p>
+                <p className="font-medium text-[#0B1C39] text-sm">
+                  Expanded Reach
+                </p>
+                <p className="text-xs text-gray-600">
+                  More learners across Africa
+                </p>
               </div>
               <Link
                 href="#contact"
@@ -285,12 +303,20 @@ const EnterprisePage = () => {
         </div>
         <div className="bg-blue-50 text-center py-6 px-4 sm:px-8 border-t border-gray-100 mt-8 rounded-xl">
           <p className="text-gray-700 text-sm sm:text-base">
-            More case studies and partnerships coming soon as Web3 Mates grows. Interested in collaborating? <Link href="#contact" className="text-[#0066FF] underline">Contact us</Link>.
+            More case studies and partnerships coming soon as Web3 Mates grows.
+            Interested in collaborating?{" "}
+            <Link href="#contact" className="text-[#0066FF] underline">
+              Contact us
+            </Link>
+            .
           </p>
         </div>
       </section>
 
-      <section id="contact" className="bg-white rounded-2xl p-8 sm:p-12 shadow-sm border border-gray-100">
+      <section
+        id="contact"
+        className="bg-white rounded-2xl p-8 sm:p-12 shadow-sm border border-gray-100"
+      >
         <h2 className="text-2xl sm:text-3xl font-bold text-[#0B1C39] mb-2 text-center">
           Start Your Web3 Transformation
         </h2>
@@ -298,7 +324,10 @@ const EnterprisePage = () => {
           Complete the form below and our enterprise team will contact you
           within 24 hours
         </p>
-        <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <form
+          onSubmit={handleSubmit}
+          className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto"
+        >
           <div>
             <label
               htmlFor="name"
@@ -413,4 +442,4 @@ const EnterprisePage = () => {
   );
 };
 
-export default EnterprisePage
+export default EnterprisePage;
