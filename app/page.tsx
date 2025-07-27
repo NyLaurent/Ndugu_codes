@@ -20,10 +20,11 @@ export default function Home() {
   return (
     <div>
       <HeroSection />
-      <CarouselSection />
+      
       <ImpactSection />
       <EmpowerSection />
       <InnovateSection />
+      <CarouselSection />
       <NewsletterSection />
       <PartnersShowcase />
     </div>

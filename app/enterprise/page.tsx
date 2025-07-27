@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useToast } from "@/hooks/use-toast";
 
 const EnterprisePage = () => {
   const url = process.env.NEXT_PUBLIC_FORMSPREE_URL;
@@ -49,9 +50,63 @@ const EnterprisePage = () => {
     { value: "100%", label: "Certified teams" },
   ];
 
+  const { toast, ToastContainer } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const form = e.currentTarget as HTMLFormElement;
+    const data = new FormData(form);
+
+    toast({
+      title: "Submitting inquiry...",
+      description: "Please wait while your request is being sent.",
+    });
+
+    try {
+      const response = await fetch(
+        url || "https://formspree.io/f/YOUR_ENTERPRISE_FORM_ID",
+        {
+          method: "POST",
+          body: data,
+          headers: {
+            Accept: "application/json",
+          },
+        }
+      );
+
+      if (response.ok) {
+        toast({
+          title: "Inquiry Sent!",
+          description:
+            "Your enterprise inquiry has been sent successfully. We'll contact you within 24 hours.",
+          variant: "success",
+        });
+        form.reset();
+      } else {
+        const result = await response.json();
+        toast({
+          title: "Submission Failed",
+          description: result.errors
+            ? result.errors
+                .map((err: { message: string }) => err.message)
+                .join(", ")
+            : "There was an issue sending your inquiry. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast({
+        title: "Error",
+        description: "An unexpected error occurred. Please try again later.",
+        variant: "destructive",
+      });
+    }
+  };
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-      {/* Hero */}
       <div className="text-center mb-16 lg:mb-20">
         <motion.h1
           className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0B1C39] mb-4 sm:mb-6"
@@ -269,7 +324,6 @@ const EnterprisePage = () => {
         </div>
       </section>
 
-      {/* Contact Form */}
       <section
         id="contact"
         className="bg-white  text-slate-400 rounded-2xl p-8 sm:p-12 shadow-sm border border-gray-100"
@@ -325,7 +379,7 @@ const EnterprisePage = () => {
               type="email"
               id="email"
               name="email"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF]"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF] text-black outline-none"
               placeholder="you@company.com"
               required
             />
@@ -355,7 +409,7 @@ const EnterprisePage = () => {
             <select
               id="needs"
               name="partnershipInterest"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF]"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF] text-black outline-none"
               required
             >
               <option value="">Select partnership interest</option>
@@ -376,7 +430,7 @@ const EnterprisePage = () => {
               id="message"
               name="message"
               rows={4}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF]"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#0066FF] focus:border-[#0066FF] text-black outline-none"
               placeholder="Tell us about your Web3 needs..."
             ></textarea>
           </div>
@@ -390,6 +444,8 @@ const EnterprisePage = () => {
           </div>
         </form>
       </section>
+
+      <ToastContainer />
     </div>
   );
 };

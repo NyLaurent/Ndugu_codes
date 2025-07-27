@@ -1,10 +1,9 @@
 "use client"
 
-import type React from "react"
-
 import { useState } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
+import { useToast } from "@/hooks/use-toast"
 
 const ApplyPage = () => {
   const [formData, setFormData] = useState({
@@ -16,9 +15,11 @@ const ApplyPage = () => {
     timezone: "",
     availability: "",
   })
-  const url = process.env.NEXT_PUBLIC_FORMSPREE_URL;
+  const { toast, ToastContainer } = useToast()
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
+  ) => {
     const { name, value } = e.target
     setFormData((prev) => ({
       ...prev,
@@ -26,8 +27,66 @@ const ApplyPage = () => {
     }))
   }
 
+  const url = process.env.NEXT_PUBLIC_FORMSPREE_URL;
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+
+    const form = e.currentTarget as HTMLFormElement
+    const data = new FormData(form)
+
+    toast({
+      title: "Submitting application...",
+      description: "Please wait while your application is being sent.",
+    })
+
+    try {
+      const response = await fetch(url || "https://formspree.io/f/YOUR_MENTORSHIP_FORM_ID", {
+        method: "POST",
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
+      })
+
+      if (response.ok) {
+        toast({
+          title: "Application Sent!",
+          description: "Your mentorship application has been sent successfully. We'll be in touch soon!",
+          variant: "success",
+        })
+        setFormData({
+          name: "",
+          email: "",
+          track: "",
+          experience: "",
+          goals: "",
+          timezone: "",
+          availability: "",
+        })
+      } else {
+        const result = await response.json()
+        toast({
+          title: "Submission Failed",
+          description: result.errors
+            ? result.errors.map((err: { message: string }) => err.message).join(", ")
+            : "There was an issue sending your application. Please try again.",
+          variant: "destructive",
+        })
+      }
+    } catch (error) {
+      console.error("Form submission error:", error)
+      toast({
+        title: "Error",
+        description: "An unexpected error occurred. Please try again later.",
+        variant: "destructive",
+      })
+    }
+  }
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+      <ToastContainer />
       <div className="text-center mb-12">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -69,7 +128,7 @@ const ApplyPage = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none"
               placeholder="Your name"
             />
           </div>
@@ -85,7 +144,7 @@ const ApplyPage = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none"
               placeholder="your@email.com"
             />
           </div>
@@ -100,7 +159,7 @@ const ApplyPage = () => {
               value={formData.track}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none"
             >
               <option value="">Select a track</option>
               <option value="Web3 Fundamentals">Web3 Fundamentals</option>
@@ -123,7 +182,7 @@ const ApplyPage = () => {
                     value={level}
                     checked={formData.experience === level}
                     onChange={handleChange}
-                    className="h-4 w-4 text-blue-600 focus:ring-blue-500"
+                    className="h-4 w-4 text-blue-600 focus:ring-blue-500 outline-none"
                   />
                   <label htmlFor={`experience-${level.toLowerCase()}`} className="ml-2 block text-sm text-gray-700">
                     {level}
@@ -144,7 +203,7 @@ const ApplyPage = () => {
               onChange={handleChange}
               required
               rows={4}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none"
               placeholder="What do you hope to achieve through this mentorship?"
             />
           </div>
@@ -160,7 +219,7 @@ const ApplyPage = () => {
               value={formData.timezone}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none"
               placeholder="e.g. GMT+1, EST, etc."
             />
           </div>
@@ -176,7 +235,7 @@ const ApplyPage = () => {
               value={formData.availability}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none"
               placeholder="How many hours per week can you dedicate?"
             />
           </div>
@@ -204,7 +263,6 @@ const ApplyPage = () => {
         </form>
       </motion.div>
 
-      {/* Next Steps */}
       <motion.section
         className="mt-16 bg-blue-50 rounded-xl p-8 sm:p-12 text-center"
         initial={{ opacity: 0 }}
