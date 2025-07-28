@@ -148,12 +148,19 @@ const PartnersShowcase = () => {
             Together, we&apos;re building the future of decentralized innovation.
           </p>
           <motion.a
-            href="#contact"
+            href="/partnership"
             className="inline-block bg-gradient-to-r from-[#0066FF] to-[#0047CC] text-white px-10 py-4 rounded-full hover:shadow-xl transition-all duration-300 font-medium text-lg"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
             Become a Partner
+          </motion.a>
+          <motion.a
+            href="/sponsorship"
+            className="mt-2 inline-block bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-10 py-4 rounded-full hover:shadow-xl transition-all duration-300 font-medium text-lg ml-4"
+            whileHover={{ scale: 1.05, y: -2 }}
+          >
+            Become a Sponsor
           </motion.a>
         </motion.div>
       </div>

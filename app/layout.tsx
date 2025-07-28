@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: "Web3 Mates - Blockchain Catalyst",
   description: "Empowering Africa's Web3 Builders—One Line of Code at a Time.",
   icons: {
-    icon: "/logo.jpeg", // Reference favicon in /public
+    icon: "/logo.svg", // Reference favicon in /public
   },
   // Note: viewport is handled manually in <head> below
 };
