@@ -22,7 +22,7 @@ const team = [
   {
     image: "/jabo.jpeg",
     name: "Jabo Prosper",
-    role: "Operations Lead",
+    role: "Community Manager / Operations Lead",
     description:
       "Mr. Jabo ensures operational efficiency and seamless execution of projects, optimizing workflows to empower teams and maximize impact.",
     socials: {
