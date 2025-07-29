@@ -23,8 +23,8 @@ export default function WorkshopsPage() {
       title: "Base Batches #001 Workshop",
       description:
         "Comprehensive workshop on Base blockchain development, covering smart contract deployment, Layer 2 scaling solutions, and building decentralized applications on Coinbase's Layer 2 network.",
-      startDate: "2024-05-30T09:00:00",
-      endDate: "2024-05-30T17:00:00",
+      startDate: "2024-05-03T09:00:00",
+      endDate: "2024-05-03T17:00:00",
       instructor: "Web3 Mates & Base Team",
       location: "Web3 Mates Hub, Kigali",
       capacity: 200,
@@ -38,8 +38,8 @@ export default function WorkshopsPage() {
       title: "AyaHQ X Lisk Roadshow",
       description:
         "Exclusive roadshow event featuring AyaHQ and Lisk collaboration, showcasing innovative blockchain solutions and community building initiatives across Africa.",
-      startDate: "2024-05-15T10:00:00",
-      endDate: "2024-05-15T18:00:00",
+      startDate: "2024-02-28T10:00:00",
+      endDate: "2024-02-28T18:00:00",
       instructor: "AyaHQ Team & Lisk Representatives",
       location: "Multiple Cities, Africa",
       capacity: 200,
@@ -187,8 +187,8 @@ export default function WorkshopsPage() {
               No upcoming workshops
             </h3>
             <p className="mt-2 text-gray-500 text-sm sm:text-base">
-              We don&apos;t have any workshops scheduled yet. Check back soon or join
-              our mailing list for updates.
+              We don&apos;t have any workshops scheduled yet. Check back soon or
+              join our mailing list for updates.
             </p>
             <button className="mt-4 inline-flex items-center px-3 sm:px-4 py-2 border border-transparent text-xs sm:text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700">
               Notify Me
@@ -202,7 +202,7 @@ export default function WorkshopsPage() {
           <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4 sm:mb-6">
             Past Workshops
           </h2>
-          
+
           {/* Highlighted Featured Workshops */}
           <div className="mb-8 sm:mb-12">
             <h3 className="text-lg sm:text-xl font-semibold text-gray-700 mb-4 sm:mb-6">
@@ -210,9 +210,16 @@ export default function WorkshopsPage() {
             </h3>
             <div className="grid gap-6 sm:gap-8 grid-cols-1 lg:grid-cols-2">
               {pastWorkshops
-                .filter(workshop => workshop.id === "base-batch-001" || workshop.id === "ayahq-lisk-roadshow")
+                .filter(
+                  (workshop) =>
+                    workshop.id === "base-batch-001" ||
+                    workshop.id === "ayahq-lisk-roadshow"
+                )
                 .map((workshop) => (
-                  <div key={workshop.id} className="border-2 border-blue-200 rounded-xl overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-50 hover:shadow-lg transition-all duration-300">
+                  <div
+                    key={workshop.id}
+                    className="border-2 border-blue-200 rounded-xl overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-50 hover:shadow-lg transition-all duration-300"
+                  >
                     {workshop.imageUrl && (
                       <div className="h-48 sm:h-56 bg-gray-100 overflow-hidden">
                         <img
@@ -237,21 +244,30 @@ export default function WorkshopsPage() {
                           <div className="grid grid-cols-2 gap-4 text-sm">
                             <div>
                               <span className="text-gray-500">Instructor:</span>
-                              <p className="font-medium text-gray-900">{workshop.instructor}</p>
+                              <p className="font-medium text-gray-900">
+                                {workshop.instructor}
+                              </p>
                             </div>
                             <div>
                               <span className="text-gray-500">Location:</span>
-                              <p className="font-medium text-gray-900">{workshop.location}</p>
+                              <p className="font-medium text-gray-900">
+                                {workshop.location}
+                              </p>
                             </div>
                             <div>
                               <span className="text-gray-500">Date:</span>
                               <p className="font-medium text-gray-900">
-                                {format(parseISO(workshop.startDate), "MMM dd, yyyy")}
+                                {format(
+                                  parseISO(workshop.startDate),
+                                  "MMM dd, yyyy"
+                                )}
                               </p>
                             </div>
                             <div>
                               <span className="text-gray-500">Attendance:</span>
-                              <p className="font-medium text-gray-900">{workshop.enrolled}/{workshop.capacity}</p>
+                              <p className="font-medium text-gray-900">
+                                {workshop.enrolled}/{workshop.capacity}
+                              </p>
                             </div>
                           </div>
                           <div className="mt-4 flex flex-wrap gap-2">
@@ -271,7 +287,7 @@ export default function WorkshopsPage() {
                 ))}
             </div>
           </div>
-          
+
           {/* Regular Past Workshops */}
           <div>
             <h3 className="text-lg sm:text-xl font-semibold text-gray-700 mb-4 sm:mb-6">
@@ -279,7 +295,11 @@ export default function WorkshopsPage() {
             </h3>
             <div className="grid gap-4 sm:gap-6 lg:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               {pastWorkshops
-                .filter(workshop => workshop.id !== "base-batch-001" && workshop.id !== "ayahq-lisk-roadshow")
+                .filter(
+                  (workshop) =>
+                    workshop.id !== "base-batch-001" &&
+                    workshop.id !== "ayahq-lisk-roadshow"
+                )
                 .slice(0, 6)
                 .map((workshop) => (
                   <WorkshopCard
@@ -289,10 +309,22 @@ export default function WorkshopsPage() {
                   />
                 ))}
             </div>
-            {pastWorkshops.filter(workshop => workshop.id !== "base-batch-001" && workshop.id !== "ayahq-lisk-roadshow").length > 6 && (
+            {pastWorkshops.filter(
+              (workshop) =>
+                workshop.id !== "base-batch-001" &&
+                workshop.id !== "ayahq-lisk-roadshow"
+            ).length > 6 && (
               <div className="mt-6 sm:mt-8 text-center">
                 <button className="inline-flex items-center px-3 sm:px-4 py-2 border border-gray-300 text-xs sm:text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
-                  View All Past Workshops ({pastWorkshops.filter(workshop => workshop.id !== "base-batch-001" && workshop.id !== "ayahq-lisk-roadshow").length})
+                  View All Past Workshops (
+                  {
+                    pastWorkshops.filter(
+                      (workshop) =>
+                        workshop.id !== "base-batch-001" &&
+                        workshop.id !== "ayahq-lisk-roadshow"
+                    ).length
+                  }
+                  )
                 </button>
               </div>
             )}
