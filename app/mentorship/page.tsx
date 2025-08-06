@@ -59,6 +59,13 @@ const MentorshipPage = () => {
       image: "/white.jpeg",
     },
     {
+      name: "Awosika Israel Ayodeji",
+      role: "Founder & Web3 Educator",
+      company: "Web3Bridge",
+      expertise: "Blockchain Education, Developer Training, Ecosystem Building",
+      image: "/new_mentor.jpg",
+    },
+    {
       name: "Michael Lawal",
       role: "Conscious Capitalism Advocate",
       company: "Open source",
