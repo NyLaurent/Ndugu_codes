@@ -15,23 +15,32 @@ export const useNewsletter = () => {
     setMessage(null);
     setError(null);
 
+    const url = process.env.NEXT_PUBLIC_FORMSPREE_NEWSLETTER_URL;
+
     try {
-      const response = await fetch('/api/newsletter', {
+      const formData = new FormData();
+      formData.append('email', email);
+      formData.append('form_type', 'newsletter');
+
+      const response = await fetch(url || 'https://formspree.io/f/YOUR_NEWSLETTER_FORM_ID', {
         method: 'POST',
+        body: formData,
         headers: {
-          'Content-Type': 'application/json',
+          Accept: 'application/json',
         },
-        body: JSON.stringify({ email }),
       });
 
-      const data: NewsletterResponse = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Failed to subscribe to newsletter');
+      if (response.ok) {
+        setMessage('Successfully subscribed to newsletter!');
+        return { success: true, message: 'Successfully subscribed to newsletter!' };
+      } else {
+        const result = await response.json();
+        const errorMessage = result.errors 
+          ? result.errors.map((err: { message: string }) => err.message).join(', ')
+          : 'Failed to subscribe to newsletter. Please try again.';
+        setError(errorMessage);
+        return { success: false, error: errorMessage };
       }
-
-      setMessage(data.message || 'Successfully subscribed to newsletter!');
-      return { success: true, message: data.message };
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Failed to subscribe to newsletter';
       setError(errorMessage);
