@@ -1,6 +1,26 @@
+'use client';
+
 import { FaDiscord, FaTelegram, FaXTwitter, FaGithub, FaLinkedin } from 'react-icons/fa6';
+import { useState } from 'react';
+import { useNewsletter } from '../../hooks/useNewsletter';
 
 const CommunityPage = () => {
+  const [email, setEmail] = useState('');
+  const { subscribeToNewsletter, isLoading, message, error } = useNewsletter();
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email.trim()) {
+      return;
+    }
+
+    const result = await subscribeToNewsletter(email);
+    if (result.success) {
+      setEmail(''); // Clear the form on success
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#f7f9fc] to-[#eef2f6]">
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -24,7 +44,7 @@ const CommunityPage = () => {
                 Join our active Discord community for real-time discussions, support, and networking.
               </p>
               <a
-                href="#"
+                href="https://discord.gg/qzECSsvuxu"
                 className="block w-full py-3 px-6 text-center bg-[#5865F2] hover:bg-[#4752C4] text-white font-medium rounded-lg transition-colors duration-200"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -64,7 +84,7 @@ const CommunityPage = () => {
                 Follow us on X for news, updates, and engaging content.
               </p>
               <a
-                href="#"
+                href="https://x.com/Web3Mates"
                 className="block w-full py-3 px-6 text-center bg-black hover:bg-gray-800 text-white font-medium rounded-lg transition-colors duration-200"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -136,19 +156,35 @@ const CommunityPage = () => {
               <p className="text-gray-600 text-center mb-6">
                 Subscribe to our newsletter for monthly updates and insights.
               </p>
-              <form className="space-y-4 text-black">
+              <form onSubmit={handleNewsletterSubmit} className="space-y-4 text-black">
                 <input
                   type="email"
                   placeholder="Your email address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0066FF] focus:border-transparent"
                   required
+                  disabled={isLoading}
                 />
                 <button
                   type="submit"
-                  className="w-full py-3 px-6 bg-[#0066FF] hover:bg-[#0055DD] text-white font-medium rounded-lg transition-colors duration-200"
+                  disabled={isLoading}
+                  className="w-full py-3 px-6 bg-[#0066FF] hover:bg-[#0055DD] disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-medium rounded-lg transition-colors duration-200"
                 >
-                  Subscribe
+                  {isLoading ? 'Subscribing...' : 'Subscribe'}
                 </button>
+                
+                {message && (
+                  <div className="mt-3 p-3 bg-green-100 border border-green-400 text-green-700 rounded-lg text-sm">
+                    {message}
+                  </div>
+                )}
+                
+                {error && (
+                  <div className="mt-3 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg text-sm">
+                    {error}
+                  </div>
+                )}
               </form>
             </div>
           </div>
