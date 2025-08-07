@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useToast } from "@/hooks/use-toast";
 
 const EnterprisePage = () => {
-  const url = process.env.NEXT_PUBLIC_FORMSPREE_URL;
+  const url = process.env.NEXT_PUBLIC_FORMSPREE_ENTERPRISE_URL;
   const partnershipOptions = [
     {
       title: "Talent Pipeline",
@@ -218,17 +218,25 @@ const EnterprisePage = () => {
                   height={40}
                   className="h-8 object-contain"
                 />
-                <span className="text-sm text-gray-500">Web3 Community Platform</span>
+                <span className="text-sm text-gray-500">
+                  Web3 Community Platform
+                </span>
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-[#0B1C39] mb-3">
                 Community Growth Partner
               </h3>
               <p className="text-gray-600 text-sm mb-4">
-                &quot;Web3 Mates has been a valuable partner in growing our African developer community and facilitating meaningful connections across the continent.&quot;
+                &quot;Web3 Mates has been a valuable partner in growing our
+                African developer community and facilitating meaningful
+                connections across the continent.&quot;
               </p>
               <div className="bg-blue-50 p-3 rounded-lg mb-4">
-                <p className="font-medium text-[#0B1C39] text-sm">Community Growth</p>
-                <p className="text-xs text-gray-600">Expanded reach across Africa</p>
+                <p className="font-medium text-[#0B1C39] text-sm">
+                  Community Growth
+                </p>
+                <p className="text-xs text-gray-600">
+                  Expanded reach across Africa
+                </p>
               </div>
               <Link
                 href="#contact"
@@ -263,11 +271,17 @@ const EnterprisePage = () => {
                 Expanding Blockchain Learning
               </h3>
               <p className="text-gray-600 text-sm mb-4">
-                &quot;The mentorship and collaboration with Web3 Mates helped us reach more learners and deliver hands-on blockchain education in Africa.&quot;
+                &quot;The mentorship and collaboration with Web3 Mates helped us
+                reach more learners and deliver hands-on blockchain education in
+                Africa.&quot;
               </p>
               <div className="bg-blue-50 p-3 rounded-lg mb-4">
-                <p className="font-medium text-[#0B1C39] text-sm">Expanded Reach</p>
-                <p className="text-xs text-gray-600">More learners across Africa</p>
+                <p className="font-medium text-[#0B1C39] text-sm">
+                  Expanded Reach
+                </p>
+                <p className="text-xs text-gray-600">
+                  More learners across Africa
+                </p>
               </div>
               <Link
                 href="#contact"
@@ -296,17 +310,25 @@ const EnterprisePage = () => {
                   height={40}
                   className="h-8 object-contain"
                 />
-                <span className="text-sm text-gray-500">Ethereum Builders Guild</span>
+                <span className="text-sm text-gray-500">
+                  Ethereum Builders Guild
+                </span>
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-[#0B1C39] mb-3">
                 Strengthening the Builder Network
               </h3>
               <p className="text-gray-600 text-sm mb-4">
-                &quot;Web3 Mates has contributed passionate developers and fresh perspectives to our builder community, strengthening our collective impact.&quot;
+                &quot;Web3 Mates has contributed passionate developers and fresh
+                perspectives to our builder community, strengthening our
+                collective impact.&quot;
               </p>
               <div className="bg-blue-50 p-3 rounded-lg mb-4">
-                <p className="font-medium text-[#0B1C39] text-sm">Stronger Network</p>
-                <p className="text-xs text-gray-600">Enhanced builder community</p>
+                <p className="font-medium text-[#0B1C39] text-sm">
+                  Stronger Network
+                </p>
+                <p className="text-xs text-gray-600">
+                  Enhanced builder community
+                </p>
               </div>
               <Link
                 href="#contact"
@@ -319,7 +341,12 @@ const EnterprisePage = () => {
         </div>
         <div className="bg-blue-50 text-center py-6 px-4 sm:px-8 border-t border-gray-100 mt-8 rounded-xl">
           <p className="text-gray-700 text-sm sm:text-base">
-            More case studies and partnerships coming soon as Web3 Mates grows. Interested in collaborating? <Link href="#contact" className="text-[#0066FF] underline">Contact us</Link>.
+            More case studies and partnerships coming soon as Web3 Mates grows.
+            Interested in collaborating?{" "}
+            <Link href="#contact" className="text-[#0066FF] underline">
+              Contact us
+            </Link>
+            .
           </p>
         </div>
       </section>

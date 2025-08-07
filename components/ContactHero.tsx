@@ -5,7 +5,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { useToast } from "@/hooks/use-toast";
 
 export default function ContactHero() {
-  const url = process.env.NEXT_PUBLIC_FORMSPREE_URL;
+  const url = process.env.NEXT_PUBLIC_FORMSPREE_CONTACT_URL;
   const { toast, ToastContainer } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
