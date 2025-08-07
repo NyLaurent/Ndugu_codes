@@ -24,7 +24,7 @@ const CommunityPage = () => {
                 Join our active Discord community for real-time discussions, support, and networking.
               </p>
               <a
-                href="#"
+                href="https://discord.gg/qzECSsvuxu"
                 className="block w-full py-3 px-6 text-center bg-[#5865F2] hover:bg-[#4752C4] text-white font-medium rounded-lg transition-colors duration-200"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -64,7 +64,7 @@ const CommunityPage = () => {
                 Follow us on X for news, updates, and engaging content.
               </p>
               <a
-                href="#"
+                href="https://x.com/Web3Mates"
                 className="block w-full py-3 px-6 text-center bg-black hover:bg-gray-800 text-white font-medium rounded-lg transition-colors duration-200"
                 target="_blank"
                 rel="noopener noreferrer"
