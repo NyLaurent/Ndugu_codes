@@ -75,7 +75,6 @@ export default function PartnershipPage() {
   const websitePattern = /^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/\S*)?$/;
 
   const isContactValid =
-  const isContactValid =
     nameOrgPattern.test(form.name.trim()) &&
     nameOrgPattern.test(form.org.trim()) &&
     emailPattern.test(form.email.trim()) &&

@@ -69,7 +69,6 @@ export default function SponsorshipPage() {
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const isSponsorDetailsValid =
-  const isSponsorDetailsValid =
     nameCompanyPattern.test(form.name.trim()) &&
     nameCompanyPattern.test(form.company.trim()) &&
     emailPattern.test(form.email.trim());
