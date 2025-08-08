@@ -101,25 +101,7 @@ const SolutionsPage = () => {
     },
   ];
 
-  // const successStories = [
-  //   {
-  //     name: "GrowEasy",
-  //     result: "Increased farmer payments by 40%",
-  //     story:
-  //       "Trained 3 developers who built a blockchain solution for agricultural supply chains.",
-  //   },
-  //   {
-  //     name: "PayPulse",
-  //     result: "$1.2M in seed funding",
-  //     story:
-  //       "Co-founded by 2 Web3 Mates alumni specializing in cross-border payments.",
-  //   },
-  //   {
-  //     name: "SecureChain",
-  //     result: "3x engineering capacity",
-  //     story: "Hired 5 graduates who reduced smart contract audit times by 30%.",
-  //   },
-  // ];
+
 
   const ArrowAnimation = ({ reversed = false }) => (
     <motion.div
@@ -148,7 +130,7 @@ const SolutionsPage = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-24 pt-20 sm:pt-24">
-      {/* Hero Section */}
+
       <div className="text-center mb-12 sm:mb-16 lg:mb-20">
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
           Solving Africa&apos;s{" "}

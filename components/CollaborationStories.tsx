@@ -4,7 +4,7 @@ const CollaborationStories = () => {
   return (
     <section className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
+  
         <div className="text-center mb-8 sm:mb-10 lg:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-3 sm:mb-4">
             Collaboration in Action
@@ -19,7 +19,7 @@ const CollaborationStories = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-          {/* Main Story */}
+
           <div className="bg-white rounded-lg overflow-hidden shadow-sm">
             <div className="relative h-40 sm:h-64 lg:h-[400px]">
               <Image
@@ -43,9 +43,7 @@ const CollaborationStories = () => {
             </div>
           </div>
 
-          {/* Right Side Stories */}
           <div className="space-y-4 sm:space-y-6 lg:space-y-8">
-            {/* Story 1 */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 bg-white rounded-lg overflow-hidden shadow-sm p-3 sm:p-4">
               <div className="relative w-full sm:w-48 h-24 sm:h-32 flex-shrink-0 rounded-lg overflow-hidden">
                 <Image
@@ -68,7 +66,7 @@ const CollaborationStories = () => {
               </div>
             </div>
 
-            {/* Story 2 */}
+
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 bg-white rounded-lg overflow-hidden shadow-sm p-3 sm:p-4">
               <div className="relative w-full sm:w-48 h-24 sm:h-32 flex-shrink-0 rounded-lg overflow-hidden">
                 <Image
@@ -91,7 +89,7 @@ const CollaborationStories = () => {
               </div>
             </div>
 
-            {/* Story 3 */}
+
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 bg-white rounded-lg overflow-hidden shadow-sm p-3 sm:p-4">
               <div className="relative w-full sm:w-48 h-24 sm:h-32 flex-shrink-0 rounded-lg overflow-hidden">
                 <Image

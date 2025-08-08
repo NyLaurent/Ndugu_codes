@@ -49,7 +49,7 @@ const HeroSection = () => {
     { name: "DAOs", icon: "🏛️", position: "bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2" },
     { name: "Smart Contracts", icon: "📜", position: "bottom-1/4 left-8 translate-y-1/2 -translate-x-1/2" },
     { name: "dApps", icon: "📱", position: "top-1/4 left-8 -translate-y-1/2 -translate-x-1/2" },
-    // { name: "Web3 Mates", icon: "", position: "centre-0 right-70 top-50 translate-y-1/2 translate-x-1/2"},
+
   ];
 
   return (
@@ -63,7 +63,7 @@ const HeroSection = () => {
         animate="visible"
         variants={containerVariants}
       >
-        {/* Left Content */}
+
         <div>
           <motion.h1 
             className="text-4xl md:text-6xl font-bold text-[#0B1C39] mb-6 leading-tight"

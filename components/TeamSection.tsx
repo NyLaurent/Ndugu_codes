@@ -41,7 +41,7 @@ const team = [
     socials: {
       twitter: "https://x.com/0xJonaseb11",
       instagram: "https://instagram.com/sebe_j_az99",
-      linkedin: "https://linkedin.com/in/jonas-sebera",
+      linkedin: "https://linkedin.com/in/jonassebera",
       telegram: "https://t.me/jonas_sebera",
       github: "https://github.com/0xJonaseb11",
     },

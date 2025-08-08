@@ -32,7 +32,7 @@ const Navbar = () => {
       <nav className="bg-white/80 backdrop-blur-sm border-b border-white/20 fixed w-full top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 sm:h-20">
-            {/* Logo and Company Name */}
+
             <div className="flex items-center">
               <Link href="/" className="flex items-center space-x-1 sm:space-x-2 lg:space-x-1">
                 <Image
@@ -54,7 +54,7 @@ const Navbar = () => {
               </Link>
             </div>
 
-            {/* Desktop Navigation */}
+
             <div className="hidden lg:flex items-center space-x-6 xl:space-x-8 2xl:space-x-10">
               <Link
                 href="/"
@@ -117,7 +117,7 @@ const Navbar = () => {
               </Link>
             </div>
 
-            {/* Mobile menu button */}
+
             <div className="lg:hidden flex items-center">
               <button
                 onClick={() => setIsOpen(!isOpen)}
@@ -162,15 +162,11 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Mobile menu overlay - COMPLETELY SOLID BACKGROUND */}
       {isOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
-          {/* Solid white background with no transparency or blur effects */}
           <div className="absolute inset-0 bg-white" style={{ backgroundColor: "#ffffff" }} />
 
-          {/* Menu content */}
           <div className="relative flex flex-col h-full w-full">
-            {/* Header with close button */}
             <div className="flex justify-between items-center p-4 sm:p-6 border-b border-gray-300">
               <div className="flex items-center space-x-3">
                 <Image
@@ -195,7 +191,7 @@ const Navbar = () => {
               </button>
             </div>
 
-            {/* Navigation Links */}
+
             <div className="flex-1 px-4 sm:px-6 py-6 space-y-1 bg-white">
               <Link
                 href="/"
@@ -244,7 +240,7 @@ const Navbar = () => {
               </Link>
             </div>
 
-            {/* Contact Button */}
+
             <div className="p-4 sm:p-6 border-t border-gray-300 bg-white">
               <Link
                 href="/contact"

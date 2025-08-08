@@ -55,18 +55,15 @@ const MentorsPage = () => {
     },
   ];
 
-  // Filter options state
   const [filters, setFilters] = useState({
     track: "",
     search: "",
   });
 
-  // State for expanded bios
   const [expandedBios, setExpandedBios] = useState<{ [key: number]: boolean }>(
     {}
   );
 
-  // State for modal
   const [selectedMentor, setSelectedMentor] = useState<Mentor | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -79,15 +76,7 @@ const MentorsPage = () => {
     );
   });
 
-  // const handleFilterChange = (
-  //   e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
-  // ) => {
-  //   const { name, value } = e.target;
-  //   setFilters((prev) => ({
-  //     ...prev,
-  //     [name]: value,
-  //   }));
-  // };
+
 
   const toggleBioExpansion = (index: number) => {
     setExpandedBios((prev) => ({
@@ -108,7 +97,7 @@ const MentorsPage = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-      {/* Hero Section */}
+
       <div className="text-center mb-12">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -129,7 +118,7 @@ const MentorsPage = () => {
         </motion.p>
       </div>
 
-      {/* Filters */}
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

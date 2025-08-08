@@ -44,7 +44,7 @@ const UpcomingEvents = () => {
     <section className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
-          {/* Featured Event */}
+  
           <article className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
             <div className="relative h-48 sm:h-64 lg:h-[400px] w-full">
               <Image
@@ -90,7 +90,7 @@ const UpcomingEvents = () => {
             </div>
           </article>
 
-          {/* Other Events */}
+  
           <div className="space-y-4 sm:space-y-6 lg:space-y-8">
             {otherEvents.map((event) => (
               <article

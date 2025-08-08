@@ -41,7 +41,7 @@ export default function GroupsPage() {
         "Monthly discussions on ethical implications of AI systems and responsible development practices. This group brings together technologists, philosophers, and policymakers to examine critical issues in AI deployment.",
       focusArea: "Artificial Intelligence",
       startDate: "2026-07-15",
-      // endDate: "2026-02-15",
+
       members: 0,
       organizer: "Laurent Nyumbayire",
       status: "upcoming",

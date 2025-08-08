@@ -65,11 +65,9 @@ export default function SponsorshipPage() {
     "Other",
   ];
 
-  // Regex patterns
   const nameCompanyPattern = /^[A-Za-z .,'-]{2,}$/;
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  // Validation logic for each step
   const isSponsorDetailsValid =
     nameCompanyPattern.test(form.name.trim()) &&
     nameCompanyPattern.test(form.company.trim()) &&
@@ -109,7 +107,6 @@ export default function SponsorshipPage() {
     const formElement = e.currentTarget as HTMLFormElement;
     const data = new FormData(formElement);
 
-    // Manually add the checkbox values since FormData doesn't handle multiple checkboxes with same name well
     form.type.forEach((type) => {
       data.append("type", type);
     });
@@ -139,7 +136,6 @@ export default function SponsorshipPage() {
             "Your sponsorship inquiry has been received. We'll be in touch soon!",
           variant: "success",
         });
-        // Reset form
         setForm({
           name: "",
           company: "",

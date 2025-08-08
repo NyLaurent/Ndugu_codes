@@ -16,9 +16,8 @@ export const metadata: Metadata = {
   title: "Web3 Mates - Blockchain Catalyst",
   description: "Empowering Africa's Web3 Builders—One Line of Code at a Time.",
   icons: {
-    icon: "/logo.svg", // Reference favicon in /public
+    icon: "/logo.svg",
   },
-  // Note: viewport is handled manually in <head> below
 };
 
 export default function RootLayout({
@@ -29,7 +28,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={montserrat.variable}>
       <head>
-        {/* Manually add the viewport meta tag for mobile support */}
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"

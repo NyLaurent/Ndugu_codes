@@ -190,7 +190,7 @@ const TeamPage = () => {
   );
 };
 
-// Social Icons Components
+
 const InstagramIcon = () => (
   <svg
     className="w-4 h-4 sm:w-5 sm:h-5"

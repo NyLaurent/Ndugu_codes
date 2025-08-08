@@ -17,20 +17,16 @@ export function useToast() {
   const [toasts, setToasts] = useState<ToastState[]>([]);
 
   const toast = useCallback(({ title, description, variant = "success" }: ToastOptions) => {
-    const id = Math.random().toString(36).substr(2, 9); // Simple unique ID generator
+    const id = Math.random().toString(36).substr(2, 9);
     setToasts((prev) => [...prev, { id, title, description, variant, isVisible: true }]);
 
-    // Auto-dismiss toast after 5 seconds
     setTimeout(() => {
       setToasts((prev) => prev.map((t) => (t.id === id ? { ...t, isVisible: false } : t)));
-      // Remove toast from state after animation completes
       setTimeout(() => {
         setToasts((prev) => prev.filter((t) => t.id !== id));
-      }, 300); // Match with animation duration
+      }, 300);
     }, 5000);
   }, []);
-
-  // Render toasts (this could be used in a ToastContainer component)
   const ToastContainer: React.FC = () => {
     return (
       <div className="fixed bottom-4 right-4 space-y-2 z-50">

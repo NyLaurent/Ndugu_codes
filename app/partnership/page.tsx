@@ -70,12 +70,10 @@ export default function PartnershipPage() {
     "Other",
   ];
 
-  // Regex patterns
   const nameOrgPattern = /^[A-Za-z .,'-]{2,}$/;
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const websitePattern = /^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/\S*)?$/;
 
-  // Validation logic for each step
   const isContactValid =
     nameOrgPattern.test(form.name.trim()) &&
     nameOrgPattern.test(form.org.trim()) &&
@@ -116,7 +114,6 @@ export default function PartnershipPage() {
     const formElement = e.currentTarget as HTMLFormElement;
     const data = new FormData(formElement);
 
-    // Manually add the checkbox values since FormData doesn't handle multiple checkboxes with same name well
     form.type.forEach((type) => {
       data.append("type", type);
     });
@@ -146,7 +143,6 @@ export default function PartnershipPage() {
             "Your partnership inquiry has been received. We'll be in touch soon!",
           variant: "success",
         });
-        // Reset form
         setForm({
           name: "",
           org: "",

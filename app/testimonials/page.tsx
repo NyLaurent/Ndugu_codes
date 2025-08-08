@@ -29,14 +29,12 @@ const Testimonials = () => {
     },
   ];
 
-  // State for expanded testimonials
   const [expanded, setExpanded] = useState<{ [key: number]: boolean }>({});
 
   const toggleExpand = (index: number) => {
     setExpanded((prev) => ({ ...prev, [index]: !prev[index] }));
   };
 
-  // State for expanded company testimonials
   const [expandedCompany, setExpandedCompany] = useState<{
     [key: number]: boolean;
   }>({});
@@ -98,7 +96,7 @@ const Testimonials = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-24 pt-20 sm:pt-24">
-      {/* Header */}
+
       <div className="text-center mb-10 sm:mb-12 lg:mb-16">
         <motion.h1
           className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#0B1C39] mb-4 sm:mb-6"
