@@ -46,7 +46,7 @@ export function useToast() {
             }`}
           >
             <h3 className="font-semibold">{toast.title}</h3>
-            <p className="text-sm">{toast.description}</p>
+            <p className="text-blue-700 text-sm">{toast.description}</p>
           </div>
         ))}
       </div>
