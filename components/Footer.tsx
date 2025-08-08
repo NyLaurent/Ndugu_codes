@@ -36,7 +36,7 @@ const Footer = () => {
               <a href="#" className="hover:opacity-80 transition-opacity">
                 <FaLinkedin className="w-5 h-5 sm:w-6 sm:h-6 text-[#0A66C2]" />
               </a>
-              <a href="#" className="hover:opacity-80 transition-opacity">
+              <a href="https://x.com/Web3Mates" className="hover:opacity-80 transition-opacity">
                 <FaXTwitter className="w-5 h-5 sm:w-6 sm:h-6 text-black" />
               </a>
               <a
