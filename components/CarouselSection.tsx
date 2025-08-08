@@ -38,15 +38,14 @@ const CarouselSection = () => {
   const [isTransitioning, setIsTransitioning] = useState(false)
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
-  // Auto-slide functionality - continuous without pause
   useEffect(() => {
     intervalRef.current = setInterval(() => {
       setIsTransitioning(true)
       setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
         setIsTransitioning(false)
-      }, 150) // Half of transition duration for smooth effect
-    }, 3000) // Change slide every 3 seconds
+      }, 150)
+    }, 3000)
 
     return () => {
       if (intervalRef.current) {
