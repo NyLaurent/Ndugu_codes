@@ -14,7 +14,7 @@ const ContactSection = () => {
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Left Column */}
+  
           <div>
             <p className="text-[#0066FF] mb-4">
               Empowering Africa, one connection at a time.
@@ -41,7 +41,7 @@ const ContactSection = () => {
             </div>
           </div>
 
-          {/* Right Column - Contact Form */}
+  
           <div className="bg-white p-8 rounded-2xl shadow-sm">
             <h3 className="text-2xl font-bold text-[#0B1C39] mb-4">
               Contact Us

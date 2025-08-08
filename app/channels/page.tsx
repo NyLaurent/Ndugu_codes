@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import { format, parseISO } from "date-fns";
 
 interface Channel {
@@ -127,7 +127,7 @@ function ChannelCard({ channel }: { channel: Channel }) {
     <div className="border rounded-xl overflow-hidden hover:shadow-md transition-shadow">
       <div className="p-4 sm:p-6">
         <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
-          {/* Channel Icon */}
+  
           {channel.icon && (
             <div className="flex-shrink-0 text-2xl sm:text-3xl w-12 h-12 sm:w-16 sm:h-16 rounded-lg bg-gray-100 flex items-center justify-center">
               {channel.icon}
@@ -164,7 +164,7 @@ function ChannelCard({ channel }: { channel: Channel }) {
             </p>
 
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
-              {/* Tags */}
+      
               <div className="flex flex-wrap gap-1 sm:gap-2">
                 {channel.tags.map((tag) => (
                   <span

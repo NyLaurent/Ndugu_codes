@@ -84,9 +84,7 @@ const CarouselSection = () => {
       </div>
 
       <div className="relative overflow-hidden rounded-sm">
-        {/* Main Carousel Container */}
         <div className="relative h-96 md:h-[500px] lg:h-[600px] flex items-center justify-center overflow-hidden">
-          {/* Smooth Sliding Container */}
           <div 
             className="flex items-center justify-center space-x-8 w-full transition-all duration-700 ease-in-out"
             style={{
@@ -94,7 +92,7 @@ const CarouselSection = () => {
               opacity: isTransitioning ? 0.7 : 1
             }}
           >
-            {/* Previous Image */}
+
             <div
               className="relative cursor-pointer transition-all duration-700 ease-in-out transform hover:scale-105"
               style={{ 
@@ -113,7 +111,7 @@ const CarouselSection = () => {
               </div>
             </div>
 
-            {/* Current Image (Center - Bigger) */}
+
             <div
               className="relative transition-all duration-700 ease-in-out transform"
               style={{ 
@@ -131,7 +129,7 @@ const CarouselSection = () => {
               </div>
             </div>
 
-            {/* Next Image */}
+
             <div
               className="relative cursor-pointer transition-all duration-700 ease-in-out transform hover:scale-105"
               style={{ 
@@ -160,7 +158,7 @@ const CarouselSection = () => {
           />
         </div> */}
 
-        {/* Navigation Dots */}
+
         {/* <div className="flex justify-center mt-6 space-x-2">
           {images.map((_, index) => (
             <button

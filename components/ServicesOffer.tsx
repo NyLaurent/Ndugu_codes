@@ -66,7 +66,6 @@ const ServicesOffer = () => {
     <section className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Left Column - Image */}
           <div className="relative order-first lg:order-last">
             <Image
               src="/offer.svg"
@@ -78,7 +77,6 @@ const ServicesOffer = () => {
             />
           </div>
 
-          {/* Right Column - Content */}
           <div className="text-center lg:text-left">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0B1C39] mb-4 sm:mb-6">
               What We Offer

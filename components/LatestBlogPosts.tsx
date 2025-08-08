@@ -58,7 +58,7 @@ const LatestBlogPosts = () => {
   return (
     <section className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
+
         <div className="text-center mb-8 sm:mb-10 lg:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-3 sm:mb-4">
             Upcoming Stories & Spotlights
@@ -70,7 +70,7 @@ const LatestBlogPosts = () => {
           </p>
         </div>
 
-        {/* Blog Grid */}
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {blogPosts.map((post) => (
             <article

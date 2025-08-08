@@ -8,7 +8,7 @@ const ServicesHero = () => {
     <section className="py-12 sm:py-16 lg:py-20 bg-white pt-20 sm:pt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Left Column */}
+  
           <div className="text-center lg:text-left">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#0B1C39] mb-4 sm:mb-6 leading-tight">
               Turning Web3 <span className="text-[#0066FF]">Ideas</span> into
@@ -35,7 +35,6 @@ const ServicesHero = () => {
             </div>
           </div>
 
-          {/* Right Column - Image */}
           <div className="relative order-first lg:order-last">
             <div className="pt-3 rounded-2xl overflow-hidden">
               <Image

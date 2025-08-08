@@ -8,7 +8,7 @@ const TopCollaborator = () => {
   return (
     <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+
         <motion.div
           className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -28,7 +28,7 @@ const TopCollaborator = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
-          {/* Left Side - Genesys Info */}
+
           <motion.div
             className="space-y-6 sm:space-y-8"
             initial={{ opacity: 0, x: -20 }}
@@ -101,7 +101,7 @@ const TopCollaborator = () => {
             </div>
           </motion.div>
 
-          {/* Right Side - Embedded Genesys */}
+
           <motion.div
             className="relative"
             initial={{ opacity: 0, x: 20 }}
@@ -129,7 +129,7 @@ const TopCollaborator = () => {
           </motion.div>
         </div>
 
-        {/* Partnership Stats */}
+
         <motion.div
           className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8"
           initial={{ opacity: 0, y: 20 }}

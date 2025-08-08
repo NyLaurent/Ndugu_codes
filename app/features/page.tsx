@@ -10,7 +10,7 @@ const FeaturesPage = () => {
       title: "Project-Based Curriculum",
       description:
         "Learn by building real Web3 applications from day one - no theoretical fluff.",
-      image: "/img1.jpg", // Community classroom image
+      image: "/img1.jpg",
       highlights: [
         "Build 5+ portfolio projects",
         "Real-world case studies",
@@ -21,7 +21,7 @@ const FeaturesPage = () => {
       title: "African-Focused Content",
       description:
         "Case studies and projects tailored to African market needs and challenges.",
-      image: "/img2.jpg", // Group discussion image
+      image: "/img2.jpg",
       highlights: [
         "Local payment integrations",
         "Cross-border solutions",
@@ -32,7 +32,7 @@ const FeaturesPage = () => {
       title: "Mentorship Network",
       description:
         "1:1 guidance from industry experts who've built successful Web3 projects in Africa.",
-      image: "/img3.jpg", // Mentorship session image
+      image: "/img3.jpg",
       highlights: [
         "Weekly office hours",
         "Code reviews",
@@ -78,19 +78,19 @@ const FeaturesPage = () => {
       title: "Interactive Learning Portal",
       description:
         "Our custom platform with coding exercises, video tutorials, and progress tracking.",
-      image: "/img4.jpg", // Event/learning portal image
+      image: "/img4.jpg",
     },
     {
       title: "Localized Development Kits",
       description:
         "Pre-configured environments with African blockchain node connections.",
-      image: "/img5.jpg", // Tech/collaboration image
+      image: "/img5.jpg",
     },
     {
       title: "Career Dashboard",
       description:
         "Track your job search with our interview prep tools and employer connections.",
-      image: "/img6.jpg", // Career/community image
+      image: "/img6.jpg",
     },
   ];
 

@@ -4,7 +4,7 @@ import Link from "next/link";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import useLoading from "@/hooks/useLoading";
 
-// Mock blog posts data - replace with real data fetching as needed
+
 const blogPosts = [
   {
     id: "1",

@@ -41,7 +41,7 @@ const EmpowerSection = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Animated Globe Container */}
+  
           <motion.div 
             className="relative w-full aspect-square max-w-xs sm:max-w-md lg:max-w-lg mx-auto lg:mx-0"
             animate={{ rotate: 360 }}

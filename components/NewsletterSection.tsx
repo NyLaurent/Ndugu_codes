@@ -12,7 +12,6 @@ const NewsletterSection = () => {
     if (!email.trim()) return;
 
     try {
-      // TODO: Replace this with actual API call
       console.log("Subscribing email:", email);
 
       setStatus("success");
@@ -63,7 +62,7 @@ const NewsletterSection = () => {
             </button>
           </form>
 
-          {/* Feedback */}
+  
           {status === "success" && (
             <p className="text-green-600 mt-3 sm:mt-4 text-sm sm:text-base">
               Thanks for subscribing!

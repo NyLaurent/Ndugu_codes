@@ -12,7 +12,6 @@ export default function NProgressProvider({ children }: { children: React.ReactN
   useEffect(() => {
     let timeout: NodeJS.Timeout;
     NProgress.start();
-    // Add a small artificial delay for smoother effect
     timeout = setTimeout(() => {
       NProgress.done();
     }, 600);
@@ -20,7 +19,6 @@ export default function NProgressProvider({ children }: { children: React.ReactN
       clearTimeout(timeout);
       NProgress.done();
     };
-    // Only run on pathname change
   }, [pathname]);
 
   return <>{children}</>;

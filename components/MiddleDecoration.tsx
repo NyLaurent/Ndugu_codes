@@ -5,7 +5,7 @@ const MiddleDecoration = () => {
     <section className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
-          {/* Header Section */}
+  
           <div className="lg:w-1/2 mb-8 lg:mb-0">
             <div className="flex items-center gap-2 mb-3 sm:mb-4">
               <Image src="/globe.svg" alt="Globe Icon" width={24} height={24} />
@@ -87,9 +87,7 @@ const MiddleDecoration = () => {
             </ul>
           </div>
 
-          {/* Stats Grid */}
           <div className="lg:w-1/2 grid grid-cols-2 gap-4 sm:gap-8">
-            {/* First Row */}
             <div className="text-center p-4 sm:p-6 bg-white rounded-lg shadow-sm">
               <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-red-500 flex items-center justify-center">
@@ -124,7 +122,7 @@ const MiddleDecoration = () => {
               <p className="text-gray-600 text-xs sm:text-sm lg:text-base">Startups We Plan to Support</p>
             </div>
 
-            {/* Second Row */}
+
             <div className="text-center p-4 sm:p-6 bg-white rounded-lg shadow-sm">
               <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-blue-500 flex items-center justify-center">

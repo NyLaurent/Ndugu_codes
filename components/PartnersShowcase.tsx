@@ -16,12 +16,12 @@ const PartnersShowcase = () => {
 
   return (
     <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden">
-      {/* Background decorative elements */}
+      
       <div className="absolute top-0 right-0 w-64 h-64 bg-[#0066FF]/5 rounded-full filter blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#0066FF]/5 rounded-full filter blur-3xl"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+
         <motion.div
           className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -40,9 +40,7 @@ const PartnersShowcase = () => {
           </p>
         </motion.div>
 
-        {/* Animated Partners Carousel */}
         <div className="overflow-hidden relative">
-          {/* Gradient overlays for fade effect */}
           <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-blue-50 to-transparent z-10"></div>
           <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-blue-50 to-transparent z-10"></div>
           
@@ -82,8 +80,7 @@ const PartnersShowcase = () => {
           </motion.div>
         </div>
 
-        {/* Partnership Stats */}
-        {/* Sponsors Section */}
+
         <motion.div
           className="mt-12 text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -132,7 +129,7 @@ const PartnersShowcase = () => {
           </div>
         </motion.div>
 
-        {/* Call to Action */}
+
         <motion.div
           className="mt-16 sm:mt-20 text-center"
           initial={{ opacity: 0, y: 20 }}
