@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { validateForm, validateField } from "@/utils/validation";
 
 const statusOptions = ["Live", "Beta", "Coming Soon", "Prototype", "Ideation"];
 const categoryOptions = ["DeFi", "NFT", "DAOs", "Payments", "Education", "Social Impact", "E-commerce", "Gaming", "Infrastructure"];
@@ -24,6 +25,10 @@ export default function SubmitProjectPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
+
+  const requiredFields = ["title", "description", "status"];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -31,6 +36,26 @@ export default function SubmitProjectPage() {
       ...prev,
       [name]: value
     }));
+
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: "" }));
+    }
+  };
+
+  const handleBlur = (field: string) => {
+    setTouched(prev => ({ ...prev, [field]: true }));
+    
+    // Validate field on blur - only validate string fields
+    const value = formData[field as keyof typeof formData];
+    if (typeof value === 'string') {
+      const error = validateField(field, value, true);
+      if (error) {
+        setErrors(prev => ({ ...prev, [field]: error.message }));
+      } else {
+        setErrors(prev => ({ ...prev, [field]: "" }));
+      }
+    }
   };
 
   const handleTagChange = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -102,8 +127,22 @@ export default function SubmitProjectPage() {
     setIsSubmitting(true);
     setError("");
 
-    if (!formData.title || !formData.description || formData.tags.length === 0) {
-      setError("Please fill in all required fields");
+    // Validate all fields
+    const validation = validateForm(formData, requiredFields);
+    
+    if (!validation.isValid) {
+      const newErrors: Record<string, string> = {};
+      validation.errors.forEach(error => {
+        newErrors[error.field] = error.message;
+      });
+      setErrors(newErrors);
+      setError("Please fix the errors in the form before submitting.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    if (formData.tags.length === 0) {
+      setError("Please add at least one tag");
       setIsSubmitting(false);
       return;
     }
@@ -168,10 +207,16 @@ export default function SubmitProjectPage() {
                     name="title"
                     value={formData.title}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                    onBlur={() => handleBlur("title")}
+                    className={`w-full px-4 py-3 rounded-lg border focus:ring-blue-500 focus:border-blue-500 ${
+                      errors.title ? 'border-red-500' : 'border-gray-300'
+                    }`}
                     placeholder="e.g. AfriChain Marketplace"
                     required
                   />
+                  {errors.title && touched.title && (
+                    <p className="mt-1 text-sm text-red-600">{errors.title}</p>
+                  )}
                 </div>
 
                 <div className="sm:col-span-2">
@@ -184,10 +229,16 @@ export default function SubmitProjectPage() {
                     rows={4}
                     value={formData.description}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                    onBlur={() => handleBlur("description")}
+                    className={`w-full px-4 py-3 rounded-lg border focus:ring-blue-500 focus:border-blue-500 ${
+                      errors.description ? 'border-red-500' : 'border-gray-300'
+                    }`}
                     placeholder="Briefly describe your project (what problem it solves, how it works, etc.)"
                     required
                   />
+                  {errors.description && touched.description && (
+                    <p className="mt-1 text-sm text-red-600">{errors.description}</p>
+                  )}
                 </div>
 
                 <div>
@@ -199,12 +250,18 @@ export default function SubmitProjectPage() {
                     name="status"
                     value={formData.status}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                    onBlur={() => handleBlur("status")}
+                    className={`w-full px-4 py-3 rounded-lg border focus:ring-blue-500 focus:border-blue-500 ${
+                      errors.status ? 'border-red-500' : 'border-gray-300'
+                    }`}
                   >
                     {statusOptions.map(status => (
                       <option key={status} value={status}>{status}</option>
                     ))}
                   </select>
+                  {errors.status && touched.status && (
+                    <p className="mt-1 text-sm text-red-600">{errors.status}</p>
+                  )}
                 </div>
 
                 <div>

@@ -111,19 +111,27 @@ export default function PartnershipPage() {
     setSubmitting(true);
     setError("");
 
-    const formElement = e.currentTarget as HTMLFormElement;
-    const data = new FormData(formElement);
-
-    form.type.forEach((type) => {
-      data.append("type", type);
-    });
-
     toast({
       title: "Submitting partnership inquiry...",
       description: "Please wait while we process your submission.",
     });
 
     try {
+      // Create FormData with all the form data from state
+      const data = new FormData();
+      data.append("form_type", "partnership");
+      data.append("name", form.name);
+      data.append("org", form.org);
+      data.append("email", form.email);
+      data.append("website", form.website);
+      data.append("motivation", form.motivation);
+      data.append("ideas", form.ideas);
+      
+      // Add each partnership type
+      form.type.forEach((type) => {
+        data.append("type", type);
+      });
+
       const response = await fetch(
         url || "https://formspree.io/f/YOUR_PARTNERSHIP_FORM_ID",
         {
@@ -267,8 +275,6 @@ export default function PartnershipPage() {
               </motion.div>
             ) : (
               <motion.form
-                action={url}
-                method="POST"
                 onSubmit={handleSubmit}
                 className="max-w-2xl mx-auto space-y-6"
                 initial={{ opacity: 0 }}
