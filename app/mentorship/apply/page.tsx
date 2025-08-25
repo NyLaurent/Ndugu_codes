@@ -4,18 +4,26 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useToast } from "@/hooks/use-toast";
+import { validateForm, validateField } from "@/utils/validation";
+import PhoneInput from "@/components/PhoneInput";
 
 const ApplyPage = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     track: "",
     experience: "",
     goals: "",
     timezone: "",
     availability: "",
   });
+  const [countryCode, setCountryCode] = useState("+1");
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
   const { toast, ToastContainer } = useToast();
+
+  const requiredFields = ["name", "email", "phone", "track", "experience", "goals", "timezone", "availability"];
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -27,12 +35,58 @@ const ApplyPage = () => {
       ...prev,
       [name]: value,
     }));
+
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: "" }));
+    }
+  };
+
+  const handleBlur = (field: string) => {
+    setTouched(prev => ({ ...prev, [field]: true }));
+    
+    // Validate field on blur
+    const error = validateField(field, formData[field as keyof typeof formData], true);
+    if (error) {
+      setErrors(prev => ({ ...prev, [field]: error.message }));
+    } else {
+      setErrors(prev => ({ ...prev, [field]: "" }));
+    }
+  };
+
+  const handlePhoneChange = (value: string) => {
+    setFormData(prev => ({ ...prev, phone: value }));
+    if (errors.phone) {
+      setErrors(prev => ({ ...prev, phone: "" }));
+    }
+  };
+
+  const handleCountryCodeChange = (code: string) => {
+    setCountryCode(code);
   };
 
   const url = process.env.NEXT_PUBLIC_FORMSPREE_MENTORSHIP_URL;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validate all fields
+    const validation = validateForm(formData, requiredFields);
+    
+    if (!validation.isValid) {
+      const newErrors: Record<string, string> = {};
+      validation.errors.forEach(error => {
+        newErrors[error.field] = error.message;
+      });
+      setErrors(newErrors);
+      
+      toast({
+        title: "Validation Error",
+        description: "Please fix the errors in the form before submitting.",
+        variant: "destructive",
+      });
+      return;
+    }
 
     toast({
       title: "Submitting application...",
@@ -45,6 +99,7 @@ const ApplyPage = () => {
       data.append("form_type", "mentorship");
       data.append("name", formData.name);
       data.append("email", formData.email);
+      data.append("phone", `${countryCode}${formData.phone}`);
       data.append("track", formData.track);
       data.append("experience", formData.experience);
       data.append("goals", formData.goals);
@@ -72,12 +127,15 @@ const ApplyPage = () => {
         setFormData({
           name: "",
           email: "",
+          phone: "",
           track: "",
           experience: "",
           goals: "",
           timezone: "",
           availability: "",
         });
+        setErrors({});
+        setTouched({});
       } else {
         const result = await response.json();
         toast({
@@ -135,7 +193,7 @@ const ApplyPage = () => {
               htmlFor="name"
               className="block text-sm font-medium text-gray-700 mb-1"
             >
-              Full Name
+              Full Name *
             </label>
             <input
               type="text"
@@ -143,10 +201,16 @@ const ApplyPage = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
+              onBlur={() => handleBlur("name")}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none"
-              placeholder="Your name"
+              className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none ${
+                errors.name ? 'border-red-500' : 'border-gray-300'
+              }`}
+              placeholder="Your full name"
             />
+            {errors.name && touched.name && (
+              <p className="mt-1 text-sm text-red-600">{errors.name}</p>
+            )}
           </div>
 
           <div>
@@ -154,7 +218,7 @@ const ApplyPage = () => {
               htmlFor="email"
               className="block text-sm font-medium text-gray-700 mb-1"
             >
-              Email Address
+              Email Address *
             </label>
             <input
               type="email"
@@ -162,9 +226,33 @@ const ApplyPage = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
+              onBlur={() => handleBlur("email")}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none"
+              className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none ${
+                errors.email ? 'border-red-500' : 'border-gray-300'
+              }`}
               placeholder="your@email.com"
+            />
+            {errors.email && touched.email && (
+              <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+            )}
+          </div>
+
+          <div>
+            <label
+              htmlFor="phone"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
+              Phone Number *
+            </label>
+            <PhoneInput
+              value={formData.phone}
+              onChange={handlePhoneChange}
+              onCountryCodeChange={handleCountryCodeChange}
+              countryCode={countryCode}
+              placeholder="Enter your phone number"
+              required
+              error={errors.phone && touched.phone ? errors.phone : undefined}
             />
           </div>
 
@@ -173,15 +261,18 @@ const ApplyPage = () => {
               htmlFor="track"
               className="block text-sm font-medium text-gray-700 mb-1"
             >
-              Preferred Mentorship Track
+              Preferred Mentorship Track *
             </label>
             <select
               id="track"
               name="track"
               value={formData.track}
               onChange={handleChange}
+              onBlur={() => handleBlur("track")}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none"
+              className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none ${
+                errors.track ? 'border-red-500' : 'border-gray-300'
+              }`}
             >
               <option value="">Select a track</option>
               <option value="Web3 Fundamentals">Web3 Fundamentals</option>
@@ -190,6 +281,9 @@ const ApplyPage = () => {
               </option>
               <option value="DeFi & dApp Building">DeFi & dApp Building</option>
             </select>
+            {errors.track && touched.track && (
+              <p className="mt-1 text-sm text-red-600">{errors.track}</p>
+            )}
           </div>
 
           <div>
@@ -197,7 +291,7 @@ const ApplyPage = () => {
               htmlFor="experience"
               className="block text-sm font-medium text-gray-700 mb-1"
             >
-              Current Web3 Experience Level
+              Current Web3 Experience Level *
             </label>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               {["Beginner", "Intermediate", "Advanced"].map((level) => (
@@ -209,6 +303,7 @@ const ApplyPage = () => {
                     value={level}
                     checked={formData.experience === level}
                     onChange={handleChange}
+                    onBlur={() => handleBlur("experience")}
                     className="h-4 w-4 text-blue-600 focus:ring-blue-500 outline-none"
                   />
                   <label
@@ -220,6 +315,9 @@ const ApplyPage = () => {
                 </div>
               ))}
             </div>
+            {errors.experience && touched.experience && (
+              <p className="mt-1 text-sm text-red-600">{errors.experience}</p>
+            )}
           </div>
 
           <div>
@@ -227,18 +325,24 @@ const ApplyPage = () => {
               htmlFor="goals"
               className="block text-sm font-medium text-gray-700 mb-1"
             >
-              Your Learning Goals
+              Your Learning Goals *
             </label>
             <textarea
               id="goals"
               name="goals"
               value={formData.goals}
               onChange={handleChange}
+              onBlur={() => handleBlur("goals")}
               required
               rows={4}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none"
-              placeholder="What do you hope to achieve through this mentorship?"
+              className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none ${
+                errors.goals ? 'border-red-500' : 'border-gray-300'
+              }`}
+              placeholder="What do you hope to achieve through this mentorship? (Minimum 10 characters)"
             />
+            {errors.goals && touched.goals && (
+              <p className="mt-1 text-sm text-red-600">{errors.goals}</p>
+            )}
           </div>
 
           <div>
@@ -246,7 +350,7 @@ const ApplyPage = () => {
               htmlFor="timezone"
               className="block text-sm font-medium text-gray-700 mb-1"
             >
-              Timezone
+              Timezone *
             </label>
             <input
               type="text"
@@ -254,10 +358,16 @@ const ApplyPage = () => {
               name="timezone"
               value={formData.timezone}
               onChange={handleChange}
+              onBlur={() => handleBlur("timezone")}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none"
-              placeholder="e.g. GMT+1, EST, etc."
+              className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none ${
+                errors.timezone ? 'border-red-500' : 'border-gray-300'
+              }`}
+              placeholder="e.g. GMT+1, EST, UTC, etc."
             />
+            {errors.timezone && touched.timezone && (
+              <p className="mt-1 text-sm text-red-600">{errors.timezone}</p>
+            )}
           </div>
 
           <div>
@@ -265,18 +375,26 @@ const ApplyPage = () => {
               htmlFor="availability"
               className="block text-sm font-medium text-gray-700 mb-1"
             >
-              Weekly Availability (Hours)
+              Weekly Availability (Hours) *
             </label>
             <input
-              type="text"
+              type="number"
               id="availability"
               name="availability"
               value={formData.availability}
               onChange={handleChange}
+              onBlur={() => handleBlur("availability")}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none"
+              min="1"
+              max="168"
+              className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none ${
+                errors.availability ? 'border-red-500' : 'border-gray-300'
+              }`}
               placeholder="How many hours per week can you dedicate?"
             />
+            {errors.availability && touched.availability && (
+              <p className="mt-1 text-sm text-red-600">{errors.availability}</p>
+            )}
           </div>
 
           <div className="pt-4">

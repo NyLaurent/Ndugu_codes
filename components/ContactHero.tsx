@@ -1,18 +1,123 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaXTwitter } from "react-icons/fa6";
 import { useToast } from "@/hooks/use-toast";
+import { validateForm, validateField } from "@/utils/validation";
+import PhoneInput from "@/components/PhoneInput";
 
 export default function ContactHero() {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    contactMethod: "",
+    message: "",
+  });
+  const [countryCode, setCountryCode] = useState("+1");
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
   const url = process.env.NEXT_PUBLIC_FORMSPREE_CONTACT_URL;
   const { toast, ToastContainer } = useToast();
+
+  const requiredFields = ["firstName", "lastName", "email", "contactMethod", "message"];
+
+  // Validate phone if contact method is phone
+  const shouldValidatePhone = formData.contactMethod === "phone" && formData.phone;
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: "" }));
+    }
+
+    // If contact method changes to phone, validate phone field
+    if (name === "contactMethod" && value === "phone" && formData.phone) {
+      const phoneError = validateField("phone", formData.phone, true);
+      if (phoneError) {
+        setErrors(prev => ({ ...prev, phone: phoneError.message }));
+      }
+    }
+  };
+
+  const handleBlur = (field: string) => {
+    setTouched(prev => ({ ...prev, [field]: true }));
+    
+    // Validate field on blur
+    const error = validateField(field, formData[field as keyof typeof formData], true);
+    if (error) {
+      setErrors(prev => ({ ...prev, [field]: error.message }));
+    } else {
+      setErrors(prev => ({ ...prev, [field]: "" }));
+    }
+  };
+
+  const handlePhoneChange = (value: string) => {
+    setFormData(prev => ({ ...prev, phone: value }));
+    
+    // Clear error when user starts typing
+    if (errors.phone) {
+      setErrors(prev => ({ ...prev, phone: "" }));
+    }
+
+    // Validate phone if contact method is phone
+    if (formData.contactMethod === "phone" && value) {
+      const phoneError = validateField("phone", value, true);
+      if (phoneError) {
+        setErrors(prev => ({ ...prev, phone: phoneError.message }));
+      }
+    }
+  };
+
+  const handleCountryCodeChange = (code: string) => {
+    setCountryCode(code);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const form = e.currentTarget as HTMLFormElement;
-    const data = new FormData(form);
+    // Mark all fields as touched to show errors
+    const allTouched: Record<string, boolean> = {};
+    requiredFields.forEach(field => {
+      allTouched[field] = true;
+    });
+    setTouched(allTouched);
+
+    // Validate all fields
+    const validation = validateForm(formData, requiredFields);
+    
+    // Additional validation for phone if contact method is phone
+    if (shouldValidatePhone) {
+      const phoneError = validateField("phone", formData.phone, true);
+      if (phoneError) {
+        validation.errors.push(phoneError);
+      }
+    }
+    
+    if (!validation.isValid) {
+      const newErrors: Record<string, string> = {};
+      validation.errors.forEach(error => {
+        newErrors[error.field] = error.message;
+      });
+      setErrors(newErrors);
+      
+      toast({
+        title: "Please fix the form errors",
+        description: "Check the highlighted fields below and correct any errors.",
+        variant: "destructive",
+      });
+      return;
+    }
 
     toast({
       title: "Submitting message...",
@@ -20,6 +125,18 @@ export default function ContactHero() {
     });
 
     try {
+      // Create FormData with all the form data from state
+      const data = new FormData();
+      data.append("form_type", "contact");
+      data.append("firstName", formData.firstName);
+      data.append("lastName", formData.lastName);
+      data.append("email", formData.email);
+      if (formData.phone) {
+        data.append("phone", `${countryCode}${formData.phone}`);
+      }
+      data.append("contactMethod", formData.contactMethod);
+      data.append("message", formData.message);
+
       const response = await fetch(url || "", {
         method: "POST",
         body: data,
@@ -35,7 +152,16 @@ export default function ContactHero() {
             "Your message has been sent successfully. We'll get back to you soon!",
           variant: "success",
         });
-        form.reset();
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          contactMethod: "",
+          message: "",
+        });
+        setErrors({});
+        setTouched({});
       } else {
         const result = await response.json();
         toast({
@@ -59,97 +185,153 @@ export default function ContactHero() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 pt-20 sm:pt-24">
-      <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 pt-20 sm:pt-24">
+      <div className="text-center mb-12">
         <motion.h1
-          className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Get in Touch with Us
+          Contact Us
         </motion.h1>
         <motion.p
-          className="text-gray-600 text-sm sm:text-base lg:text-lg"
+          className="text-gray-600 text-lg max-w-2xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Reach out to us with any question or inquiry you have and we&apos;ll
-          do our best to get back to you as soon as possible.
+          Ready to build the future of Web3? Let&apos;s connect.
         </motion.p>
       </div>
-      <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
-        <div className="lg:col-span-2">
-          <form className="space-y-4 sm:space-y-6" onSubmit={handleSubmit}>
+      
+      <div className="grid lg:grid-cols-2 gap-12">
+        {/* Contact Form */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8"
+        >
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Send us a message</h2>
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <div>
                 <label className="block text-gray-700 mb-2 text-sm sm:text-base">
-                  First Name
+                  First Name *
                 </label>
                 <input
                   type="text"
                   name="firstName"
-                  placeholder="Please input"
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base outline-none"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  onBlur={() => handleBlur("firstName")}
+                  placeholder="Your first name"
+                  className={`w-full px-4 py-3 text-black rounded-xl border-2 transition-all duration-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
+                    errors.firstName ? 'border-red-500 bg-red-50' : 'border-gray-200 bg-white hover:border-gray-300'
+                  }`}
                   required
                 />
+                {errors.firstName && touched.firstName && (
+                  <p className="mt-1 text-sm text-red-600">{errors.firstName}</p>
+                )}
               </div>
               <div>
                 <label className="block text-gray-700 mb-2 text-sm sm:text-base">
-                  Email Address
+                  Last Name *
                 </label>
                 <input
-                  type="email"
-                  name="email"
-                  placeholder="Please input"
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base outline-none"
+                  type="text"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                  onBlur={() => handleBlur("lastName")}
+                  placeholder="Your last name"
+                  className={`w-full px-4 py-3 text-black rounded-xl border-2 transition-all duration-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
+                    errors.lastName ? 'border-red-500 bg-red-50' : 'border-gray-200 bg-white hover:border-gray-300'
+                  }`}
                   required
                 />
-              </div>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-              <div>
-                <label className="block text-gray-700 mb-2 text-sm sm:text-base">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="+000"
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base outline-none"
-                />
-              </div>
-              <div>
-                <label className="block text-gray-700 mb-2 text-sm sm:text-base">
-                  Contact method
-                </label>
-                <select
-                  name="contactMethod"
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base outline-none"
-                  defaultValue=""
-                  required
-                >
-                  <option value="" disabled>
-                    Choose method
-                  </option>
-                  <option value="email">Email</option>
-                  <option value="phone">Phone</option>
-                  <option value="whatsapp">WhatsApp</option>
-                </select>
+                {errors.lastName && touched.lastName && (
+                  <p className="mt-1 text-sm text-red-600">{errors.lastName}</p>
+                )}
               </div>
             </div>
             <div>
               <label className="block text-gray-700 mb-2 text-sm sm:text-base">
-                Message
+                Email Address *
+              </label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                onBlur={() => handleBlur("email")}
+                placeholder="your@email.com"
+                className={`w-full px-4 py-3 text-black rounded-xl border-2 transition-all duration-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
+                  errors.email ? 'border-red-500 bg-red-50' : 'border-gray-200 bg-white hover:border-gray-300'
+                }`}
+                required
+              />
+              {errors.email && touched.email && (
+                <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+              )}
+            </div>
+            <div>
+              <label className="block text-gray-700 mb-2 text-sm sm:text-base">
+                Phone Number {formData.contactMethod === "phone" && <span className="text-red-500">*</span>}
+              </label>
+              <PhoneInput
+                value={formData.phone}
+                onChange={handlePhoneChange}
+                onCountryCodeChange={handleCountryCodeChange}
+                countryCode={countryCode}
+                placeholder="Enter your phone number"
+                error={errors.phone && touched.phone ? errors.phone : undefined}
+              />
+            </div>
+            <div>
+              <label className="block text-gray-700 mb-2 text-sm sm:text-base">
+                Contact method *
+              </label>
+              <select
+                name="contactMethod"
+                value={formData.contactMethod}
+                onChange={handleChange}
+                onBlur={() => handleBlur("contactMethod")}
+                className={`w-full px-4 py-3 text-black rounded-xl border-2 transition-all duration-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
+                  errors.contactMethod ? 'border-red-500 bg-red-50' : 'border-gray-200 bg-white hover:border-gray-300'
+                }`}
+                required
+              >
+                <option value="">Choose method</option>
+                <option value="email">Email</option>
+                <option value="phone">Phone</option>
+                <option value="whatsapp">WhatsApp</option>
+              </select>
+              {errors.contactMethod && touched.contactMethod && (
+                <p className="mt-1 text-sm text-red-600">{errors.contactMethod}</p>
+              )}
+            </div>
+            <div>
+              <label className="block text-gray-700 mb-2 text-sm sm:text-base">
+                Message *
               </label>
               <textarea
                 name="message"
+                value={formData.message}
+                onChange={handleChange}
+                onBlur={() => handleBlur("message")}
                 rows={4}
-                placeholder="Enter your message..."
-                className="w-full px-3 sm:px-4 py-2 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 text-sm sm:text-base outline-none"
+                placeholder="Enter your message... (Minimum 5 characters)"
+                className={`w-full px-4 py-3 text-black rounded-xl border-2 transition-all duration-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
+                  errors.message ? 'border-red-500 bg-red-50' : 'border-gray-200 bg-white hover:border-gray-300'
+                }`}
                 required
-              ></textarea>
+              />
+              {errors.message && touched.message && (
+                <p className="mt-1 text-sm text-red-600">{errors.message}</p>
+              )}
             </div>
             <div className="flex items-start">
               <input
@@ -169,84 +351,82 @@ export default function ContactHero() {
             <div>
               <button
                 type="submit"
-                className="px-4 sm:px-6 py-2 sm:py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm sm:text-base w-full sm:w-auto"
+                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold py-4 px-6 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-200 transform hover:scale-105 shadow-lg"
               >
-                Submit
+                Send Message
               </button>
             </div>
           </form>
-        </div>
-        <div className="space-y-6 sm:space-y-8">
-          <div>
-            <h2 className="text-lg sm:text-xl text-black font-semibold mb-2 sm:mb-3">
-              Get in touch
-            </h2>
-            <p className="text-gray-600 text-sm sm:text-base">
-              We&apos;d love to hear from you—whether you&apos;re looking to
-              collaborate, support, or join our mission to drive Web3 innovation
-              across Africa. Let&apos;s build something meaningful together.
-            </p>
-            <a
-              href="#"
-              className="text-blue-600 hover:text-blue-700 inline-flex items-center mt-2 text-sm sm:text-base"
-            >
-              Read more →
-            </a>
-          </div>
-          <div>
-            <h2 className="text-lg sm:text-xl text-black font-semibold mb-2 sm:mb-3">
-              Address
-            </h2>
-            <p className="font-medium text-black text-sm sm:text-base">
-              Web3 Mates Hub — Kigali, Rwanda
-            </p>
-            <p className="text-gray-600 text-sm sm:text-base">
-              Bumbogo Innovation Center, KG 690 St, Kigali, Rwanda
-            </p>
-          </div>
-          <div>
-            <a
-              href="tel:+250788123456"
-              className="text-blue-600 hover:text-blue-700 text-sm sm:text-base"
-            >
-              Make a phone call
-            </a>
-            <p className="text-gray-600 mt-2 text-sm sm:text-base">
-              +250 788 123 456
-            </p>
-          </div>
-          <div>
-            <h2 className="text-lg sm:text-xl text-black font-semibold mb-2 sm:mb-3">
-              Social media
-            </h2>
-            <div className="flex space-x-3 sm:space-x-4">
-              <a href="#" className="text-gray-600 hover:text-blue-600">
-                <span className="sr-only">Instagram</span>
-                <svg
-                  className="w-5 h-5 sm:w-6 sm:h-6"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
-                </svg>
-              </a>
-              <a href="#" className="text-gray-600 hover:text-blue-600">
-                <span className="sr-only">X (Twitter)</span>
-                <FaXTwitter className="w-5 h-5 sm:w-6 sm:h-6" />
-              </a>
-              <a href="#" className="text-gray-600 hover:text-blue-600">
-                <span className="sr-only">LinkedIn</span>
-                <svg
-                  className="w-5 h-5 sm:w-6 sm:h-6"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                </svg>
-              </a>
+        </motion.div>
+
+        {/* Contact Information */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="space-y-8"
+        >
+          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Get in touch</h2>
+            
+            <div className="space-y-6">
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0">
+                  <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900">Address</h3>
+                  <p className="text-gray-600 mt-1">Web3 Mates Hub — Kigali, Rwanda</p>
+                  <p className="text-gray-500 text-sm">Bumbogo Innovation Center, KG 690 St</p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0">
+                  <div className="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900">Phone</h3>
+                  <a href="tel:+256789649671" className="text-blue-600 hover:text-blue-700 font-medium">
+                    +256 789 649671
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0">
+                  <div className="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9" />
+                    </svg>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900">Follow us</h3>
+                  <div className="flex space-x-3 mt-2">
+                    <a href="https://x.com/Web3Mates" className="text-gray-600 hover:text-blue-600 transition-colors">
+                      <FaXTwitter className="w-5 h-5" />
+                    </a>
+                    <a href="https://www.linkedin.com/company/Web3Mates" className="text-gray-600 hover:text-blue-600 transition-colors">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
       <ToastContainer />
     </div>
