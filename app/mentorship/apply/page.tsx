@@ -34,15 +34,23 @@ const ApplyPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const form = e.currentTarget as HTMLFormElement;
-    const data = new FormData(form);
-
     toast({
       title: "Submitting application...",
       description: "Please wait while your application is being sent.",
     });
 
     try {
+      // Create FormData with all the form data from state
+      const data = new FormData();
+      data.append("form_type", "mentorship");
+      data.append("name", formData.name);
+      data.append("email", formData.email);
+      data.append("track", formData.track);
+      data.append("experience", formData.experience);
+      data.append("goals", formData.goals);
+      data.append("timezone", formData.timezone);
+      data.append("availability", formData.availability);
+
       const response = await fetch(
         url || "https://formspree.io/f/YOUR_MENTORSHIP_FORM_ID",
         {
@@ -121,7 +129,7 @@ const ApplyPage = () => {
         transition={{ duration: 0.5 }}
         className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 sm:p-8 lg:p-10 max-w-3xl mx-auto"
       >
-        <form action={url} method="POST" className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label
               htmlFor="name"
